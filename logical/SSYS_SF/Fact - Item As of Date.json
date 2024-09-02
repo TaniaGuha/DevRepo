@@ -1,0 +1,512 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Item As of Date",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Std AMC Inter Org (6M)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_INTER_ORG_6M" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Misc (6M)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_MISC_6M" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC So (6M)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_SO_6M" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Wip (6M)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_WIP_6M" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Total (6M)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_TOTAL_6M" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Inter Org (1Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_INTER_ORG_1Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Misc (1Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_MISC_1Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC So (1Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_SO_1Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Wip (1Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_WIP_1Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Total (1Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_TOTAL_1Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Inter Org (2Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_INTER_ORG_2Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Misc (2Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_MISC_2Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC So (2Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_SO_2Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Wip (2Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_WIP_2Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Total (2Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_TOTAL_2Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Inter Org (3Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_INTER_ORG_3Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Misc (3Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_MISC_3Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC So (3Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_SO_3Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Wip (3Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_WIP_3Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Total (3Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_TOTAL_3Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Inter Org (4Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_INTER_ORG_4Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Misc (4Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_MISC_4Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC So (4Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_SO_4Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Wip (4Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_WIP_4Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Std AMC Total (4Q)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.STD_AMC_TOTAL_4Q" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "MOI AMC",
+      "description" : "MAX value of AMC columns",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date.MOI_AMC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging Hist.Dim - Purchasing Supply Pegging Hist Total", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Hist.Dim - Item Daily Snapshot Hist Total", "logicalLevel:SSYS_SF.Dim - Item Daily Snapshot Curr.Dim - Item Daily Snapshot Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Item_As_of_Date" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Inventory Organization (Common).Dim - Inventory Organization (Common) Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Inventory Organization (Common)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item As off Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

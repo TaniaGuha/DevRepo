@@ -1,0 +1,424 @@
+{
+  "logicalTable" : {
+    "name" : "AR Cash Receipt History Fact",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Batch Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.BATCH_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cash Receipt History Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CASH_RECEIPT_HISTORY_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cash Receipt Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CASH_RECEIPT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Chart Of Accounts Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CHART_OF_ACCOUNTS_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Currency Exchange Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CURRENCY_EXCHANGE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Currency Exchange Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CURRENCY_EXCHANGE_RATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Currency Exchange Rate Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CURRENCY_EXCHANGE_RATE_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Current Record Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.CURRENT_RECORD_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Factor Discount Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.FACTOR_DISCOUNT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Factoring Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.FACTORING_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Func Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.FUNC_CURRENCY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Func Factor Discount Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.FUNC_FACTOR_DISCOUNT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Functional Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.FUNCTIONAL_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Gl Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.GL_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.LEDGER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Note Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.NOTE_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.ORG_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Receipt Batch Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.RECEIPT_BATCH_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Receipt Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.RECEIPT_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Receipt Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Cash Receipt History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Cash Receipt History Fact.RECEIPT_STATUS" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "AR Cash Receipt History Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.AR Cash Receipt History Fact" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.AR Cash Receipts Dim.AR Cash Receipts Dim Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:EBS.Operating Units Dim.Org ID", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.AR Cash Receipts Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Code Combinations",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Ledgers Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Periods Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.Operating Units Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "physicalTable" : {
+    "name" : "DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select sp.supplier_gk,nvl(sps.supplier_site_gk,-1) as supplier_site_gk,\r\nnvl(sps.ou_org_gk,-1) as site_ou_org_gk, nvl(sc.supplier_contact_gk,-1) as supplier_contact_gk ,\r\nSP.SUPPLIER_ID,SPS.SUPPLIER_SITE_ID,SC.SUPPLIER_CONTACT_ID\r\nfrom \r\nDIM_AP_SUPPLIER_DWH sp,\r\nDIM_AP_SUPPLIER_SITE_DWH sps,\r\nDIM_AP_SUPPLIER_CONTACTS_DWH sc\r\nwhere sp.supplier_gk = sps.supplier_gk (+)\r\nand sps.supplier_site_gk = sc.supplier_site_gk(+)\r\nand sp.supplier_gk > 0"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "SUPPLIER_SITE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SUPPLIER_SITE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_CONTACT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_CONTACT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SITE_OU_ORG_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:DW.DWH.DIM_AP_SUPPLIER_CONTACTS_DWH_Dim_Supplier_Contact",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SUPPLIER_CONTACT_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_CONTACTS_DWH_Dim_Supplier_Contact.SUPPLIER_CONTACT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SUPPLIER_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SUPPLIER_SITE_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SUPPLIER_SITE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SITE_OU_ORG_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+      } ]
+    } ]
+  }
+}

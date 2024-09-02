@@ -1,0 +1,88 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Mfg Item Cost",
+    "tags" : [ "Project:Lead2Invoice", "Project:SSYS_All_DWH", "Project:SSYS_Lead2Invoice" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Item Cost by Mfg Org",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost.ITEM_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Item.Dim - Item Total", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Material Cost by Mfg Org",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost.MATERIAL_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Item.Dim - Item Total", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Inventory Source Org.Dim - Inventory Source Org Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Detail", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Detail", "logicalLevel:SSYS.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > 0",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Mfg_Item_Cost.ITEM_COST_GK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Inventory Source Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item Cost type",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item Cost",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "physicalTable": {
+    "name": "PA Expenditures Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPA_EXPENDITURES_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Expenditures Fact.DR_CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Expenditures Fact.DIST_GL_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Expenditures Fact.PEA_ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Expenditure Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Expenditures Fact.PEIA_EXPENDITURE_TYPE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Expenditure Items Dim.EXPENDITURE_TYPE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Projects Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Expenditures Fact.PEIA_PROJECT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Projects Dim.PROJECT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Task Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Expenditures Fact.PEIA_TASK_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Task Dim.TASK_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

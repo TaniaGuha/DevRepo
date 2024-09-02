@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "DIM_CS_WORK_ORDER_DWH_Dim_Work_Order",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CS_WORK_ORDER_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_RESOURCE_DWH_Work_Order_Assigned_Resource",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CS_WORK_ORDER_DWH_Dim_Work_Order.ASSIGNED_RESOURCE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_RESOURCE_DWH_Work_Order_Assigned_Resource.SERVICE_RESOURCE_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "WORK_ORDER_GK"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Install Site",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Site GK" ],
+    "logicalColumns" : [ {
+      "name" : "City Address",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_CITY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.CITY_ADDRESS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Country Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_COUNTRY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.COUNTRY__NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "County Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_COUNTY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.COUNTY__NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Operating Unit Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "''"
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.OPERATING_UNIT_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Site Address",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_ADDRESS1" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_ADDRESS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Site GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_GK" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Site Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.PARTY_SITE_NAME" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Site Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.PARTY_SITE_NUMBER" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Site Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.PARTY_SITE_STATUS" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Site Usage",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 || '/' || %2",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.BILL_TO_FLAG", "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.SHIP_TO_FLAG" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_USAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "State Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_STATE" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.STATE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Zip Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_POSTAL_CODE" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.ZIP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Install Site Detail"
+    }, {
+      "name" : "Bill To Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.BILL_TO_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.SHIP_TO_FLAG" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+      "description" : "@deprecated",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Install Site Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Install Site Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Install Site Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Site GK" ],
+        "displayKey" : "Site GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Install Site",
+        "levels" : [ "Dim - Install Site Total", "Dim - Install Site Detail" ]
+      } ]
+    }
+  }
+}

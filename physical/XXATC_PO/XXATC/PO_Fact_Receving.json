@@ -1,0 +1,25 @@
+{
+  "physicalTable": {
+    "name": "PO_Fact_Receving",
+    "sourceTable": "physicalTable:XXATC_PO.XXATC.XXATC_PO_D_RECEIPTS_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.INV_D_BUY_ITEMS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_Fact_Receving.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_BUY_ITEMS.BI_ITEM_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_ITEM_CODE"
+      ]
+    ]
+  }
+}

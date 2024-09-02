@@ -1,0 +1,186 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Asset",
+    "tags" : [ "Project:Strataforce 2" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Assets",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_ASSET_DWH_Fact_Asset",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ASSET_DWH_Fact_Asset.ASSET_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS.Dim - Customer Service Work Order Open Date.Dim - Customer Service Work Order Open Date Total", "logicalLevel:SSYS.Dim - Customer Service Case.Dim - Customer Service Case Total", "logicalLevel:SSYS.Dim - Customer Service Case Close Date.Dim - Customer Service Case Close Date Total", "logicalLevel:SSYS.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS.Dim - Item (Asset Attribute Product).Dim - Item (Asset Attribute Product) Total", "logicalLevel:SSYS.Dim - Asset Attribute.Dim - Asset Attribute Total", "logicalLevel:SSYS.Dim - Asset Attribute Criteria.Dim - Asset Attribute Criteria Total", "logicalLevel:SSYS.Dim - Customer Contacts (End Customer).Dim - Customer Contacts (End Customer) Total", "logicalLevel:SSYS.Dim - Item Material.Dim - Item Material Total", "logicalLevel:SSYS.Dim - PPU Material Line.Dim - PPU Material Line Total", "logicalLevel:SSYS.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Total", "logicalLevel:SSYS.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS.Dim - GC User.Dim - GC User Total" ]
+      }
+    }, {
+      "name" : "Total Printing Time",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_ASSET_DWH_Fact_Asset",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ASSET_DWH_Fact_Asset.TOTAL_PRINTING_TIME" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS.Dim - Customer Service Work Order Open Date.Dim - Customer Service Work Order Open Date Total", "logicalLevel:SSYS.Dim - Customer Service Case.Dim - Customer Service Case Total", "logicalLevel:SSYS.Dim - Customer Service Case Close Date.Dim - Customer Service Case Close Date Total", "logicalLevel:SSYS.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS.Dim - Item (Asset Attribute Product).Dim - Item (Asset Attribute Product) Total", "logicalLevel:SSYS.Dim - Asset Attribute.Dim - Asset Attribute Total", "logicalLevel:SSYS.Dim - Asset Attribute Criteria.Dim - Asset Attribute Criteria Total", "logicalLevel:SSYS.Dim - Customer Contacts (End Customer).Dim - Customer Contacts (End Customer) Total" ]
+      }
+    }, {
+      "name" : "# of Contacts",
+      "description" : "Number Of Contacts Attached to the Asset Serial End Customer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_SFDC_DWH_Factless_End_Customer_Contacts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUST_CONTACT_SFDC_DWH_Factless_End_Customer_Contacts.SFDC_CUSTOMER_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS.Dim - Item (Asset Product).Dim - Item (Asset Product) Total", "logicalLevel:SSYS.Dim - Asset.Dim - Asset Total", "logicalLevel:SSYS.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total", "logicalLevel:SSYS.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS.Dim - Asset Attribute.Dim - Asset Attribute Total", "logicalLevel:SSYS.Dim - Asset Attribute Criteria.Dim - Asset Attribute Criteria Total", "logicalLevel:SSYS.Dim - Service Contract (Next Signed Contract).Dim - Service Contract (Next Signed Contract) Total" ]
+      }
+    }, {
+      "name" : "# of Assets (Contract Total)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_ASSET_DWH_Fact_Asset",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ASSET_DWH_Fact_Asset.ASSET_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS.Dim - Customer Service Work Order Open Date.Dim - Customer Service Work Order Open Date Total", "logicalLevel:SSYS.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS.Dim - Customer Service Case.Dim - Customer Service Case Total", "logicalLevel:SSYS.Dim - Customer Service Case Close Date.Dim - Customer Service Case Close Date Total", "logicalLevel:SSYS.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total", "logicalLevel:SSYS.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS.Dim - Item (Asset Attribute Product).Dim - Item (Asset Attribute Product) Total", "logicalLevel:SSYS.Dim - Asset Attribute.Dim - Asset Attribute Total", "logicalLevel:SSYS.Dim - Asset Attribute Criteria.Dim - Asset Attribute Criteria Total", "logicalLevel:SSYS.Dim - Customer Contacts (End Customer).Dim - Customer Contacts (End Customer) Total", "logicalLevel:SSYS.Dim - Item Material.Dim - Item Material Total", "logicalLevel:SSYS.Dim - PPU Material Line.Dim - PPU Material Line Total", "logicalLevel:SSYS.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Total", "logicalLevel:SSYS.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS.Dim - Service Contract (Next Signed Contract).Dim - Service Contract (Next Signed Contract) Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUST_CONTACT_SFDC_DWH_Factless_End_Customer_Contacts",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_CUST_CONTACT_SFDC_DWH_Factless_End_Customer_Contacts" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS.Dim - Customer Contacts (End Customer).Dim - Customer Contacts (End Customer) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_ASSET_DWH_Fact_Asset",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_ASSET_DWH_Fact_Asset" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Asset Install Period.Dim - Asset Install Period Day", "logicalLevel:SSYS.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Detail", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Detail", "logicalLevel:SSYS.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS.Dim - Customer Site (Install).Dim - Customer Site (Install) Detail", "logicalLevel:SSYS.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Detail", "logicalLevel:SSYS.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS.Dim - Item Material.Dim - Item Material Total", "logicalLevel:SSYS.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS.Dim - PPU Material Line.Dim - PPU Material Line Total", "logicalLevel:SSYS.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Detail", "logicalLevel:SSYS.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Detail", "logicalLevel:SSYS.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS.Dim - Customer Account (Account).Dim - Customer Account (Account) Detail", "logicalLevel:SSYS.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Detail", "logicalLevel:SSYS.Dim - Service Contract (Next Signed Contract).Dim - Service Contract (Next Signed Contract) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > 0",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_ASSET_DWH_Fact_Asset.ASSET_GK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : "%1 =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Customer Account (Account).Account Region", "variable:undeclaredVariables.SFDC_REGION" ]
+      }
+    }, {
+      "accessor" : "role:CS_User",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : "%1 =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Customer Account (Account).Account Region", "variable:undeclaredVariables.SFDC_REGION" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Asset Install Period",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Asset",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Account)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Asset End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Contacts (End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Install)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Asset Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Service Contract (Current Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Service Contract (Next Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Service Contract (Next Signed Contract)",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Service Contract (Previous Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Service Contract (Warranty)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

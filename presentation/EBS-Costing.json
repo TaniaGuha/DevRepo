@@ -1,0 +1,51 @@
+{
+  "subjectArea" : {
+    "name" : "EBS-Costing",
+    "description" : "The Costing subject area is used to view detail about the Material Transactions.  It joins to the XLA tables (sub-ledger accounting) to get the true GL Accouting debits/credit as well as the Ledger and GL Effective periods.",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "sourceBusinessModel" : "businessModel:EBS",
+    "tableOrder" : [ {
+      "name" : "presentationTable:EBS-Costing.Time"
+    }, {
+      "name" : "presentationTable:EBS-Costing.GL Ledgers"
+    }, {
+      "name" : "presentationTable:EBS-Costing.GL Code Combinations"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Inventory Items"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Inventory All Item Category Sets"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Products"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Main Category Set"
+    }, {
+      "name" : "presentationTable:EBS-Costing.All Inventory Orgs Items"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Inventory Item Frozen Cost"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Inventory Orgs"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Subinventory"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Locator"
+    }, {
+      "name" : "presentationTable:EBS-Costing.To Locator"
+    }, {
+      "name" : "presentationTable:EBS-Costing.Material Costing Fact",
+      "children" : [ {
+        "name" : "presentationTable:EBS-Costing.Material Costing Attributes"
+      }, {
+        "name" : "presentationTable:EBS-Costing.Material Costing Measures"
+      }, {
+        "name" : "presentationTable:EBS-Costing.XLA Attributes"
+      } ]
+    }, {
+      "name" : "presentationTable:EBS-Costing.MTL Sales Order Dim"
+    } ],
+    "localization" : {
+      "localizationKey" : "EBS-Costing",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Costing)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Costing)"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "logicalTable" : {
+    "name" : "MTL Safety Stock UME Dim",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Safety Stock UME Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Safety Stock UME Dim.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Safety Stock UME Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Safety Stock UME Dim.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Safety Stock Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Safety Stock UME Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Safety Stock UME Dim.SAFETY_STOCK_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Safety Stock Quantity(UME)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Safety Stock UME Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Safety Stock UME Dim.SAFETY_STOCK_QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Uom",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Safety Stock UME Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Safety Stock UME Dim.UOM" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MTL Safety Stock UME Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.MTL Safety Stock UME Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Inventory Item Id", "Organization Id" ]
+  }
+}

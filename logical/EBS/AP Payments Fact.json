@@ -1,0 +1,626 @@
+{
+  "logicalTable" : {
+    "name" : "AP Payments Fact",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Discount Lost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.DISCOUNT_LOST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Discount Taken",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.DISCOUNT_TAKEN" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Invoice Base Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.INVOICE_BASE_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Payment Base Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.PAYMENT_BASE_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Payment Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.PAYMENT_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.CURRENCY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Accrual Posted Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.ACCRUAL_POSTED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Assets Addition Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.ASSETS_ADDITION_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bank Account Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.BANK_ACCOUNT_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bank Account Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.BANK_ACCOUNT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bank Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.BANK_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cash Posted Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.CASH_POSTED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Exchange Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.EXCHANGE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Exchange Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.EXCHANGE_RATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Exchange Rate Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.EXCHANGE_RATE_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Payment Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.INVOICE_PAYMENT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Posted Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.POSTED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.PERIOD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Accounting Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.ACCOUNTING_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Set Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.PERIOD_SET_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Vendor Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.VENDOR_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Vendor Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.VENDOR_SITE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Accts Pay Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.ACCTS_PAY_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Asset Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.ASSET_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Chart Of Accounts Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.CHART_OF_ACCOUNTS_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Check Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.CHECK_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "External Bank Account Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.EXTERNAL_BANK_ACCOUNT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Gain Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.GAIN_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.INVOICE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Payment Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.INVOICE_PAYMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.LEDGER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Loss Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.LOSS_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Org Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.ORG_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AP Payments Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AP Payments Fact.INVOICE_DATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "AP Payments Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.AP Payments Fact" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.AP Checks Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.AP Invoice Date Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.AP Invoice Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.AP Suppliers Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Code Combinations",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Ledgers Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Periods Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.Operating Units Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

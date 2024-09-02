@@ -1,0 +1,207 @@
+{
+  "physicalTable": {
+    "name": "FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions",
+    "sourceTable": "physicalTable:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SUPPLIER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SHIP_TO_LOCATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_SUBINVENTORY_DWH_Subinventory",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SUBINVENTORY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.LOCATOR_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ITEM_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_MTL_GENERIC_DSPOSITION_DWH_Dim_Account_Alias",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.ACCOUNT_ALIAS_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_MTL_GENERIC_DSPOSITION_DWH_Dim_Account_Alias.ACCOUNT_ALIAS_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SALE_ORDER_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.PO_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.PO_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_RELEASE_DWH_Dim_Po_Release",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.PO_RELEASE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_RELEASE_DWH_Dim_Po_Release.PO_RELEASE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.REQUISITION_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line.REQUISITION_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_RCV_SHIPMENT_HEADER_DWH_Dim_Rcv_Shipment_header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SHIPMENT_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_RCV_SHIPMENT_HEADER_DWH_Dim_Rcv_Shipment_header.SHIPMENT_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.WIP_ENTITY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job.WIP_ENTITY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_WSH_DELIVERY_DWH_Dim_Delivery",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.DELIVERY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_WSH_DELIVERY_DWH_Dim_Delivery.DELIVERY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Dim_Material_Transactions",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.MATERIAL_TRANSACTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Dim_Material_Transactions.MATERIAL_TRANSACTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SALE_ORDER_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.PO_DISTRIBUTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_DISTRIBUTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.PO_LINE_LOCATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.SHIPMENT_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Fact_Material_Transactions.DELIVERY_DETAIL_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line.DELIVERY_DETAIL_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

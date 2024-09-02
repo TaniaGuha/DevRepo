@@ -1,0 +1,56 @@
+{
+  "physicalTable": {
+    "name": "MFG_CHM_AVAILABLE_WORK_HOURS",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_HR_F_WORK_HOURS_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DWSOURCE.XXATC.MFG_D_EMPLOYEES",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 AND %3 >= %4 AND %3 <= %5",
+          "expressionObjects": [
+            "physicalColumn:DWSOURCE.XXATC.MFG_D_EMPLOYEES.BI_PERSON_CODE",
+            "physicalColumn:DWSOURCE.XXATC.MFG_CHM_AVAILABLE_WORK_HOURS.BI_PERSON_CODE",
+            "physicalColumn:DWSOURCE.XXATC.MFG_CHM_AVAILABLE_WORK_HOURS.AS_OF_DATE",
+            "physicalColumn:DWSOURCE.XXATC.MFG_D_EMPLOYEES.EFFECTIVE_START_DATE",
+            "physicalColumn:DWSOURCE.XXATC.MFG_D_EMPLOYEES.EFFECTIVE_END_DATE"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.MFG_D_HC_ALLOCATION",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.MFG_CHM_AVAILABLE_WORK_HOURS.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.MFG_D_HC_ALLOCATION.BI_AS_OF_DATE"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.MFG_CHM_AVAILABLE_WORK_HOURS.BI_PERSON_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.MFG_D_HC_ALLOCATION.BI_PERSON_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_CHM.MFG_D_DATES",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.MFG_CHM_AVAILABLE_WORK_HOURS.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:XXATC_MFG_CHM.MFG_D_DATES.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_CHM.XXATC_HR_D_ORGANIZATION_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.MFG_CHM_AVAILABLE_WORK_HOURS.BI_ORGANIZATION_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_CHM.XXATC_HR_D_ORGANIZATION_BI.BI_ORG_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

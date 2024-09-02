@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty",
+    "sourceTable": "physicalTable:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_SUBINVENTORY_DWH_Subinventory",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.SUBINVENTORY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.TPL_FREE_STAGE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.TPL_FREE_STAGE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

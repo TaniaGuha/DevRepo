@@ -1,0 +1,99 @@
+{
+  "presentationTable" : {
+    "name" : "GL Period",
+    "presentationColumns" : [ {
+      "name" : "GL Date",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - GL Period.GL Date",
+      "localization" : {
+        "localizationKey" : "GL Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Date)"
+      }
+    }, {
+      "name" : "Period Name",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - GL Period.Period Name",
+      "localization" : {
+        "localizationKey" : "Period Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_Period_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_Period_Name)"
+      }
+    }, {
+      "name" : "Period Quarter",
+      "description" : "Year and Quarter in format \"2017 Q2\"",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - GL Period.Period Quarter",
+      "alternateNames" : [ "Per Name Quarter" ],
+      "localization" : {
+        "localizationKey" : "Period Quarter",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_Period_Quarter)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_Period_Quarter)"
+      }
+    }, {
+      "name" : "Period Year",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - GL Period.Period Year",
+      "localization" : {
+        "localizationKey" : "Period Year",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_Period_Year)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_Period_Year)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "GL Period",
+      "sourceLogicalTable" : "logicalTable:SSYS.Dim - GL Period",
+      "localization" : {
+        "localizationKey" : "GL Period",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Period)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Period)"
+      },
+      "levels" : [ {
+        "name" : "Total",
+        "sourceLogicalLevel" : "logicalLevel:SSYS.Dim - GL Period.Total",
+        "localization" : {
+          "localizationKey" : "Total",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Period_Total)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Period_Total)"
+        }
+      }, {
+        "name" : "Year",
+        "sourceLogicalLevel" : "logicalLevel:SSYS.Dim - GL Period.Year",
+        "displayColumn" : "presentationColumn:SSYS - AR Invoices.GL Period.Period Year",
+        "localization" : {
+          "localizationKey" : "Year",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Period_Year)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Period_Year)"
+        }
+      }, {
+        "name" : "Quarter",
+        "sourceLogicalLevel" : "logicalLevel:SSYS.Dim - GL Period.Quarter",
+        "displayColumn" : "presentationColumn:SSYS - AR Invoices.GL Period.Period Quarter",
+        "localization" : {
+          "localizationKey" : "Quarter",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Period_Quarter)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Period_Quarter)"
+        }
+      }, {
+        "name" : "Month",
+        "sourceLogicalLevel" : "logicalLevel:SSYS.Dim - GL Period.Month",
+        "displayColumn" : "presentationColumn:SSYS - AR Invoices.GL Period.Period Name",
+        "localization" : {
+          "localizationKey" : "Month",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Period_Month)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Period_Month)"
+        }
+      }, {
+        "name" : "Day Detail",
+        "sourceLogicalLevel" : "logicalLevel:SSYS.Dim - GL Period.Day Detail",
+        "displayColumn" : "presentationColumn:SSYS - AR Invoices.GL Period.GL Date",
+        "localization" : {
+          "localizationKey" : "Day Detail",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period_GL_Period_Day_Detail)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period_GL_Period_Day_Detail)"
+        }
+      } ]
+    } ],
+    "localization" : {
+      "localizationKey" : "GL Period",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_GL_Period)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_GL_Period)"
+    }
+  }
+}

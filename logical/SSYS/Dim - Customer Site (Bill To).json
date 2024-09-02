@@ -1,0 +1,658 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Customer Site (Bill To)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Customer Site Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Bill To Agent Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.AGENT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Agent Salesrep Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.AGENT_SALESREP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.BILL_TO_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Cust Acct Sites Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUST_ACCT_SITES_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site Country Short Name",
+      "description" : "Sourced from EBS fnd_territories_tl.territory_short_name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUST_SITE_COUNTRY_SHORT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Account Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Party Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_PARTY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site Address1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_ADDRESS1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site City",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_CITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site Country",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_COUNTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Customer Site Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site Postal Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_POSTAL_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Site State",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_STATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Identifying Address Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.IDENTIFYING_ADDRESS_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Inactive Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.INACTIVE_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Market Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.MARKET_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Org Ou Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.ORG_OU_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Orig System Ref Party Site",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.ORIG_SYSTEM_REF_PARTY_SITE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Orig System Ref Site",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.ORIG_SYSTEM_REF_SITE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Site Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_SITE_APPLICATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Site Created By Module",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_SITE_CREATED_BY_MODULE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Site Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_SITE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Site Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_SITE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Party Site Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.PARTY_SITE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Sf Site Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.SF_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Ship To Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.SHIP_TO_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Site Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.SITE_APPLICATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Site Created By Module",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.SITE_CREATED_BY_MODULE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Site Territory Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.SITE_TERRITORY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Territory Controlled 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.TERRITORY_CONTROLLED_1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Territory Controlled 2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.TERRITORY_CONTROLLED_2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Usa East West",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.USA_EAST_WEST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Region",
+      "description" : "Taken from the \"ACCOUNTING\" EBS hierarchy, according to the site's \"country short name\"",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.REGION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Sfdc Location Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.SFDC_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To Country Cardinal Directions",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.COUNTRY_CARDINAL_DIRECTIONS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    }, {
+      "name" : "Bill To County",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_COUNTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Site (Bill To) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Customer Site (Bill To) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Customer Site (Bill To) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Customer Site (Bill To) Detail",
+        "numberOfElements" : 50000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Customer Site Gk" ],
+        "displayKey" : "Customer Site Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customer Site (Bill To)",
+        "levels" : [ "Dim - Customer Site (Bill To) Total", "Dim - Customer Site (Bill To) Detail" ]
+      } ]
+    }
+  }
+}

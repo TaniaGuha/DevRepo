@@ -1,0 +1,116 @@
+{
+  "logicalTable" : {
+    "name" : "BI_PARAM",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "BI_ENV",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.BI_ENV" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_PARAM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.BI_PARAM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_PARAM_SEC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.BI_PARAM_SEC" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "PARAM_DESC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.PARAM_DESC" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "VALUE_CHAR",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.VALUE_CHAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "VALUE_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.VALUE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "VALUE_NUMBER",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_PARAM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_PARAM.VALUE_NUMBER" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "BI_PARAM",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.BI_PARAM" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "BI_PARAM_CODE", "BI_PARAM_SEC" ]
+  }
+}

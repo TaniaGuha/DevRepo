@@ -1,0 +1,271 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Quotation Price Break",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Po Line Location Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Po Line Location Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Po Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Price Break Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.SHIPMENT_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Price Break Eff End Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PRICE_BREAK_EFF_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Price Break Eff Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PRICE_BREAK_EFF_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "UOM",
+      "description" : "Unit Of Measure",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.UNIT_MEAS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Price Override",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PRICE_OVERRIDE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Price Discount (%)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PRICE_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Ship To Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.SHIP_TO_LOCATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Payment Terms",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PAYMENT_TERMS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Fob Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.FOB_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Fob",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.FOB_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Freight Terms Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.FREIGHT_TERMS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    }, {
+      "name" : "Freight Terms",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.FREIGHT_TERMS_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Price Break Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : " IFNULL(%1, 'QUOTATION') = 'QUOTATION'",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.SHIPMENT_TYPE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Quotation Price Break Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Quotation Price Break Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Quotation Price Break Detail",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Po Line Location Gk" ],
+        "displayKey" : "Po Line Location Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Quotation Price Break",
+        "levels" : [ "Dim - Purchasing Quotation Price Break Total", "Dim - Purchasing Quotation Price Break Detail" ]
+      } ]
+    }
+  }
+}

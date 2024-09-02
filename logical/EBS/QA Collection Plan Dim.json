@@ -1,0 +1,624 @@
+{
+  "logicalTable" : {
+    "name" : "QA Collection Plan Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Plan Id" ],
+    "logicalColumns" : [ {
+      "name" : "Collection Plan Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Collection Plan Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Plan Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.PLAN_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Plan Type Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.PLAN_TYPE_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Plan Type Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.PLAN_TYPE_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "QA Collection Plan Dim Type"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Effective From",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.EFFECTIVE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Effective To",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.EFFECTIVE_TO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Plan Effective Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 IS NULL  AND  VALUEOF(%2) >= %3 OR %3 IS NULL  AND  VALUEOF(%2) <= %1 OR  NOT %3 IS NULL  AND  NOT %1 IS NULL  AND  VALUEOF(%2) BETWEEN %3 AND %1 OR %3 IS NULL  AND %1 IS NULL  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.EFFECTIVE_TO", "variable:EBS_CURRENT_GL_PERIOD.EBS_CURR_PERIOD_DAY", "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.EFFECTIVE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Esig Mode",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ESIG_MODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Import View Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.IMPORT_VIEW_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Instructions",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.INSTRUCTIONS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Jrad Doc Ver",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.JRAD_DOC_VER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Multirow Flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.MULTIROW_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Multirow Flag Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.MULTIROW_FLAG_MEANING" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Spec Assignment Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.SPEC_ASSIGNMENT_MEANING" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Spec Assignment Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.SPEC_ASSIGNMENT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "View Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.VIEW_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE3" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE4" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE5" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE6" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE7" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE8" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE9" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE10" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE11" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE12" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE13" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE14" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.ATTRIBUTE15" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "QA Collection Plan Dim Detail"
+    }, {
+      "name" : "Template Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "QA Collection Plan Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.QA Collection Plan Dim.TEMPLATE_PLAN_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "QA Collection Plan Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.QA Collection Plan Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "QA Collection Plan Dim Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "QA Collection Plan Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "QA Collection Plan Dim Type",
+        "numberOfElements" : 100,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Plan Type Meaning" ],
+        "displayKey" : "Plan Type Meaning"
+      }, {
+        "name" : "QA Collection Plan Dim Detail",
+        "numberOfElements" : 100,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Plan Id" ],
+        "displayKey" : "Plan Id"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "QA Collection Plan Dim",
+        "levels" : [ "QA Collection Plan Dim Total", "QA Collection Plan Dim Type", "QA Collection Plan Dim Detail" ]
+      } ]
+    }
+  }
+}

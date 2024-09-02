@@ -1,0 +1,140 @@
+{
+  "physicalTable": {
+    "name": "GL_F_BALANCE",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_GL_F_BALANCE_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 7,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_BALANCE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_GL_BALANCE_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_BALANCE.BI_GL_BALANCE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_BUDGET_BASE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_BUDGET_VERSION_ID",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_BUDGET_BASE.BUDGET_VERSION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_CODE_COMBINATION",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_CODE_COMBINATION_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_CODE_COMBINATION.BI_CODE_COMBINATION_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_LEDGER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_LEDGER_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_LEDGER.BI_LEDGER_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_PERIODS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_PERIOD_YM_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_PERIODS.BI_PERIOD_YEAR_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_1",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT1_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_1.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_10",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT10_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_10.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_2",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT2_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_2.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_3",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT3_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_3.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_4",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT4_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_4.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_5",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT5_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_5.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_6",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT6_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_6.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_7",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT7_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_7.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_8",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT8_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_8.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_9",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT9_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_9.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_ACNT",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE.BI_SEGMENT_ACCOUNT_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_ACNT.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

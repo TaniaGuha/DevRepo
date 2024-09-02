@@ -1,0 +1,481 @@
+{
+  "logicalTable" : {
+    "name" : "PO_Component_Usage",
+    "description" : "Current Usage for each item (Filter By Rank=1)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "BI_INVENTORY_ITEM_CODE" ],
+    "logicalColumns" : [ {
+      "name" : "AS_OF_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.AS_OF_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BASE_ITEM_PRICE_USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.BASE_ITEM_PRICE_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_AS_OF_DATE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.BI_AS_OF_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_INVENTORY_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.BI_INVENTORY_ITEM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Component Details"
+    }, {
+      "name" : "CREATION_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Standard Unit Cost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.ITEM_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LAST_PO_PRICE_USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_PRICE_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LAST_RCV_PO_PRICE_USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_RCV_PO_PRICE_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Standard Material Cost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.MATERIAL_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MATERIAL_OVERHEAD_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.MATERIAL_OVERHEAD_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "OUTSIDE_PROCESSING_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.OUTSIDE_PROCESSING_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "RANK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.RANK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "RESOURCE_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.RESOURCE_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TARGET_PRICE_USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.TARGET_PRICE_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TOTAL_QTY_BGN_YEAR",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.TOTAL_QTY_BGN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TOTAL_QTY_EVER",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.TOTAL_QTY_EVER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ITEM_SET_CAT_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.BI_ITEM_SET_CAT_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_MS_INVENTORY_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.BI_MS_INVENTORY_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "WIP_SUPPLY_TYPE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.WIP_SUPPLY_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "WIP_SUPPLY_TYPE_GROUP",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.WIP_SUPPLY_TYPE_GROUP" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LAST_RCV_PO_PRICE_ORG_AMOUNT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_RCV_PO_PRICE_ORG_AMOUNT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LAST_RCV_PO_PRICE_ORG_CURRENCY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_RCV_PO_PRICE_ORG_CURRENCY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LAST_RCV_PO_PRICE_RATE2USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_RCV_PO_PRICE_RATE2USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Last PO Buyer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_BUYER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Last PO Vendor",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_VENDOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Last PO Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Last PO Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_ITEM_QTY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Last PO Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_CURRENCY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Last PO Unit Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.LAST_PO_UNIT_PRICE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component Multi Source",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Component_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.MULTI_SOURCE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "PO_Component_Usage",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.PO_Component_Usage" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 1",
+        "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.RANK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total Components",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total Components",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Component Details",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "BI_INVENTORY_ITEM_CODE" ],
+        "displayKey" : "BI_INVENTORY_ITEM_CODE"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Component Usage",
+        "levels" : [ "Total Components", "Component Details" ]
+      } ]
+    }
+  }
+}

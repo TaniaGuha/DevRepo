@@ -1,0 +1,472 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Forecast",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Forecast Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Forecast Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Disable Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Aps Collection Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_APS_COLLECTION_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Active Flag",
+      "description" : "If disable_date is null or\r\n disable_date > sysdate then 'Yes' else 'No'\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 IS NULL  OR %1 >  CURRENT_DATE  THEN 'Yes' ELSE 'N' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Forecast.Forecast Disable Date" ]
+        }
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Set Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_SET" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Set Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_SET_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Set Disable Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_SET_DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Set Aps Collection Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORECAST_SET_APS_CLLCTION_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forecast Set Active Flag",
+      "description" : "If forecast_set_disable_date is null or\r\n forecast_set_disable_date > sysdate then 'Yes' else 'No'\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 IS NULL  OR %1 >  CURRENT_DATE  THEN 'Yes' ELSE 'N' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Forecast.Forecast Set Disable Date" ]
+        }
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Bucket Type Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.BUCKET_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Bucket Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.BUCKET_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Demand Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.DEMAND_CLASS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Demand Class",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.DEMAND_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Consume Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.CONSUME_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Forward Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.FORWARD_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Backward Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.BACKWARD_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.CREATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.LAST_UPDATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Level",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.LEVL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Outlier Update Percentage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.OUTLIER_UPDATE_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    }, {
+      "name" : "Update Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_FORECAST_DWH_Dim_Forecast",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast.UPDATE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D_FORECAST_DWH_Dim_Forecast",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.D_FORECAST_DWH_Dim_Forecast" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Forecast Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Forecast Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Forecast Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Forecast Gk" ],
+        "displayKey" : "Forecast Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Forecast",
+        "levels" : [ "Dim - Forecast Total", "Dim - Forecast Detail" ]
+      } ]
+    }
+  }
+}

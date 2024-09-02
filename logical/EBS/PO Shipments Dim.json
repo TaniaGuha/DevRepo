@@ -1,0 +1,1020 @@
+{
+  "logicalTable" : {
+    "name" : "PO Shipments Dim",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Accrue On Receipt Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ACCRUE_ON_RECEIPT_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Actual Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ACTUAL_PRICE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Allow Substitute Receipt",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ALLOW_SUBSTITUTE_RECEIPT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Approval Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.APPROVAL_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Approved Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.APPROVED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Actual Lead Time (Created Date)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+          "expressionObjects" : [ "logicalColumn:EBS.PO Shipments Dim.Created Date", "logicalColumn:EBS.PO Shipments Dim.Shipment Closed Date" ]
+        }
+      }
+    }, {
+      "name" : "Actual Lead Time (Last Approval Date)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY , %1, %2)",
+          "expressionObjects" : [ "logicalColumn:EBS.PO Shipments Dim.Approval Date", "logicalColumn:EBS.PO Shipments Dim.Shipment Closed Date" ]
+        }
+      }
+    }, {
+      "name" : "Bid Payment Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.BID_PAYMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Buyer Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.BUYER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cancel Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CANCEL_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cancel Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CANCEL_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cancel Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CANCEL_REASON" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Closed Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CLOSED_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Closed For Invoice Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CLOSED_FOR_INVOICE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Closed For Receiving Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CLOSED_FOR_RECEIVING_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Closed Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CLOSED_REASON" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Closure Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CLOSURE_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Consigned Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CONSIGNED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.CREATED_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Drop Ship Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.DROP_SHIP_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Early Receipt Allowed Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.EARLY_RECEIPT_ALLOWED_DAYS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Encumbered Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ENCUMBERED_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Encumbered Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ENCUMBERED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Enforce Ship To Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ENFORCE_SHIP_TO_LOCATION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Final Match Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.FINAL_MATCH_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Firm Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.FIRM_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Close Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.INVOICE_CLOSE_TOLERANCE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Matching",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.INVOICE_MATCHING" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.LAST_UPDATED_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Late Receipt Allowed Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.LATE_RECEIPT_ALLOWED_DAYS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Latest Acceptable Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.LATEST_ACCEPTABLE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Manual Price Change Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.MANUAL_PRICE_CHANGE_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Matching Basis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.MATCHING_BASIS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Need By Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.NEED_BY_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Operating Unit Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.OPERATING_UNIT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Original Shipment Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.ORIGINAL_SHIPMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Outsourced Assembly",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.OUTSOURCED_ASSEMBLY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Payment Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PAYMENT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PO_LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Po Shipment Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PO_SHIPMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Preferred Grade",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PREFERRED_GRADE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Project Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PROJECT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Promised Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PROMISED_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Purchase Order Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PURCHASE_ORDER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qty Received Exception",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.QTY_RECEIVED_EXCEPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quantity Financed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.QUANTITY_FINANCED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quantity Received Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.QUANTITY_RECEIVED_TOLERANCE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quantity Recouped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.QUANTITY_RECOUPED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Receipt Days Exception",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.RECEIPT_DAYS_EXCEPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Receiving Close Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.RECEIVING_CLOSE_TOLERANCE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Receiving Routing Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.RECEIVING_ROUTING_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Release Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.RELEASE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Retroactive Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.RETROACTIVE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sales Order Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SALES_ORDER_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Secondary Unit Of Measure",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SECONDARY_UNIT_OF_MEASURE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SHIP_TO_LOCATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SHIP_TO_ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Shipment Closed Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SHIPMENT_CLOSED_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Shipment Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SHIPMENT_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Shipment Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SHIPMENT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Supplier Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.SUPPLIER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Tax Attribute Update Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.TAX_ATTRIBUTE_UPDATE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Taxable Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.TAXABLE_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Unit Of Measure",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.UNIT_OF_MEASURE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ussgl Transaction Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.USSGL_TRANSACTION_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Value Basis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.VALUE_BASIS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Vmi Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.VMI_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Work Approver Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO Shipments Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.PO Shipments Dim.WORK_APPROVER_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "PO Shipments Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.PO Shipments Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Po Shipment Id" ]
+  }
+}

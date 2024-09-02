@@ -1,0 +1,60 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Material TRX To",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "End Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_DIM_TIME_To",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_To.END_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_DIM_TIME_To",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_To.PERIOD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_DIM_TIME_To",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_To.START_DATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "X_FIN_DIM_TIME_To",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_To" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "End Date" ]
+  }
+}

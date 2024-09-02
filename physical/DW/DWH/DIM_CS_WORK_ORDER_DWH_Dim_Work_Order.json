@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "DIM_CS_WORK_ORDER_DWH_Dim_Work_Order",
+    "sourceTable": "physicalTable:DW.DWH.DIM_CS_WORK_ORDER_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_SERVICE_RESOURCE_DWH_Work_Order_Assigned_Resource",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_CS_WORK_ORDER_DWH_Dim_Work_Order.ASSIGNED_RESOURCE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_SERVICE_RESOURCE_DWH_Work_Order_Assigned_Resource.SERVICE_RESOURCE_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "WORK_ORDER_GK"
+      ]
+    ]
+  }
+}

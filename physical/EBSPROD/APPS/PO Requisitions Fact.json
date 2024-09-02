@@ -1,0 +1,80 @@
+{
+  "physicalTable": {
+    "name": "PO Requisitions Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPO_REQUISITIONS_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Suppliers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.VENDOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.SET_OF_BOOKS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Expenditure Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.EXPENDITURE_TYPE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Expenditure Items Dim.EXPENDITURE_TYPE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Projects Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.PROJECT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Projects Dim.PROJECT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Task Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.TASK_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Task Dim.TASK_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Preparer Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.PREPARER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Preparer Dim.PERSON_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Requisitions Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Fact.PR_DISTRIBUTION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Dim.PR_DISTRIBUTION_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

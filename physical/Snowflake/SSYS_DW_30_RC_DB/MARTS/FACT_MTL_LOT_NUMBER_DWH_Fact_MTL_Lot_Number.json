@@ -1,0 +1,82 @@
+{
+  "physicalTable": {
+    "name": "FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_From_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_From_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.OU_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Dim_MTL_Lot_Number",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Fact_MTL_Lot_Number.LOT_NUMBER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_LOT_NUMBER_DWH_Dim_MTL_Lot_Number.LOT_NUMBER_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

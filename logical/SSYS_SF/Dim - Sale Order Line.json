@@ -1,0 +1,3124 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Sale Order Line",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Order Line Gk" ],
+    "logicalColumns" : [ {
+      "name" : "ATP Requested Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATP_REQUESTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "ATP Available Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATP_AVAILABLE_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "ATP Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "ATP Full On Hand Score",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATP_FULL_ON_HAND_SCORE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Adjusted War Months",
+      "description" : "Sourced from FlexField",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ADJUSTED_WAR_MONTHS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ar Avg Discount",
+      "description" : "Sourced from FlexField",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.AR_AVG_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Asset Serial No",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ASSET_SERIAL_NO" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Air Shipment Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute16",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE16" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute17",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE17" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute18",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE18" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute19",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE19" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute20",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE20" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Avatax Tax Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.AVATAX_TAX_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Booked Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.BOOKED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Cancelation Comment",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.CANCELATION_COMMENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Cancelled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.CANCELLED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Cancelled Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.CANCELLED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Competition Scrap System",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.COMPETITION_SCRAP_SYSTEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Context",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.CONTEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Cust Po Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.CUST_PO_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Defective Lot",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.DEFECTIVE_LOT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Defective Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.DEFECTIVE_LOT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Defective Serial Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.DEFECTIVE_SERIAL_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Deliver To Contact Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.DELIVER_TO_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Deliver To Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.DELIVER_TO_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Fdm Serial Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FDM_SERIAL_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Freight Carrier Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FREIGHT_CARRIER_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Freight Charges",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FREIGHT_CHARGES" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Freight Terms Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FREIGHT_TERMS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Fulfilled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FULFILLED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Fulfilled Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FULFILLED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Intmed Ship To Contact Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.INTMED_SHIP_TO_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Intmed Ship To Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.INTMED_SHIP_TO_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Invoice To Contact Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.INVOICE_TO_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Invoice To Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.INVOICE_TO_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Invoiced Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.INVOICED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Is Bundle Line",
+      "description" : "Returns Y if the supplied item is of type bundle component",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.IS_BUNDLE_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Is Comp Bundle Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.IS_COMP_BUNDLE_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Is Model Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.IS_MODEL_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Is Option Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.IS_OPTION_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_TYPE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Link To Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINK_TO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Maintenance End Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.MAINTENANCE_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Maintenance Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.MAINTENANCE_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Modification Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.MODIFICATION_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Open Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.OPEN_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Opportunity Line Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.OPPORTUNITY_LINE_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Opportunity No",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.OPPORTUNITY_NO" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Created By Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_CREATED_BY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Created By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_CREATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Creation Datetime",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Quantity Uom",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_QUANTITY_UOM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Source Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_SOURCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Source Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_SOURCE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ordered Item",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDERED_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ordered Quantity",
+      "description" : "If Line Category is 'RETURN' Then Quantity Will Be Negative\r\nOtherwise, Positive.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'RETURN' THEN -(1) * %2 ELSE %2 END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_CATEGORY_CODE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Payment Term Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PAYMENT_TERM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Price List Dist",
+      "description" : "Calculated price per line when a Boundle transactions sale was done.\r\nsource logic in :xxar_autoinvoice_pkg.get_price_list_dist",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRICE_LIST_DIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Price List Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRICE_LIST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Pricing Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRICING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Pricing Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRICING_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Pricing Quantity Uom",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRICING_QUANTITY_UOM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Printer Water Jet Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRINTER_WATER_JET_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Request Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.REQUEST_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Resin Credit Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RESIN_CREDIT_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Resin Credit Original So",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RESIN_CREDIT_ORIGINAL_SO" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Resin Credit Ref Line",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RESIN_CREDIT_REF_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Salesrep Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SALESREP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Schedule Arrival Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SCHEDULE_ARRIVAL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Schedule Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SCHEDULE_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Serial Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERIAL_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Serial Number For Bundles",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERIAL_NUMBER_FOR_BUNDLES" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service Item",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service Ref Line",
+      "description" : "Sourced from FlexField",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_REF_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service S/N (Only for Upgrades/Heads)",
+      "description" : "Attribute1 in Order Lines",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_SERIAL_NO_FOR_UPGRADE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ship From Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_FROM_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ship Set Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_SET_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ship To Contact Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_TO_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ship To Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_TO_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shippable Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPPABLE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shipped Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPPED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shipping Interfaced Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPPING_INTERFACED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shipping Method Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPPING_METHOD_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shipping Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPPING_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shipping Quantity Uom",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPPING_QUANTITY_UOM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Sold From Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SOLD_FROM_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Sold To Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SOLD_TO_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SUBINVENTORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Tax Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TAX_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Tax Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TAX_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Tax Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TAX_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Tax Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TAX_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ti Machine Return Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TI_MACHINE_RETURN_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ti Machine Return S N",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TI_MACHINE_RETURN_S_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Top Model Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.TOP_MODEL_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Unit List Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.UNIT_LIST_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Unit Selling Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.UNIT_SELLING_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "User Item Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.USER_ITEM_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Active Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_ACTIVE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Etl Insert Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_ETL_INSERT_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Etl Update Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_ETL_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Integration Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_INTEGRATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Src Create By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_SRC_CREATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Src Create Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_SRC_CREATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Src Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_SRC_UPDATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "X Src Update Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.X_SRC_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Recognition Date",
+      "description" : "Sourced from extrenal APEX system.\r\nManually update by User.",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RECOGNITION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Recognition Value",
+      "description" : "Sourced from extrenal APEX system.\r\nManually update by User.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RECOGNITION_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Type Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type.ORDER_TYPE_CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type.TRX_TYP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type.TRX_TYPE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Return Reason Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RETURN_REASON_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Actual Shipment Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ACTUAL_SHIPMENT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Price List Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PRICE_LIST_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Salesperson Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SALESPERSON_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Extended Amount",
+      "description" : "\"unit selling price\" * \"ordered quantity\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Sale Order Line.Ordered Quantity", "logicalColumn:SSYS_SF.Dim - Sale Order Line.Unit Selling Price" ]
+        }
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Shipment Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPMENT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Option Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.OPTION_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Component Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.COMPONENT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Number (Decimal)",
+      "description" : "line_number.shipment_number.option_number.component_number.service_number",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Line Number Sorting Column",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " REPLACE( TRIM(TRAILING '.' FROM  CAST (%1 AS CHARACTER ( 10 )) || '.' ||  CAST (%2 AS CHARACTER ( 2 )) || '.' ||  CAST (%3 AS CHARACTER ( 2 )) || '.' ||  CAST (%4 AS CHARACTER ( 2 )) || '.' ||  CAST (%5 AS CHARACTER ( 2 ))), ' ', '')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Sale Order Line.Line Number", "logicalColumn:SSYS_SF.Dim - Sale Order Line.Shipment Number", "logicalColumn:SSYS_SF.Dim - Sale Order Line.Option Number", "logicalColumn:SSYS_SF.Dim - Sale Order Line.Component Number", "logicalColumn:SSYS_SF.Dim - Sale Order Line.Service Number" ]
+        }
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "First Invoice Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FIRST_INVOICE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ship Set Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_SET_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Ordered Quantity (positive)",
+      "description" : "The Ordered Quantity always in positive value (even for RETURN type of lines)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Exchange Rate Date to USD",
+      "description" : "First Invoice Date and if does not exists, current date.\r\nused for conversion rates to USD.",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1,  CURRENT_DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.FIRST_INVOICE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Is Get Item Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.IS_GET_ITEM_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "List Price By Header Price List",
+      "description" : "calculated list price also for PTO and GET items (using Order Header price list).\r\ncalculated using\r\nxxoe_utils_pkg.get_header_plist_item_price(:oe_order_lines_all.inventory_item_id,:dim_oe_order_header_dwh.price_list_id,:oe_order_lines_all.pricing_date,:oe_order_lines_all.line_id)\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LIST_PRICE_BY_HEADR_PRICE_LIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Item Type Code",
+      "description" : "\"STANDARD\",\"INCLUDED\",\"OPTION\",\"KIT\",\"MODEL\",\"CLASS\"",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_ITEM_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Discount Auto Adjustments",
+      "description" : "sum all order line's adjustments with type='discount' done automatically at ORDER LINE level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_DISCOUNT_AUTO_ADJSTMT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Discount Manual Adjustments",
+      "description" : "sum all order line's adjustments with type='discount' done manually at ORDER LINE level\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_DISCOUNT_MANUAL_ADJSTMT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Rate To Usd At Ordered Date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RATE_TO_USD_AT_ORDERED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "List Price By Line Price List",
+      "description" : "calculated using\r\nxxoe_utils_pkg.get_header_plist_item_price(:oe_order_lines_all.inventory_item_id,:oe_order_lines_all.price_list_id,:oe_order_lines_all.pricing_date,:oe_order_lines_all.line_id)\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LIST_PRICE_BY_LINE_PRICE_LIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Header discount auto adjustment opened",
+      "description" : "When arithmetic_operator = '%' in the header discount, this columns holds the operand to use to calculate the line level automatic discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.HEADER_DISCNT_AUTO_ADJ_OPRND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Header discount manual adjustment opened",
+      "description" : "When arithmetic_operator = '%' in the header discount, this columns holds the operand to use to calculate the line level manual discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.HEADER_DISCNT_MANUAL_ADJ_OPRND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Item Cogs At Creation Date ($)",
+      "description" : "The item COGS (the standared cost in the manufacturing organization) at the time the order line was created\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ITEM_COGS_AT_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Number Sorting Column",
+      "description" : "Support column to enable Sorting in report according to \"Line Number (Decimal)\" column",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * 100000000 +  IFNULL(%2, 0) * 1000000 +  IFNULL(%3, 0) * 10000 +  IFNULL(%4, 0) * 100 +  IFNULL(%5, 0)",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_NUMBER", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIPMENT_NUMBER", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.OPTION_NUMBER", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.COMPONENT_NUMBER", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Orig Sys Line Ref",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORIG_SYS_LINE_REF" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Sfdc Quote Line Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SFDC_QUOTE_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Orig Sys Document Ref",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORIG_SYS_DOCUMENT_REF" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Orig Sys Shipment Ref",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORIG_SYS_SHIPMENT_REF" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Requisition Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.REQUISITION_HEADER_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Requisition Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.REQUISITION_LINE_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Subinventory Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_TO_SUBINVENTORY_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Source Document Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SOURCE_DOCUMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Source Document Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SOURCE_DOCUMENT_LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Source Document Type Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SOURCE_DOCUMENT_TYPE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Source Document Type Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SOURCE_DOCUMENT_TYPE_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_TO_SUBINVENTORY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Inv Organization Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_TO_INV_ORGANIZATION_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_TO_INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship Method Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SHIP_METHOD_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service Duration",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_DURATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service End Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service Period",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_PERIOD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Service Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SERVICE_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type COGS Account Concatenated",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type COGS Account Company",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account.GL_SEG1_COMPANY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type COGS Account Department",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account.GL_SEG2_DEPARTMENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type COGS Account Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account.GL_SEG3_ACCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type COGS Account Product Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account.GL_SEG5_PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "So Dynamic Line Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SO_DYNAMIC_LINE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "So Mode Of Transport",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SO_MODE_OF_TRANSPORT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "AOP Rate to USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.AOP_RATE_TO_USD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Line Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Reference Line Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.REFERENCE_LINE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Reference Order Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.REFERENCE_ORDER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Reference Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.REFERENCE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Return Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RETURN_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Warehouse Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.WAREHOUSE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Warehouse Org Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.WAREHOUSE_ORG_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Mfg Org Std Item Cost - Ship Date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.MFG_ITEM_COGS_ACTUAL_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "SO Consumption",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SO_CONSUMPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Actual Shipment Date - Local",
+      "description" : "Converts the date from Cape Verde Time  to the timezone of the Operating Unit's country",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EVALUATE('XXBI_ETL_UTILS_PKG.adjust_datetime (\\%1,\\%2,\\%3)', %1, 'Atlantic/Cape_Verde', %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Sale Order Line.Actual Shipment Date", "logicalColumn:SSYS_SF.Dim - Operating Unit Org.Timezone Code" ]
+        }
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Unit Selling Price ($)",
+      "description" : "\"unit selling price\" * \"ordered quantity\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * %2",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.UNIT_SELLING_PRICE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.RATE_TO_USD_AT_ORDERED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Cancelation Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.CANCELLATION_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Sfdc Cancel Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.SFDC_CANCEL_COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Sale Order Line Detail"
+    }, {
+      "name" : "Order Line Promise Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.PROMISE_DATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account", "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+          "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Gl_Cogs_Account",
+          "joinType" : "LEFT_OUTER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : " IFNULL(%1, 'LINE') = 'LINE'",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type.TRX_TYP_CODE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Sale Order Line Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Sale Order Line Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Sale Order Line Detail",
+        "numberOfElements" : 1000000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Order Line Gk" ],
+        "displayKey" : "Order Line Id",
+        "additionalKeys" : [ [ "Order Line Id" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Sale Order Line",
+        "levels" : [ "Dim - Sale Order Line Total", "Dim - Sale Order Line Detail" ]
+      } ]
+    }
+  }
+}

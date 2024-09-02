@@ -1,0 +1,56 @@
+{
+  "physicalTable": {
+    "name": "PO Summary Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPO_INFORMATION_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.PO_CREATED_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Standard Cost Detail Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Standard Cost Detail Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.SHIP_TO_ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Standard Cost Detail Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Summary Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

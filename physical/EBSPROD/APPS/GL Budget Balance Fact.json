@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "GL Budget Balance Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXGL_BUDGET_BALANCES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Budget Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Budget Balance Fact.BUDGET_VERSION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Budget Dim.BUDGET_VERSION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Budget Balance Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Budget Balance Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Budget Balance Fact.START_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      }
+    ]
+  }
+}

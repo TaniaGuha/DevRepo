@@ -1,0 +1,223 @@
+{
+  "logicalTable" : {
+    "name" : "FA Acctg Period Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Book Type Code", "Period Counter" ],
+    "logicalColumns" : [ {
+      "name" : "Fiscal Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.FISCAL_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fiscal Year"
+    }, {
+      "name" : "Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fiscal Period"
+    }, {
+      "name" : "Period Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fiscal Period"
+    }, {
+      "name" : "Period Close Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_CLOSE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Period Open Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_OPEN_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Calendar Period Open Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.CALENDAR_PERIOD_OPEN_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Calendar Period Close Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.CALENDAR_PERIOD_CLOSE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Depreciaion Run",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.DEPRECIAION_RUN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Book Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.BOOK_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Period Counter",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_COUNTER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    }, {
+      "name" : "Book Type Code Period Counter",
+      "description" : "Combination of Book Type Code || '~' || Period Counter",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FA Acctg Period Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 || '~' ||  CAST (%2 AS CHARACTER ( 30 ))",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.BOOK_TYPE_CODE", "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_COUNTER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FA Acctg Period Dim Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FA Acctg Period Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.FA Acctg Period Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.FA Acctg Period Dim.FA Acctg Period Dim Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "FA Acctg Period Dim Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "FA Acctg Period Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Fiscal Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Fiscal Year" ],
+        "displayKey" : "Fiscal Year"
+      }, {
+        "name" : "Fiscal Period",
+        "numberOfElements" : 120,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Period Number" ],
+        "displayKey" : "Period Number"
+      }, {
+        "name" : "FA Acctg Period Dim Detail",
+        "numberOfElements" : 500,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Book Type Code", "Period Counter" ],
+        "displayKey" : "Book Type Code Period Counter",
+        "additionalKeys" : [ [ "Book Type Code Period Counter" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "FA Acctg Period Dim",
+        "levels" : [ "FA Acctg Period Dim Total", "Fiscal Year", "Fiscal Period", "FA Acctg Period Dim Detail" ]
+      } ]
+    }
+  }
+}

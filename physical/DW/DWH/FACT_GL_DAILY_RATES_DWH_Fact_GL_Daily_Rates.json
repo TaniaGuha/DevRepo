@@ -1,0 +1,63 @@
+{
+  "physicalTable": {
+    "name": "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+    "sourceTable": "physicalTable:DW.DWH.FACT_GL_DAILY_RATES_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.TO_CURRENCY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.CURRENCY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.FROM_CURRENCY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Transaction_Currency.CURRENCY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.FROM_CURRENCY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LEDGER_CURRENCY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_PERIOD_DWH_GL_Period",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.GL_PERIOD_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_PERIOD_DWH_GL_Period.GL_PERIOD_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.GL_RATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.GL_RATE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_GL_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.CONVERSION_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_GL_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Invoice_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.CONVERSION_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Invoice_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1058 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Modifier Detail",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Qualifier Header Context",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HDR_CONTEXT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Header Grouping No",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HDR_GROUPING_NO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Header Value Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HDR_VALUE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Header Value From",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HDR_VALUE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Header Attribute",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HEADER_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Header Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HEADER_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Header Qualifiers (FBS)",
+      "description" : "# of Header Qualifiers (FBS)\r\nBill_To - Ship_To Header Qualifiers Combinations are counted as 1 Header Qualifier",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS.Dim - GL Period.Total", "logicalLevel:SSYS.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Qualifier Header Operator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.A_QUALIFIER_HEADER_OPERATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To - Qualifier Header Context",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.B_QUALIFIER_HDR_CONTEXT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To - Qualifier Header Attribute",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.B_QUALIFIER_HEADER_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of End Cust - Qualifier Header Grouping No",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BE_QUALIFIER_HDR_GROUPING_NO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of End Cust - Qualifier Header Value Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BE_QUALIFIER_HDR_VALUE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of End Cust - Qualifier Header Value From",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BE_QUALIFIER_HDR_VALUE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of End Cust - Qualifier Header Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BE_QUALIFIER_HEADER_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of End Cust - Qualifier Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BE_QUALIFIER_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of End Cust - Qualifier Header Operator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BE_QUALIFIER_HEADER_OPERATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of XX Ship To - Qualifier Header Grouping No",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BX_QUALIFIER_HDR_GROUPING_NO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of XX Ship To - Qualifier Header Value Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BX_QUALIFIER_HDR_VALUE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of XX Ship To - Qualifier Header Value From",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BX_QUALIFIER_HDR_VALUE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of XX Ship To - Qualifier Header Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BX_QUALIFIER_HEADER_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of XX Ship To - Qualifier Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BX_QUALIFIER_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To of XX Ship To - Qualifier Header Operator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.BX_QUALIFIER_HEADER_OPERATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Arithmetic Operator (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_ARITHMETIC_OPERATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Discount Formula (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_DISCOUNT_FORMULA" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Id (Define Details GET)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Line Group Type (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_LINE_GROUP_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Master Item Gk (Define Details GET)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_MASTER_ITEM_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Operand (Define Details GET)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_OPERAND" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price By Formula Id (Define Details GET)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRICE_BY_FORMULA_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Pricing Attr Value From (Define Details GET)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRICING_ATTR_VALUE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Pricing Attr Value To (Define Details GET)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRICING_ATTR_VALUE_TO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Context (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRODUCT_ATTR_CONTEXT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Value (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRODUCT_ATTR_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Value Id (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRODUCT_ATTR_VALUE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attribute (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRODUCT_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "UOM (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_UOM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Get Price (Define Details GET)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_GET_PRICE_LIST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Get Quantity (Define Details GET)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_GET_QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Get UOM (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_GET_UOM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Get Price List Name (Define Details GET)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD1_PRICE_LIST_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Group No (Define Details Additional Item)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_GROUP_NO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Id (Define Details Additional Item)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Master Item Gk (Define Details Additional Item)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_MASTER_ITEM_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Code (Define Details Additional Item)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_PRODUCT_ATTR_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Context (Define Details Additional Item)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_PRODUCT_ATTR_CONTEXT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Value (Define Details Additional Item)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_PRODUCT_ATTR_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Attr Value Id (Define Details Additional Item)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.DD2_PRODUCT_ATTR_VALUE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Context",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HDR_CONTEXT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Grouping No",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HDR_GROUPING_NO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Value Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HDR_VALUE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Value From",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HDR_VALUE_FROM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Attribute",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HEADER_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HEADER_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Cust - Qualifier Header Operator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.E_QUALIFIER_HEADER_OPERATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Modifier Header Calc Active Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_HDR_CALC_ACTIVE_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Modifier Header Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_HEADER_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Modifier Headers",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS.Dim - GL Period.Total", "logicalLevel:SSYS.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Modifier Header Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_HEADER_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Modifier Line Calc Active Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_LINE_CALC_ACTIVE_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Modifier Line Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_LINE_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Modifier Lines",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_LINE_LIST_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS.Dim - GL Period.Total", "logicalLevel:SSYS.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Modifier Line Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.MODIFIER_LINE_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Header Calc Active F",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.QUALIFIER_HDR_CALC_ACTIVE_F" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Line Attr Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.QUALIFIER_LINE_ATTR_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Line Calc Active F",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.QUALIFIER_LINE_CALC_ACTIVE_F" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Line Context Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.QUALIFIER_LINE_CONTEXT_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qualifier Line Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.QUALIFIER_LINE_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Line Qualifiers",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail.QUALIFIER_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS.Dim - GL Period.Total", "logicalLevel:SSYS.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MODIFIER_DETAIL_DWH_Fact_Modifier_Detail",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MODIFIER_DETAIL_DWH_Factless_Modifier_Detail" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Detail", "logicalLevel:SSYS.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Detail", "logicalLevel:SSYS.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Detail", "logicalLevel:SSYS.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Detail", "logicalLevel:SSYS.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Detail", "logicalLevel:SSYS.Dim - Item (Modifier Line).Dim - Item (Mod Line) Detail", "logicalLevel:SSYS.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Detail", "logicalLevel:SSYS.Dim - Modifier Header.Dim Modifier Header Detail", "logicalLevel:SSYS.Dim - Modifier Line.Dim Modifier Line Detail", "logicalLevel:SSYS.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Detail", "logicalLevel:SSYS.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Detail", "logicalLevel:SSYS.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Detail", "logicalLevel:SSYS.Dim - Qualifier Header.Dim Qualifier Header Detail", "logicalLevel:SSYS.Dim - Qualifier Line.Dim Qualifier Line Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Header Qualifier Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Header Qualifier Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Line Qualifier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Define Details Additional)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Define Details GET)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Line Qualifier)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Modifier Line)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Modifier Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Modifier Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Qualifier Header (Bill To End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Qualifier Header (Bill To Ship Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Qualifier Header (End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Qualifier Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Qualifier Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

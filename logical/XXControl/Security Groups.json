@@ -1,0 +1,144 @@
+{
+  "logicalTable" : {
+    "name" : "Security Groups",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : true,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.G_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Effective End Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.G_END_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Group Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.G_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Source System",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.G_SOURCE_SYSTEM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Effective Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.G_START_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.LAST_UPDATE_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Security Groups",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Security Groups.LAST_UPDATE_STATUS" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Security Groups",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXControl.XXCTRL.Security Groups" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Group Name" ]
+  }
+}

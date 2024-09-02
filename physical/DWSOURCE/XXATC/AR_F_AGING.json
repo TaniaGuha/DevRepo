@@ -1,0 +1,128 @@
+{
+  "physicalTable": {
+    "name": "AR_F_AGING",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_AR_AGING_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_AGING_AS_OF_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_AGING_AS_OF_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_AGING",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.AS_OF_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_AGING.AS_OF_DATE"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_AGING_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_AGING.BI_AGING_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_BILL_TO_CUSTOMER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_CUSTOMER_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_BILL_TO_CUSTOMER.BI_CUSTOMER_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_EXCHANGE_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_EXCHANGE_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_EXCHANGE_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_GL_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_GL_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_GL_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_INVOICE_CREATION_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_INVOICE_CREATION_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_INVOICE_CREATION_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_INVOICE_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_INVOICE_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_INVOICE_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_PRINTING_ORIG_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_PRINTING_ORIGINAL_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_PRINTING_ORIG_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_SHIP_TO_CUSTOMER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_CUSTOMER_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_SHIP_TO_CUSTOMER.BI_CUSTOMER_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_TRX_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_TRX_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_TRX_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_CODE_COMBINATION",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_CODE_COMB_ID",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_CODE_COMBINATION.BI_CODE_COMBINATION_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_LEDGER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_LEDGER_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_LEDGER.BI_LEDGER_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_ORGANIZATIONS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_ORG_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.HR_D_ORGANIZATIONS.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.OE_D_SALESREP",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_AGING.BI_SALESREP_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.OE_D_SALESREP.BI_SALESREP_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

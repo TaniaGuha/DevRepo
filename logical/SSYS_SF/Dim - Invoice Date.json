@@ -1,0 +1,71 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Invoice Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Time Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Time Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Invoice_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Invoice_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Date Detail"
+    }, {
+      "name" : "Invoice Date",
+      "description" : "Invoice Transaction Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Invoice_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Invoice_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Date Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Invoice_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Invoice_Date" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Invoice Date Total",
+      "logicalLevels" : [ {
+        "name" : "Dim - Invoice Date Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Invoice Date Detail",
+        "numberOfElements" : 1000000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Time Gk" ],
+        "displayKey" : "Time Gk",
+        "chronologicalKey" : [ "Time Gk" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Invoice Date",
+        "levels" : [ "Dim - Invoice Date Total", "Dim - Invoice Date Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "logicalTable" : {
+    "name" : "INV_F_COSTING_F_SHP",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "AS_OF_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.AS_OF_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CLASS",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.CLASS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INV_ORG",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.INV_ORG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.ITEM_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "OPERATING_UNIT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.OPERATING_UNIT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "QTY",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.QTY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "RANK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.RANK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_AS_OF_DATE",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_AS_OF_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_INV_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_INV_ORG_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_OPERATING_UNIT_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_OPERATING_UNIT_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIVISOR1_REGULAR",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR1_REGULAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIVISOR2_RM_WIP_SYSTEMS",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR2_RM_WIP_SYSTEMS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIVISOR3_RM_WIP_RESIN",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR3_RM_WIP_RESIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIVISOR4_HEADS",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR4_HEADS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_COST_PER_UNIT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.ITEM_COST_PER_UNIT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MATERIAL_COST_PER_UNIT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.MATERIAL_COST_PER_UNIT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIVISOR1_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR1_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR2_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR2_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR3_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR3_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR4_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING_F_SHP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.DIVISOR4_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV_F_COSTING_F_SHP",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.COSTING_AS_OF_DATE",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.INV_D_MS_ITEMS_FOR_SHP",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.INV_ORG_FOR_SHP",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.OPERATING_UNITS_FOR_SHP",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

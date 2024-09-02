@@ -1,0 +1,334 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Printer Job Start Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Start Date GK" ],
+    "logicalColumns" : [ {
+      "name" : "Start Date GK",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Day Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.DAY_OF_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Day Number (week)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Day Number (month)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.DAY_NUMBER_IN_CALENDAR_MONTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Day Number (year)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.DAY_NUMBER_IN_CALENDAR_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Day Is Holiday",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.HOLIDAY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Day"
+    }, {
+      "name" : "Start Week Number (year)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_WEEK_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Month and Year",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Start Month ID",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Month"
+    }, {
+      "name" : "Start Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Month"
+    }, {
+      "name" : "Start Month Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Month"
+    }, {
+      "name" : "Start Month ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_YEAR_MONTH_YYYYMM_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Month"
+    }, {
+      "name" : "Start Quarter",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Start Quarter ID",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_YEAR_QUARTER_QQYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Quarter"
+    }, {
+      "name" : "Start Quarter ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Quarter"
+    }, {
+      "name" : "Start Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_YEAR_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Year"
+    }, {
+      "name" : "Start Year ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Date Year"
+    }, {
+      "name" : "Days in Month",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE('add_months(trunc(\\%1,''mm''),1) - trunc(\\%2,''mm'')' AS  INTEGER , %1, %1)",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.TIME_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Is Relevant",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Job_Start_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 >= 2010 AND %2 <  CURRENT_DATE  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.CALENDAR_YEAR_N", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.TIME_DATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Printer_Job_Start_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Printer Job Start Date Total",
+      "logicalLevels" : [ {
+        "name" : "Dim - Printer Job Start Date Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Printer Job Start Date Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Start Year ID" ],
+        "displayKey" : "Start Year",
+        "additionalKeys" : [ [ "Start Year" ] ]
+      }, {
+        "name" : "Dim - Printer Job Start Date Quarter",
+        "numberOfElements" : 40,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Start Quarter ID" ],
+        "displayKey" : "Start Quarter",
+        "additionalKeys" : [ [ "Start Quarter" ] ]
+      }, {
+        "name" : "Dim - Printer Job Start Date Month",
+        "numberOfElements" : 120,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Start Month ID" ],
+        "displayKey" : "Start Month and Year",
+        "additionalKeys" : [ [ "Start Month and Year" ] ]
+      }, {
+        "name" : "Dim - Printer Job Start Date Day",
+        "numberOfElements" : 4000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Start Date GK" ],
+        "displayKey" : "Start Date",
+        "additionalKeys" : [ [ "Start Date" ] ],
+        "chronologicalKey" : [ "Start Date GK" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Printer Job Start Date",
+        "levels" : [ "Dim - Printer Job Start Date Total", "Dim - Printer Job Start Date Year", "Dim - Printer Job Start Date Quarter", "Dim - Printer Job Start Date Month", "Dim - Printer Job Start Date Day" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "physicalTable": {
+    "name": "FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Related_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship.RELATED_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Related_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship.OU_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Dim_Item_Relationship",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Fact_Item_Relationship.ITEM_RELASHIONSHIP_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_RELATIONSHIP_DWH_Dim_Item_Relationship.ITEM_RELASHIONSHIP_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ITEM_RELASHIONSHIP_GK"
+      ]
+    ]
+  }
+}

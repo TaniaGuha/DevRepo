@@ -1,0 +1,20 @@
+{
+  "initBlock" : {
+    "name" : "PRICELIST_CHANGE_DATE",
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:DW.DW_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select DISTINCT TO_CHAR(date_for_pl_communication_mail,'DD-MON-YYYY') from dim_pricelist_header_dwh where date_for_pl_communication_mail is not null;\r\n"
+    } ],
+    "variables" : [ {
+      "name" : "PRICELIST_CHANGE_DATE",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

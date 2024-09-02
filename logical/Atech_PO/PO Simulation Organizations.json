@@ -1,0 +1,92 @@
+{
+  "logicalTable" : {
+    "name" : "PO Simulation Organizations",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "BI_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATION_ORGANIZATIONS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.BI_ORG_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Operating Unit ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATION_ORGANIZATIONS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.OPERATING_UNIT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Operating Unit Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATION_ORGANIZATIONS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.OPERATING_UNIT_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inventory Org ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATION_ORGANIZATIONS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inventory Org Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATION_ORGANIZATIONS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.ORGANIZATION_NAMED" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "PO_D_SIMULATION_ORGANIZATIONS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'Inv Organization'",
+        "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.ORG_TYPE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "BI_ORG_CODE" ]
+  }
+}

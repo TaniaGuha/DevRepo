@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line",
+    "sourceTable": "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.FACT_WSH_SHIPPING_DETAILS_DWH_Dim_TPL_Shipping_Detail",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line.DELIVERY_DETAIL_ID",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_WSH_SHIPPING_DETAILS_DWH_Dim_TPL_Shipping_Detail.DELIVERY_DETAIL_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "DELIVERY_DETAIL_GK"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,703 @@
+{
+  "logicalTable" : {
+    "name" : "WIP ECO Items Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Component Item Id", "Eco Name", "Header Org Id", "Revised Item Id" ],
+    "logicalColumns" : [ {
+      "name" : "Action",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ACTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Approval Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.APPROVAL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Approval Request Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.APPROVAL_REQUEST_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Approval Status Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.APPROVAL_STATUS_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Bill Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.BILL_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Bom Item Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.BOM_ITEM_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Cancellation Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.CANCELLATION_COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Cancellation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.CANCELLATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Change Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.CHANGE_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Disable Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMP_DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Effective Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMP_EFF_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Implementation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMP_IMP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Supply Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMP_SUPPLY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMPONENT_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Item Revision Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMPONENT_ITEM_REVISION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMPONENT_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Remarks",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMPONENT_REMARKS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Component Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMPONENT_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Earliest Effective Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.EARLIEST_EFFECTIVE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Eco Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ECO_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Eco Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ECO_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Eco Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ECO_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Header Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.HEADER_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Implementation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.IMPLEMENTATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Item Cancel Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ITEM_CANCEL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Item Change Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ITEM_CHANGE_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Item Disposition",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ITEM_DISPOSITION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Item Imp Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ITEM_IMP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Item Status Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ITEM_STATUS_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Line Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.LINE_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "New Item Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.NEW_ITEM_REVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Operation Seq Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.OPERATION_SEQ_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Pick Components",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.PICK_COMPONENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Priority Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.PRIORITY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Quantity Related",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.QUANTITY_RELATED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Reason Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.REASON_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Revised Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.REVISED_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Revised Item Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.REVISED_ITEM_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Start Effective Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.START_EFFECTIVE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Status Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.STATUS_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Supply Locator Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.SUPPLY_LOCATOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Supply Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.SUPPLY_SUBINVENTORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Vendor Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.VENDOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    }, {
+      "name" : "Comp Item Eco Name Org Revised Item Code",
+      "description" : "CAST(\"EBSPROD\".\"\".\"APPS\".\"WIP ECO Items Dim\".\"COMPONENT_ITEM_ID\" AS CHAR) \r\n|| '~' || \r\nCAST(\"EBSPROD\".\"\".\"APPS\".\"WIP ECO Items Dim\".\"ECO_NAME\" AS CHAR) \r\n|| '~' || \r\nCAST(\"EBSPROD\".\"\".\"APPS\".\"WIP ECO Items Dim\".\"HEADER_ORG_ID\" AS CHAR) \r\n|| '~' || \r\nCAST(\"EBSPROD\".\"\".\"APPS\".\"WIP ECO Items Dim\".\"REVISED_ITEM_ID\" AS CHAR)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) || '~' ||  CAST (%2 AS CHARACTER ( 30 )) || '~' ||  CAST (%3 AS CHARACTER ( 30 )) || '~' ||  CAST (%4 AS CHARACTER ( 30 ))",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.COMPONENT_ITEM_ID", "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.ECO_NAME", "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.HEADER_ORG_ID", "physicalColumn:EBSPROD.APPS.WIP ECO Items Dim.REVISED_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "WIP ECO Items Dim Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "WIP ECO Items Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.WIP ECO Items Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "WIP ECO Items Dim Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "WIP ECO Items Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "WIP ECO Items Dim Detail",
+        "numberOfElements" : 100000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Component Item Id", "Eco Name", "Header Org Id", "Revised Item Id" ],
+        "displayKey" : "Comp Item Eco Name Org Revised Item Code",
+        "additionalKeys" : [ [ "Comp Item Eco Name Org Revised Item Code" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "WIP ECO Items Dim",
+        "levels" : [ "WIP ECO Items Dim Total", "WIP ECO Items Dim Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "presentationTable" : {
+    "name" : "Printer Usage",
+    "alternateNames" : [ "Fact - Printer Usage" ],
+    "presentationColumns" : [ {
+      "name" : "# of Materials",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.# of Materials",
+      "localization" : {
+        "localizationKey" : "# of Materials",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_#_of_Materials)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_#_of_Materials)"
+      }
+    }, {
+      "name" : "# of Printers",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.# of Printers",
+      "localization" : {
+        "localizationKey" : "# of Printers",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_#_of_Printers)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_#_of_Printers)"
+      }
+    }, {
+      "name" : "# of Jobs",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.# of Jobs",
+      "alternateNames" : [ "# of Runs" ],
+      "localization" : {
+        "localizationKey" : "# of Jobs",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_#_of_Jobs)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_#_of_Jobs)"
+      }
+    }, {
+      "name" : "Average Per Job",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.Average Per Job",
+      "alternateNames" : [ "Usage Actual (avg)" ],
+      "localization" : {
+        "localizationKey" : "Average Per Job",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_Average_Per_Job)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_Average_Per_Job)"
+      }
+    }, {
+      "name" : "Actual Overall Usage",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.Actual Overall Usage",
+      "alternateNames" : [ "Usage Actual", "Usage Actual (sum)" ],
+      "localization" : {
+        "localizationKey" : "Actual Overall Usage",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_Actual_Overall_Usage)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_Actual_Overall_Usage)"
+      }
+    }, {
+      "name" : "Estimated Per Job",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.Estimated Per Job",
+      "alternateNames" : [ "Usage Estimated (avg)" ],
+      "localization" : {
+        "localizationKey" : "Estimated Per Job",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_Estimated_Per_Job)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_Estimated_Per_Job)"
+      }
+    }, {
+      "name" : "Estimated Overall Usage",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Fact - Printer Usage.Estimated Overall Usage",
+      "alternateNames" : [ "Usage Estimated", "Usage Estimated (sum)" ],
+      "localization" : {
+        "localizationKey" : "Estimated Overall Usage",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage_Estimated_Overall_Usage)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage_Estimated_Overall_Usage)"
+      }
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:SSYS_GrabCAD_SA",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : "%1 =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS GrabCAD.Dim - End Customer.Customer Region", "variable:undeclaredVariables.SFDC_REGION" ]
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Printer Usage",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Printer_Usage)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Printer_Usage)"
+    }
+  }
+}

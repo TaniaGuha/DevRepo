@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "MFG_D_PLAN",
+    "sourceTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.XXATC_MFG_D_PLAN_BI",
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.MFG_PLAN_ITEM_CATEGORIES",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_D_PLAN.BI_ITEM_MAIN_SET_CAT_CODE",
+            "rightColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_PLAN_ITEM_CATEGORIES.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_ITEM_CODE"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "physicalTable": {
+    "name": "FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date",
+    "sourceTable": "physicalTable:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Related_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Related_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.ITEM_AS_OF_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date.ITEM_AS_OF_DATE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_INV_ITEM_RELATIONSHIP_DWH_Dim_Item_Relationship",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_AS_OF_DATE_DWH_Fact_Related_Item_As_of_Date.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_RELATIONSHIP_DWH_Dim_Item_Relationship.RELATED_ITEM_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ITEM_AS_OF_DATE_GK"
+      ],
+      [
+        "INVENTORY_ITEM_ID"
+      ]
+    ]
+  }
+}

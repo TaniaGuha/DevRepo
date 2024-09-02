@@ -1,0 +1,62 @@
+{
+  "physicalTable" : {
+    "name" : "X_FIN_FACT_HEDGING_V",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "Period_Name",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "Currency_Code",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "Balance",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "Short_Name",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : false
+    }, {
+      "name" : "Category",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : true
+    }, {
+      "name" : "LEDGER_ID",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "Entered_Amount",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 6,
+      "expiryUnit" : "HOURS"
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_LEDGER_CURRENCY_V",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.LEDGER_ID",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_LEDGER_CURRENCY_V.LEDGER_ID"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Period_Name",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods.PERIOD_NAME"
+      } ]
+    } ]
+  }
+}

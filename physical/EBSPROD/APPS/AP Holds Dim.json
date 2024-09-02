@@ -1,0 +1,47 @@
+{
+  "physicalTable": {
+    "name": "AP Holds Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAP_HOLDS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Invoice Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Dim.INVOICE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Dim.INVOICE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Suppliers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Dim.VENDOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Dim.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Dim.HOLD_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Dim.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

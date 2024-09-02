@@ -1,0 +1,45 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - MTL Valid Categories",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Item" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Valid Categories",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_VAL_CATEGORY_DWH_Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_VAL_CATEGORY_DWH_Fact.CATEGORY_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MTL_VAL_CATEGORY_DWH_Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MTL_VAL_CATEGORY_DWH_Fact" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - MTL Categories.Dim - MTL Categories Detail", "logicalLevel:SSYS.Dim - MTL Category Sets.Dim - MTL Category Sets Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - MTL Categories",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - MTL Category Sets",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,1903 @@
+{
+  "logicalTable" : {
+    "name" : "AR Invoice Distributions Fact (XLA)",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Functional Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).FUNCTIONAL_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Functional Debit Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).FUNCTIONAL_DEBIT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Functional Credit Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).FUNCTIONAL_CREDIT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Debit Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).DEBIT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Credit Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CREDIT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Account Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ACCOUNT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Bill To Site Use Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).BILL_TO_SITE_USE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Chart Of Accounts Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CHART_OF_ACCOUNTS_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer Trx Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CUSTOMER_TRX_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer Trx Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).CUSTOMER_TRX_LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Exchange Rate Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).EXCHANGE_RATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Functional Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).FUNCTIONAL_CURRENCY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Gl Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).GL_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).INVOICE_CURRENCY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).LEDGER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ORG_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Ship To Site Use Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).SHIP_TO_SITE_USE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Transaction Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).TRANSACTION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Transaction Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).TRANSACTION_DISTRIBUTION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Revenue Adjustment Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).REVENUE_ADJUSTMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sales Order Line Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).SALES_ORDER_LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "VSOE Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE10" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE3" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE4" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE5" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE6" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE7" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE8" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).ATTRIBUTE9" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Source Distribution Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).SOURCE_DISTRIBUTION_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Accounting Line Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_ACCOUNTING_LINE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Accounting Line Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_ACCOUNTING_LINE_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Ae Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_AE_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Ae Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_AE_LINE_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLICATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_APPLICATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Dist Id Char 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_DIST_ID_CHAR_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Dist Id Num 1",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_DIST_ID_NUM_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Distribution Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_DISTRIBUTION_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Entity Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_ENTITY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Entity Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_ENTITY_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Source Id Char 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_SOURCE_ID_CHAR_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Applied To Source Id Num 1",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_APPLIED_TO_SOURCE_ID_NUM_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Event Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_EVENT_CLASS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Event Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_EVENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Event Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_EVENT_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Line Definition Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_LINE_DEFINITION_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Ref Ae Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_REF_AE_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Ref Event Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_REF_EVENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Source Distrib Id Char 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_SOURCE_DISTRIB_ID_CHAR_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Source Distribution Id Num 1",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_SOURCE_DISTRIBUTION_ID_NUM_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Source Distribution Id Num 2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_SOURCE_DISTRIBUTION_ID_NUM_2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Source Distribution Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_SOURCE_DISTRIBUTION_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Statistical Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_STATISTICAL_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "D Tax Line Ref Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_TAX_LINE_REF_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Tax Rec Nrec Dist Ref Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_TAX_REC_NREC_DIST_REF_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Tax Summary Line Ref Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_TAX_SUMMARY_LINE_REF_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Temp Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_TEMP_LINE_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "D Unrounded Accounted Cr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_UNROUNDED_ACCOUNTED_CR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "D Unrounded Accounted Dr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_UNROUNDED_ACCOUNTED_DR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "D Unrounded Entered Cr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_UNROUNDED_ENTERED_CR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "D Unrounded Entered Dr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_UNROUNDED_ENTERED_DR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "H Accounting Batch Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_ACCOUNTING_BATCH_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Accounting Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_ACCOUNTING_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Accounting Entry Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_ACCOUNTING_ENTRY_STATUS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Accounting Entry Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_ACCOUNTING_ENTRY_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Ae Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_AE_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_APPLICATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Balance Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_BALANCE_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Budget Version Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_BUDGET_VERSION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Encumbrance Type Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_ENCUMBRANCE_TYPE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Event Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_EVENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Event Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_EVENT_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Funds Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_FUNDS_STATUS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Gl Transfer Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_GL_TRANSFER_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Gl Transfer Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_GL_TRANSFER_STATUS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Je Category Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_JE_CATEGORY_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_LEDGER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Parent Ae Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_PARENT_AE_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Parent Ae Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_PARENT_AE_LINE_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_PERIOD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "H Product Rule Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.H_PRODUCT_RULE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_APPLICATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Business Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_BUSINESS_CLASS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Control Balance Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_CONTROL_BALANCE_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_CURRENCY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Encumbrance Type Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ENCUMBRANCE_TYPE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Entered Cr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ENTERED_CR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Entered Dr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ENTERED_DR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Funds Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_FUNDS_STATUS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Gain Or Loss Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_GAIN_OR_LOSS_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Gl Sl Link Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_GL_SL_LINK_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Gl Sl Link Table",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_GL_SL_LINK_TABLE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Gl Transfer Mode Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_GL_TRANSFER_MODE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_LEDGER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Merge Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_MERGE_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Source Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_SOURCE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Source Table",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_SOURCE_TABLE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Statistical Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_STATISTICAL_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Accounted Cr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ACCOUNTED_CR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Accounted Dr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ACCOUNTED_DR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Accounting Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ACCOUNTING_CLASS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Accounting Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_ACCOUNTING_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Ae Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_AE_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Ae Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_AE_LINE_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "L Unrounded Entered Dr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_UNROUNDED_ENTERED_DR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Unrounded Accounted Cr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_UNROUNDED_ACCOUNTED_CR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Unrounded Accounted Dr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_UNROUNDED_ACCOUNTED_DR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Unrounded Entered Cr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_UNROUNDED_ENTERED_CR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "L Substituted Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "AR Invoice Distributions Fact (XLA)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_SUBSTITUTED_CCID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "AR Invoice Distributions Fact (XLA)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.AR Invoice Distributions Fact (XLA)", "physicalTable:EBSPROD.APPS.GL XLA (AR) Fact" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:EBSPROD.APPS.GL XLA (AR) Fact",
+          "rightTable" : "physicalTable:EBSPROD.APPS.AR Invoice Distributions Fact (XLA)",
+          "joinType" : "LEFT_OUTER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.AR Dist Code Combinations Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.AR Invoice Headers Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.AR Invoice Lines Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.AR Revenue Adjustments Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Code Combinations",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Ledgers Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.GL Periods Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.HZ Customer Sites Dim(Bill-To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.HZ Customer Sites Dim(Ship-To)",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV All Item Category Sets Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Activity Analysis Hier Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Class Hierarchy Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Master Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.OE Order Line Shipment Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.OE Order Lines Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.Operating Units Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

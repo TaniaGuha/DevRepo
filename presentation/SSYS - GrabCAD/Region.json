@@ -1,0 +1,76 @@
+{
+  "presentationTable" : {
+    "name" : "Region",
+    "description" : "@deprecated",
+    "alternateNames" : [ "Dim - Region" ],
+    "hideIfTrue" : {
+      "expressionTemplate" : " VALUEOF(%1) <> 'N/A'",
+      "expressionObjects" : [ "variable:staticVariables.DW_USER" ]
+    },
+    "presentationColumns" : [ {
+      "name" : "Region GK",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Dim - Region.Region GK",
+      "localization" : {
+        "localizationKey" : "Region GK",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region_GK)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region_GK)"
+      }
+    }, {
+      "name" : "Region Name",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Dim - Region.Region Name",
+      "localization" : {
+        "localizationKey" : "Region Name",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region_Name)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region_Name)"
+      }
+    }, {
+      "name" : "Region Group",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Dim - Region.Region Group",
+      "localization" : {
+        "localizationKey" : "Region Group",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region_Group)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region_Group)"
+      }
+    }, {
+      "name" : "Region Type",
+      "sourceLogicalColumn" : "logicalColumn:SSYS GrabCAD.Dim - Region.Region Type",
+      "localization" : {
+        "localizationKey" : "Region Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region_Type)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Region",
+      "sourceLogicalTable" : "logicalTable:SSYS GrabCAD.Dim - Region",
+      "localization" : {
+        "localizationKey" : "Region",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region)"
+      },
+      "levels" : [ {
+        "name" : "Dim - Region Total",
+        "sourceLogicalLevel" : "logicalLevel:SSYS GrabCAD.Dim - Region.Dim - Region Total",
+        "localization" : {
+          "localizationKey" : "Dim - Region Total",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region_Dim_-_Region_Total)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region_Dim_-_Region_Total)"
+        }
+      }, {
+        "name" : "Dim - Region Detail",
+        "sourceLogicalLevel" : "logicalLevel:SSYS GrabCAD.Dim - Region.Dim - Region Detail",
+        "displayColumn" : "presentationColumn:SSYS - GrabCAD.Region.Region Name",
+        "localization" : {
+          "localizationKey" : "Dim - Region Detail",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region_Region_Dim_-_Region_Detail)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region_Region_Dim_-_Region_Detail)"
+        }
+      } ]
+    } ],
+    "localization" : {
+      "localizationKey" : "Region",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_GrabCAD_Region)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_GrabCAD_Region)"
+    }
+  }
+}

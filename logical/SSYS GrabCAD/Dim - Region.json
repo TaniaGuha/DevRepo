@@ -1,0 +1,104 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Region",
+    "description" : "@deprecated",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Region GK" ],
+    "logicalColumns" : [ {
+      "name" : "Region GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_REGIONS_DETAILS_DWH_Dim_Region",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region.REGION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Region Detail"
+    }, {
+      "name" : "Region Group",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_REGIONS_DETAILS_DWH_Dim_Region",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region.REGION_GROUP" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Region Detail"
+    }, {
+      "name" : "Region Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_REGIONS_DETAILS_DWH_Dim_Region",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region.REGION_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Region Detail"
+    }, {
+      "name" : "Region Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_REGIONS_DETAILS_DWH_Dim_Region",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region.REGION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Region Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_REGIONS_DETAILS_DWH_Dim_Region",
+      "description" : "@deprecated",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Region Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Region Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Region Detail",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Region GK" ],
+        "displayKey" : "Region Name",
+        "additionalKeys" : [ [ "Region Name" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Region",
+        "levels" : [ "Dim - Region Total", "Dim - Region Detail" ]
+      } ]
+    }
+  }
+}

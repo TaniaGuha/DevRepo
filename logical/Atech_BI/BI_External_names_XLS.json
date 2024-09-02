@@ -1,0 +1,74 @@
+{
+  "logicalTable" : {
+    "name" : "BI_External_names_XLS",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "ACTUAL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_XLS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_XLS.ACTUAL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LANG",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_XLS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_XLS.LANG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SESSION_VARIABLE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_XLS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_XLS.SESSION_VARIABLE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TRANSLATION",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_XLS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_XLS.TRANSLATION" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "BI_External_names_XLS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.BI_External_names_XLS" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "SESSION_VARIABLE" ]
+  }
+}

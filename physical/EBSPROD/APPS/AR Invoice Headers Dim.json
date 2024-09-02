@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "AR Invoice Headers Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAR_AR_INVOICE_HEADERS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Lease Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Headers Dim.REFERENCE_NUMBER",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Lease Dim.CONTRACT_NUMBER"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "TRANSACTION_ID"
+      ],
+      [
+        "REFERENCE_NUMBER"
+      ]
+    ]
+  }
+}

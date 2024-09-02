@@ -1,0 +1,202 @@
+{
+  "physicalTable": {
+    "name": "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Po_Req_Charge_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.CHARGE_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Po_Req_Charge_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIP_TO_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Ship_From_Org_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIP_FROM_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Ship_From_Org_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIP_TO_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.TO_SUBINVENTORY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ITEM_LOCATION_DWH_Dim_Locator",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.LOCATOR_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ITEM_LOCATION_DWH_Dim_Locator.ITEM_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.OE_ORDER_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.TO_INV_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.TO_INV_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_From_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.FROM_INV_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_From_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_From_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.FROM_OU_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_From_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.TO_OU_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Po_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.PO_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_LINE_DWH_Dim_Po_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.PO_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_RELEASE_DWH_Dim_Po_Release",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.PO_RELEASE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_RELEASE_DWH_Dim_Po_Release.PO_RELEASE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.REQUISITION_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line.REQUISITION_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_RCV_SHIPMENT_HEADER_DWH_Dim_Rcv_Shipment_header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIPMENT_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_RCV_SHIPMENT_HEADER_DWH_Dim_Rcv_Shipment_header.SHIPMENT_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_WSH_DELIVERY_DWH_Dim_Delivery",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.DELIVERY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_WSH_DELIVERY_DWH_Dim_Delivery.DELIVERY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.OE_ORDER_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.PO_DISTRIBUTION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_DISTRIBUTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.PO_LINE_LOCATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIPMENT_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_LINE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

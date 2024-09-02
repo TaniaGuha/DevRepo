@@ -1,0 +1,140 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Hedging",
+    "description" : " Fact  Hedging -  for currency exposure GL report",
+    "tags" : [ "Project:Ad Hoc Finance" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Balance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Balance" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Entered_Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Entered_Amount" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Category" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Currency_Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Currency_Code" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period_Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Period_Name" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Short_Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.Short_Name" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LEDGER_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_HEDGING_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V.LEDGER_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "X_FIN_FACT_HEDGING_V",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Finance_AD_HOC.XXBI.X_FIN_FACT_HEDGING_V" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:Ad Hoc Finance.Dim - GL Ledgers.Organization ID", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Ad Hoc Finance.Dim - GL Ledgers",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Ad Hoc Finance.Dim - GL Period and Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

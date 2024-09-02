@@ -1,0 +1,386 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - PriceList Lines",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Price List Line Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Arithmetic Operator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.ARITHMETIC_OPERATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Automatic Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.AUTOMATIC_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Created By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.CREATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.END_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Last Updated By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LAST_UPDATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "List Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LIST_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "List Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LIST_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "List Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LIST_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "List Line Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LIST_LINE_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "List Line Type Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.LIST_LINE_TYPE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Modifier Level Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.MODIFIER_LEVEL_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Price List Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.PRICE_LIST_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Start Date Active",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.START_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Reason For Change",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.REASON_FOR_CHANGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "New Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.NEW_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    }, {
+      "name" : "Request Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim_Pricelist_Lines_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details.REQUEST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PriceList Lines Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Dim_Pricelist_Lines_Details",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Lines_Details" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - PriceList Lines Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - PriceList Lines Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - PriceList Lines Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Price List Line Gk" ],
+        "displayKey" : "Price List Line Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "PriceList Lines",
+        "levels" : [ "Dim - PriceList Lines Total", "Dim - PriceList Lines Detail" ]
+      } ]
+    }
+  }
+}

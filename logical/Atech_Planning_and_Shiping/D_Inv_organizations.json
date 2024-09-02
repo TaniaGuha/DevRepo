@@ -1,0 +1,176 @@
+{
+  "logicalTable" : {
+    "name" : "D_Inv_organizations",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "BI_ORG_CODE" ],
+    "logicalColumns" : [ {
+      "name" : "BI_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.BI_ORG_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "HIR_LEVEL",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.HIR_LEVEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "LOADING_TIME",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.LOADING_TIME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "Operating Unit Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.OPERATING_UNIT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "Operating Unit Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.OPERATING_UNIT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "Organization Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "Organization Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.ORGANIZATION_NAMED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "ORG_TYPE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "D_Inv_organizations",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.ORG_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "D_Inv_organizations Detail"
+    }, {
+      "name" : "Organization Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LEFT(%1, 3)",
+          "expressionObjects" : [ "logicalColumn:Atech_Planning_and_Shiping.D_Inv_organizations.Organization Name" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "D_Inv_organizations",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'Inv Organization'",
+        "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.ORG_TYPE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "D_Inv_organizations Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "D_Inv_organizations Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "D_Inv_organizations Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "BI_ORG_CODE" ],
+        "displayKey" : "BI_ORG_CODE"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "D_Inv_organizationsDim",
+        "levels" : [ "D_Inv_organizations Total", "D_Inv_organizations Detail" ]
+      } ]
+    }
+  }
+}

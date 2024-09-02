@@ -1,0 +1,614 @@
+{
+  "logicalTable" : {
+    "name" : "OE Order Line Shipment Snapshot Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Delivery Detail Id", "Snapshot Date" ],
+    "logicalColumns" : [ {
+      "name" : "Snapshot Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SNAPSHOT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Shipping Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SHIPPING_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Delivery Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.DELIVERY_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Shipped Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SHIPPED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Source Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SOURCE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Delivery Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.DELIVERY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Confirmation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.CONFIRMATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Initial Pickup Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.INITIAL_PICKUP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Ultimate Dropoff Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.ULTIMATE_DROPOFF_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Firm Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.FIRM_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Freight Terms Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.FREIGHT_TERMS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Ship Method Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SHIP_METHOD_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Requested Quantity Uom",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.REQUESTED_QUANTITY_UOM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Requested Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.REQUESTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Requested Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.REQUESTED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Gross Weight",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.GROSS_WEIGHT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Net Weight",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.NET_WEIGHT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Oe Interfaced Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.OE_INTERFACED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Inv Interfaced Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.INV_INTERFACED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Released Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.RELEASED_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Replenishment Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.REPLENISHMENT_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Tracking Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.TRACKING_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Waybill",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.WAYBILL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Weight Uom Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.WEIGHT_UOM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.LOT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Mode Of Transport",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.MODE_OF_TRANSPORT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.REVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Ship To Cust Site Use Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SHIP_TO_CUST_SITE_USE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Source Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SOURCE_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Source Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SOURCE_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Batch Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.BATCH_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Bill To Cust Site Use Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.BILL_TO_CUST_SITE_USE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Carrier Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.CARRIER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Delivery Detail Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.DELIVERY_DETAIL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    }, {
+      "name" : "Snapshot Date Delivery Detail Id",
+      "description" : "Combination of Snapshot Date || '~' || Delivery Detail Id columns",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Order Line Shipment Snapshot Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST ( EXTRACT( YEAR  FROM %1) * 10000 +  EXTRACT( MONTH  FROM %1) * 100 +  DAYOFMONTH(%1) AS CHARACTER ( 30 )) || '~' ||  CAST (%2 AS CHARACTER ( 30 ))",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.SNAPSHOT_DATE", "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim.DELIVERY_DETAIL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Order Line Shipment Snapshot Dim Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "OE Order Line Shipment Snapshot Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.OE Order Line Shipment Snapshot Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.OE Order Line Shipment Snapshot Dim.OE Order Line Shipment Snapshot Dim Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "OE Order Line Shipment Snapshot Dim Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "OE Order Line Shipment Snapshot Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "OE Order Line Shipment Snapshot Dim Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Delivery Detail Id", "Snapshot Date" ],
+        "displayKey" : "Snapshot Date Delivery Detail Id",
+        "additionalKeys" : [ [ "Snapshot Date Delivery Detail Id" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "OE Order Line Shipment Snapshot Dim",
+        "levels" : [ "OE Order Line Shipment Snapshot Dim Total", "OE Order Line Shipment Snapshot Dim Detail" ]
+      } ]
+    }
+  }
+}

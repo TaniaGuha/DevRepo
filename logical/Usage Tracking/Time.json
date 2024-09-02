@@ -1,0 +1,105 @@
+{
+  "logicalTable" : {
+    "name" : "Time",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Start Hour Minute",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.START_HOUR_MIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.START_DT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Hour Minute",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.END_HOUR_MIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Timestamp",
+      "description" : "The date and time that the logical query finished. The start and end timestamps also reflect any time that the query spent waiting for resources to become available.\r\n\r\nNote: If the user submitting the query navigates away from the page before the query finishes, then the final fetch never happens, and a timeout value of 3600 is recorded. However, if the user navigates back to the page before the timeout, then the fetch completes at that time, and this is recorded as the end_ts time\r\n",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.END_TS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Date",
+      "description" : "The date the logical query was completed",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.END_DT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Timestamp",
+      "description" : "The date and time that the logical query was submitted",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.START_TS" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LOGICAL_QUERIES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Start Date" ]
+  }
+}

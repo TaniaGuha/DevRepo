@@ -1,0 +1,42 @@
+{
+  "physicalTable": {
+    "name": "FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.SUBINVENTORY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Fact_TPL_Free_Stage_Qty.TPL_FREE_STAGE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.TPL_FREE_STAGE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

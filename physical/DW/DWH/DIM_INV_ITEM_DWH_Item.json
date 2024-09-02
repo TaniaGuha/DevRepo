@@ -1,0 +1,55 @@
+{
+  "physicalTable": {
+    "name": "DIM_INV_ITEM_DWH_Item",
+    "sourceTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Item_GL_Cogs_Account",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.COST_OF_GOODS_SOLD_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Item_GL_Cogs_Account.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Item_sales_account",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.SALES_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Item_sales_account.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_BUYER_DWH_Dim_Default_Buyer_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.DEFAULT_BUYER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_BUYER_DWH_Dim_Default_Buyer_Item.BUYER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_BUYER_DWH_Dim_Sourcing_Buyer_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.SOURCING_BUYER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_BUYER_DWH_Dim_Sourcing_Buyer_Item.BUYER_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ITEM_KEY"
+      ],
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID"
+      ],
+      [
+        "ITEM_KEY",
+        "MFG_ORG"
+      ],
+      [
+        "COUNTRY_OF_ORIGIN"
+      ]
+    ]
+  }
+}

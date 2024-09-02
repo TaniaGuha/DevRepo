@@ -1,0 +1,119 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Quotation",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release2", "Project:SSYS_Procure2Pay_Release3" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Quotations",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Quotations Lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Quotations Price Breaks",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Detail", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Detail", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit Org Id", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Buyer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Quotation Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Quotation Price Break",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier Contact",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

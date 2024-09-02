@@ -1,0 +1,101 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - MTL Serial Unit Transactions",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Serial Units",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_UNIT_TRX_DWH_Fact_MTL_Unit_Transactions",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_UNIT_TRX_DWH_Fact_MTL_Unit_Transactions.UNIT_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - Period Start Date.Dim - Period Start Date Total", "logicalLevel:SSYS.Dim - Account Alias.Dim - Account Alias Total", "logicalLevel:SSYS.Dim - MTL Demand Histories.Dim - MTL Demand Histories Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MTL_UNIT_TRX_DWH_Fact_MTL_Unit_Transactions",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MTL_UNIT_TRX_DWH_Fact_MTL_Unit_Transactions" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Detail", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Detail", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Detail", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Detail", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Detail", "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Detail", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Detail", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS.Dim - Inventory Organization (Common).Dim - Inventory Organization (Common) Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Detail", "logicalLevel:SSYS.Dim - Item Locator.Dim - Item Locator Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Delivery Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Delivery",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Inventory Organization (Common)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item Locator",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - MTL Material Transactions",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - MTL Unit Transactions",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Receiving Shipment Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Receiving Shipment Lines",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Serial Numbers",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Subinventory",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

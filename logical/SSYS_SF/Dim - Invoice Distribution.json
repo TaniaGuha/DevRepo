@@ -1,0 +1,1412 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Invoice Distribution",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Invoice Line Gl Dist Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Calc GL Product Line Segment",
+      "description" : "\"Segment 5\" from IFNULL(Xla Account,Dist Account) of AR distribution \r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG5_PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Product Line Segment Desc",
+      "description" : "\"Segment 5\" description from IFNULL(Xla Account,Dist Account) of AR distribution\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG5_PRODUCT_LINE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Location Segment",
+      "description" : "\"Segment 6\" from IFNULL(Xla Account,Dist Account) of AR distribution\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG6_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Location Segment Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG6_LOCATION_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Inter Company Segment",
+      "description" : "\"Segment 7\" from IFNULL(Xla Account,Dist Account) of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG7_INTERCOMPANY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Inter Company Segment Desc",
+      "description" : "\"Segment 7\" description from IFNULL(Xla Account,Dist Account) of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG7_INTERCOMPANY_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Parent Location",
+      "description" : "based on \"Segment 6\" from IFNULL(Xla Account,Dist Account) of the AR distribution, find the parent location in the EBS \"ACCOUNTING\" hierarchy.\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.PARENT_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Account Combination",
+      "description" : "The IFNULL(Xla Account,Dist Account) of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Account Combination Desc",
+      "description" : "The IFNULL(Xla Account,Dist Account) description of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Account Segment",
+      "description" : "\"Segment 3\" from IFNULL(Xla Account,Dist Account) of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG3_ACCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Account Segment Desc",
+      "description" : "\"Segment 3\" description from IFNULL(Xla Account,Dist Account) of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.GL_SEG3_ACCOUNT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Parent Product Line",
+      "description" : "Based On SLA (Sub Ledger Account) ccid (Segment 5) :\r\n\r\nCASE  \"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\"  \r\n   WHEN '400' then   'MB - Systems'\r\n   WHEN '410' then   'MB - Systems'\r\n   WHEN '430' then   'MB - SP'\r\n   WHEN '470' then   'MB - Consumables'  \r\n   WHEN '393' then   'FDM-Maintenance and SP'  \r\n   WHEN '392' then   'FDM-Maintenance and SP'  \r\n   WHEN '398' then   'Customer Support'  \r\n   WHEN '394' then   'Customer Support'\r\nELSE\r\n\r\n  CASE  LEFT(\"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\"  , 1)   \r\n    WHEN  '1' THEN 'Systems'\r\n    WHEN  '2' THEN 'FDM-Systems'\r\n    WHEN  '5' THEN 'Consumables'\r\n    WHEN  '6' THEN 'Consumables'\r\n    WHEN  '7' THEN 'FDM-Consumables'\r\n    WHEN  '8' THEN 'Customer Support'\r\n    WHEN  '9' THEN 'FDM-Maintenance and SP'\r\n     ELSE   'Other'\r\n  END\r\nEND   ",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE %1 WHEN '400' THEN 'MB - Systems' WHEN '410' THEN 'MB - Systems' WHEN '430' THEN 'MB - SP' WHEN '470' THEN 'MB - Consumables' WHEN '393' THEN 'FDM-Maintenance and SP' WHEN '392' THEN 'FDM-Maintenance and SP' WHEN '398' THEN 'Customer Support' WHEN '394' THEN 'Customer Support' ELSE  CASE  LEFT(%1, 1) WHEN '1' THEN 'Systems' WHEN '2' THEN 'FDM-Systems' WHEN '5' THEN 'Consumables' WHEN '6' THEN 'Consumables' WHEN '7' THEN 'FDM-Consumables' WHEN '8' THEN 'Customer Support' WHEN '9' THEN 'FDM-Maintenance and SP' ELSE 'Other' END  END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Invoice Distribution.Calc GL Product Line Segment" ]
+        }
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc GL Product Line Family",
+      "description" : "Based On SLA (Sub Ledger Account)  (Segment 5) :\r\n\r\nCASE  \"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\"  \r\n   WHEN '890' then   'Service'\r\n   WHEN '999' then   'FDM-Service'\r\n   WHEN '400' then   'MB - Systems'\r\n   WHEN '410' then   'MB - Systems'\r\n   WHEN '430' then   'MB - SP'\r\n   WHEN '470' then   'MB - Consumables'  \r\n   WHEN '393' then   'FDM-Maintenance and SP'  \r\n   WHEN '392' then   'FDM-Maintenance and SP'  \r\n   WHEN '398' then   'Customer Support'  \r\n   WHEN '394' then   'Customer Support'\r\n\r\nELSE\r\n   CASE WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\" AS DOUBLE)  BETWEEN 101 and 189 THEN 'Equipment'\r\n             WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\" AS DOUBLE)    BETWEEN 191 AND 199 THEN 'Equipment Other'  \r\n             WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\" AS DOUBLE)  BETWEEN 201 and 271 THEN 'FDM-Equipment'  \r\n             WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\" AS DOUBLE)  BETWEEN 272 and 299 THEN 'FDM-Equipment Other'  \r\n\r\n   ELSE\r\n      CASE  LEFT(\"SSYS\".\"Dim - Invoice Distribution\".\"Calc GL Product Line Segment\"  , 1)   \r\n         WHEN  '5' THEN 'Resins'\r\n         WHEN  '6' THEN 'Resins'\r\n         WHEN  '7' THEN 'FDM-Consumable'\r\n         WHEN  '8' THEN 'Service'\r\n         WHEN  '9' THEN 'FDM-Service'\r\n         ELSE   'Other'\r\n      END\r\n   END\r\nEND  ",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE %1 WHEN '890' THEN 'Service' WHEN '999' THEN 'FDM-Service' WHEN '400' THEN 'MB - Systems' WHEN '410' THEN 'MB - Systems' WHEN '430' THEN 'MB - SP' WHEN '470' THEN 'MB - Consumables' WHEN '393' THEN 'FDM-Maintenance and SP' WHEN '392' THEN 'FDM-Maintenance and SP' WHEN '398' THEN 'Customer Support' WHEN '394' THEN 'Customer Support' ELSE  CASE  WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 101 AND 189 THEN 'Equipment' WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 191 AND 199 THEN 'Equipment Other' WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 201 AND 271 THEN 'FDM-Equipment' WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 272 AND 299 THEN 'FDM-Equipment Other' ELSE  CASE  LEFT(%1, 1) WHEN '5' THEN 'Resins' WHEN '6' THEN 'Resins' WHEN '7' THEN 'FDM-Consumable' WHEN '8' THEN 'Service' WHEN '9' THEN 'FDM-Service' ELSE 'Other' END  END  END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Invoice Distribution.Calc GL Product Line Segment" ]
+        }
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Account Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.ACCOUNT_CLASS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Account Class Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.ACCOUNT_CLASS_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Account Set Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.ACCOUNT_SET_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Calc Dist Code Combination Id",
+      "description" : "If \"xla_dist_link_ccid\" doesn't exist take the original ccid \"gl_dist_code_combination id\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.CALC_DIST_CCID_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Accounted Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ACCTD_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Created By Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_CREATED_BY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Entered Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_ENTERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Last Updated By Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_LAST_UPDATED_BY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Functional Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.FUNCTIONAL_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.GL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "GL Dist Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.GL_DIST_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "GL Posted Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.GL_POSTED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Invoice Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Invoice Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Invoice Line GL Dist Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_LINE_GL_DIST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Invoice Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Invoice Trx Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_TRX_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Latest Rec Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.LATEST_REC_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.LEDGER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Original GL Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.ORIGINAL_GL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Post Request Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.POST_REQUEST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Posting Control Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.POSTING_CONTROL_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Rec Offset Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.REC_OFFSET_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Revenue Adjustment Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.REVENUE_ADJUSTMENT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla Event Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.SLA_EVENT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "User Generated Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.USER_GENERATED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Xla Dist Link Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.XLA_DIST_LINK_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Invoice Line Gl Dist Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_LINE_GL_DIST_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Account Combination",
+      "description" : "The GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Account Segment",
+      "description" : "\"Segment 3\" from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG3_ACCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Account Segment Desc",
+      "description" : "\"Segment 3\" Description from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG3_ACCOUNT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Product Line Segment Desc",
+      "description" : "\"Segment 5\" Description from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG5_PRODUCT_LINE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Product Line Segment",
+      "description" : "\"Segment 5\" from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG5_PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Location Segment",
+      "description" : "\"Segment 6\" from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG6_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Location Segment Desc",
+      "description" : "\"Segment 6\" description from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG6_LOCATION_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Parent Location",
+      "description" : "based on \"Segment 6\" from GL Account of the AR distribution, find the parent location in the EBS \"ACCOUNTING\" hierarchy.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.PARENT_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Inter Company Segment",
+      "description" : "\"Segment 7\" from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG7_INTERCOMPANY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Inter Company Segment Desc",
+      "description" : "\"Segment 7\" description from GL Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.GL_SEG7_INTERCOMPANY_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Account Combination Desc",
+      "description" : "The GL Account description of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Product Line Segment",
+      "description" : "\"Segment 5\" from Xla Account of AR distribution\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG5_PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Product Line Segment Desc",
+      "description" : "\"Segment 5\" description from Xla Account of AR distribution\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG5_PRODUCT_LINE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Location Segment",
+      "description" : "\"Segment 6\" from Xla Account of AR distribution\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG6_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Location Segment Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG6_LOCATION_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Inter Company Segment",
+      "description" : "\"Segment 7\" from Xla  Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG7_INTERCOMPANY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Inter Company Segment Desc",
+      "description" : "\"Segment 7\" description from Xla  Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG7_INTERCOMPANY_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Parent Location",
+      "description" : "based on \"Segment 6\" from Xla Account of the AR distribution, find the parent location in the EBS \"ACCOUNTING\" hierarchy.\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.PARENT_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Account Combination",
+      "description" : "The Xla Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Account Combination Desc",
+      "description" : "The Xla Account description of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Account Segment",
+      "description" : "\"Segment 3\" from Xla Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG3_ACCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Account Segment Desc",
+      "description" : "\"Segment 3\" description from Xla Account of the AR distribution",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.GL_SEG3_ACCOUNT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Parent Product Line",
+      "description" : "Based On SLA ((Sub Ledger Account)) ccid (Segment 5) :\r\n\r\nCASE  \"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\"  \r\n   WHEN '400' then   'MB - Systems'\r\n   WHEN '410' then   'MB - Systems'\r\n   WHEN '430' then   'MB - SP'\r\n   WHEN '470' then   'MB - Consumables'  \r\n   WHEN '393' then   'FDM-Maintenance and SP'  \r\n   WHEN '392' then   'FDM-Maintenance and SP'  \r\n   WHEN '398' then   'Customer Support'  \r\n   WHEN '394' then   'Customer Support'\r\nELSE\r\n\r\n  CASE  LEFT(\"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\"  , 1)   \r\n    WHEN  '1' THEN 'Systems'\r\n    WHEN  '2' THEN 'FDM-Systems'\r\n    WHEN  '5' THEN 'Consumables'\r\n    WHEN  '6' THEN 'Consumables'\r\n    WHEN  '7' THEN 'FDM-Consumables'\r\n    WHEN  '8' THEN 'Customer Support'\r\n    WHEN  '9' THEN 'FDM-Maintenance and SP'\r\n     ELSE   'Other'\r\n  END\r\nEND   ",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE %1 WHEN '400' THEN 'MB - Systems' WHEN '410' THEN 'MB - Systems' WHEN '430' THEN 'MB - SP' WHEN '470' THEN 'MB - Consumables' WHEN '393' THEN 'FDM-Maintenance and SP' WHEN '392' THEN 'FDM-Maintenance and SP' WHEN '398' THEN 'Customer Support' WHEN '394' THEN 'Customer Support' ELSE  CASE  LEFT(%1, 1) WHEN '1' THEN 'Systems' WHEN '2' THEN 'FDM-Systems' WHEN '5' THEN 'Consumables' WHEN '6' THEN 'Consumables' WHEN '7' THEN 'FDM-Consumables' WHEN '8' THEN 'Customer Support' WHEN '9' THEN 'FDM-Maintenance and SP' ELSE 'Other' END  END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Invoice Distribution.Sla GL Product Line Segment" ]
+        }
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist GL Parent Product Line",
+      "description" : "Based On distribution ccid (Segment 5) :\r\n\r\nCASE  \"SSYS\".\"Dim - Invoice Distribution\".\"Dist GL Product Line Segment\" \r\n   WHEN '400' then   'MB - Systems'\r\n   WHEN '410' then   'MB - Systems'\r\n   WHEN '430' then   'MB - SP'\r\n   WHEN '470' then   'MB - Consumables'  \r\n   WHEN '393' then   'FDM-Maintenance and SP'  \r\n   WHEN '392' then   'FDM-Maintenance and SP'  \r\n   WHEN '398' then   'Customer Support'  \r\n   WHEN '394' then   'Customer Support'\r\nELSE\r\n\r\n  CASE  LEFT(\"SSYS\".\"Dim - Invoice Distribution\".\"Dist GL Product Line Segment\" , 1)   \r\n    WHEN  '1' THEN 'Systems'\r\n    WHEN  '2' THEN 'FDM-Systems'\r\n    WHEN  '5' THEN 'Consumables'\r\n    WHEN  '6' THEN 'Consumables'\r\n    WHEN  '7' THEN 'FDM-Consumables'\r\n    WHEN  '8' THEN 'Customer Support'\r\n    WHEN  '9' THEN 'FDM-Maintenance and SP'\r\n     ELSE   'Other'\r\n  END\r\nEND \r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE %1 WHEN '400' THEN 'MB - Systems' WHEN '410' THEN 'MB - Systems' WHEN '430' THEN 'MB - SP' WHEN '470' THEN 'MB - Consumables' WHEN '393' THEN 'FDM-Maintenance and SP' WHEN '392' THEN 'FDM-Maintenance and SP' WHEN '398' THEN 'Customer Support' WHEN '394' THEN 'Customer Support' ELSE  CASE  LEFT(%1, 1) WHEN '1' THEN 'Systems' WHEN '2' THEN 'FDM-Systems' WHEN '5' THEN 'Consumables' WHEN '6' THEN 'Consumables' WHEN '7' THEN 'FDM-Consumables' WHEN '8' THEN 'Customer Support' WHEN '9' THEN 'FDM-Maintenance and SP' ELSE 'Other' END  END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Invoice Distribution.Dist GL Product Line Segment" ]
+        }
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Amount USD",
+      "description" : "Dist Entered Amount Converted to USD\r\n(Rate date is invoice_trx_date)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_AMOUNT_USD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Dist Amount ILS",
+      "description" : "Dist Entered Amount Converted to ILS\r\n(Rate date is invoice_trx_date)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.DIST_AMOUNT_ILS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    }, {
+      "name" : "Sla GL Product Line Family",
+      "description" : "Based On SLA (Sub Ledger Account) ccid (Segment 5) :\r\n\r\nCASE  \"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\"  \r\n   WHEN '890' then   'Service'\r\n   WHEN '999' then   'FDM-Service'\r\n   WHEN '400' then   'MB - Systems'\r\n   WHEN '410' then   'MB - Systems'\r\n   WHEN '430' then   'MB - SP'\r\n   WHEN '470' then   'MB - Consumables'  \r\n   WHEN '393' then   'FDM-Maintenance and SP'  \r\n   WHEN '392' then   'FDM-Maintenance and SP'  \r\n   WHEN '398' then   'Customer Support'  \r\n   WHEN '394' then   'Customer Support'\r\n\r\nELSE\r\n   CASE WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\" AS DOUBLE)  BETWEEN 101 and 189 THEN 'Equipment'\r\n             WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\" AS DOUBLE)    BETWEEN 191 AND 199 THEN 'Equipment Other'  \r\n             WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\" AS DOUBLE)  BETWEEN 201 and 271 THEN 'FDM-Equipment'  \r\n             WHEN CAST(\"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\" AS DOUBLE)  BETWEEN 272 and 299 THEN 'FDM-Equipment Other'  \r\n\r\n   ELSE\r\n      CASE  LEFT(\"SSYS\".\"Dim - Invoice Distribution\".\"Sla GL Product Line Segment\"  , 1)   \r\n         WHEN  '5' THEN 'Resins'\r\n         WHEN  '6' THEN 'Resins'\r\n         WHEN  '7' THEN 'FDM-Consumable'\r\n         WHEN  '8' THEN 'Service'\r\n         WHEN  '9' THEN 'FDM-Service'\r\n         ELSE   'Other'\r\n      END\r\n   END\r\nEND  ",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE %1 WHEN '890' THEN 'Service' WHEN '999' THEN 'FDM-Service' WHEN '400' THEN 'MB - Systems' WHEN '410' THEN 'MB - Systems' WHEN '430' THEN 'MB - SP' WHEN '470' THEN 'MB - Consumables' WHEN '393' THEN 'FDM-Maintenance and SP' WHEN '392' THEN 'FDM-Maintenance and SP' WHEN '398' THEN 'Customer Support' WHEN '394' THEN 'Customer Support' ELSE  CASE  WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 101 AND 189 THEN 'Equipment' WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 191 AND 199 THEN 'Equipment Other' WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 201 AND 271 THEN 'FDM-Equipment' WHEN  CAST (%1 AS DOUBLE PRECISION ) BETWEEN 272 AND 299 THEN 'FDM-Equipment Other' ELSE  CASE  LEFT(%1, 1) WHEN '5' THEN 'Resins' WHEN '6' THEN 'Resins' WHEN '7' THEN 'FDM-Consumable' WHEN '8' THEN 'Service' WHEN '9' THEN 'FDM-Service' ELSE 'Other' END  END  END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Invoice Distribution.Sla GL Product Line Segment" ]
+        }
+      },
+      "logicalLevel" : "Dim - Invoice Distribution Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Invoice Distribution Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Invoice Distribution Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Invoice Distribution Detail",
+        "numberOfElements" : 13000000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Invoice Line Gl Dist Gk" ],
+        "displayKey" : "Invoice Line Gl Dist Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Invoice Distribution",
+        "levels" : [ "Dim - Invoice Distribution Total", "Dim - Invoice Distribution Detail" ]
+      } ]
+    }
+  }
+}

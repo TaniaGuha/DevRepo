@@ -1,0 +1,506 @@
+{
+  "logicalTable" : {
+    "name" : "MSC Order Types Fact",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Org Code Msc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ORG_CODE_MSC" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ITEM_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ITEM_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Planner Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.PLANNER_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Material Cost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ITEM_MATERIAL_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Unit Cost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ITEM_UNIT_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Frozen Material Cost Usd",
+      "description" : "Current Frozen Item Material Cost Usd for the specific Organization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.MATERIAL_COST_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Frozen Unit Cost Usd",
+      "description" : "Current Frozen Item Unit Cost Usd for the specific Organization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.ITEM_COST_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Cost Usd (MFG Org)",
+      "description" : "Current Frozen Item Unit Cost Usd for it's Primary MFG Organization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:EBS.INV All Inv Orgs Items Dim.Item Cost Usd (MFG Org)" ]
+        }
+      }
+    }, {
+      "name" : "Safety Stock Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.SAFETY_STOCK_QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sourcing Rule Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.SOURCING_RULE_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Compile Designator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.COMPILE_DESIGNATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Order Type Group",
+      "description" : "Grouping of 'Order Type New' column in to Demands, Supplies, or Non-Nettable Onhand",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'Demand' THEN 'Demands' WHEN %1 = 'On Hand -Non Net' THEN 'Non-Nettable On Hand' ELSE 'Supplies' END ",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ORDER_TYPE_NEW" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Order Type New",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ORDER_TYPE_NEW" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "New Due Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.NEW_DUE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Quantity (Abs)",
+      "description" : "Abs(Quantity)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " ABS(%1)",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Ext Item Cost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.EXT_ITEM_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Ext Frozen Material Cost Usd",
+      "description" : "Abs(Quantity) * Current Frozen Item Material Cost Usd for the specific Organization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) *  ABS( IFNULL(%2, 0))",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.MATERIAL_COST_USD", "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Ext Frozen Cost Usd",
+      "description" : "Abs(Quantity) * Current Frozen Item Unit Cost Usd for the specific Organization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) *  ABS( IFNULL(%2, 0))",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.ITEM_COST_USD", "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Ext Item Cost Usd (MFG Org)",
+      "description" : "Abs(Quantity) * Current Frozen Item Unit Cost Usd for it's Primary MFG Organization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) *  ABS( IFNULL(%2, 0))",
+          "expressionObjects" : [ "logicalColumn:EBS.INV All Inv Orgs Items Dim.Item Cost Usd (MFG Org)", "logicalColumn:EBS.MSC Order Types Fact.Quantity" ]
+        }
+      }
+    }, {
+      "name" : "Inventory Item Count",
+      "description" : "Distinct count of (MTL) Inventory Item IDs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.MTL_INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Msc Plan Count",
+      "description" : "Unique count of Msc Plans",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.PLAN_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Organization Count",
+      "description" : "Unique count of Organizations",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Mtl Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.MTL_INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.PLAN_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Types Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.SR_INSTANCE_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MSC Order Types Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.INV Item Frozen Cost Dim", "physicalTable:EBSPROD.APPS.MSC Order Types Fact" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:EBSPROD.APPS.MSC Order Types Fact",
+          "rightTable" : "physicalTable:EBSPROD.APPS.INV Item Frozen Cost Dim",
+          "joinType" : "RIGHT_OUTER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.INV All Inv Orgs Items Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV All Item Category Sets Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Brand Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Activity Analysis Hier Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Class Hierarchy Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Frozen Cost Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Master Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Main Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Organizations Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MSC Items Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MSC Orders New Due Date Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MSC Organizations Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MSC Plans Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MTL Demand History Time Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

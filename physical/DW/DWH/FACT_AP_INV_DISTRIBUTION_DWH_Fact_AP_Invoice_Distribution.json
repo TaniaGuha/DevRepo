@@ -1,0 +1,189 @@
+{
+  "physicalTable": {
+    "name": "FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution",
+    "sourceTable": "physicalTable:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.INVOICE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_INVOICE_LINE_DWH_Dim_AP_Invoice_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.INVOICE_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_INVOICE_LINE_DWH_Dim_AP_Invoice_Line.INVOICE_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.SUPPLIER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.SUPPLIER_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SUPPLIER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_GL_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.DIST_CODE_COMBINATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_GL_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_BUDGET_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Charge_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_CHARGE_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Charge_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.GL_LEDGER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.GL_LEDGER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_PERIOD_DWH_GL_Period",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.GL_PERIOD_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_PERIOD_DWH_GL_Period.GL_PERIOD_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PA_PROJECT_DWH_Dim_Pa_Project",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PROJECT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PA_PROJECT_DWH_Dim_Pa_Project.PROJECT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PA_TASK_DWH_Dim_Pa_Task",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.TASK_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PA_TASK_DWH_Dim_Pa_Task.TASK_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_RELEASE_DWH_Dim_Po_Release",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_RELEASE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_RELEASE_DWH_Dim_Po_Release.PO_RELEASE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.REQUISITION_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line.REQUISITION_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Dim_AP_Invoice_Distribution",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.INVOICE_DISTRIBUTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Dim_AP_Invoice_Distribution.INVOICE_DISTRIBUTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_DISTRIBUTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_DISTRIBUTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.PO_LINE_LOCATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_GL_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AP_INV_DISTRIBUTION_DWH_Fact_AP_Invoice_Distribution.GL_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_GL_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Printer Job Runs",
+    "tags" : [ "Project:SSYS_GrabCAD" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Jobs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.GC_PRINTER_JOB_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Duration Actual (avg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.DURATION_ACTUAL_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Duration Actual (sum)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.DURATION_ACTUAL_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Duration Estimated (avg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.DURATION_ESTIMATED_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Duration Estimated (sum)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.DURATION_ESTIMATED_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Utilization",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.DURATION_ACTUAL_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "BASED_ON_DIMENSION",
+        "dimensionBasedRules" : [ {
+          "dimension" : "OTHER",
+          "rule" : "SUM"
+        }, {
+          "dimension" : "logicalTable:SSYS GrabCAD.Dim - Printer",
+          "rule" : "AVG"
+        } ]
+      }
+    }, {
+      "name" : "Bounding Dim X (avg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 IS NULL  THEN  NULL  ELSE %2 / %1 END ",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_NUMBER_OF_PARTS", "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_BOUND_DIM_X" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Bounding Dim Y (avg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 IS NULL  THEN  NULL  ELSE %2 / %1 END ",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_NUMBER_OF_PARTS", "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_BOUND_DIM_Y" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Bounding Dim Z (avg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 IS NULL  THEN  NULL  ELSE %2 / %1 END ",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_NUMBER_OF_PARTS", "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_BOUND_DIM_Z" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Bounding Dim Box (avg)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 IS NULL  THEN  NULL  ELSE %2 * %3 * %4 / %1 END ",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_NUMBER_OF_PARTS", "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_BOUND_DIM_X", "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_BOUND_DIM_Y", "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.M_BOUND_DIM_Z" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS GrabCAD.Dim - User.Dim - User Detail", "logicalLevel:SSYS GrabCAD.Dim - Account.Dim - Account Detail", "logicalLevel:SSYS GrabCAD.Dim - Product.Dim - Product Detail", "logicalLevel:SSYS GrabCAD.Dim - Install Site.Dim - Install Site Detail", "logicalLevel:SSYS GrabCAD.Dim - Region.Dim - Region Detail", "logicalLevel:SSYS GrabCAD.Dim - Material.Dim - Material Total", "logicalLevel:SSYS GrabCAD.Dim - Printer.Dim - Printer Detail", "logicalLevel:SSYS GrabCAD.Dim - Start Date.Dim - Start Date Day", "logicalLevel:SSYS GrabCAD.Dim - Printer Job.Dim - Printer Job Detail", "logicalLevel:SSYS GrabCAD.Dim - Start Time.Dim - Start Time Hour Second", "logicalLevel:SSYS GrabCAD.Dim - End Customer.Dim - End Customer Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:SSYS_GrabCAD_SA",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : "%1 =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS GrabCAD.Dim - End Customer.Customer Region", "variable:undeclaredVariables.SFDC_REGION" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - End Customer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Install Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Printer Job",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Printer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Product",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Region",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Start Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Start Time",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - User",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,521 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - MTL Demand Histories",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Demand History Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Account Alias Production",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.ACCOUNT_ALIAS_PRODUCTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Account Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.ACCOUNT_ISSUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Closed Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.CLOSED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Demand History Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.DEMAND_HISTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Field Service Usage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.FIELD_SERVICE_USAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Internal Order Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.INTERNAL_ORDER_ISSUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Interorg Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.INTERORG_ISSUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Master Org Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Miscellaneous Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.MISCELLANEOUS_ISSUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Period Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PERIOD_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Period Start Date Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PERIOD_START_DATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Period Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PERIOD_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Period Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PERIOD_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Program Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PROGRAM_APPLICATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Program Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PROGRAM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Program Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PROGRAM_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Project Move Order Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.PROJECT_MOVE_ORDER_ISSUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Request Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.REQUEST_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "SO Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.SALES_ORDER_DEMAND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "WIP Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.STD_WIP_USAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    }, {
+      "name" : "Total Consumption",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories.TOTAL_CONSUMPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Demand Histories Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MTL_DEMAND_HISTORIES_DWH_Dim_Demand_Histories" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - MTL Demand Histories Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - MTL Demand Histories Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - MTL Demand Histories Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Demand History Gk" ],
+        "displayKey" : "Demand History Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MTL Demand Histories",
+        "levels" : [ "Dim - MTL Demand Histories Total", "Dim - MTL Demand Histories Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - AR Invoices",
+    "description" : "Oracle EBS Accounts Receivable",
+    "tags" : [ "Project:Lead2Invoice", "Project:SSYS_All_DWH", "Project:SSYS_Lead2Invoice" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.# of Invoices",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - AR Invoices.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.GL Period"
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Opportunity"
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Customers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AR Invoices.Sold To Customer"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.Bill To Customer"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.Ship To Customer"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.End Customer"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Inventory Item"
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Requisition Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AR Invoices.Requisition Header"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.Requisition Line"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Order Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AR Invoices.Order Header"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.Order Line"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Invoice Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AR Invoices.Invoice Header"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.Invoice Line"
+      }, {
+        "name" : "presentationTable:SSYS - AR Invoices.Invoice Distribution"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AR Invoices.Invoice Distribution Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_AR_Invoices_SA",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - AR Invoices",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices)"
+    }
+  }
+}

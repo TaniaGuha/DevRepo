@@ -1,0 +1,17 @@
+{
+  "initBlock" : {
+    "name" : "xxctrl_user_data_security",
+    "description" : "get the user data security from table xxctrl_user_data_security. use in the Application Roles permission filters",
+    "tags" : [ "Project:ADMIN" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:Snowflake.Snowflake ODBC",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select p.parameter_name, uv.sec_value\nfrom SSYS_DW_30_RC_DB.MARTS.xxctrl_security_parameters p,\n     SSYS_DW_30_RC_DB.MARTS.xxctrl_user_data_security uv,\n     SSYS_DW_30_RC_DB.MARTS.xxctrl_bi_users u\nwhere p.parameter_name = uv.sec_parameter\nand lower(u.ad_samaccountname) = lower(':USER')\nand ((lower(uv.user_name) = lower(u.salesforce_user_name)) \n  or (lower(uv.user_name) = lower(u.oracle_user_name)) \n  or (lower(uv.user_name) = lower(u.ad_samaccountname))) \n\nUNION\n\nselect p.parameter_name,'-999'\nfrom SSYS_DW_30_RC_DB.MARTS.xxctrl_security_parameters p\nwhere p.parameter_id  >0 "
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : true,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : false
+  }
+}

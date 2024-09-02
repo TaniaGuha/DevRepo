@@ -1,0 +1,221 @@
+{
+  "logicalTable" : {
+    "name" : "WIP Closed Date Dim",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.QUARTER_YEAR_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Month",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Period Year Name",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_DAY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.QUARTER_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.QUARTER_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter Rank",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.QUARTER_RANK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Year Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_YEAR_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Month Name",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Period Year Name",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.MONTH_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_START_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period End Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_END_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Set Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_SET_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Month Rank",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Closed Date Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * 12 + %2",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_YEAR", "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_NUMBER" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "WIP Closed Date Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.WIP Closed Date Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.WIP Job Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "ZERO_OR_ONE_TO_MANY"
+    } ],
+    "primaryKey" : [ "Date" ]
+  }
+}

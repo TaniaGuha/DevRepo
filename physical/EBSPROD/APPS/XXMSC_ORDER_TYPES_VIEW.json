@@ -1,0 +1,102 @@
+{
+  "physicalTable" : {
+    "name" : "XXMSC_ORDER_TYPES_VIEW",
+    "description" : "SQL query used to produce the Disco report \"XX: Planning Demand vs Supply\"",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "PLANNER_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_UNIT_COST",
+      "description" : "Item Unit Cost (Org specific) using \r\nxxinv_utils_pkg.get_item_cost(Item Id, Org Id)",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_NUMBER",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : false
+    }, {
+      "name" : "SAFETY_STOCK_QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "MTL_INVENTORY_ITEM_ID",
+      "description" : "Inventory Item Id for the MTL_SYSTEM_ITEMS",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ORG_CODE_MSC",
+      "description" : "Organization code for the ASCP module",
+      "dataType" : "VARCHAR",
+      "length" : 7,
+      "nullable" : false
+    }, {
+      "name" : "SR_INSTANCE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_MATERIAL_COST",
+      "description" : "Item's Material Cost Element (Org specific) using xxinv_utils_pkg.get_item_material_cost(Item Id, Org Id)",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ORDER_TYPE_NEW",
+      "description" : "If Demand based quantity, then 'Demand'; Else select \"Order Type Text\" column for Supply based quantities",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    }, {
+      "name" : "NEW_DUE_DATE",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "EXT_ITEM_COST",
+      "description" : "Quantity * Item Unit Cost (Org specific) using \r\nxxinv_utils_pkg.get_item_cost(Item Id, Org Id)",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "COMPILE_DESIGNATOR",
+      "description" : "MSC Plan Name/Compile (for MRP plans)",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : false
+    }, {
+      "name" : "PLAN_ID",
+      "description" : "MSC Plan Id (for MRP plans)",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SOURCING_RULE_NAME",
+      "description" : "Supplier Name coming from xxpo_utils_pkg.get_item_sourcing_rule (org id, item id)",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    } ]
+  }
+}

@@ -1,0 +1,745 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Action History - All Revisions",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release3" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of PO Headers",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Max Action Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.ACTION_END_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Max Approve Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'APPROVE')",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Purchasing Action History - First Revision.PO Max Action Date", "logicalColumn:SSYS.Dim - Purchasing Action History.Action Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Response Time - Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_DAY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Response Time - Hours",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_HOUR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Response Time - Minutes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_MINUTE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Response Time - Seconds",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. PO Response Time - Minutes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_MINUTE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. PO ResponseTtime - Hours",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_HOUR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. PO Response Time - Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_DAY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "# of Requisition",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.REQUISITION_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Max Action Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.ACTION_END_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Max Approve Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'APPROVE')",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Purchasing Action History - First Revision.Requisition Max Action Date", "logicalColumn:SSYS.Dim - Purchasing Action History.Action Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Response Time - Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_DAY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Response Time - Hours",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_HOUR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Response Time - Minutes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_MINUTE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Response Time - Seconds",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. Requisition Response Time - Minutes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_MINUTE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. Requisition Response Time - Hours",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_HOUR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. Requisition Response Time - Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_DAY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "# of Releases",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RELEASE_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Max Action Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.ACTION_END_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Max Approve Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'APPROVE')",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Purchasing Action History - First Revision.Release Max Action Date", "logicalColumn:SSYS.Dim - Purchasing Action History.Action Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Response Time - Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_DAY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Response Time - Hours",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_HOUR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Response Time - Minutes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_MINUTE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Response Time - Seconds",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. Release Response Time - Minutes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_MINUTE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. Release Response Time - Hours",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_HOUR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Avg. Release Response Time - Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_DAY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Total Response Time - Seconds",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.RESPONSE_TIME_SEC" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.RESPONSE_TIME_SEC" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.RESPONSE_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Response Time - Days (Emp WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'ISR' THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.APPROVER_EMP_COUNTRY_CODE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.ACTION_END_DATE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.ACTION_START_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "PO Response Time - Days (OU WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 81 THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.OU_ORG_ID", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.ACTION_END_DATE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.ACTION_START_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Response Time - Days (Emp WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'ISR' THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.APPROVER_EMP_COUNTRY_CODE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.ACTION_END_DATE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.ACTION_START_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Release Response Time - Days (OU WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 81 THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.OU_ORG_ID", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.ACTION_END_DATE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.ACTION_START_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Response Time - Days (Emp WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'ISR' THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.APPROVER_EMP_COUNTRY_CODE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.ACTION_END_DATE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    }, {
+      "name" : "Requisition Response Time - Days (OU WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 81 THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.OU_ORG_ID", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.ACTION_END_DATE", "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Detail", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 IN ('PO', 'PA')",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_PO.OBJECT_TYPE_CODE" ]
+      },
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'REQUISITION'",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.OBJECT_TYPE_CODE" ]
+      },
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Detail", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'RELEASE'",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_RELEASE.OBJECT_TYPE_CODE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit Org Id", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Action History",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

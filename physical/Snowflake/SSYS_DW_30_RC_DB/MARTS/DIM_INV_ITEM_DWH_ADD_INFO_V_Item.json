@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "DIM_INV_ITEM_DWH_ADD_INFO_V_Item",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_ADD_INFO_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_ADD_INFO_V_Item.CHILD_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "CHILD_ITEM_GK"
+      ]
+    ]
+  }
+}

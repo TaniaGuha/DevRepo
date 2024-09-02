@@ -1,0 +1,1278 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Po Distribution",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Po Distribution Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Accrual Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ACCRUAL_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Accrue On Receipt Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ACCRUE_ON_RECEIPT_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Accrued Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ACCRUED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Amount Billed (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.AMOUNT_BILLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Service Line Amount Cancelled (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.AMOUNT_CANCELLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Service Line Amount Delivered (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.AMOUNT_DELIVERED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Amount Financed (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.AMOUNT_FINANCED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Service Line Amount Ordered",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.AMOUNT_ORDERED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Amount Recouped (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.AMOUNT_RECOUPED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Bom Resource Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.BOM_RESOURCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Budget Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.BUDGET_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Charge Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.CHARGE_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Deliver To Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DELIVER_TO_LOCATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Deliver To Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DELIVER_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Deliver To Requester Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DELIVER_TO_REQUESTER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Deliver To Requester Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DELIVER_TO_REQUESTER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Destination Organization Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DESTINATION_ORGANIZATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Destination Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DESTINATION_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Destination Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DESTINATION_SUBINVENTORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Destination Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DESTINATION_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Distribution Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DISTRIBUTION_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Distribution Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.DISTRIBUTION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Encumbered Amount (Functional Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ENCUMBERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Encumbered Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.ENCUMBERED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Expenditure Item Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.EXPENDITURE_ITEM_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Expenditure Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.EXPENDITURE_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Expenditure Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.EXPENDITURE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Failed Funds Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.FAILED_FUNDS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Gl Cancelled Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.GL_CANCELLED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Gl Closed Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.GL_CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Gl Encumbered Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.GL_ENCUMBERED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Gl Encumbered Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.GL_ENCUMBERED_PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Gl Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.GL_LEDGER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Kanban Card Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.KANBAN_CARD_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Nonrecoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.NONRECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Po Distribution Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Po Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Po Line Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_LINE_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Po Release Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_RELEASE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Prevent Encumbrance Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PREVENT_ENCUMBRANCE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Project Accounting Context",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PROJECT_ACCOUNTING_CONTEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Project Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PROJECT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Quantity Billed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.QUANTITY_BILLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Distribution Quantity Cancelled",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.QUANTITY_CANCELLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Quantity Delivered",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.QUANTITY_DELIVERED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Quantity Financed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.QUANTITY_FINANCED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Quantity Ordered",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.QUANTITY_ORDERED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Quantity Recouped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.QUANTITY_RECOUPED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Rate Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.RATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Recoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.RECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Recovery Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.RECOVERY_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Req Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.REQ_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Req Header Reference Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.REQ_HEADER_REFERENCE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Req Line Reference Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.REQ_LINE_REFERENCE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Task Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.TASK_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Tax Recovery Override Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.TAX_RECOVERY_OVERRIDE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Unencumbered Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.UNENCUMBERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Unencumbered Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.UNENCUMBERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Variance Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.VARIANCE_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Wip Entity Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.WIP_ENTITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Wip Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.WIP_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Wip Operation Seq Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.WIP_OPERATION_SEQ_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Wip Repetitive Schedule Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.WIP_REPETITIVE_SCHEDULE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Wip Resource Seq Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.WIP_RESOURCE_SEQ_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Distribution Detail"
+    }, {
+      "name" : "Concatenated Segments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.CONCATENATED_SEGMENTS" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Charge_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Charge_Code_Combination.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Expenditure Organization Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.EXPENDITURE_ORGANIZATION_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Charge_Code_Combination",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Charge_Code_Combination" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Po Distribution Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Po Distribution Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Po Distribution Detail",
+        "numberOfElements" : 355581,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Po Distribution Gk" ],
+        "displayKey" : "Po Distribution Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Po Distribution",
+        "levels" : [ "Dim - Purchasing Po Distribution Total", "Dim - Purchasing Po Distribution Detail" ]
+      } ]
+    }
+  }
+}

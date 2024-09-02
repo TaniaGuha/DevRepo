@@ -1,0 +1,456 @@
+{
+  "logicalTable" : {
+    "name" : "INV_F_COSTING",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "AS_OF_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.AS_OF_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CLASS",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.CLASS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INV_ORG",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.INV_ORG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.ITEM_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "OPERATING_UNIT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.OPERATING_UNIT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "QTY",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.QTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "RANK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.RANK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_AS_OF_DATE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_AS_OF_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_INV_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_INV_ORG_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_OPERATING_UNIT_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_OPERATING_UNIT_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIVISOR1_REGULAR",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR1_REGULAR" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR2_RM_WIP_SYSTEMS",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR2_RM_WIP_SYSTEMS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR3_RM_WIP_RESIN",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR3_RM_WIP_RESIN" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR4_HEADS",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR4_HEADS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "ITEM_COST_PER_UNIT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.ITEM_COST_PER_UNIT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MATERIAL_COST_PER_UNIT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.MATERIAL_COST_PER_UNIT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Divisor1_cogs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) *  IFNULL(%2, 0)",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.INV_F_COSTING.DIVISOR1_REGULAR", "logicalColumn:Atech_PO.INV_F_COSTING.ITEM_COST_PER_UNIT" ]
+        }
+      }
+    }, {
+      "name" : "Divisor2_cogs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) *  IFNULL(%2, 0)",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.INV_F_COSTING.DIVISOR2_RM_WIP_SYSTEMS", "logicalColumn:Atech_PO.INV_F_COSTING.ITEM_COST_PER_UNIT" ]
+        }
+      }
+    }, {
+      "name" : "Divisor3_cogs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) *  IFNULL(%2, 0)",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.INV_F_COSTING.DIVISOR3_RM_WIP_RESIN", "logicalColumn:Atech_PO.INV_F_COSTING.ITEM_COST_PER_UNIT" ]
+        }
+      }
+    }, {
+      "name" : "Divisor4_cogs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) *  IFNULL(%2, 0)",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.INV_F_COSTING.DIVISOR4_HEADS", "logicalColumn:Atech_PO.INV_F_COSTING.ITEM_COST_PER_UNIT" ]
+        }
+      }
+    }, {
+      "name" : "DIVISOR1_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR1_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR2_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR2_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR3_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR3_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DIVISOR4_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.DIVISOR4_COST" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "SUBINVENTORY_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.SUBINVENTORY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "State2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 = 'Regular' THEN '' ELSE %1 END ",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.INV_F_COSTING.CLASS" ]
+        }
+      }
+    }, {
+      "name" : "CALC_CATEGORY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_F_COSTING",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.CALC_CATEGORY" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV_F_COSTING",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.INV_F_COSTING" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_PO.INV_D_COSTING_INV_ORGANIZATION",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_PO.INV_D_COSTING_OPERATING_UNIT",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_PO.XXATC_COST_AS_OF_DATE",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_PO.XXATC_INV_D_MS_ITEMS_BI",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

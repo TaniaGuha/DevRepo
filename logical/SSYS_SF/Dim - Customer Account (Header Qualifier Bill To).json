@@ -1,0 +1,581 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Customer Account (Header Qualifier Bill To)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Oracle Customer Account Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Account Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ACCOUNT_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Account Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ACCOUNT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Account Reference",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ACCOUNT_REFERENCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Account Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ACCOUNT_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Account Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ACCOUNT_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Account Status Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ACCOUNT_STATUS_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Business Type Industry",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.BUSINESS_TYPE_INDUSTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Account Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_ACCOUNT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Account Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_ACCOUNT_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Operating Unit",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_OPERATING_UNIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Customer Party Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.CUSTOMER_PARTY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Department",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.DEPARTMENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Inactive Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.INACTIVE_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Institution Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.INSTITUTION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "National Registration Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.NATIONAL_REGISTRATION_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Objet Vendor Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.OBJET_VENDOR_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Oracle Customer Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ORACLE_CUSTOMER_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Oracle Customer Account Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.ORACLE_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Created By User",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_CREATED_BY_USER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Created By User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_CREATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Customer Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_CUSTOMER_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Customer Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_CUSTOMER_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Customer Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_CUSTOMER_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Local Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_LOCAL_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Party Orig System Reference",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.PARTY_ORIG_SYSTEM_REFERENCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Political Customer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.POLITICAL_CUSTOMER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Sales Channel Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.SALES_CHANNEL_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    }, {
+      "name" : "Vip Customer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer.VIP_CUSTOMER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Bill To (Mod HQ) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Mod_HQ_Bill_To_Customer" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Customer Bill To (Mod HQ) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Customer Bill To (Mod HQ) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Customer Bill To (Mod HQ) Detail",
+        "numberOfElements" : 50000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Oracle Customer Account Gk" ],
+        "displayKey" : "Oracle Customer Account Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customer Account (Header Qualifier Bill To)",
+        "levels" : [ "Dim - Customer Bill To (Mod HQ) Total", "Dim - Customer Bill To (Mod HQ) Detail" ]
+      } ]
+    }
+  }
+}

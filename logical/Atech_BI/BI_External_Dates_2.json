@@ -1,0 +1,51 @@
+{
+  "logicalTable" : {
+    "name" : "BI_External_Dates_2",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "FIELD_NAME",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_Dates_2",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_Dates_2.FIELD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TRANSLATED_NAME_TO_ADD",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_Dates_2",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_Dates_2.TRANSLATED_NAME_TO_ADD" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "BI_External_Dates_2",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.BI_External_Dates_2" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_BI.BI_External_Dates",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

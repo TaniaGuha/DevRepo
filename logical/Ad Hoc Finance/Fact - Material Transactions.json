@@ -1,0 +1,178 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Material Transactions",
+    "tags" : [ "Project:Ad Hoc Finance" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Date as of",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.DATE_AS_OF" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "GL Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.GL_ACCOUNT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Is UR",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.IS_UR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Desctiption",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.ITEM_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.ITEM_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Org Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.ORG_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Qty Open Balance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.QTY_OPEN_BALANCE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Transaction Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.TRANSACTION_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.ORGANIZATION_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Amount",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_FACT_MATERIAL_TRX",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.AMOUNT" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "X_FIN_FACT_MATERIAL_TRX",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Ad Hoc Finance.Dim - GL Accounts",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Ad Hoc Finance.Dim - Material TRX From",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Ad Hoc Finance.Dim - Material TRX To",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Ad Hoc Finance.Dim - Organization",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

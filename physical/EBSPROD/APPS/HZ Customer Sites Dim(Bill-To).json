@@ -1,0 +1,28 @@
+{
+  "physicalTable": {
+    "name": "HZ Customer Sites Dim(Bill-To)",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXHZ_CUSTOMER_SITES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GEO Region Hierarchy (Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).COUNTRY",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GEO Region Hierarchy (Bill-To).COUNTRY_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Profile Amounts (Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).CUST_ACCOUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Profile Amounts (Bill-To).cust_account_id"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "SITE_USE_ID"
+      ]
+    ]
+  }
+}

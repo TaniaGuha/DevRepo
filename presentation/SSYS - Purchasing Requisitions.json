@@ -1,0 +1,62 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Requisitions",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release2", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Purchasing Requisition.# of Requisitions",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Requisitions.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Requisitions.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Item (Destination Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Requisitions.Buyer"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Requisitions.Supplier Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Supplier Site"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Supplier Contact"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Requisitions.Requisition",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Requisition Header"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Requisition Line"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Requisitions.Requisition Distribution"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Requisitions.Requisition Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Requisitions_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Requisitions",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions)"
+    }
+  }
+}

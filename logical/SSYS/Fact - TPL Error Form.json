@@ -1,0 +1,39 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - TPL Error Form",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Quantity",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_ERROR_FORM_DWH_Fact_Error_Form",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_TPL_ERROR_FORM_DWH_Fact_Error_Form.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_TPL_ERROR_FORM_DWH_Fact_Error_Form",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_TPL_ERROR_FORM_DWH_Fact_Error_Form" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - TPL Errors",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

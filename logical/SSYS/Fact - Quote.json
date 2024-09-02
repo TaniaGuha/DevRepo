@@ -1,0 +1,251 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Quote",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# Of Quotes",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# Of Quote Lines",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Additional Discount Amount (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.ADDITIONAL_DISCOUNT_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Count Discount Program",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.COUNT_DISCOUNT_PROGRAM" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Lease Term",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.LEASE_TERM" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "List Total (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.LIST_TOTAL" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Net Total (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.NET_TOTAL" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "List Total ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  LOOKUP( SPARSE %2, 1,  CURRENT_DATE , %3, 'USD')",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.LIST_TOTAL", "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Net Total ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  LOOKUP( SPARSE %2, 1,  CURRENT_DATE , %3, 'USD')",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.NET_TOTAL", "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Quote Line Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_LINE_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Target Customer Amount (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.TARGET_CUSTOMER_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Tax (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote.TAX" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_CPQ_QUOTE_DWH_Fact_Quote" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Quote.Dim - Quote Detail", "logicalLevel:SSYS.Dim - Customer Account (End Customer).Dim - Customer Account (End Customer) Detail", "logicalLevel:SSYS.Dim - Quote Line.Dim - Quote Line Detail", "logicalLevel:SSYS.Dim - Quote (Charges).Dim - Quote(Charges) Detail", "logicalLevel:SSYS.Dim - Opportunity.Dim - Opportunity Detail", "logicalLevel:SSYS.Dim - Quote Line (Charges).Dim - Quote Line (Charges) Detail", "logicalLevel:SSYS.Dim - Customer Account (Channel).Dim - Customer Account (Channel) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Channel)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Opportunity",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Quote (Charges)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Quote Line (Charges)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Quote Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Quote",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

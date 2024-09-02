@@ -1,0 +1,31 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Rule_Update",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PRICELIST_RULE_UPDATE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_PriceList_Rule_Update.LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Master",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_PriceList_Rule_Update.MASTER_LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Master.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Rule_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_PriceList_Rule_Update.RULE_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Rule_Header.RULE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

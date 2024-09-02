@@ -1,0 +1,68 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - AP Invoice Hold",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Hold Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Fact_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_INVOICE_HOLDS_DWH_Fact_Ap_Invoice_Hold.HOLD_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_AP_INVOICE_HOLDS_DWH_Fact_Ap_Invoice_Hold",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_INVOICE_HOLDS_DWH_Fact_Ap_Invoice_Hold" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Detail", "logicalLevel:SSYS_SF.Dim - AP Invoice Hold.Dim - AP Invoice Hold Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - AP Invoice Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - AP Invoice Hold",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Shipment",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

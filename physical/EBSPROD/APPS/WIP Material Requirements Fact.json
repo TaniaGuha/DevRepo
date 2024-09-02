@@ -1,0 +1,138 @@
+{
+  "physicalTable": {
+    "name": "WIP Material Requirements Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMFG_OPERATION_REQUIREMENTS_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.BOM Departments Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.DEPARTMENT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.BOM Departments Dim.DEPARTMENT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.BOM Resources Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.COMPONENT_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.BOM Resources Dim.PURCHASE_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Inv Orgs Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Frozen Cost Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.COMPONENT_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Locators Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Locators Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.SUPPLY_LOCATOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Locators Dim.INVENTORY_LOCATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Subinventory Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Subinventory Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.SUPPLY_SUBINVENTORY",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Subinventory Dim.SUBINVENTORY_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Component Item Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.COMPONENT_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Item Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Item Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Component Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.COMPONENT_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Job Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.WIP_ENTITY_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Job Dim.WIP_ENTITY_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Operations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.OPERATION_SEQ_NUM",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Dim.OPERATION_SEQ_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Material Requirements Fact.WIP_ENTITY_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Dim.WIP_ENTITY_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

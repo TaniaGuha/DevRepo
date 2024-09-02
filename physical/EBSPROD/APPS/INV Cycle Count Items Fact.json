@@ -1,0 +1,115 @@
+{
+  "physicalTable": {
+    "name": "INV Cycle Count Items Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXINV_CYCLE_COUNT_ITEMS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Inv Orgs Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Item Category Sets",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Item Category Sets.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Cycle Count Classes Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.ABC_CLASS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Classes Dim.ABC_CLASS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.CYCLE_COUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Classes Dim.CYCLE_COUNT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Cycle Count Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.CYCLE_COUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Headers Dim.CYCLE_COUNT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Activity Analysis Hier Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Activity Analysis Hier Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Category Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Class Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Class Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Frozen Cost Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Frozen Cost Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Main Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Main Category Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Cycle Count Items Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

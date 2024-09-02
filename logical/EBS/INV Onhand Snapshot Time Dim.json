@@ -1,0 +1,251 @@
+{
+  "logicalTable" : {
+    "name" : "INV Onhand Snapshot Time Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Date" ],
+    "logicalColumns" : [ {
+      "name" : "Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Year"
+    }, {
+      "name" : "Quarter",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.QUARTER_YEAR_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Quarter"
+    }, {
+      "name" : "Month",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Period Year Name",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Month"
+    }, {
+      "name" : "Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_DAY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Date"
+    }, {
+      "name" : "Quarter Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.QUARTER_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.QUARTER_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter Rank",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.QUARTER_RANK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Year Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_YEAR_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Month"
+    }, {
+      "name" : "Period Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Month Name",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Period Number",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.MONTH_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_START_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period End Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_END_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Set Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Snapshot Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Snapshot Time Dim.PERIOD_SET_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV Onhand Snapshot Time Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.INV Onhand Snapshot Time Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.INV Onhand Snapshot Time Dim.Date" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "INV Onhand Snapshot Time Dim Total",
+      "logicalLevels" : [ {
+        "name" : "INV Onhand Snapshot Time Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Year" ],
+        "displayKey" : "Year"
+      }, {
+        "name" : "Quarter",
+        "numberOfElements" : 40,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Quarter" ],
+        "displayKey" : "Quarter"
+      }, {
+        "name" : "Month",
+        "numberOfElements" : 120,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Month" ],
+        "displayKey" : "Month"
+      }, {
+        "name" : "Date",
+        "numberOfElements" : 3600,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Date" ],
+        "displayKey" : "Date",
+        "chronologicalKey" : [ "Date" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "INV Onhand Snapshot Time Dim",
+        "levels" : [ "INV Onhand Snapshot Time Dim Total", "Year", "Quarter", "Month", "Date" ]
+      } ]
+    }
+  }
+}

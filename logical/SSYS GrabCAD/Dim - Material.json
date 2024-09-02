@@ -1,0 +1,168 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Material",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "GC Material GK" ],
+    "logicalColumns" : [ {
+      "name" : "GC Material GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.GC_MATERIAL_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "GC Material Src ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.GC_MATERIAL_SRC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "Is Support",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.IS_SUPPORT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "Material Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.MATERIAL_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "Material Name (src)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.MATERIAL_SRC_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Unit Of Measure (org)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.UNIT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "Unit Of Measure (std)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN  UPPER(%1) = 'G' THEN 'kg' WHEN  UPPER(%1) = 'CM³' THEN 'in³' ELSE '' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS GrabCAD.Dim - Material.Unit Of Measure (org)" ]
+        }
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "Vendor Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material.VENDOR_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Material Detail"
+    }, {
+      "name" : "Converting Factor",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN  UPPER(%1) = 'G' THEN 0.001 WHEN  UPPER(%1) = 'CM³' THEN 0.0610237441 ELSE 1 END ",
+          "expressionObjects" : [ "logicalColumn:SSYS GrabCAD.Dim - Material.Unit Of Measure (org)" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GC_MATERIAL_DWH_Dim_Material",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_GC_MATERIAL_DWH_Dim_Material" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Material Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Material Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Material Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "GC Material GK" ],
+        "displayKey" : "GC Material GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Material",
+        "levels" : [ "Dim - Material Total", "Dim - Material Detail" ]
+      } ]
+    }
+  }
+}

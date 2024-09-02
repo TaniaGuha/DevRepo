@@ -1,0 +1,65 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Quotations",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release2", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Purchasing Quotation.# of Quotations",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Quotations.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Quotations.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Item (Ship To Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Quotations.Supplier Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Supplier Site"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Supplier Contact"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Quotations.Buyer"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Quotations.Quotation Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Header"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Line",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Quotations.Line IDs"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Quotations.Price Break"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Quotations.Quotation Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Quotations_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Quotations",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Quotations)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Quotations)"
+    }
+  }
+}

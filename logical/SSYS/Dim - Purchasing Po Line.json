@@ -1,0 +1,1654 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Po Line",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Po Line Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Po Line Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LINE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LINE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Type Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LINE_TYPE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Category",
+      "description" : "Line Category Concat Segment",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LINE_CATEGORY_CONCAT_SEGMENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Item Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ITEM_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Uom",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LINE_UOM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Original Unit Price",
+      "description" : "PO Line Price (Original Currency, before Linkage)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Uom Po To Primary Convert Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UOM_PO_TO_PRIMARY_CONVERT_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Supplier Item",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SUPPLIER_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Min Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MIN_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Max Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MAX_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Note From Supplier",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.NOTE_TO_SUPPLIER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Allow Price Override Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ALLOW_PRICE_OVERRIDE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Amount Agreed",
+      "description" : "Blankets only: Amount agreed for an agreement line (PO Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.AMOUNT_AGREED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Base Unit Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.BASE_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Cancel Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CANCEL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Cancel Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CANCEL_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Cancel Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CANCEL_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Cancelled By Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CANCELLED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Cancelled By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CANCELLED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Category Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CATEGORY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Closed By Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CLOSED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Closed By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CLOSED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Closed Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CLOSED_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Closed Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Closed Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CLOSED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Closed Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CLOSED_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Collected At",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.COLLECTED_AT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Cumulative Pricing",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CUMULATIVE_PRICING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Driver Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.DRIVER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Exp Original Price (PO Currency)",
+      "description" : "Entered Manually by users (if linkage exist, price will be with the liinkage currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.EXP_ORIGINAL_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Exp Saving Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.EXP_SAVING_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Expiration Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.EXPIRATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Fai Fsi",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.FAI_FSI" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "From Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.FROM_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Hazard Class Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.HAZARD_CLASS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Item Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ITEM_REVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Linked Amount",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.LINKED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Manual Price Change Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MANUAL_PRICE_CHANGE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Master Org Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Matching Basis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MATCHING_BASIS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Mfg Part Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MFG_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Min Release Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.MIN_RELEASE_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Negotiated By Preparer Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.NEGOTIATED_BY_PREPARER_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Oke Contract Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.OKE_CONTRACT_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Oke Contract Version Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.OKE_CONTRACT_VERSION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Order Type Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ORDER_TYPE_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Over Tolerance Error Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.OVER_TOLERANCE_ERROR_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Price Limit",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PRICE_LIMIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Price Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PRICE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Project Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PROJECT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Purchase Basis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PURCHASE_BASIS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Qty Rcv Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.QTY_RCV_TOLERANCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Quantity",
+      "description" : "PO Line Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Line Quantity Agreed",
+      "description" : "Blankets only: Quantity agreed for an agreement line",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.QUANTITY_AGREED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Retroactive Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.RETROACTIVE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Source Doc Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SOURCE_DOC_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Source Doc Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SOURCE_DOC_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Source Doc Line Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SOURCE_DOC_LINE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Source Doc Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SOURCE_DOC_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Source Doc Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SOURCE_DOC_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Task Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.TASK_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Tax Code Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.TAX_CODE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Tax Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.TAX_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Taxable Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.TAXABLE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Un Number Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UN_NUMBER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Unit List Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UNIT_LIST_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Unit Market Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UNIT_MARKET_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Unordered Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UNORDERED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Line Price",
+      "description" : "PO Line Price ( In Linakge Currency or in Original Po Currency, if no linkage)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 /  IFNULL(%2, 1)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UNIT_PRICE", "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINKAGE_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Line Price ($)",
+      "description" : "PO Line Price in USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * %2",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_RATE_TO_USD", "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Exp Original Price ($)",
+      "description" : "\"Exp Original Price\" converted to USD using PO Creation date.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  IFNULL(%2, 1) * %3",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.EXP_ORIGINAL_PRICE", "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINKAGE_RATE", "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_RATE_TO_USD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Line Price ($) BOY Rate",
+      "description" : "Po Line Price converted to USD.\r\nBOY = Beginning Of Year.\r\nUsing exchange rate from the po_currency to USD at January 1st the year of \"first approved date\".\r\nThis column can be used to compare the po unit price to the item's material cost.\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Line.Po Line Price", "logicalColumn:SSYS.Dim - Purchasing Po Line.Rate to USD (BOY)" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Po Line Quantity By Primary UOM",
+      "description" : "PO Line Quantity converted to the item's primary unit of measure",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * %2",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.QUANTITY", "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.UOM_PO_TO_PRIMARY_CONVERT_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Rate to USD (BOY)",
+      "description" : "Exchange rate from the po_currency to USD at January 1st the year of \"first approved date\".\r\nBOY = Beginning Of Year\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.RATE_TO_USD_BEGINING_OF_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "CR Exception Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.CR_EXCEPTION_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Prefix",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ITEM_PREFIX" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Item Subclass",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ITEM_SUBCLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Suggested Buyer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.SUGGESTED_BUYER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    }, {
+      "name" : "Item Class",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.ITEM_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Line Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_PO_LINE_DWH_Dim_Po_Line",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Po Line Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Po Line Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Po Line Detail",
+        "numberOfElements" : 325129,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Po Line Gk" ],
+        "displayKey" : "Po Line Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Po Line",
+        "levels" : [ "Dim - Purchasing Po Line Total", "Dim - Purchasing Po Line Detail" ]
+      } ]
+    }
+  }
+}

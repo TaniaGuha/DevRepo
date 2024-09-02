@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Comparison",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PRICELIST_COMPARISON_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Comparison.LIST_HEADER_NAME",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList.NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Master",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Comparison.MASTER_LIST_HEADER_NAME1",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Master.NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Request 1",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Comparison.REQUEST_ID1",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Request 1.REQUEST_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Request 2",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Comparison.REQUEST_ID2",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Request 2.REQUEST_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

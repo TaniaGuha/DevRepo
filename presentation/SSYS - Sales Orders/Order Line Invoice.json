@@ -1,0 +1,45 @@
+{
+  "presentationTable" : {
+    "name" : "Order Line Invoice",
+    "presentationColumns" : [ {
+      "name" : "Invoice Number",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Invoice Header.Invoice Number",
+      "localization" : {
+        "localizationKey" : "Invoice Number",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Sales_Orders_Order_Line_Invoice_Invoice_Number)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Sales_Orders_Order_Line_Invoice_Invoice_Number)"
+      }
+    }, {
+      "name" : "Invoice Trx Date",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Invoice Header.Invoice Trx Date",
+      "localization" : {
+        "localizationKey" : "Invoice Trx Date",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Sales_Orders_Order_Line_Invoice_Invoice_Trx_Date)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Sales_Orders_Order_Line_Invoice_Invoice_Trx_Date)"
+      }
+    }, {
+      "name" : "Trx Source",
+      "description" : "The Name from ra_batch_sources_all table \r\nthat match the invoice header batch_source_id value",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Invoice Header.Trx Source",
+      "localization" : {
+        "localizationKey" : "Trx Source",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Sales_Orders_Order_Line_Invoice_Trx_Source)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Sales_Orders_Order_Line_Invoice_Trx_Source)"
+      }
+    }, {
+      "name" : "Invoice Amount",
+      "description" : "Sum of the extended_amount from all invoice's lines\r\nInterfaced from the Sales Order Line",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Sale Order line.Invoice Amount",
+      "localization" : {
+        "localizationKey" : "Invoice Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Sales_Orders_Order_Line_Invoice_Invoice_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Sales_Orders_Order_Line_Invoice_Invoice_Amount)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Order Line Invoice",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Sales_Orders_Order_Line_Invoice)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Sales_Orders_Order_Line_Invoice)"
+    }
+  }
+}

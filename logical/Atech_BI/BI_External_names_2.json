@@ -1,0 +1,79 @@
+{
+  "logicalTable" : {
+    "name" : "BI_External_names_2",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "ACTUAL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_2",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_2.ACTUAL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LANG",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_2",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_2.LANG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SESSION_VARIABLE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_2",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_2.SESSION_VARIABLE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TRANSLATION",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BI_External_names_2",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BI_External_names_2.TRANSLATION" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "BI_External_names_2",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.BI_External_names_2" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_BI.BI_External_names",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

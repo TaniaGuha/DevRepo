@@ -1,0 +1,986 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Quote Line (Charges)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Quote Line Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Additional Discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.ADDITIONAL_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Additional Discount Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.ADDITIONAL_DISCOUNT_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Additional Discount Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.ADDITIONAL_DISCOUNT_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Bundled",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.BUNDLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Channel Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.CHANNEL_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Created By User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.CREATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Created By User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.CREATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Created Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.CREATED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Direct Discount Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DIRECT_DISCOUNT_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Direct Product Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DIRECT_PRODUCT_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Direct Total Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DIRECT_TOTAL_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Direct Unit Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DIRECT_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Discount Program Details",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DISCOUNT_PROGRAM_DETAILS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Discount Schedule Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.DISCOUNT_SCHEDULE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "End Customer Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.END_CUSTOMER_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "External Serial Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.EXTERNAL_SERIAL_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Get Line From Modifier",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.GET_LINE_FROM_MODIFIER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Last Modified By User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.LAST_MODIFIED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Last Modified By User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.LAST_MODIFIED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Last Modified Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.LAST_MODIFIED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "List Total (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.LIST_TOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "List Unit Price(Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.LIST_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Net Total (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.NET_TOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Net Unit Price (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.NET_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "OA External Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.OA_EXTERNAL_KEY__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Operating Unit Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.OPERATING_UNIT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Opportunity Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.OPPORTUNITY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Oracle Order Line Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.ORACLE_ORDER_LINE_NUMER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Oracle Sale Order Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.ORACLE_SALE_ORDER_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Primary Application",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRIMARY_APPLICATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Primary Contact Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRIMARY_CONTACT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Product Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRODUCT_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Product Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRODUCT_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Product Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRODUCT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Product Option Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRODUCT_OPTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Product SFDC Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.PRODUCT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Quote Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Quote Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Quote Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Quote Line Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Quote Line Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_LINE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Quote Line Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_LINE_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Related IB Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.RELATED_IB_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Related IN Serial Number Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.RELATED_IB_SERIAL_NUMBER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Required By Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.REQUIRED_BY_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Required By Line ID",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.REQUIRED_BY_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Required By Line Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.REQUIRED_BY_LINE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Service Provider",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SERVICE_PROVIDER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Source Quote Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SOURCE_QUOTE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Source Quote Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SOURCE_QUOTE_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Source Quote Line Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SOURCE_QUOTE_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Source Quote Line Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SOURCE_QUOTE_LINE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Special Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SPECIAL_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "SSYS Direct Unit Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SSYS_DIRECT_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "SSYS Discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SSYS_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Sub Application",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SUB_APPLICATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "System Mod Code",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SYSTEM_MOD_STAMP" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "System Product Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SYSTEM_PRODUCT_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "System Serial Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.SYSTEM_SERIAL_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    }, {
+      "name" : "Unit List Price ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  LOOKUP( SPARSE %2, 1,  CURRENT_DATE , %3, 'USD')",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.LIST_UNIT_PRICE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Is Chargeable Flag",
+      "description" : "Case when Net Total = 0 and Additional Discount Amt = 0 then 'N' else 'Y'",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN  IFNULL(%1, 0) = 0 AND  IFNULL(%2, 0) = 0 THEN 'N' ELSE 'Y' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Quote Line (Charges).Additional Discount Amount", "logicalColumn:SSYS_SF.Dim - Quote Line (Charges).Net Total (Original Currency)" ]
+        }
+      },
+      "logicalLevel" : "Dim - Quote Line (Charges) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Quote Line (Charges) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Quote Line (Charges) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Quote Line (Charges) Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Quote Line Gk" ],
+        "displayKey" : "Quote Line Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Quote Line (Charges)",
+        "levels" : [ "Dim - Quote Line (Charges) Total", "Dim - Quote Line (Charges) Detail" ]
+      } ]
+    }
+  }
+}

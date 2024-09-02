@@ -1,0 +1,22 @@
+{
+  "physicalTable": {
+    "name": "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "additionalKeys": [
+      [
+        "SUPPLY_TRANSACTION_SNAPSHOT_GK"
+      ],
+      [
+        "PLAN_GK",
+        "SNAPSHOT_DATE",
+        "SUPPLY_TRANSACTION_GK"
+      ]
+    ]
+  }
+}

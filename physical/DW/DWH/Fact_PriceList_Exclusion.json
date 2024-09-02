@@ -1,0 +1,45 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Exclusion",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PLUPDT_RULE_EXCLUSION_DWH",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 AND %3 = 91",
+          "expressionObjects": [
+            "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_CODE_SEGMENT1",
+            "physicalColumn:DW.DWH.Fact_PriceList_Exclusion.CONDITION_VALUE",
+            "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ORGANIZATION_ID"
+          ]
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Exclusion.LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Master",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Exclusion.MASTER_LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Master.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_Rule_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Exclusion.RULE_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_Rule_Header.RULE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

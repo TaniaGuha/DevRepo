@@ -1,0 +1,46 @@
+{
+  "logicalTable" : {
+    "name" : "ETL Package Name",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "ETL Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Package Name",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Package Name.ETL_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Package Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Package Name",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Package Name.PACKAGE_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "ETL Package Name",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXControl.XXCTRL.ETL Package Name" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Package Name" ]
+  }
+}

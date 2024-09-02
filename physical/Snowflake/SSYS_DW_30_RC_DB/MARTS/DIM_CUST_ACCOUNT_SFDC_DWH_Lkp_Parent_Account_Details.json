@@ -1,0 +1,37 @@
+{
+  "physicalTable" : {
+    "name" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select c.oracle_account_gk,c.sfdc_parent_account_id,c.sfdc_parent_account_gk,p.sfdc_account_name as sfdc_parent_account_name ,p.oracle_account_number as sfdc_parent_account_number\r\nfrom dim_cust_account_sfdc_dwh c,\r\ndim_cust_account_sfdc_dwh p\r\nwhere c.sfdc_parent_account_gk = p.sfdc_customer_account_gk\r\nand c.sfdc_parent_account_gk <> -1"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "ORACLE_ACCOUNT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SFDC_PARENT_ACCOUNT_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 360,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_PARENT_ACCOUNT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_PARENT_ACCOUNT_NUMBER",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_PARENT_ACCOUNT_ID",
+      "dataType" : "VARCHAR",
+      "length" : 18,
+      "nullable" : true
+    } ],
+    "additionalKeys" : [ [ "ORACLE_ACCOUNT_GK" ] ]
+  }
+}

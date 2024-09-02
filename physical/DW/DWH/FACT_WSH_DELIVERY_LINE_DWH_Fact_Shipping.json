@@ -1,0 +1,183 @@
+{
+  "physicalTable": {
+    "name": "FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping",
+    "sourceTable": "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_BILL_TO_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Ship_To_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_SHIP_TO_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Ship_To_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Bill_To_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_BILL_TO_CUST_ACOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Bill_To_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Ship_To_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_SHIP_TO_CUST_ACOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Ship_To_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Sold_To_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_SOLD_TO_CUST_ACOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Sold_To_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_SHIP_TO_CONTACT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.ORACLE_CUSTOMER_CONTACT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.OE_SHIP_TO_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Ship_From_Org_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.SHIP_FROM_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Ship_From_Org_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.SHIP_FROM_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.LOCATOR_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ITEM_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.OPPORTUNITY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.OE_SHIP_TO_INV_ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.OE_REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_WSH_DELIVERY_DWH_Dim_Delivery",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.DELIVERY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_WSH_DELIVERY_DWH_Dim_Delivery.DELIVERY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.ORDER_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_OPPORTUNITY_PRODUCT_DWH_Dim_Opportunity_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.OPPORTUNITY_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_OPPORTUNITY_PRODUCT_DWH_Dim_Opportunity_Product.OPPORTUNITY_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.DELIVERY_DETAIL_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line.DELIVERY_DETAIL_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_LPN_Delivery_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.PARENT_DELIVERY_DETAIL_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_LPN_Delivery_Line.DELIVERY_DETAIL_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

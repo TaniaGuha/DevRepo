@@ -1,0 +1,581 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - PPU Material Line",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Ppu Line Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Asset Account Sfdc Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.ASSET_ACCOUNT_SFDC_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Asset End Customer Sfdc Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.ASSET_END_CUSTOMER_SFDC_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Asset Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.ASSET_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Asset Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.ASSET_OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Asset Service Contract Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.ASSET_SERVICE_CONTRACT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Created By User",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.CREATED_BY_USER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Created By User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.CREATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Customer Minimum Stock Ci",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.CUSTOMER_MINIMUM_STOCK_CI" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Customer Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.CUSTOMER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Last Updated By User",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.LAST_UPDATED_BY_USER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Last Updated By User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.LAST_UPDATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Master Org Material Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MASTER_ORG_MATERIAL_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Master Org Printer Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MASTER_ORG_PRINTER_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Material Enable Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MATERIAL_ENABLE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Material Part Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MATERIAL_PART_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Material Part Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MATERIAL_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Material Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MATERIAL_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Material Units To Replen",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.MATERIAL_UNITS_TO_REPLEN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Contract Enable Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_CONTRACT_ENABLE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Delivery Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_DELIVERY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Delivery Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_DELIVERY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Delivery Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_DELIVERY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Header Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_HEADER_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Header Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_HEADER_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Order Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_ORDER_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Order Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_ORDER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Ppu Order Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PPU_ORDER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Printer Part Number Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PRINTER_PART_NUMBER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    }, {
+      "name" : "Printer Serial Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line.PRINTER_SERIAL_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - PPU Material Line Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Dim_PPU_Material_Line" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - PPU Material Line Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - PPU Material Line Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - PPU Material Line Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Ppu Line Gk" ],
+        "displayKey" : "Ppu Line Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "PPU Material Line",
+        "levels" : [ "Dim - PPU Material Line Total", "Dim - PPU Material Line Detail" ]
+      } ]
+    }
+  }
+}

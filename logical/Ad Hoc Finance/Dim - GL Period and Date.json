@@ -1,0 +1,47 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - GL Period and Date",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Period Name",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Start Date",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_DIM_PERIODS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods.PERIOD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "X_FIN_DIM_PERIODS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods.START_DATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "X_FIN_DIM_PERIODS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Start Date" ]
+  }
+}

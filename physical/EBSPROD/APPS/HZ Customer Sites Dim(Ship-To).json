@@ -1,0 +1,28 @@
+{
+  "physicalTable": {
+    "name": "HZ Customer Sites Dim(Ship-To)",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXHZ_CUSTOMER_SITES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GEO Region Hierarchy (Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To).COUNTRY",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GEO Region Hierarchy (Ship-To).COUNTRY_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Profile Amounts (Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To).CUST_ACCOUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Profile Amounts (Ship-To).cust_account_id"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "SITE_USE_ID"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "xxctrl_no_of_users",
+    "description" : "Counts Users log-ins (temporary solution until usage tracking fix)",
+    "tags" : [ "Project:ADMIN" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:DW.DW_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "insert into xxctrl_logged_users(username,cdate)\r\nvalues\r\n(\r\n'valueof(NQ_SESSION.USER)',\r\nsysdate\r\n);"
+    } ],
+    "variables" : [ {
+      "name" : "User_logged_In",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

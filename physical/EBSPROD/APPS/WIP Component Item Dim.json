@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "WIP Component Item Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXINV_ALL_ORG_ITEMS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Component Item Buyer Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Component Item Dim.BUYER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Item Buyer Dim.PERSON_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID"
+      ],
+      [
+        "INVENTORY_ITEM_ID"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "physicalTable": {
+    "name": "FACT_MTL_SAFETY_STOCK_DWH_Fact_MTL_Safety_Stock",
+    "sourceTable": "physicalTable:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Fact_MTL_Safety_Stock.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Fact_MTL_Safety_Stock.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Fact_MTL_Safety_Stock.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Fact_MTL_Safety_Stock.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Fact_MTL_Safety_Stock.MTL_SAFETY_STOCK_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.MTL_SAFETY_STOCK_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "DIM_CUST_CONTACT_ORACLE_DWH_Sold_To_Contact",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Sold_To_Contact_Location",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Sold_To_Contact.LOCATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Sold_To_Contact_Location.LOCATION_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ORACLE_CUSTOMER_CONTACT_GK"
+      ]
+    ]
+  }
+}

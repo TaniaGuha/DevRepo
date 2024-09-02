@@ -1,0 +1,79 @@
+{
+  "physicalTable": {
+    "name": "FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute",
+    "sourceTable": "physicalTable:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ASSET_ATTRIBUTE_DWH_Dim_Asset_Attribute_Criteria",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ATTRIBUTE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ASSET_ATTRIBUTE_DWH_Dim_Asset_Attribute_Criteria.ATTRIBUTE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_ACCOUNT_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_END_CUSTOMER_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Asset_Attribute_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_ATT_PRODUCT_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Asset_Attribute_Product.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Asset_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_PRODUCT_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Asset_Product.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Dim_Asset_Attribute",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_ATTRIBUTE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Dim_Asset_Attribute.ASSET_ATTRIBUTE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_ASSET_DWH_Dim_Asset",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_ASSET_DWH_Dim_Asset.ASSET_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_CS_CASE_DWH_Dim_Case",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.CASE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Dim_Case.CASE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

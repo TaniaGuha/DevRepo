@@ -1,0 +1,191 @@
+{
+  "physicalTable": {
+    "name": "AR Invoice Distributions Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAR_AR_INVOICE_DIST_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Dist Code Combinations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Dist Code Combinations Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Dist Code Combinations Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.TRANSACTION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice GL Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.GL_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice GL Date.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CUSTOMER_TRX_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Headers Dim.TRANSACTION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Lines Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CUSTOMER_TRX_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Lines Dim.TRANSACTION_LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Revenue Adjustments Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.REVENUE_ADJUSTMENT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Revenue Adjustments Dim.REVENUE_ADJUSTMENT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Transaction Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CUSTOMER_TRX_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Transaction Dim.CUSTOMER_TRX_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.GL_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.BILL_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.SHIP_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Item Category Sets",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Item Category Sets.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Activity Analysis Hier Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Activity Analysis Hier Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Category Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Class Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Class Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Main Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Main Category Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.SALES_ORDER_HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Dim.HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Lines Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.SALES_ORDER_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Lines Dim.LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

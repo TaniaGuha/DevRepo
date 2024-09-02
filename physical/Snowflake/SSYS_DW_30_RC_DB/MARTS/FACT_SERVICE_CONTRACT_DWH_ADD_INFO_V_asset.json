@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "FACT_SERVICE_CONTRACT_DWH_ADD_INFO_V_asset",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_ADD_INFO_V",
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Next_Signed_Contract",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_ADD_INFO_V_asset.NEXT_SIGNED_CONTRACT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Next_Signed_Contract.CONTRACT_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ASSET_ID",
+        "CONTRACT_ID"
+      ]
+    ]
+  }
+}

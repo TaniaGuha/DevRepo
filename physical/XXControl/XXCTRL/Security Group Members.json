@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "Security Group Members",
+    "sourceTable": "physicalTable:XXControl.XXCTRL.XXCTRL_SECURITY_GROUPMEMBERS",
+    "joins": [      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.BI Users",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXControl.XXCTRL.Security Group Members.G_MEMBER",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.BI Users.USER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.Security Groups",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXControl.XXCTRL.Security Group Members.G_NAME",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.Security Groups.G_NAME"
+          }
+        ]
+      }
+    ]
+  }
+}

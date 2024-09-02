@@ -1,0 +1,779 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - OE Price Adjustments",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Price Adj Accrual Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ACCRUAL_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Adjusted Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ADJUSTED_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Price Adj Applied Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_APPLIED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Arithmetic Operator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ARITHMETIC_OPERATOR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Automatic Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_AUTOMATIC_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Benefit Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_BENEFIT_QTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Price Adj Benefit Uom Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_BENEFIT_UOM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Charge Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_CHARGE_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Credit Or Charge F",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_CREDIT_OR_CHARGE_F" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Include On Returns F",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_INCLUDE_ON_RETURNS_F" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Interco Invoiced F",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_INTERCO_INVOICED_F" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Invoiced Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_INVOICED_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "# of Modifiers Lines",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_LIST_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Price Adj List Line Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_LIST_LINE_TYPE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Modifiers Headers",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_MODIFIER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Price Adj Modifier Level Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_MODIFIER_LEVEL_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Operand",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_OPERAND" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Operand Per Pqty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_OPERAND_PER_PQTY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Sales Orders",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ORDER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "# of Sales Orders Lines",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ORDER_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Price Adj Overide Allowed",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_OVERIDE_ALLOWED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Price Break Type Cd",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_PRICE_BREAK_TYPE_CD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Pricing Phase Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_PRICING_PHASE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Print On Invoice F",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_PRINT_ON_INVOICE_F" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Range Break Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_RANGE_BREAK_QTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Price Adj User Modify Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_USER_MODIFY_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adjusted Amount Per Pqty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJUSTED_AMOUNT_PER_PQTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Pricing Group Sequence",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICING_GROUP_SEQUENCE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Product Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRODUCT_ITEM_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quote Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.QUOTE_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Change Reason Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.CHANGE_REASON_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Created By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Created By Code",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_CREATED_BY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Last Updated By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Last Updated By Code",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_LAST_UPDATED_BY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adjustment Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJUSTMENT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Order Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ORDER_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Order Line Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_ORDER_LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Modifier Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_MODIFIER_HEADER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Price Adj Modifier Line Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.PRICE_ADJ_LIST_LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Modifier Header Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.MODIFIER_HEADER_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Modifier Header Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust.MODIFIER_HEADER_NUMBER" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_PRICE_ADJUSTMENTS_DWH_Fact_OE_Price_Adjust" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Detail", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Detail", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Detail", "logicalLevel:SSYS_SF.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Detail", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Detail", "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Detail", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Sold To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Contacts (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Contacts (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Contacts (Sold To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Service Case",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Site (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Site (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Asset Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Ship From Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Modifier Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Modifier Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Opportunity Product Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Opportunity",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (From Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Subinventory",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

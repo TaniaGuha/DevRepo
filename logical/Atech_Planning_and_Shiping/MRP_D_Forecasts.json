@@ -1,0 +1,293 @@
+{
+  "logicalTable" : {
+    "name" : "MRP_D_Forecasts",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "BI_FORECAST_CODE" ],
+    "logicalColumns" : [ {
+      "name" : "Advanced Planning Collections",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .APS_COLLECTION_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Backward Consumption Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .BACKWARD_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "BI_FORECAST_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .BI_FORECAST_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Bucket Type Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .BUCKET_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Bucket Type",
+      "description" : "days, weeks or periods",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .BUCKET_TYPE_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Consume forecast flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .CONSUME_FORECAST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Demand Class",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .DEMAND_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Disable Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORECAST_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Level Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORECAST_LEVEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Level",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORECAST_LEVEL_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORECAST_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Set",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORECAST_SET" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forecast Set Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORECAST_SET_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Forward Consumption Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .FORWARD_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Organization id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Forecasts",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Forecasts Detail"
+    }, {
+      "name" : "Is Active Forecast",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 IS NULL  OR %1 >  CURRENT_DATE  THEN 'Yes' ELSE 'No' END ",
+          "expressionObjects" : [ "logicalColumn:Atech_Planning_and_Shiping.MRP_D_Forecasts.Disable Date" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MRP_D_Forecasts",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts " ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "MRP_D_Forecasts Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "MRP_D_Forecasts Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "MRP_D_Forecasts Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "BI_FORECAST_CODE" ],
+        "displayKey" : "BI_FORECAST_CODE"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MRP_D_ForecastsDim",
+        "levels" : [ "MRP_D_Forecasts Total", "MRP_D_Forecasts Detail" ]
+      } ]
+    }
+  }
+}

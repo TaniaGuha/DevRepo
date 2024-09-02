@@ -1,0 +1,445 @@
+{
+  "logicalTable" : {
+    "name" : "MTL Demand History Fact",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Period Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.PERIOD_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Closed Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.CLOSED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Start Date Join",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.PERIOD_START_DATE_JOIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.PERIOD_START_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Count",
+      "description" : "Distinct Item Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Sales Order Demand",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.SALES_ORDER_DEMAND" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Interorg Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.INTERORG_ISSUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Miscellaneous Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.MISCELLANEOUS_ISSUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Std Wip Usage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.STD_WIP_USAGE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Demand",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.TOTAL_DEMAND" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Consumption",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) +  IFNULL(%2, 0) +  IFNULL(%3, 0)",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.SALES_ORDER_DEMAND", "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.STD_WIP_USAGE", "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.MISCELLANEOUS_ISSUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Sales+Wip Issue",
+      "description" : "Sum of historic (Sales + Wip) Issue demands",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MTL Demand History Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) +  IFNULL(%2, 0)",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.SALES_ORDER_DEMAND", "physicalColumn:EBSPROD.APPS.MTL Demand History Fact.STD_WIP_USAGE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Demand (Past 3M)",
+      "description" : "Sum of 'Total Demand' for past 3 full month periods\r\nTotal Demand = (Sales + Wip + Misc) Issue + (Interorg) Transfer",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -(3), -(1))",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Demand" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Demand (Past 6M)",
+      "description" : "Sum of 'Total Demand' for past 6 full month periods\r\nTotal Demand = (Sales + Wip + Misc) Issue + (Interorg) Transfer",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -(6), -(1))",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Demand" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Consumption (Past 3M)",
+      "description" : "Sum of 'Total Consumption' for past 3 full month periods\r\nTotal Consumption = (Sales + Wip + Misc) Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -(3), -(1))",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Consumption" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Total Consumption (Past 6M)",
+      "description" : "Sum of 'Total Consumption' for past 6 full month periods\r\nTotal Consumption = (Sales + Wip + Misc) Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " PeriodRolling(%1, -(6), -(1))",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Consumption" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Avg Monthly Demand (Past 3M)",
+      "description" : "Averge 'Total Demand' for past 3 full month periods\r\nTotal Demand = (Sales + Wip + Misc) Issue + (Interorg) Transfer",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) / 3",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Demand (Past 3M)" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Avg Monthly Demand (Past 6M)",
+      "description" : "Averge 'Total Demand' for past 6 full month periods\r\nTotal Demand = (Sales + Wip + Misc) Issue + (Interorg) Transfer",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) / 6",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Demand (Past 6M)" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Avg Monthly Consumption (Past 3M)",
+      "description" : "Average 'Total Consumption' for past 3 full month periods\r\nTotal Consumption = (Sales + Wip + Misc) Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) / 3",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Consumption (Past 3M)" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Avg Monthly Consumption (Past 6M)",
+      "description" : "Average 'Total Consumption' for past 6 full month periods\r\nTotal Consumption = (Sales + Wip + Misc) Issue",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) / 6",
+          "expressionObjects" : [ "logicalColumn:EBS.MTL Demand History Fact.Total Consumption (Past 6M)" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MTL Demand History Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.MTL Demand History Fact" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.INV All Inv Orgs Items Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV All Item Category Sets Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Brand Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Activity Analysis Hier Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Class Hierarchy Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Master Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Main Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Organizations Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MTL Demand History Time Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

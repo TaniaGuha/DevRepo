@@ -1,0 +1,186 @@
+{
+  "physicalTable": {
+    "name": "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.SUPPLIER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.SUPPLIER_SITE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SUPPLIER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.LAST_RUN_IND",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind.LAST_RUN_IND"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.SUB_INVENTORY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_DWH_Dim_MSC_Plans",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PLAN_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_DWH_Dim_MSC_Plans.PLAN_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PLAN_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.PLAN_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_From_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_From_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.OU_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.BUYER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Po_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PO_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_LINE_DWH_Dim_Po_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PO_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_RELEASE_DWH_Dim_Po_Release",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PO_RELEASE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_RELEASE_DWH_Dim_Po_Release.PO_RELEASE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.REQUISITION_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line.REQUISITION_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.WIP_ENTITY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job.WIP_ENTITY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Dim_MSC_Supply",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.SUPPLY_TRANSACTION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Dim_MSC_Supply.SUPPLY_TRANSACTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PO_DISTRIBUTION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_DISTRIBUTION_DWH_Dim_Po_Distribution.PO_DISTRIBUTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.PO_LINE_LOCATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

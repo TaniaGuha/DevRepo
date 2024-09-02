@@ -1,0 +1,65 @@
+{
+  "logicalTable" : {
+    "name" : "INV Item Buyer (Master Org) Dim",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Buyer Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Item Buyer (Master Org) Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Buyer (Master Org) Dim.FULL_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Job Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Item Buyer (Master Org) Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Buyer (Master Org) Dim.JOB_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Person Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Item Buyer (Master Org) Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Buyer (Master Org) Dim.PERSON_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV Item Buyer (Master Org) Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.INV Item Buyer (Master Org) Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.INV Item Master Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "ZERO_OR_ONE_TO_MANY"
+    } ],
+    "primaryKey" : [ "Person Id" ]
+  }
+}

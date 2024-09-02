@@ -1,0 +1,68 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Supply Base",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release2", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Purchasing Supplier.# of Suppliers",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.Inventory Organization",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.Inventory Source Org"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.Item (Assigned Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.Supplier Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.Supplier Site"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.Supplier Contact"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.Supplier Measures"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.Sourcing Rule Assignment",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.Sourcing Rule IDs"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Supply Base.All Sourcing Rule Assignments",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.All Sourcing Rule Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Supply Base.All Sourcing Rule Measures"
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Supply_Base_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Supply Base",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Supply_Base)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Supply_Base)"
+    }
+  }
+}

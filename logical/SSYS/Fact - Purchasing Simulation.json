@@ -1,0 +1,93 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Simulation",
+    "tags" : [ "Project:SSYS_GSC_Project_Release1", "Project:SSYS_Procure2Pay_Release3" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Quantity",
+      "description" : "Quantity for PO Simulation",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Target Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.TARGET_DATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Detail", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Detail", "logicalLevel:SSYS.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Detail", "logicalLevel:SSYS.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Detail", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Detail", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Buyer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing MSC Plans",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Simulation Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Simulation Type",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Supply MRP",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

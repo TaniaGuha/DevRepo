@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "PA Budgets Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPA_BUDGETS_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Budgets Fact.org_id",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Projects Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PA Budgets Fact.PROJECT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Projects Dim.PROJECT_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

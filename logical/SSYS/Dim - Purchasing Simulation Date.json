@@ -1,0 +1,365 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Simulation Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Time Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Time Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Date",
+      "description" : "Simulation Target Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Half Year (HHYYYY)",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Half Year Yyyyhh N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_HALF_YEAR_HHYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Half Year (YYYYHH)",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Half Year Yyyyhh N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_HALF_YEAR_YYYYHH_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Half Year Yyyyhh N",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_HALF_YEAR_YYYYHH_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Month Number In Year",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Quarter",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_QUARTER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Week Ending Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_WEEK_ENDING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Week Ending Date Us",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_WEEK_ENDING_DATE_US" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Week Number In Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_WEEK_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Year N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year Month (MMYYYY)",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Year Month Yyyymm N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_MONTH_MMYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year Month (YYYYMM)",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Year Month Yyyymm N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_MONTH_YYYYMM_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year Month Yyyymm N",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_MONTH_YYYYMM_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year N",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year Quarter (QQYYYY)",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Year Quarter Yyyyqq N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_QUARTER_QQYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year Quarter (YYYYQQ)",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Year Quarter Yyyyqq N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Year Quarter Yyyyqq N",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Month Number In Epoch",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.MONTH_NUMBER_IN_EPOCH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    }, {
+      "name" : "Target Period Name",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Target Year Month Yyyymm N",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Simulation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Purchasing_Simulation_Date.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Date Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Purchasing_Simulation_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.TIME_DIM_Purchasing_Simulation_Date" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Simulation Date Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Simulation Date Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Simulation Date Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Time Gk" ],
+        "displayKey" : "Time Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Simulation Date",
+        "levels" : [ "Dim - Purchasing Simulation Date Total", "Dim - Purchasing Simulation Date Detail" ]
+      } ]
+    }
+  }
+}

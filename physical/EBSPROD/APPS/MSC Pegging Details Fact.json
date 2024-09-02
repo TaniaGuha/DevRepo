@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "MSC Pegging Details Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMSC_PEGGING_DETAILS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Organizations Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Plans Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.PLAN_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Plans Dim.PLAN_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

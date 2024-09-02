@@ -1,0 +1,79 @@
+{
+  "physicalTable": {
+    "name": "OE Order Line Holds Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXOE_ORDER_HOLDS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Creation Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.CREATION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Creation Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Contacts (Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.SHIP_TO_CONTACT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Contacts (Ship-To).CONTACT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.BILL_TO_CUST_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.SHIP_TO_CUST_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Hold Release Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.RELEASE_CREATION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Hold Release Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Dim.HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Lines Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Lines Dim.LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Holds Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "LINE_ID"
+      ],
+      [
+        "HEADER_ID"
+      ]
+    ]
+  }
+}

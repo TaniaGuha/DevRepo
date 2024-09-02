@@ -1,0 +1,349 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Receiving",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Deliver Transactions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "# of PO Headers",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "# of PO Lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "# of PO Shipments",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "# of PO Distributions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "# of Releases",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PO_RELEASE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "# of Requisitions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.REQ_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "Receiving Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "Receiving Qnt. By Primary UOM",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PRIMARY_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "Receiving Quantity By PO UOM",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.SOURCE_DOC_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "Material Cost ($) by MFG Org",
+      "description" : "Material Cost From the Manufacturing Organization.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = %3)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - Item Cost.Material Cost", "logicalColumn:SSYS_SF.Dim - Item (Master Org).Mfg Org", "logicalColumn:SSYS_SF.Dim - Item Cost.Inv Organization Id" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Supplier Contact.Dim - Supplier Contact Total", "logicalLevel:SSYS_SF.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total" ]
+      }
+    }, {
+      "name" : "Receiving Quantity Per Shipment",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total" ]
+      }
+    }, {
+      "name" : "Receiving Qnt. By Primary UOM (By Item and OU)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.PRIMARY_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Supplier Contact.Dim - Supplier Contact Total", "logicalLevel:SSYS_SF.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Type.Dim - Purchasing Simulation Type Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Purchasing Simulation Date.Dim - Purchasing Simulation Date Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "# Std Receiving OTD (Score) Abroad",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " SUM( CASE  WHEN %1 IS NULL  THEN 0 ELSE  CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_DAY , %2, %1) - %3 > 2 THEN 0 ELSE 1 END  END )",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Purchasing Receiving.Po Shipment Promised Date", "logicalColumn:SSYS_SF.Dim - Purchasing Receiving.Transaction Datetime", "logicalColumn:SSYS_SF.Dim - Item (Deliver To Org).Postprocessing Lead Time" ]
+        }
+      }
+    }, {
+      "name" : "# RFR Receiving OTD (Score) Abroad",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " SUM( CASE  WHEN %1 IS NULL  THEN 1 ELSE  CASE  WHEN  TIMESTAMPDIFF( SQL_TSI_DAY , %2, %1) > 75 THEN 0 ELSE 1 END  END )",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Purchasing Receiving.Po First Approved Date", "logicalColumn:SSYS_SF.Dim - Purchasing Receiving.Transaction Datetime" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Detail", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS_SF.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS_SF.Dim - Item Locator.Dim - Item Locator Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'PO'",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_TRANSACTION_DWH_Fact_Po_Receiving_Transaction.SOURCE_DOCUMENT_CODE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item Locator",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Budget Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Charge Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Release",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Shipment",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Receiving",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Receiving Shipment Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

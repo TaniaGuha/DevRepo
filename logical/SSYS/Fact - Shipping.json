@@ -1,0 +1,323 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Shipping",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Cancelled Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.CANCELLED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Delivered Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.DELIVERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Picked Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.PICKED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Quality Control Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.QUALITY_CONTROL_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Received Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.RECEIVED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Requested Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.REQUESTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Returned Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.RETURNED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Scheduled Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.SCHEDULED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Shipped Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.SHIPPED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "Src Requested Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.SRC_REQUESTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "# of Deliveries",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.DELIVERY_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    }, {
+      "name" : "# of Delivery Lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping.DELIVERY_DETAIL_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Fact_Shipping" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Detail", "logicalLevel:SSYS.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - MTL Unit Transactions.Dim - MTL Unit Transactions Total", "logicalLevel:SSYS.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Total", "logicalLevel:SSYS.Dim - Inventory Organization (Common).Dim - Inventory Organization (Common) Detail", "logicalLevel:SSYS.Dim - Opportunity Product Line.Dim - Opportunity Product Line Detail", "logicalLevel:SSYS.Dim - Serial Numbers.Dim - Serial Numbers Total", "logicalLevel:SSYS.Dim - Opportunity.Dim - Opportunity Detail", "logicalLevel:SSYS.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS.Dim - MTL LOT Transactions.Dim - MTL Transactions LOT Numbers Total", "logicalLevel:SSYS.Dim - Item Locator.Dim - Item Locator Detail", "logicalLevel:SSYS.Dim - MTL Material Transactions.Dim - MTL Material Transactions Total", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Detail", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Detail", "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Detail", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Detail", "logicalLevel:SSYS.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Detail", "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Detail", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Detail", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS.Dim - LPN Delivery Line.Dim - LPN Delivery Line Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Sold To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Contacts (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Delivery Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Delivery",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Inventory Organization (Common)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Ship From Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item Locator",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - LPN Delivery Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Opportunity Product Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Opportunity",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

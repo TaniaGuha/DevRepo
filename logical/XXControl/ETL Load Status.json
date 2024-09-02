@@ -1,0 +1,162 @@
+{
+  "logicalTable" : {
+    "name" : "ETL Load Status",
+    "tags" : [ "Project:ADMIN", "Project:External_Strings" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "ETL Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.ETL_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Package Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.PACKAGE_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Rows Processed",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.ROWS_PROCESSED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Run End",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.RUN_END" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Run Start",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.RUN_START" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Target Table Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.TARGET_TABLE_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Load Plan Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.LOAD_PLAN_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Batch ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.BATCH_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Successful Load Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Load Status",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.Last Succesful Load Date.RUN_START" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "ETL Load Status",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXControl.XXCTRL.ETL Load Status", "physicalTable:XXControl.XXCTRL.Last Succesful Load Date" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:XXControl.XXCTRL.ETL Load Status",
+          "rightTable" : "physicalTable:XXControl.XXCTRL.Last Succesful Load Date",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > %2 AND %3 = 'S'",
+        "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Load Status.RUN_START", "physicalColumn:XXControl.XXCTRL.Last Succesful Load Date.RUN_START", "physicalColumn:XXControl.XXCTRL.Last Succesful Load Date.ETL_STATUS" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:XXControl.ETL Package Name",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

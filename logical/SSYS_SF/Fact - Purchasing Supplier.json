@@ -1,0 +1,89 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Supplier",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Suppliers",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SUPPLIER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total" ]
+      }
+    }, {
+      "name" : "# of Supplier Sites",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SUPPLIER_SITE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total" ]
+      }
+    }, {
+      "name" : "# of Supplier Contacts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier.SUPPLIER_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS_SF.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Factless_AP_Supplier" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Supplier Contact.Dim - Supplier Contact Detail", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier Contact",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "physicalTable": {
+    "name": "FACT_MTL_VAL_CATEGORY_DWH_Fact",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_VAL_CATEGORY_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CATEGORY_SET_DWH_Dim_Category_Set",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_VAL_CATEGORY_DWH_Fact.CATEGORY_SET_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CATEGORY_SET_DWH_Dim_Category_Set.CATEGORY_SET_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MTL_CATEGORIES_DWH_Dim_Categories",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_VAL_CATEGORY_DWH_Fact.CATEGORY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MTL_CATEGORIES_DWH_Dim_Categories.CATEGORY_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

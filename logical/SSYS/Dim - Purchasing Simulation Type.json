@@ -1,0 +1,73 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Simulation Type",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Simulation Type Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Simulation Type",
+      "description" : "1) Direct - All Items suggested to buy by MRP results\r\n2) Direct (Childless Only) - Item suggested to buy by MRP results but has no BOM\r\n3) Third Party - Items under Direct item BOM that has sourcing rule \r\n",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Simulation Type Gk",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_SIMULATION_TYPE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_SIMULATION_TYPE.SIMULATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Type Detail"
+    }, {
+      "name" : "Simulation Type Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_SIMULATION_TYPE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_SIMULATION_TYPE.SIMULATION_TYPE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Simulation Type Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_PO_SIMULATION_TYPE",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_PO_SIMULATION_TYPE" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Simulation Type Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Simulation Type Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Simulation Type Detail",
+        "numberOfElements" : 5,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Simulation Type Gk" ],
+        "displayKey" : "Simulation Type Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Simulation Type",
+        "levels" : [ "Dim - Purchasing Simulation Type Total", "Dim - Purchasing Simulation Type Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "logicalTable" : {
+    "name" : "ETL Data Quality Results",
+    "tags" : [ "Project:ADMIN", "Project:External_Strings" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Dq Check Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_CHECK_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Check Rule",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_CHECK_RULE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Column Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_COLUMN_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DQ Default Record Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_DEFAULT_REC_CNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "DQ Fail Record Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_FAIL_REC_CNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Dq Group Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_GROUP_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Group Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_GROUP_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Module Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_MODULE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Module Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_MODULE_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DQ Pass Record Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_PASS_REC_CNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Dq Rule Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_RULE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Status Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_STATUS_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Dq Table Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_TABLE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DQ Total Record Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_TOTAL_REC_CNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Target Column Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.TARGET_COLUMN_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Target Schema Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.TARGET_SCHEMA_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Target Table Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ETL Data Quality Results",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.TARGET_TABLE_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "ETL Data Quality Results",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXControl.XXCTRL.ETL Data Quality Results" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:XXControl.ETL Data Quality Dependancy",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

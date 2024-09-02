@@ -1,0 +1,196 @@
+{
+  "physicalTable" : {
+    "name" : "FACT_PRICEBOOK_COMPARISON_DWH",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT DECODE(NVL(t33.item_code_2,'XX'),'XX','Y','N') removed_item,\r\n  Decode(Nvl(T33.Item_Code_1,'XX'),'XX','Y','N') New_Item,\r\nDECODE ( (NVL (T33.Reseller_Price_1, 0) - NVL (T33.Reseller_Price_2, 0)), 0,'N', 'Y')     Reseller_Price_Change,\r\nDECODE ( (NVL (T33.Customer_Price_1, 0) - NVL (T33.Customer_Price_2, 0)), 0,'N', 'Y')     Ssys_User_Price_Change,\r\nDECODE ( (NVL (T33.third_party_price_1, 0) - NVL (T33.third_party_price_2, 0)), 0,'N', 'Y')     ssys_non_user_price_change,\r\n  NVL(t33.pb_name_1,t33.pb_name_2) pb_name,\r\n  NVL(t33.pb_currency_1,t33.pb_currency_2) pb_currency,\r\nt33.pb_name_1,\r\nt33.pb_name_2,\r\nt33.pb_currency_1,\r\nt33.pb_currency_2,\r\n  t33.pb_version_1,\r\n  t33.pb_version_2,\r\n  t33.pb_status_1,\r\n  t33.pb_status_2,\r\n  t33.pb_effective_date_1,\r\n  t33.pb_effective_date_2,\r\n  t33.pb_product_type_l1_1,\r\n  t33.pb_product_type_l2_1,\r\n  t33.pb_product_type_l3_1,\r\n  t33.item_code_1,\r\n  t33.item_description_1,\r\n  t33.repairable_1,\r\n  t33.reseller_price_1,\r\n  t33.customer_price_1,\r\n  t33.third_party_price_1,\r\n  t33.error_message_1,\r\n  t33.pb_product_type_l1_2,\r\n  t33.pb_product_type_l2_2,\r\n  t33.pb_product_type_l3_2,\r\n  t33.item_code_2,\r\n  t33.item_description_2,\r\n  t33.repairable_2,\r\n  t33.reseller_price_2,\r\n  t33.customer_price_2,\r\n  t33.third_party_price_2,\r\n  t33.error_message_2\r\nFROM\r\n  (SELECT *\r\n  From\r\n    (SELECT distinct fact_1.price_book_id price_book_id_1,\r\n      fact_1.price_book_name pb_name_1,\r\n      fact_1.pb_currency_code pb_currency_1,\r\n      fact_1.pb_version_num pb_version_1,\r\n      fact_1.pb_effective_date pb_effective_date_1,\r\n      fact_1.product_type_l1 pb_product_type_l1_1,\r\n      fact_1.product_type_l2 pb_product_type_l2_1,\r\n      fact_1.product_type_l3 pb_product_type_l3_1,\r\n      fact_1.item_code item_code_1,\r\n      fact_1.item_description item_description_1,\r\n      fact_1.repairable repairable_1,\r\n      fact_1.reseller_price reseller_price_1,\r\n      fact_1.customer_price customer_price_1,\r\n      fact_1.third_party_price third_party_price_1,\r\n      fact_1.error_message error_message_1,\r\n      fact_1.pb_status_Code Pb_Status_1\r\n    From Fact_Price_Book_Lines_Dwh Fact_1\r\n    Where Fact_1.Price_Book_Name ='valueof(NQ_SESSION.pricebook_name1)'\r\n    AND fact_1.pb_version_num =Substr('valueof(NQ_SESSION.pb_version1)',0,3)\r\n\r\n    ) t11\r\n  Full Outer Join\r\n    (SELECT distinct fact_2.price_book_id price_book_id_2,\r\n      fact_2.price_book_name pb_name_2,\r\n      fact_2.pb_currency_code pb_currency_2,\r\n      fact_2.pb_version_num pb_version_2,\r\n      fact_2.pb_effective_date pb_effective_date_2,\r\n      fact_2.product_type_l1 pb_product_type_l1_2,\r\n      fact_2.product_type_l2 pb_product_type_l2_2,\r\n      fact_2.product_type_l3 pb_product_type_l3_2,\r\n      fact_2.item_code item_code_2,\r\n      fact_2.item_description item_description_2,\r\n      fact_2.repairable repairable_2,\r\n      fact_2.reseller_price reseller_price_2,\r\n      fact_2.customer_price customer_price_2,\r\n      fact_2.third_party_price third_party_price_2,\r\n      fact_2.error_message error_message_2,\r\n      fact_2.pb_Status_Code Pb_Status_2\r\n    From Fact_Price_Book_Lines_Dwh Fact_2\r\n    Where  Fact_2.Price_Book_Name  ='valueof(NQ_SESSION.pricebook_name2)'\r\n    AND fact_2.pb_version_num  =Substr('valueof(NQ_SESSION.pb_version2)',0,3)\r\n  ) t22\r\n  ON t11.item_code_1      = t22.item_code_2\r\n  And T11.Price_Book_Id_1 = T22.Price_Book_Id_2\r\n  ) T33"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "THIRD_PARTY_PRICE_2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ERROR_MESSAGE_2",
+      "dataType" : "VARCHAR",
+      "length" : 2000,
+      "nullable" : false
+    }, {
+      "name" : "SSYS_NON_USER_PRICE_CHANGE",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "PB_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : false
+    }, {
+      "name" : "PB_STATUS_1",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "PB_PRODUCT_TYPE_L2_1",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "PB_PRODUCT_TYPE_L3_1",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_CODE_1",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : false
+    }, {
+      "name" : "REPAIRABLE_1",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    }, {
+      "name" : "ERROR_MESSAGE_1",
+      "dataType" : "VARCHAR",
+      "length" : 2000,
+      "nullable" : false
+    }, {
+      "name" : "REPAIRABLE_2",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    }, {
+      "name" : "RESELLER_PRICE_2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "NEW_ITEM",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "PB_CURRENCY",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "PB_VERSION_1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_VERSION_2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_EFFECTIVE_DATE_1",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_PRODUCT_TYPE_L1_1",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_DESCRIPTION_1",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    }, {
+      "name" : "RESELLER_PRICE_1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_PRODUCT_TYPE_L2_2",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_DESCRIPTION_2",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    }, {
+      "name" : "REMOVED_ITEM",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "PB_EFFECTIVE_DATE_2",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_PRODUCT_TYPE_L3_2",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "CUSTOMER_PRICE_2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_NAME_1",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : false
+    }, {
+      "name" : "PB_CURRENCY_1",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "PB_CURRENCY_2",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "PB_NAME_2",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : false
+    }, {
+      "name" : "RESELLER_PRICE_CHANGE",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "SSYS_USER_PRICE_CHANGE",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "PB_STATUS_2",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "CUSTOMER_PRICE_1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "THIRD_PARTY_PRICE_1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PB_PRODUCT_TYPE_L1_2",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_CODE_2",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : false
+    } ]
+  }
+}

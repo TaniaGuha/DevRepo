@@ -1,0 +1,512 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Quotation Header",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Po Header Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Po Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quotation Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quotation Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_ORIGINAL_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quotation Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quotation Creation Datetime",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.STATUS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Effective End Date",
+      "description" : "Agreement Effective End Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.AGREEMENT_EFFECTIVE_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Effective Start Date",
+      "description" : "Agreement Effective Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.AGREEMENT_EFFECTIVE_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Response Date",
+      "description" : "Reply Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.REPLY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quote Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.QUOTE_TYPE_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quotation Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.QUOTATION_CLASS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Supplier Quote",
+      "description" : "Quote Vendor Quote Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.QUOTE_VENDOR_QUOTE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Approval Required Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.APPROVAL_REQUIRED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Buyer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.BUYER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Agent Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.AGENT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Buyer Team",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Agent Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( SPARSE %1, 'Team Not Assigned', %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.LKP - Purchasing Buyer Details.Buyer Team", "logicalColumn:SSYS_SF.Dim - Purchasing Quotation Header.Agent Id" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "From RFQ Header ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.FROM_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Bill To Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.BILL_TO_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Ship To Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.SHIP_TO_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quote Warning Delay",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.QUOTE_WARNING_DELAY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Quote Warning Delay Unit",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.QUOTE_WARNING_DELAY_UNIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Payment Terms",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PAYMENT_TERMS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Carrier Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.CARRIER_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Carrier",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.CARRIER_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Fob Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.FOB_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Fob",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.FOB_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Freight Terms",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.FREIGHT_TERMS_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Freight Terms Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.FREIGHT_TERMS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    }, {
+      "name" : "Reply Method Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.REPLY_METHOD_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Quotation Header Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : " IFNULL(%1, 'QUOTATION') = 'QUOTATION'",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_TYPE_CODE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Quotation Header Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Quotation Header Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Quotation Header Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Po Header Gk" ],
+        "displayKey" : "Po Header Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Quotation Header",
+        "levels" : [ "Dim - Purchasing Quotation Header Total", "Dim - Purchasing Quotation Header Detail" ]
+      } ]
+    }
+  }
+}

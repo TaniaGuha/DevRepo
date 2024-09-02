@@ -1,0 +1,414 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Product",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Product GK" ],
+    "logicalColumns" : [ {
+      "name" : "Product GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.ITEM_KEY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Category Set",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.MAIN_CAT_CATEGORY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.CATEGORY_SET" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Family",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.MAIN_CAT_FAMILY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.FAMILY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Group Set",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.MAIN_CAT_GROUP" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.GROUP_SET" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Product Family",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.PRODUCT_FAMILY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_FAMILY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Product Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.PRODUCT_LINE" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Product Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.ITEM_DESCRIPTION" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Product Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.ITEM_CODE_SEGMENT1" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Product Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.ITEM_STATUS" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Product Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "''"
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Products Family",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.PRODUCTS_FAMILY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCTS_FAMILY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Specialty",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.SPECIALTY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.SPECIALTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Sub Family",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.SUB_FAMILY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.SUB_FAMILY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Technology",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.TECHNOLOGY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.TECHNOLOGY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Unit Of Measure",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.UNIT_OF_MEASURE" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.UNIT_OF_MEASURE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Unit Volume",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.UNIT_VOLUME" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.UNIT_VOLUME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    }, {
+      "name" : "Unit Weight",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_ITEM_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.UNIT_WEIGHT" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.UNIT_WEIGHT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Product Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_INV_ITEM_DWH_Dim_Product",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+      "description" : "@deprecated",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product" ]
+      },
+      "dataFragmentation" : {
+        "expressionTemplate" : "1 = 0"
+      },
+      "combineWithOtherFragments" : true,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "1 = 0"
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Product Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Product Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Product Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Product GK" ],
+        "displayKey" : "Product GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Product",
+        "levels" : [ "Dim - Product Total", "Dim - Product Detail" ]
+      } ]
+    }
+  }
+}

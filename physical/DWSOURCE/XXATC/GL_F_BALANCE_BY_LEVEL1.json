@@ -1,0 +1,60 @@
+{
+  "physicalTable": {
+    "name": "GL_F_BALANCE_BY_LEVEL1",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_GL_F_BALANCE_BY_L1_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_DISP_LEDGER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE_BY_LEVEL1.DISP_LDG_ID",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_DISP_LEDGER.ROW_WID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_LEDGER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE_BY_LEVEL1.BI_LEDGER_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_LEDGER.BI_LEDGER_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_PERIODS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE_BY_LEVEL1.BI_PERIOD_YM_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_PERIODS.BI_PERIOD_YEAR_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_1",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE_BY_LEVEL1.BI_COMPANY_NUM_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_1.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_2",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE_BY_LEVEL1.BI_DEPT_NUM_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_2.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_3",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.GL_F_BALANCE_BY_LEVEL1.BI_ACCT_NUM_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.GL_D_SEGMENT_HIER_3.BI_SEGMNET_NUM_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

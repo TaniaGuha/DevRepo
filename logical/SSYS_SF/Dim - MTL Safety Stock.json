@@ -1,0 +1,326 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - MTL Safety Stock",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Mtl Safety Stock Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Safety Stock Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.SAFETY_STOCK_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Safety Stock Code Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.SAFETY_STOCK_CODE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Safety Stock Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.SAFETY_STOCK_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Effectivity Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.EFFECTIVITY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Forecast Designator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.FORECAST_DESIGNATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Master Org Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Mtl Safety Stock Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.MTL_SAFETY_STOCK_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Service Level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.SERVICE_LEVEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - MTL Safety Stock Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MTL_SAFETY_STOCK_DWH_Dim_MTL_Safety_Stock" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - MTL Safety Stock Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - MTL Safety Stock Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - MTL Safety Stock Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Mtl Safety Stock Gk" ],
+        "displayKey" : "Mtl Safety Stock Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MTL Safety Stock",
+        "levels" : [ "Dim - MTL Safety Stock Total", "Dim - MTL Safety Stock Detail" ]
+      } ]
+    }
+  }
+}

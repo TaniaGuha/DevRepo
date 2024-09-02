@@ -1,0 +1,46 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Organization",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Organization Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "x_fin_dim_organization_v",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.x_fin_dim_organization_v.ORG_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "x_fin_dim_organization_v",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Finance_AD_HOC.XXBI.x_fin_dim_organization_v.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "x_fin_dim_organization_v",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Finance_AD_HOC.XXBI.x_fin_dim_organization_v" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Organization Name" ]
+  }
+}

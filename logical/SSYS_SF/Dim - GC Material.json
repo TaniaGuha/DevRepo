@@ -1,0 +1,157 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - GC Material",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Gc Material Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Gc Material Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.GC_MATERIAL_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    }, {
+      "name" : "Gc Material Src Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.GC_MATERIAL_SRC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    }, {
+      "name" : "Is Support",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.IS_SUPPORT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    }, {
+      "name" : "Material Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.MATERIAL_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    }, {
+      "name" : "Material Src Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.MATERIAL_SRC_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Unit of Measure (Org)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.UNIT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    }, {
+      "name" : "Vendor Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material.VENDOR_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    }, {
+      "name" : "Unit of Measure (Std)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN  UPPER(%1) = 'G' THEN 'kg' WHEN  UPPER(%1) = 'CM³' THEN 'in³' ELSE '' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - GC Material.Unit of Measure (Org)" ]
+        }
+      },
+      "logicalLevel" : "Dim - GC Material Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GC_MATERIAL_DWH_Dim_GC_Material",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_MATERIAL_DWH_Dim_GC_Material" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - GC Material Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - GC Material Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - GC Material Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Gc Material Gk" ],
+        "displayKey" : "Gc Material Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "GC Material",
+        "levels" : [ "Dim - GC Material Total", "Dim - GC Material Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "physicalTable": {
+    "name": "FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.LINE_TYPE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Line_Type.TRX_TYPE_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ORDER_LINE_GK"
+      ],
+      [
+        "FIRST_INVOICE_DATE_GK"
+      ]
+    ]
+  }
+}

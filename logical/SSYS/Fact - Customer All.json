@@ -1,0 +1,270 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Customer All",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Total # of Customer Accounts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ACCOUNT_ALL_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Oracle Accounts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of SFDC Accounts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Customer Sites (Oracle)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.CUSTOMER_SITE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Total # of Customer Contacts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 > 1 THEN %1 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.CONTACT_ALL_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Oracle Contacts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of SFDC Contacts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Oracle Accounts with Contacts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 > 1 THEN %2 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.CONTACT_ALL_GK", "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of SFDC Accounts with Contacts",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 > 1 THEN %2 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.CONTACT_ALL_GK", "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Customer Exists in Oracle EBS",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer Exists in SFDC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Contact Exists in Oracle EBS",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_CONTACT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Contact Exists in SFDC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_CONTACT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer Source (Oracle/SFDC/Both)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IS NULL  AND %2 IS NULL  THEN 'Oracle EBS' WHEN %1 IS NULL  AND  NOT %2 IS NULL  THEN 'SFDC' WHEN  NOT %1 IS NULL  AND  NOT %2 IS NULL  THEN 'Both' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_ACCOUNT_ID", "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_ACCOUNT_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Customer Contact (Oracle).Customer Contacts (Oracle) Detail", "logicalLevel:SSYS.Dim - Customer Contact (SFDC).Customer Contacts (SFDC) Detail", "logicalLevel:SSYS.Dim - Customer Site (Oracle).Customer Site (Oracle) Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Customer Account (Oracle).Customer Account (Oracle) Detail", "logicalLevel:SSYS.Dim - Customer Account (SFDC).Customer Account (SFDC) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > 0",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ACCOUNT_ALL_GK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Oracle)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (SFDC)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Contact (Oracle)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Contact (SFDC)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Oracle)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

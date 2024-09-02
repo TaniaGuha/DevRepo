@@ -1,0 +1,63 @@
+{
+  "presentationTable" : {
+    "name" : "Operating Units",
+    "alternateNames" : [ "Operating Units Dim" ],
+    "presentationColumns" : [ {
+      "name" : "Org ID",
+      "sourceLogicalColumn" : "logicalColumn:EBS.Operating Units Dim.Org ID",
+      "localization" : {
+        "localizationKey" : "Org ID",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units_Org_ID)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units_Org_ID)"
+      }
+    }, {
+      "name" : "Operating Unit",
+      "sourceLogicalColumn" : "logicalColumn:EBS.Operating Units Dim.Operating Unit",
+      "localization" : {
+        "localizationKey" : "Operating Unit",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units_Operating_Unit)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units_Operating_Unit)"
+      }
+    }, {
+      "name" : "Organization Type",
+      "sourceLogicalColumn" : "logicalColumn:EBS.Operating Units Dim.Organization Type",
+      "localization" : {
+        "localizationKey" : "Organization Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units_Organization_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units_Organization_Type)"
+      }
+    } ],
+    "hierarchies" : [ {
+      "name" : "Operating Units DimDim",
+      "sourceLogicalTable" : "logicalTable:EBS.Operating Units Dim",
+      "localization" : {
+        "localizationKey" : "Operating Units DimDim",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units_Operating_Units_DimDim)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units_Operating_Units_DimDim)"
+      },
+      "levels" : [ {
+        "name" : "Operating Units Dim Total",
+        "sourceLogicalLevel" : "logicalLevel:EBS.Operating Units Dim.Operating Units Dim Total",
+        "localization" : {
+          "localizationKey" : "Operating Units Dim Total",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units_Operating_Units_DimDim_Operating_Units_Dim_Total)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units_Operating_Units_DimDim_Operating_Units_Dim_Total)"
+        }
+      }, {
+        "name" : "Operating Units Dim Detail",
+        "sourceLogicalLevel" : "logicalLevel:EBS.Operating Units Dim.Operating Units Dim Detail",
+        "displayColumn" : "presentationColumn:EBS-Accounts Receivable.Operating Units.Org ID",
+        "localization" : {
+          "localizationKey" : "Operating Units Dim Detail",
+          "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units_Operating_Units_DimDim_Operating_Units_Dim_Detail)",
+          "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units_Operating_Units_DimDim_Operating_Units_Dim_Detail)"
+        }
+      } ]
+    } ],
+    "localization" : {
+      "localizationKey" : "Operating Units",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_EBS-Accounts_Receivable_Operating_Units)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_EBS-Accounts_Receivable_Operating_Units)"
+    }
+  }
+}

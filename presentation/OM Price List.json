@@ -1,0 +1,59 @@
+{
+  "subjectArea" : {
+    "name" : "OM Price List",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Price_List" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "tableOrder" : [ {
+      "name" : "presentationTable:OM Price List.Dim - PriceList"
+    }, {
+      "name" : "presentationTable:OM Price List.Dim - PriceList Master"
+    }, {
+      "name" : "presentationTable:OM Price List.Dim - Rule Header"
+    }, {
+      "name" : "presentationTable:OM Price List.Dim - Item"
+    }, {
+      "name" : "presentationTable:OM Price List.Dim - PriceList Request"
+    }, {
+      "name" : "presentationTable:OM Price List.Dim - PriceBook Version"
+    }, {
+      "name" : "presentationTable:OM Price List.Dim - PriceList Lines Details",
+      "children" : [ {
+        "name" : "presentationTable:OM Price List.Dim - PriceList Changes"
+      } ]
+    }, {
+      "name" : "presentationTable:OM Price List.Fact - PriceList Rule Update"
+    }, {
+      "name" : "presentationTable:OM Price List.Fact - PriceList Comparison"
+    }, {
+      "name" : "presentationTable:OM Price List.Fact - PriceList Exclusion"
+    }, {
+      "name" : "presentationTable:OM Price List.Fact - PriceBook Comparison"
+    }, {
+      "name" : "presentationTable:OM Price List.Fact - PriceList Lines"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Price_List_Book_Role",
+      "access" : "WRITE"
+    } ],
+    "localization" : {
+      "localizationKey" : "OM Price List",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_OM_Price_List)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_OM_Price_List)"
+    }
+  }
+}

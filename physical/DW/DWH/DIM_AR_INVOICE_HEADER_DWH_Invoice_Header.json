@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "DIM_AR_INVOICE_HEADER_DWH_Invoice_Header",
+    "sourceTable": "physicalTable:DW.DWH.DIM_AR_INVOICE_HEADER_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AR_TRANSACTION_TYPE_DWH_Invoice_type",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_AR_INVOICE_HEADER_DWH_Invoice_Header.TRX_TYPE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AR_TRANSACTION_TYPE_DWH_Invoice_type.TRX_TYPE_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVOICE_HEADER_GK"
+      ]
+    ]
+  }
+}

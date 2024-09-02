@@ -1,0 +1,119 @@
+{
+  "physicalTable": {
+    "name": "DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs",
+    "sourceTable": "physicalTable:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_Account",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_Account.ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.END_CUSTOMER_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.INSTALL_SITE_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Dim_Install_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_Account",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_Account.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.END_CUSTOMER_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_GC_PRINTER_DWH_Dim_Printer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.GC_PRINTER_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_DWH_Dim_Printer.GC_PRINTER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Dim_Printer_Job",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.GC_PRINTER_JOB_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Dim_Printer_Job.GC_PRINTER_JOB_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_GC_USER_DWH_Dim_User",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.GC_USER_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_USER_DWH_Dim_User.GC_USER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.START_TIME_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time.HMS_TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.PRODUCT_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_INV_ITEM_DWH_Dim_Product.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.PRODUCT_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_PRODUCTS_DETAILS_DWH_Dim_Product.PRODUCT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.REGION_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_REGIONS_DETAILS_DWH_Dim_Region.REGION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.INSTALL_SITE_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_SITES_DETAILS_DWH_Dim_Install_Site.SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.TIME_DIM_Dim_Start_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_JOB_DWH_Fact_Printer_Job_Runs.START_DATE_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.TIME_DIM_Dim_Start_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

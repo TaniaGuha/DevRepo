@@ -1,0 +1,273 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Customer Service Case Open Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Case Open Date" ],
+    "logicalColumns" : [ {
+      "name" : "Case Open Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Month",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Year",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Year Quarter",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Year Month",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_YEAR_MONTH_YYYYMM_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "First Day of Q",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.FIRST_DAY_OF_Q" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Day Number In Week",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "WorkDay Indication (IL)",
+      "description" : "indicate if it is a workday in Israel",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IN (6, 7) THEN 1 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "WorkDay Indication (WW)",
+      "description" : "indicate if it is a workday world wide( meaning not Saturday or Sunday)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IN (6, 7) THEN 1 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Workdays Passed Till Current Date",
+      "description" : "Calculate the number of workdays passed from Time date to Current Date",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY ,  TIMESTAMPADD( SQL_TSI_DAY , -( DAYOFWEEK( TIMESTAMPADD( SQL_TSI_DAY , 6, %1)) - 1),  TIMESTAMPADD( SQL_TSI_DAY , 6, %1)),  TIMESTAMPADD( SQL_TSI_DAY , -( DAYOFWEEK( CURRENT_DATE ) - 1),  CURRENT_DATE )) / 7 * 5 +  MOD(7 -  DAYOFWEEK(%1), 6) +  CASE  WHEN  DAYOFWEEK( CURRENT_DATE ) - 2 = 5 THEN 5 ELSE  DAYOFWEEK( CURRENT_DATE ) - 1 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Week Ending Date US",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_WEEK_ENDING_DATE_US" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Month-Year",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Case Open Year Month",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST ( MONTHNAME(%1) AS CHARACTER ( 3 )) || '-' ||  CAST (%2 AS CHARACTER ( 4 ))",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.TIME_DATE", "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Quarter-Year",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Case Open Year Quarter",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "'Q' ||  CAST (%1 AS CHARACTER ( 1 )) || '-' ||  CAST (%2 AS CHARACTER ( 4 ))",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_QUARTER", "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    }, {
+      "name" : "Case Open Date Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Open_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Open Date Case Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Case_Open_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.TIME_DIM_Open_Case_Date" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Customer Service Case Open Date.Dim - Open Date Case Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Open Date Case Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Open Date Case Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Open Date Case Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Case Open Date" ],
+        "displayKey" : "Case Open Date",
+        "additionalKeys" : [ [ "Case Open Date Gk" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customer Service Case Open Date",
+        "levels" : [ "Dim - Open Date Case Total", "Dim - Open Date Case Detail" ]
+      } ]
+    }
+  }
+}

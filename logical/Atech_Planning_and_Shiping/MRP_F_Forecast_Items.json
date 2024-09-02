@@ -1,0 +1,210 @@
+{
+  "logicalTable" : {
+    "name" : "MRP_F_Forecast_Items",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "BI_ACTIVITY_ANALYSIS_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_ACTIVITY_ANALYSIS_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_FORECAST_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_FORECAST_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_FORECAST_DATE_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_FORECAST_DATE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_FORECAST_ENTRY_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_FORECAST_ENTRY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_MS_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_MS_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_ORG_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_PRODUCT_HIERARCHY_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.BI_PRODUCT_HIERARCHY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Current Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.CURRENT_QTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:Atech_Planning_and_Shiping.MRP_D_Consumption_Sale_Orders.MRP_D_Consumption_Sale_Orders Total" ]
+      }
+    }, {
+      "name" : "Original Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_F_Forecast_Items",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items.ORIGINAL_QTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:Atech_Planning_and_Shiping.MRP_D_Consumption_Sale_Orders.MRP_D_Consumption_Sale_Orders Total" ]
+      }
+    }, {
+      "name" : "Consumed Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 - %2",
+          "expressionObjects" : [ "logicalColumn:Atech_Planning_and_Shiping.MRP_F_Forecast_Items.Original Quantity", "logicalColumn:Atech_Planning_and_Shiping.MRP_F_Forecast_Items.Current Quantity" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_Planning_and_Shiping.MRP_D_Consumption_Sale_Orders.MRP_D_Consumption_Sale_Orders Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MRP_F_Forecast_Items",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Items" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.D_Inv_organizations",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.D_Items",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.INV_D_Activity_Analysis",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.INV_D_Product_Hierarchy",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.MRP_D_Forecast_Items",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.MRP_D_Forecast_date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Atech_Planning_and_Shiping.MRP_D_Forecasts",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

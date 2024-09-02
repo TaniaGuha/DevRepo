@@ -1,0 +1,288 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Inventory Source Org",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "ORGANIZATION_GK" ],
+    "logicalColumns" : [ {
+      "name" : "ORGANIZATION_GK",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Org Id",
+      "description" : "Inventory Organization ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.INV_ORG_UNIT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Org Name",
+      "description" : "Inventory Organization Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.INV_ORG_UNIT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Org Code",
+      "description" : "Inventory Organization Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.INV_ORGANIZATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Effective Start Date From",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.EFFECTIVE_START_DATE_FROM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Effective Start Date To",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.EFFECTIVE_START_DATE_TO" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Operating Unit Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.OPERATING_UNIT_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Operating Unit Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.OPERATING_UNIT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Legal Entity Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.LEGAL_ENTITY_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Legal Entity Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.LEGAL_ENTITY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Last Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.LAST_UPDATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.LOCATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    }, {
+      "name" : "Location Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.LOCATION_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Source Org Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : " IFNULL(%1, 1) = 1",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.INV_ORG_FLAG" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Inventory Source Org Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Inventory Source Org Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Inventory Source Org Detail",
+        "numberOfElements" : 332,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "ORGANIZATION_GK" ],
+        "displayKey" : "ORGANIZATION_GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Inventory Source Org",
+        "levels" : [ "Dim - Inventory Source Org Total", "Dim - Inventory Source Org Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "physicalTable": {
+    "name": "User Data Security",
+    "sourceTable": "physicalTable:XXControl.XXCTRL.XXCTRL_USER_DATA_SECURITY",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:XXControl.XXCTRL.BI Users",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 OR %3 = %2",
+          "expressionObjects": [
+            "physicalColumn:XXControl.XXCTRL.BI Users.USER_NAME",
+            "physicalColumn:XXControl.XXCTRL.User Data Security.USER_NAME",
+            "physicalColumn:XXControl.XXCTRL.BI Users.SALESFORCE_USER_NAME"
+          ]
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.Data Security Parameters",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXControl.XXCTRL.User Data Security.SEC_PARAMETER",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.Data Security Parameters.PARAMETER_NAME"
+          }
+        ]
+      }
+    ]
+  }
+}

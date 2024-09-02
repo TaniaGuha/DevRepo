@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "DIM_GC_PRINTER_DWH_Dim_Printer",
+    "sourceTable": "physicalTable:DW_GrabCad.DWH.DIM_GC_PRINTER_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_Printer_End_Customer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW_GrabCad.DWH.DIM_GC_PRINTER_DWH_Dim_Printer.END_CUSTOMER_GK",
+            "rightColumn": "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_Printer_End_Customer.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "GC_PRINTER_GK"
+      ]
+    ]
+  }
+}

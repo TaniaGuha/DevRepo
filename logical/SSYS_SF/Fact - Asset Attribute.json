@@ -1,0 +1,73 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Asset Attribute",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Asset Attribute",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute.ASSET_ATTRIBUTE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Contacts (End Customer).Dim - Customer Contacts (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_ASSET_ATTRIBUTE_DWH_Fact_Asset_Attribute" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Asset Attribute Criteria.Dim - Asset Attribute Criteria Detail", "logicalLevel:SSYS_SF.Dim - Asset Attribute.Dim - Asset Attribute Detail", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Item (Asset Attribute Product).Dim - Item (Asset Attribute Product) Detail", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset Attribute Criteria",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset Attribute",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Account)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Asset End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Service Case",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Asset Attribute Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Asset Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

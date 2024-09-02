@@ -1,0 +1,99 @@
+{
+  "logicalTable" : {
+    "name" : "INV Organizations Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Inventory Org Id" ],
+    "logicalColumns" : [ {
+      "name" : "Inventory Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Organizations Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "INV Organizations Dim Detail"
+    }, {
+      "name" : "Inv Org Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Organizations Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim.OPERATING_UNIT_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inv Org Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Organizations Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORGANIZATION_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inv Org Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " SUBSTRING(%1 FROM 1 FOR 3)",
+          "expressionObjects" : [ "logicalColumn:EBS.INV Organizations Dim.Inv Org Name" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV Organizations Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.INV Organizations Dim" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'INV'",
+        "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORGANIZATION_TYPE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "INV Organizations Dim",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "INV Organizations Dim",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "INV Organizations Dim Detail",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Inventory Org Id" ],
+        "displayKey" : "Inventory Org Id"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "INV Organizations Dim",
+        "levels" : [ "INV Organizations Dim", "INV Organizations Dim Detail" ]
+      } ]
+    }
+  }
+}

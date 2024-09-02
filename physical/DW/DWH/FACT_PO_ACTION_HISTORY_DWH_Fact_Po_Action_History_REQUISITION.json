@@ -1,0 +1,37 @@
+{
+  "physicalTable": {
+    "name": "FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PO_ACTION_HISTORY_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Dim_Po_Action_History",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Fact_Po_Action_History_REQUISITION.ACTION_HISTORY_OBJECT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_PO_ACTION_HISTORY_DWH_Dim_Po_Action_History.ACTION_HISTORY_OBJECT_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

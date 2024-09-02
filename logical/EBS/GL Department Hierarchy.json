@@ -1,0 +1,170 @@
+{
+  "logicalTable" : {
+    "name" : "GL Department Hierarchy",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Department Parent Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.ROOT_FLEX_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Root Flex Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.ROOT_FLEX_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Department Parent",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.ROOT_FLEX_VALUE_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Department Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.LEVEL1_FLEX_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Department",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.LEVEL1_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.ENABLED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Date Active",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.START_DATE_ACTIVE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.END_DATE_ACTIVE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Chart of Accounts",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.CHART_OF_ACCOUNTS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Parent Child Hierarchy",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Department Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.PARENT_CHILD_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "GL Department Hierarchy",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.GL Department Hierarchy" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'XXGL_DEPARTMENT_SEG'",
+        "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.ROOT_FLEX_NAME" ]
+      },
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : "%1 =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:EBS.GL Department Hierarchy.Department Number", "variable:undeclaredVariables.GL_Department" ]
+      }
+    } ],
+    "primaryKey" : [ "Department Number" ]
+  }
+}

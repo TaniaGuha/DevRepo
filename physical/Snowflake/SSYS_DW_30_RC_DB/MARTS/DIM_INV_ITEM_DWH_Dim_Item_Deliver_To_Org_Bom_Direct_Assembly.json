@@ -1,0 +1,26 @@
+{
+  "physicalTable": {
+    "name": "DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org_Bom_Direct_Assembly",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Item_deliver_to_org_sales_account",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org_Bom_Direct_Assembly.SALES_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Item_deliver_to_org_sales_account.CODE_COMBINATION_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ITEM_KEY"
+      ]
+    ]
+  }
+}

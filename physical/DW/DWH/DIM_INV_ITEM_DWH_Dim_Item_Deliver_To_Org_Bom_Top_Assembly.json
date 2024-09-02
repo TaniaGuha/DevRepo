@@ -1,0 +1,26 @@
+{
+  "physicalTable": {
+    "name": "DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org_Bom_Top_Assembly",
+    "sourceTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Item_deliver_to_org_sales_account",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org_Bom_Top_Assembly.SALES_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Item_deliver_to_org_sales_account.CODE_COMBINATION_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ITEM_KEY"
+      ]
+    ]
+  }
+}

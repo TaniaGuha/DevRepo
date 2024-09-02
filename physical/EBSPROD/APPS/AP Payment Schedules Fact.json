@@ -1,0 +1,47 @@
+{
+  "physicalTable": {
+    "name": "AP Payment Schedules Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAP_PAYMENT_SCHEDULES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Invoice Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Payment Schedules Fact.INVOICE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Dim.INVOICE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Suppliers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Payment Schedules Fact.VENDOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Payment Schedules Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Payment Schedules Fact.DUE_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Payment Schedules Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

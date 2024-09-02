@@ -1,0 +1,133 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Start Time",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "HMS Time GK" ],
+    "logicalColumns" : [ {
+      "name" : "HMS Time GK",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Dim_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time.HMS_TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Start Time Hour Second"
+    }, {
+      "name" : "HMS Hour",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Dim_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time.HOUR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Start Time Hour"
+    }, {
+      "name" : "HMS Minute",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Dim_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time.MINUTE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Start Time Minute"
+    }, {
+      "name" : "HMC Second",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Dim_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time.SECOND_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Start Time Hour Second"
+    }, {
+      "name" : "HMS Time Caption",
+      "dataType" : "VARCHAR",
+      "sortBy" : "HMS Time GK",
+      "descriptorColumn" : "HMS Time GK",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Dim_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time.HMS_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Start Time Hour Second"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_HMS_TIME_DWH_Dim_Start_Time",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_HMS_TIME_DWH_Dim_Start_Time" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Start Time Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Start Time Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Start Time Hour",
+        "numberOfElements" : 24,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "HMS Hour" ],
+        "displayKey" : "HMS Hour"
+      }, {
+        "name" : "Dim - Start Time Minute",
+        "numberOfElements" : 1440,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "HMS Minute" ],
+        "displayKey" : "HMS Minute"
+      }, {
+        "name" : "Dim - Start Time Hour Second",
+        "numberOfElements" : 86400,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "HMS Time GK" ],
+        "displayKey" : "HMS Time Caption",
+        "additionalKeys" : [ [ "HMS Time Caption" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Start Time",
+        "levels" : [ "Dim - Start Time Total", "Dim - Start Time Hour", "Dim - Start Time Minute", "Dim - Start Time Hour Second" ]
+      } ]
+    }
+  }
+}

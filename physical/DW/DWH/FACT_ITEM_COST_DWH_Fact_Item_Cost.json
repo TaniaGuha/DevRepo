@@ -1,0 +1,69 @@
+{
+  "physicalTable": {
+    "name": "FACT_ITEM_COST_DWH_Fact_Item_Cost",
+    "sourceTable": "physicalTable:DW.DWH.FACT_ITEM_COST_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CST_COST_TYPE_DWH_Dim_Item_Cost_type",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.COST_TYPE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CST_COST_TYPE_DWH_Dim_Item_Cost_type.COST_TYPE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.CST_ORG_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.MASTER_ORG_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.CST_ORG_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.INV_ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_ITEM_COST_DWH_Dim_Item_Cost",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Fact_Item_Cost.ITEM_COST_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_ITEM_COST_DWH_Dim_Item_Cost.ITEM_COST_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

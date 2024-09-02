@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "WIP Job Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMFG_WIP_JOBS_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Closed Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Dim.DATE_CLOSED",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Closed Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Completed Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Dim.DATE_COMPLETED",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Completed Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Schedule Completion Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Dim.SCHEDULED_COMPLETION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Date Dim.PERIOD_DAY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "WIP_ENTITY_ID"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Subinventory",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Subinventory Key" ],
+    "logicalColumns" : [ {
+      "name" : "Status Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.STATUS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Asset Inventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 IS NULL  THEN 'Y' ELSE  CASE  WHEN %2 = 1 THEN 'Y' ELSE 'N' END  END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Subinventory.Secondary Inventory Name", "logicalColumn:SSYS_SF.Dim - Subinventory.Asset Inventory Ind" ]
+        }
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Inventory Atp Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.INVENTORY_ATP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Include In ATP",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 = 1 THEN 'Y' ELSE 'N' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Subinventory.Inventory Atp Code" ]
+        }
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Reservable Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.RESERVABLE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Allow Reservation",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 = 1 THEN 'Y' ELSE 'N' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Subinventory.Reservable Type" ]
+        }
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Nettable",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.NETTABLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Quantity Tracked Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.QUANTITY_TRACKED_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Quantity Tracked",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 = 1 THEN 'Y' ELSE 'N' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Subinventory.Quantity Tracked Ind" ]
+        }
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Locator Control Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.LOCATOR_CONTROL_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Default Loc Status Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.DEFAULT_LOC_STATUS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Default Loc Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.DEFAULT_LOC_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.LOCATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Secondary Inventory Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.SECONDARY_INVENTORY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Subinventory Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Asset Inventory Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.ASSET_INVENTORY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Availability Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.AVAILABILITY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Inactive On",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Drop Ship For Region",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.DROP_SHIP_FOR_REGION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Picking Order",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.PICKING_ORDER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Main Service Sub",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.MAIN_SERVICE_SUB" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Shelf Subinventory Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.SHELF_SUBINVNETORY_Y_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Include in TPL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.INCLUDE_IN_TPL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Good Defective Stock",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.GOOD_DEFECTIVE_STOCK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    }, {
+      "name" : "Include In Sp Shortage Report",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory.INCLUDE_IN_SP_SHORTAGE_REPORT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Subinventory Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_INV_SUBINVENTORY_DWH_Subinventory",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_SUBINVENTORY_DWH_Subinventory" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Subinventory Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Subinventory Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Subinventory Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Subinventory Key" ],
+        "displayKey" : "Subinventory Key"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Subinventory",
+        "levels" : [ "Dim - Subinventory Total", "Dim - Subinventory Detail" ]
+      } ]
+    }
+  }
+}

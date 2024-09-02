@@ -1,0 +1,178 @@
+{
+  "physicalTable": {
+    "name": "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AR_INVOICE_HEADER_DWH_Invoice_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AR_INVOICE_HEADER_DWH_Invoice_Header.INVOICE_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.BILL_TO_CUSTOMER_SITE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUSTOMER_ACCNT_SITE_DWH_Bill_To_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUSTOMER_ACCNT_SITE_DWH_Ship_To_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.SHIP_TO_CUSTOMER_SITE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUSTOMER_ACCNT_SITE_DWH_Ship_To_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Bill_To_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.BILL_TO_CUSTOMER_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Bill_To_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Ship_To_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.SHIP_TO_CUSTOMER_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Ship_To_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Sold_To_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.SOLD_TO_CUSTOMER_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_Sold_To_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.SHIP_TO_CONTACT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.ORACLE_CUSTOMER_CONTACT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.CALC_DIST_CCID_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Calculated_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.GL_DIST_CODE_COMBINATION_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.XLA_DIST_LINK_CCID_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_CODE_COMBINATIONS_DWH_Ar_Dist_Xla_Code_Combination.CODE_COMBINATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.LEDGER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.GL_LEDGER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.ORDER_HEADER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.OPPORTUNITY_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.OU_ORG_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INVOICE_LINE_DWH_Dim_Invoice_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INVOICE_LINE_DWH_Dim_Invoice_Line.INVOICE_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_LINE_GL_DIST_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Dim_Invoice_Distribution.INVOICE_LINE_GL_DIST_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.ORDER_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OPPORTUNITY_PRODUCT_DWH_Dim_Opportunity_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.OPPORTUNITY_LINE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_OPPORTUNITY_PRODUCT_DWH_Dim_Opportunity_Product.OPPORTUNITY_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.GL_DATE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Invoice_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_TRX_DATE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Invoice_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Requisition",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0)",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQ_LINE_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Encumbered Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.ENCUMBERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Nonrecoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.NONRECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Recoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.RECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Req Line Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQ_LINE_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Req Line Currency Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQ_LINE_CURRENCY_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "# of Requisition Distributions",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQUISITION_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "# of Requisitions",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQUISITION_HEADER_FK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "# of Requisition Lines",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQUISITION_LINE_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Detail", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Detail", "logicalLevel:SSYS_SF.Dim - GL Period.Day Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Detail", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Detail", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Inventory Organization (Common).Dim - Inventory Organization (Common) Detail", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > 0",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Fact_Po_Req_Distribution.REQUISITION_DISTRIBUTION_GK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - GL Ledger",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - GL Period",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Inventory Organization (Common)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (From Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Buyer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Req Budget Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Req Charge Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Req Creation Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Subinventory",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

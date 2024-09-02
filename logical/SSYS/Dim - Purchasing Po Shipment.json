@@ -1,0 +1,2064 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Po Shipment",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Po Line Location Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Accrue On Receipt Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ACCRUE_ON_RECEIPT_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Allow Substitute Receipts Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ALLOW_SUBSTITUTE_RECEIPTS_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount",
+      "description" : "Stores the amount on the shipments for service lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Accepted",
+      "description" : "Amount Accepted for service lines\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_ACCEPTED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Billed",
+      "description" : "Stores the amount billed for service lines\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_BILLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Cancelled",
+      "description" : "Amount cancelled for service lines\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_CANCELLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Financed",
+      "description" : "For Advances or Financing Pay Items, the amount which has been pre-paid\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_FINANCED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Received",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_RECEIVED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Recouped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_RECOUPED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Service lines Amount Rejected",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.AMOUNT_REJECTED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Approved Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.APPROVED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Approved Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.APPROVED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Calculate Tax Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CALCULATE_TAX_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Cancel Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CANCEL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Cancel Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CANCEL_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Cancel Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CANCEL_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Cancelled By Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CANCELLED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Cancelled By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CANCELLED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Carrier Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CARRIER_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Carrier Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CARRIER_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed By Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Closed Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed For Invoice Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_FOR_INVOICE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed For Receiving Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_FOR_RECEIVING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CLOSED_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Consigned Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CONSIGNED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Country Of Origin Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.COUNTRY_OF_ORIGIN_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Created By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CREATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Days Early Receipt Allowed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.DAYS_EARLY_RECEIPT_ALLOWED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Days Late Receipt Allowed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.DAYS_LATE_RECEIPT_ALLOWED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Drop Ship Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.DROP_SHIP_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Encumbered Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ENCUMBERED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Encumbered Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ENCUMBERED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Enforce Ship To Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ENFORCE_SHIP_TO_LOCATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Final Match Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FINAL_MATCH_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Firm Status Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FIRM_STATUS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Fob Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FOB_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Fob Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FOB_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Freight Terms Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FREIGHT_TERMS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Freight Terms Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FREIGHT_TERMS_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "From Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FROM_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "From Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FROM_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "From Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.FROM_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Inspection Required Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.INSPECTION_REQUIRED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Invoice Close Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.INVOICE_CLOSE_TOLERANCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Invoice Match Option",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.INVOICE_MATCH_OPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Last Accept Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LAST_ACCEPT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Last Updated By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LAST_UPDATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Lead Time",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LEAD_TIME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Lead Time Unit",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LEAD_TIME_UNIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Manual Price Change Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.MANUAL_PRICE_CHANGE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Matching Basis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.MATCHING_BASIS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Need By Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.NEED_BY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Note To Receiver",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.NOTE_TO_RECEIVER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Original Need By Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ORIGINAL_NEED_BY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Original Promise Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.ORIGINAL_PROMISE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Outsourced Assembly",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.OUTSOURCED_ASSEMBLY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Past Hold Period",
+      "description" : "Total number of days this shipment line was with shipment_acceptance_hold_flag ='Y' (not including current HOLD period) \r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PAST_HOLD_PERIOD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Payment Terms",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PAYMENT_TERMS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Payment Terms Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PAYMENT_TERMS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Po Line Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Po Line Location Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Po Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Po Release Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_RELEASE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Price Break Eff End Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PRICE_BREAK_EFF_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Price Break Eff Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PRICE_BREAK_EFF_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Price Discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PRICE_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Price Override",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PRICE_OVERRIDE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Promised Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PROMISED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Promised Date + WD (PO OU)",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 81 THEN  CASE  WHEN  DAYOFWEEK(%2) IN (4, 5) THEN %2 + 3.99999 WHEN  DAYOFWEEK(%2) = 6 THEN %2 + 2.99999 ELSE %2 + 1.99999 END  ELSE  CASE  WHEN  DAYOFWEEK(%2) IN (5, 6) THEN %2 + 3.99999 WHEN  DAYOFWEEK(%2) = 7 THEN %2 + 2.99999 ELSE %2 + 1.99999 END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.OU_ORG_ID", "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PROMISED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Qty Rcv Exception Action",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QTY_RCV_EXCEPTION_ACTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Qty Rcv Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QTY_RCV_TOLERANCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Accepted",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_ACCEPTED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Billed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_BILLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Quantity Cancelled",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_CANCELLED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Financed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_FINANCED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Received",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_RECEIVED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Recouped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_RECOUPED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Rejected",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.QUANTITY_REJECTED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Receipt Days Exception Action",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.RECEIPT_DAYS_EXCEPTION_ACTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Receipt Required Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.RECEIPT_REQUIRED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Receive Close Tolerance",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.RECEIVE_CLOSE_TOLERANCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Receiving Routing",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.RECEIVING_ROUTING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Receiving Routing Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.RECEIVING_ROUTING_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Retroactive Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.RETROACTIVE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Ship To Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIP_TO_LOCATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Ship To Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIP_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Ship To Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIP_TO_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Acceptance",
+      "description" : "Current Shipment Acceptance description (Attribute8)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_ACCEPTANCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Acceptance Code",
+      "description" : "Current Shipment Acceptance code (Attribute8)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_ACCEPTANCE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Acceptance Hold Flag",
+      "description" : "\"Y\" - If this type of acceptance represent vendor hold.\r\nElse - \"N\"",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_ACCEPTANCE_HOLD_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Closed Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Last Acceptance Date",
+      "description" : "Save the last time shipment_acceptance_code (ATTRIBUTE8) has changed",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_LAST_ACCEPTANCE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Supplier Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SUPPLIER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Tax Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.TAX_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Taxable Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.TAXABLE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Unit Meas Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.UNIT_MEAS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Value Basis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.VALUE_BASIS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Current Hold Period",
+      "description" : "If Current Acceptance is HOLD - counts the number of days in current hold period.",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 = 'Y' THEN  TIMESTAMPDIFF( SQL_TSI_DAY , %2,  CURRENT_DATE ) ELSE 0 END ",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Shipment Acceptance Hold Flag", "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Shipment Last Acceptance Date" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Total Hold Period",
+      "description" : "\"Past Hold Period\" + \"Current Hold Period\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Current Hold Period", "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Past Hold Period" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Due Received",
+      "description" : "Ordered Quantity - Cancelled Quantity – Received Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) - %2 - %3",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Quantity", "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Shipment Quantity Cancelled", "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Quantity Received" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Quantity Due Billed",
+      "description" : "Ordered Quantity - Cancelled Quantity – Received Billed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 0) - %2 - %3",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Quantity", "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Shipment Quantity Cancelled", "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Quantity Billed" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Amount Due Received ($)",
+      "description" : "(Ordered Quantity - Cancelled Quantity – Received Quantity) * Po Line Price ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Quantity Due Received", "logicalColumn:SSYS.Dim - Purchasing Po Line.Po Line Price ($)" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Amount Due Billed ($)",
+      "description" : "(Ordered Quantity - Cancelled Quantity – Billed Quantity) * Po Line Price ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - Purchasing Po Shipment.Quantity Due Billed", "logicalColumn:SSYS.Dim - Purchasing Po Line.Po Line Price ($)" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Shipment Acceptance Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.SHIPMENT_ACCEPTANCE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Last Receive Transaction DateTime",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LAST_RECEIVE_TRANSACTION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    }, {
+      "name" : "Last Receive Transaction Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.LAST_RECEIVE_TRANSACTION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Shipment Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Po Shipment Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Po Shipment Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Po Shipment Detail",
+        "numberOfElements" : 392969,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Po Line Location Gk" ],
+        "displayKey" : "Po Line Location Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Po Shipment",
+        "levels" : [ "Dim - Purchasing Po Shipment Total", "Dim - Purchasing Po Shipment Detail" ]
+      } ]
+    }
+  }
+}

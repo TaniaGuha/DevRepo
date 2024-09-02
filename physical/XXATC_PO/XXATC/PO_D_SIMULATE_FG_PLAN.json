@@ -1,0 +1,35 @@
+{
+  "physicalTable": {
+    "name": "PO_D_SIMULATE_FG_PLAN",
+    "description": "Finish goods by spend type (Systems/Consumables/Service/Accessories) manufacturing plan as extracted from the Oracle MRP results.\r\nWith an automatic completion to 12 month production forecast (taken from the 9 month and copy to lasy 3 months. Done for Consumables/Accessories)",
+    "sourceTable": "physicalTable:XXATC_PO.XXATC.XXATC_MSC_D_FG_PLAN_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 12,
+      "expiryUnit": "HOURS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.INV_D_FG_ITEMS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_FG_ITEMS.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_SIMULATION_DATES",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.BI_TARGET_DATE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.BI_DATE_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_ITEM_CODE",
+        "BI_TARGET_DATE"
+      ]
+    ]
+  }
+}

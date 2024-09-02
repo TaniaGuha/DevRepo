@@ -1,0 +1,348 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Asset Install Period",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Asset Install Period Date GK" ],
+    "logicalColumns" : [ {
+      "name" : "Asset Install Period Date GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Day Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.DAY_OF_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Day Number (week)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Day Number (month)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.DAY_NUMBER_IN_CALENDAR_MONTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Day Number (year)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.DAY_NUMBER_IN_CALENDAR_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Day Is Holiday",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.HOLIDAY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Day"
+    }, {
+      "name" : "Asset Install Period Week Number (year)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_WEEK_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Asset Install Period Month and Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Month"
+    }, {
+      "name" : "Asset Install Period Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Month"
+    }, {
+      "name" : "Asset Install Period Month Number",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Month"
+    }, {
+      "name" : "Asset Install Period Month ID",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_YEAR_MONTH_YYYYMM_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Month"
+    }, {
+      "name" : "Asset Install Period Quarter",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Asset Install Period Quarter ID",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_YEAR_QUARTER_QQYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Quarter"
+    }, {
+      "name" : "Asset Install Period Quarter ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_YEAR_QUARTER_YYYYQQ_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Quarter"
+    }, {
+      "name" : "Asset Install Period Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_YEAR_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Year"
+    }, {
+      "name" : "Asset Install Period Year ID",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Asset Install Period Year"
+    }, {
+      "name" : "Days in Month",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE('add_months(trunc(\\%1,''mm''),1) - trunc(\\%2,''mm'')' AS  INTEGER , %1, %1)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.TIME_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Is Relevant",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 >= 2010 AND %2 <  CURRENT_DATE  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.CALENDAR_YEAR_N", "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.TIME_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Asset Install Period",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Asset_Installed_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.PERIOD_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Asset_Installed_Period",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.TIME_DIM_Asset_Installed_Period" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Asset Install Period Total",
+      "logicalLevels" : [ {
+        "name" : "Dim - Asset Install Period Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Asset Install Period Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Asset Install Period Year ID" ],
+        "displayKey" : "Asset Install Period Year",
+        "additionalKeys" : [ [ "Asset Install Period Year" ] ]
+      }, {
+        "name" : "Dim - Asset Install Period Quarter",
+        "numberOfElements" : 40,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Asset Install Period Quarter ID" ],
+        "displayKey" : "Asset Install Period Quarter",
+        "additionalKeys" : [ [ "Asset Install Period Quarter" ] ]
+      }, {
+        "name" : "Dim - Asset Install Period Month",
+        "numberOfElements" : 120,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Asset Install Period Month ID" ],
+        "displayKey" : "Asset Install Period Month and Year",
+        "additionalKeys" : [ [ "Asset Install Period Month and Year" ] ],
+        "chronologicalKey" : [ "Asset Install Period Month ID" ]
+      }, {
+        "name" : "Dim - Asset Install Period Day",
+        "numberOfElements" : 4000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Asset Install Period Date GK" ],
+        "displayKey" : "Asset Install Period Date",
+        "additionalKeys" : [ [ "Asset Install Period Date" ] ],
+        "chronologicalKey" : [ "Asset Install Period Date GK" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Asset Install Period",
+        "levels" : [ "Dim - Asset Install Period Total", "Dim - Asset Install Period Year", "Dim - Asset Install Period Quarter", "Dim - Asset Install Period Month", "Dim - Asset Install Period Day" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "physicalTable": {
+    "name": "AR_F_COLLECTION",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_AR_F_COLLECTION_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 12,
+      "expiryUnit": "HOURS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_BILL_TO_CUSTOMER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_COLLECTION.BI_SITE_USE_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_BILL_TO_CUSTOMER.BI_CUSTOMER_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_Collection",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_COLLECTION.BI_COLLECTION_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_Collection.BI_COLLECTION_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.AR_D_PAYMENT_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_COLLECTION.BI_DEPOSIT_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.AR_D_PAYMENT_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_ORGANIZATIONS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.AR_F_COLLECTION.BI_ORG_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.HR_D_ORGANIZATIONS.BI_ORG_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_COLLECTION_CODE"
+      ]
+    ]
+  }
+}

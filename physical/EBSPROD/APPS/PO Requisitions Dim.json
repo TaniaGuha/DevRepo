@@ -1,0 +1,28 @@
+{
+  "physicalTable": {
+    "name": "PO Requisitions Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPO_REQUISITIONS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Requestor Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Dim.REQUESTOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Requestor Dim.PERSON_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PR Buyer Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Requisitions Dim.BUYER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PR Buyer Dim.PERSON_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "PR_DISTRIBUTION_ID"
+      ]
+    ]
+  }
+}

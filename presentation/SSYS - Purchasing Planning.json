@@ -1,0 +1,123 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Planning",
+    "tags" : [ "Project:SSYS_GSC_Project_Release1", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Purchasing Simulation",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Simulation Target Date"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.BOM",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.BOM Measures"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.BOM Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.BOM Top Assembly",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Item Inventory Org - Top Assembly"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Item Master Org - Top Assembly"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.BOM Component",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Item Master Org - Component"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Item Inventory Org - Component"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.BOM Direct Assembly",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Item Master Org - Direct Assembly"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Item Inventory Org - Direct Assembly"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Subinventory"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Item (Ship To Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Supplier",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Supplier Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Supplier Site"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Purchasing Order",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Po Header"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Po Release"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Po Line"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Po Shipment"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Planning.Po Distribution"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.MRP Plans"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Supply MRP",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Supply MRP Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Supply MRP Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Planning.Supply Pegging",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Supply Pegging Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Planning.End Pegging Item",
+          "children" : [ {
+            "name" : "presentationTable:SSYS - Purchasing Planning.End Pegging Item Attributes"
+          } ]
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Planning.Supply Pegging Measures"
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Planning_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Planning",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Planning)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Planning)"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "DIM_SERVICE_CONTRACT_DWH_Service_Contract",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Service_Contract_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Service_Contract.SERVICE_CONTRACT_PRODUCT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Service_Contract_Product.ITEM_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "CONTRACT_GK"
+      ]
+    ]
+  }
+}

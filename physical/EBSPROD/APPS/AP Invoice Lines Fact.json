@@ -1,0 +1,112 @@
+{
+  "physicalTable": {
+    "name": "AP Invoice Lines Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAP_INVOICE_LINES_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Item Category Sets",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Item Category Sets.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Activity Analysis Hier Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Activity Analysis Hier Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Category Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Class Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Class Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Main Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Main Category Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.PO_HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Headers Dim.PURCHASE_ORDER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Lines Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.PO_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Lines Dim.PO_LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Releases Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.PO_RELEASE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Releases Dim.PO_RELEASE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Requestor Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.REQUESTER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Requestor Dim.PERSON_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Shipments Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Lines Fact.PO_LINE_LOCATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Shipments Dim.PO_SHIPMENT_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVOICE_ID",
+        "LINE_NUMBER"
+      ]
+    ]
+  }
+}

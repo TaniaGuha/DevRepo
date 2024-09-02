@@ -1,0 +1,821 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Service Contract (Warranty)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Contract Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Contract Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Contract Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Asset Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.ASSET_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Account Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_ACCOUNT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Care",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_CARE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Contact Name",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_CONTACT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Contact Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_CONTACT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty End Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Owner Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_OWNER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Owner Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_OWNER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Record Type Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_RECORD_TYPE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Record Type Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_RECORD_TYPE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Template Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_TEMPLATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Template Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_TEMPLATE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Term Months",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_TERM_MONTHS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CONTRACT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Created By User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CREATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Created By User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CREATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Created Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.CREATED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Grand Total",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.GRAND_TOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Importance Level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.IMPORTANCE_LEVEL__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Last Modified By User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.LAST_MODIFIED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Last Modified By User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.LAST_MODIFIED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Last Modified Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.LAST_MODIFIED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Line Item Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.LINE_ITEM_COUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Number Of Labors",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.NUMBER_OF_LABORS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Opportunity Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.OPPORTUNITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Oracle Contract Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.ORACLE_CONTRACT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Warranty Oracle Contract Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.ORACLE_CONTRACT_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Oracle External Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.ORACLE_EXTERNAL_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Quote Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.QUOTE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Quote Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.QUOTE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Renewal Opportunity Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.RENEWAL_OPPORTUNITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Shipping And Handling",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.SHIPPING_AND_HANDLING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Srvc Contract Product Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.SRVC_CONTRACT_PRODUCT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Subtotal",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.SUBTOTAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.TAX" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "Total Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.TOTAL_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Active Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_ACTIVE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Etl Insert Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_ETL_INSERT_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Etl Update Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_ETL_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Integration Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_INTEGRATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Src Create By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_SRC_CREATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Src Create Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_SRC_CREATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Src Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_SRC_UPDATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    }, {
+      "name" : "X Src Update Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty.X_SRC_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Service Contract (Warranty) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_SERVICE_CONTRACT_DWH_Warranty",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_SERVICE_CONTRACT_DWH_Warranty" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Service Contract (Warranty) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Service Contract (Warranty) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Service Contract (Warranty) Detail",
+        "numberOfElements" : 21750,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Contract Gk" ],
+        "displayKey" : "Contract Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Service Contract (Warranty)",
+        "levels" : [ "Dim - Service Contract (Warranty) Total", "Dim - Service Contract (Warranty) Detail" ]
+      } ]
+    }
+  }
+}

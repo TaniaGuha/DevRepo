@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "ETL_DAILY_LOAD_DATE_INIT",
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:XXControl.XXCtrl Connection Pool",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select MAX(RUN_START) from XX_ETL_LOAD_CONTROL\r\nwhere PACKAGE_NAME = 'LP_DWH_DAILYLOAD' and ETL_STATUS='S';"
+    } ],
+    "variables" : [ {
+      "name" : "ETL_DAILY_LOAD_DATE",
+      "value" : " TIMESTAMP '2024-05-23 01:00:07'"
+    } ],
+    "runSchedule" : {
+      "interval" : 5,
+      "intervalUnit" : "HOURS",
+      "startingOn" : "2024-03-10 14:42:03"
+    },
+    "disable" : false
+  }
+}

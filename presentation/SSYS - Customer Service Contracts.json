@@ -1,0 +1,68 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Customer Service Contracts",
+    "tags" : [ "Project:Strataforce 2" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Customer Service Contract.# of Service Contracts",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Start Time"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.End Time"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Customers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.Account"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.End Customer"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Locations",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.Install Site"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.Ship To Site"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Service Contracts",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.Current Contract"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.Next Contract"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service Contracts.Previous Contract"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Product"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Asset"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service Contracts.Service Contract Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:CS_User",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Customer Service Contracts",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Customer_Service_Contracts)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Customer_Service_Contracts)"
+    }
+  }
+}

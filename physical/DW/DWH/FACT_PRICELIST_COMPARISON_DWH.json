@@ -1,0 +1,166 @@
+{
+  "physicalTable" : {
+    "name" : "FACT_PRICELIST_COMPARISON_DWH",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT \r\n    DECODE (NVL (master_list_header_name1, 'XX'), 'XX', 'Y', 'N')          new_entry,\r\n    DECODE (NVL (master_list_header_name2, 'XX'), 'XX', 'Y', 'N')          removed_entry,\r\n    DECODE ( (NVL (new_price1, 0) - NVL (new_price2, 0)), 0, 'N', 'Y')     price_change,\r\n    dd.pz_flag,\r\n    DECODE (err_msg1, err_msg2, 'N', 'Y')                                     factor_change,\r\n    dd.rule_id,\r\n    dd.list_header_name,\r\n    dd.item_code,\r\n    dd.description,\r\n    cc.*\r\nFROM \r\n    (SELECT *\r\n    FROM   \r\n        (Select distinct\r\n            Zz.Rule_Id Rule_Id1,\r\n            Zz.Inventory_Item_Id Inventory_Item_Id1,\r\n            Zz.Master_List_Header_Name Master_List_Header_Name1,\r\n            Zz.Master_Price Master_Price1,\r\n            Zz.New_Price New_Price1,\r\n            Zz.Err_Msg Err_Msg1,\r\n            Zz.Err_Flag Err_Flag1,\r\n            Zz.Excluded_Flag Excluded_Flag1,\r\n            Zz.Creation_Date Creation_Date1,\r\n            zz.request_id request_id1\r\n        From \r\n            FACT_PLUPDT_SIMULATION_DWH Zz,FACT_PLUPDT_SIMULATION_DWH Yy\r\n        Where Zz.List_Header_Id=Yy.List_Header_Id\r\n        And Zz.Request_Id =Substr('valueof(NQ_SESSION.requestid1)',0,10)\r\n        and YY.Request_Id =Substr('valueof(NQ_SESSION.requestid2)',0,10) \r\n        ) aa\r\n    FULL OUTER JOIN\r\n        (Select distinct\r\n            Zz.Rule_Id Rule_Id2,\r\n            Zz.Inventory_Item_Id Inventory_Item_Id2,\r\n            Zz.Master_List_Header_Name Master_List_Header_Name2,\r\n            Zz.Master_Price Master_Price2,\r\n            Zz.New_Price New_Price2,\r\n            Zz.Err_Msg Err_Msg2,\r\n            Zz.Err_Flag Err_Flag2,\r\n            Zz.Excluded_Flag Excluded_Flag2,\r\n            Zz.Creation_Date Creation_Date2,\r\n            zz.request_id request_id2\r\n        From \r\n            FACT_PLUPDT_SIMULATION_DWH Zz,FACT_PLUPDT_SIMULATION_DWH Yy\r\n        Where Zz.List_Header_Id=Yy.List_Header_Id\r\n        And Zz.Request_Id =Substr('valueof(NQ_SESSION.requestid2)',0,10)\r\n        and YY.Request_Id =Substr('valueof(NQ_SESSION.requestid1)',0,10)    \r\n        ) bb\r\n        ON aa.rule_id1 = bb.rule_id2\r\n        AND aa.inventory_item_id1 = bb.inventory_item_id2) cc,\r\n        FACT_PLUPDT_SIMULATION_DWH dd\r\n WHERE \r\n    NVL (cc.request_id1, cc.request_id2) = dd.request_id\r\n    AND dd.rule_id = NVL (cc.rule_id1, cc.rule_id2)\r\n    And Dd.Inventory_Item_Id = Nvl (Cc.Inventory_Item_Id1, Cc.Inventory_Item_Id2)"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "PRICE_CHANGE",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "ERR_FLAG2",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "CREATION_DATE2",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PZ_FLAG",
+      "dataType" : "CHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "MASTER_PRICE1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "NEW_PRICE1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ERR_MSG2",
+      "dataType" : "VARCHAR",
+      "length" : 2000,
+      "nullable" : false
+    }, {
+      "name" : "REQUEST_DATE1",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : false
+    }, {
+      "name" : "INVENTORY_ITEM_ID1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ERR_MSG1",
+      "dataType" : "VARCHAR",
+      "length" : 2000,
+      "nullable" : false
+    }, {
+      "name" : "ERR_FLAG1",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "CREATION_DATE1",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "RULE_ID2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "REMOVED_ENTRY",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "EXCLUDED_FLAG2",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "REQUEST_DATE2",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "FACTOR_CHANGE",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "RULE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "RULE_ID1",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "EXCLUDED_FLAG1",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "INVENTORY_ITEM_ID2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "NEW_ENTRY",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "REQUEST_ID2",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "LIST_HEADER_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "MASTER_LIST_HEADER_NAME1",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "REQUEST_ID1",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "MASTER_LIST_HEADER_NAME2",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : false
+    }, {
+      "name" : "MASTER_PRICE2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "NEW_PRICE2",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ]
+  }
+}

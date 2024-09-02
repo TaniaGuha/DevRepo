@@ -1,0 +1,101 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - GC User",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Gc User Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Gc User Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_USER_DWH_Dim_GC_User",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User.GC_USER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC User Detail"
+    }, {
+      "name" : "Gc User Src Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_USER_DWH_Dim_GC_User",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User.GC_USER_SRC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC User Detail"
+    }, {
+      "name" : "User Email",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_USER_DWH_Dim_GC_User",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User.USER_EMAIL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC User Detail"
+    }, {
+      "name" : "User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GC_USER_DWH_Dim_GC_User",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User.USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GC User Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GC_USER_DWH_Dim_GC_User",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - GC User Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - GC User Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - GC User Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Gc User Gk" ],
+        "displayKey" : "Gc User Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "GC User",
+        "levels" : [ "Dim - GC User Total", "Dim - GC User Detail" ]
+      } ]
+    }
+  }
+}

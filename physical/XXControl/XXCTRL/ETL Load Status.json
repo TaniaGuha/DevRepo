@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "ETL Load Status",
+    "sourceTable": "physicalTable:XXControl.XXCTRL.XX_ETL_LOAD_CONTROL",
+    "joins": [      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.ETL Package Name",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXControl.XXCTRL.ETL Load Status.PACKAGE_NAME",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.ETL Package Name.PACKAGE_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.Last Succesful Load Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXControl.XXCTRL.ETL Load Status.PACKAGE_NAME",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.Last Succesful Load Date.PACKAGE_NAME"
+          }
+        ]
+      }
+    ]
+  }
+}

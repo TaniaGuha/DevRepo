@@ -1,0 +1,52 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Customer Data",
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Customer All.# of Oracle Accounts",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Customer Data.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Data.Customer Account",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Data.Oracle Customer Accounts"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Data.SFDC Customer Accounts"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Data.Customer Site",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Data.Oracle Customer Site"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Data.Customer Contact",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Data.Oracle Customer Contacts"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Data.SFDC Customer Contacts"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Data.Customer Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Customer_Data",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Customer Data",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Customer_Data)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Customer_Data)"
+    }
+  }
+}

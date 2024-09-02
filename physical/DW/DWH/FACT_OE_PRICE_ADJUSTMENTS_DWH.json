@@ -1,0 +1,441 @@
+{
+  "physicalTable" : {
+    "name" : "FACT_OE_PRICE_ADJUSTMENTS_DWH",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select oe.* \r\n  , (select mh.modifier_header_number from dim_modifier_header_dwh mh where mh.modifier_header_gk = oe.price_adj_modifier_header_gk) modifier_header_number\r\n  , (select mh.modifier_header_name from dim_modifier_header_dwh mh where mh.modifier_header_gk = oe.price_adj_modifier_header_gk) modifier_header_name\r\nfrom FACT_OE_PRICE_ADJUSTMENTS_DWH oe"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "PRICE_ADJ_OPERAND_PER_PQTY",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ORDER_HEADER_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ORDER_HEADER_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ORDER_LINE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ORDER_LINE_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_OVERIDE_ALLOWED",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_PRICE_BREAK_TYPE_CD",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_PRICING_PHASE_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_PRINT_ON_INVOICE_F",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_RANGE_BREAK_QTY",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_TAX_RATE_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_USER_MODIFY_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICING_GROUP_SEQUENCE",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRODUCT_ITEM_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "QUOTE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "REBATE_TRANSACTION_TYPE_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "REQUISITION_HEADER_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "REQUISITION_LINE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SERVICE_CONTRACT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_FROM_INVENTORY_ITEM_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_FROM_ORG_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_CONTACT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_CUSTOMER_ACCOUNT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_INVENTORY_ITEM_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_INV_ORGANIZATION_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_SITE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SOLD_TO_CONTACT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SOLD_TO_ORG_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUBINVENTORY_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "X_ACTIVE_IND",
+      "dataType" : "CHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "X_ETL_INSERT_DT",
+      "dataType" : "DATETIME",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "X_ETL_UPDATE_DT",
+      "dataType" : "DATETIME",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "X_INTEGRATION_ID",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "X_SRC_CREATE_BY",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "X_SRC_CREATE_DT",
+      "dataType" : "DATETIME",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "X_SRC_UPDATE_BY",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "X_SRC_UPDATE_DT",
+      "dataType" : "DATETIME",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "ASSET_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BILL_TO_CONTACT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BILL_TO_CUSTOMER_ACCOUNT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BILL_TO_SITE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CASE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CHANGE_REASON_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "CHANGE_REASON_TEXT",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "FIRST_INVOICE_DATE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "INSTALL_LOCATION_SITE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "INVENTORY_ITEM_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "OPPORTUNITY_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "OPPORTUNITY_LINE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORDERED_DATE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORDER_CURRENCY_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORDER_TYPE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "OU_ORG_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJUSTED_AMOUNT_PER_PQTY",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJUSTMENT_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "PRICE_ADJUSTMENT_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ACCRUAL_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ADJUSTED_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_APPLIED_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_ARITHMETIC_OPERATOR",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_AUTOMATIC_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_BENEFIT_QTY",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_BENEFIT_UOM_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CHARGE_TYPE_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CHRG_ESTIMATED_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CHRG_INVOICED_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CREATED_BY",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CREATED_BY_CODE",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CREATION_DATE",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_CREDIT_OR_CHARGE_F",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_INCLUDE_ON_RETURNS_F",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_INTERCO_INVOICED_F",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_INVOICED_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_LAST_UPDATED_BY",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_LAST_UPDATED_BY_CODE",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_LAST_UPDATE_DATE",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_LIST_LINE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_LIST_LINE_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_LIST_LINE_TYPE_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_MODIFIER_HEADER_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_MODIFIER_HEADER_ID",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_MODIFIER_LEVEL_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_MODIFIER_LINE_NO",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_ADJ_OPERAND",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "MODIFIER_HEADER_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 250,
+      "nullable" : true
+    }, {
+      "name" : "MODIFIER_HEADER_NUMBER",
+      "dataType" : "VARCHAR",
+      "length" : 180,
+      "nullable" : true
+    } ]
+  }
+}

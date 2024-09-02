@@ -1,0 +1,88 @@
+{
+  "logicalTable" : {
+    "name" : "Lookup - Parent Account SFDC Details",
+    "type" : "LOOKUP",
+    "primaryKey" : [ "Oracle Account Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Oracle Account Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details.ORACLE_ACCOUNT_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sfdc Parent Account Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details.SFDC_PARENT_ACCOUNT_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sfdc Parent Account Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details.SFDC_PARENT_ACCOUNT_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sfdc Parent Account Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details.SFDC_PARENT_ACCOUNT_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sfdc Parent Account Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details.SFDC_PARENT_ACCOUNT_NUMBER" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Lkp_Parent_Account_Details" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "physicalTable": {
+    "name": "MTL Kanban Pull Cards Fact",
+    "description": "Distinct Kanban Item Pull Sequences for Active & Hold Card Statuses",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMTL_KANBAN_PULL_CARDS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Inv Orgs Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Locators Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.LOCATOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Locators Dim.INVENTORY_LOCATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Subinventory Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Subinventory Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.SUBINVENTORY_NAME",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Subinventory Dim.SUBINVENTORY_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Vendor Sites Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.MTL Kanban Pull Cards Fact.SUPPLIER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Vendor Sites Dim.VENDOR_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "physicalTable": {
+    "name": "INV_F_COSTING_F_SHP",
+    "sourceTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_INV_F_COSTING_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.COSTING_AS_OF_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.COSTING_AS_OF_DATE.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.INV_D_MS_ITEMS_FOR_SHP",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_MS_ITEMS_FOR_SHP.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.INV_ORG_FOR_SHP",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_INV_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_ORG_FOR_SHP.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.OPERATING_UNITS_FOR_SHP",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_F_COSTING_F_SHP.BI_OPERATING_UNIT_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.OPERATING_UNITS_FOR_SHP.BI_ORG_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

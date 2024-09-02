@@ -1,0 +1,791 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Inventory Onhand",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Onhand Quantities Id" ],
+    "logicalColumns" : [ {
+      "name" : "Containerized Flag",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.CONTAINERIZED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Cost Group Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.COST_GROUP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Create Transaction Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.CREATE_TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Created By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.CREATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Date Received",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.DATE_RECEIVED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Date Received Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.DATE_RECEIVED_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Inv Org Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.INV_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Inv Org Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.INV_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Inv Org Item Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.INV_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Is Consigned",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.IS_CONSIGNED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Last Updated By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LAST_UPDATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Locator Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LOCATOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LOT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Lpn Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LPN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Master Org Item Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Onhand Detail Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.ONHAND_DETAIL_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Onhand Quantities Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.ONHAND_QUANTITIES_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Organization Type",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.ORGANIZATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Orig Date Received",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.ORIG_DATE_RECEIVED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Owning Organization Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.OWNING_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Owning Tp Type",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.OWNING_TP_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Planning Organization Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.PLANNING_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Planning Tp Type",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.PLANNING_TP_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Primary Transaction Quantity",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.PRIMARY_TRANSACTION_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.REVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Secondary Transaction Quantity",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.SECONDARY_TRANSACTION_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Secondary Uom Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.SECONDARY_UOM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Status Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.STATUS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Subinventory Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.SUBINVENTORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Subinventory Gk",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.SUBINVENTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Transaction Quantity",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.TRANSACTION_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Transaction Uom Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.TRANSACTION_UOM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Update Transaction Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.UPDATE_TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Active Ind",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_ACTIVE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Etl Insert Dt",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_ETL_INSERT_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Etl Update Dt",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_ETL_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Integration Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_INTEGRATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Src Create By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_SRC_CREATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Src Create Dt",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_SRC_CREATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Src Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_SRC_UPDATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "X Src Update Dt",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.X_SRC_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Locator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.LOCATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Detail"
+    }, {
+      "name" : "Create Material Transaction Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand.CREATE_MATERIAL_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Inventory Onhand Total"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MTL_ONHAND_QTY_DWH_Dim_Inventory_Onhand" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Inventory Onhand Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Inventory Onhand Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Inventory Onhand Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Onhand Quantities Id" ],
+        "displayKey" : "Onhand Quantities Id"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Inventory Onhand",
+        "levels" : [ "Dim - Inventory Onhand Total", "Dim - Inventory Onhand Detail" ]
+      } ]
+    }
+  }
+}

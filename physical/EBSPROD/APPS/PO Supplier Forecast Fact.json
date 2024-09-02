@@ -1,0 +1,85 @@
+{
+  "physicalTable": {
+    "name": "PO Supplier Forecast Fact",
+    "description": "This data is based on the msc_orders_v view.",
+    "sourceTable": "physicalTable:EBSPROD.APPS.MSC_ORDERS_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.CATEGORY_SET_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.CATEGORY_SET_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.PLAN_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.PLAN_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.SR_INSTANCE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.SR_INSTANCE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC MTL Item Lookup Fact",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.ITEM_SEGMENTS",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC MTL Item Lookup Fact.SEGMENT1"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC MTL Item Lookup Fact.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Order Source Order Type Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.ORDER_TYPE_TEXT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.ORDER_TYPE_TEXT"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.SOURCE_TABLE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.MSC_SOURCE_TABLE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Organizations Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.SR_INSTANCE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Organizations Dim.SR_INSTANCE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Plans Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.PLAN_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Plans Dim.PLAN_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

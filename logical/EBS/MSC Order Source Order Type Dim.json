@@ -1,0 +1,195 @@
+{
+  "logicalTable" : {
+    "name" : "MSC Order Source Order Type Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Msc Source Table", "Order Type Text" ],
+    "logicalColumns" : [ {
+      "name" : "Msc Source Table",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.MSC_SOURCE_TABLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Order Source"
+    }, {
+      "name" : "Lookup Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.LOOKUP_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Order Source"
+    }, {
+      "name" : "Language",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.LANGUAGE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.LOOKUP_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Lookup Code Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.LOOKUP_CODE_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Order Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.ORDER_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Order Type"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.ENABLED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Msc Source Table Lookup Code",
+      "description" : "Combo of \"Msc Source Table\" || '~' || \"Lookup Code Num\"",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 || '~' || %2",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.MSC_SOURCE_TABLE", "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.LOOKUP_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Msc Source Table Order Type Text",
+      "description" : "Combo of \"Msc Source Table\" || '~' || \"Lookup Code Num\"",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MSC Order Source Order Type Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 || '~' || %2",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.MSC_SOURCE_TABLE", "physicalColumn:EBSPROD.APPS.MSC Order Source Order Type Dim.ORDER_TYPE_TEXT" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MSC Order Source Order Type Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.MSC Order Source Order Type Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.MSC Order Source Order Type Dim.Order Type" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "MSC Order Source Order Type Dim Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "MSC Order Source Order Type Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Order Source",
+        "numberOfElements" : 2,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Msc Source Table" ],
+        "displayKey" : "Msc Source Table"
+      }, {
+        "name" : "Order Type",
+        "numberOfElements" : 200,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Msc Source Table", "Order Type Text" ],
+        "displayKey" : "Order Type Text",
+        "additionalKeys" : [ [ "Order Type Text" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MSC Order Source Order Type Dim",
+        "levels" : [ "MSC Order Source Order Type Dim Total", "Order Source", "Order Type" ]
+      } ]
+    }
+  }
+}

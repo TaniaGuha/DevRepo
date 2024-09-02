@@ -1,0 +1,2141 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Supply MRP Hist",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Snapshot Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Snapshot Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SNAPSHOT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Snapshot Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SNAPSHOT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Action",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ACTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Applied",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.APPLIED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Batch Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.BATCH_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Bill Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.BILL_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Buyer Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.BUYER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Delivery Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.DELIVERY_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Disposition Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.DISPOSITION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Disposition Status Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.DISPOSITION_STATUS_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Expiration Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.EXPIRATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Expiration Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.EXPIRATION_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Explosion Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.EXPLOSION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Firm Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.FIRM_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Firm Planned Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.FIRM_PLANNED_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Firm Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.FIRM_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Firm Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.FIRM_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "From Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.FROM_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement As",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_AS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Dock Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_DOCK_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Firm",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_FIRM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Job Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_JOB_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Status Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Uom Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_UOM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implement Wip Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENT_WIP_CLASS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Implemented Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.IMPLEMENTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Intransit Lead Time",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.INTRANSIT_LEAD_TIME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Item Type Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ITEM_TYPE_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Header Gk By Item",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_HEADER_GK_BY_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Header Id By Item",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_HEADER_ID_BY_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Number By Item",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_NUMBER_BY_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Unit Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Po Unit Price By Item",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_PO_UNIT_PRICE_BY_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Load Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LOAD_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.LOT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Master Org Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Mrp Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.MRP_INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Need By Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEED_BY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "New Dock Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEW_DOCK_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "New Order Placement Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEW_ORDER_PLACEMENT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "New Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Suggested Due Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEW_SCHEDULE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Suggested Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEW_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Suggested Wip Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NEW_WIP_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Dock Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_DOCK_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Need By Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_NEED_BY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old New Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old New Schedule Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_NEW_SCHEDULE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Order Placement Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_ORDER_PLACEMENT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Qty Completed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_QTY_COMPLETED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Schedule Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_SCHEDULE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Old Wip Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OLD_WIP_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Operation Seq Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OPERATION_SEQ_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Order Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ORDER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Order Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ORDER_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Order Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ORDER_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Planning Partner Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PLANNING_PARTNER_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Currency Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_CURRENCY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Distribution Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Line Location Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Linkage Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINKAGE_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Linkage Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINKAGE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Linkage Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_LINKAGE_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Original Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_ORIGINAL_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Rate Date To Usd",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_RATE_DATE_TO_USD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Release Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_RELEASE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Po Release Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PO_RELEASE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Process Seq Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PROCESS_SEQ_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Promised Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PROMISED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Ps Supply Flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PS_SUPPLY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Purch Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.PURCH_LINE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Quantity In Process",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.QUANTITY_IN_PROCESS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Releasable",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.RELEASABLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Release Errors",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.RELEASE_ERRORS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Release Status",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.RELEASE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Req Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.REQ_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Requested Completion Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.REQUESTED_COMPLETION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Requisition Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.REQUISITION_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Requisition Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.REQUISITION_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Reschedule Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.RESCHEDULE_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Reschedule Flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.RESCHEDULE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.REVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Routing Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.ROUTING_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Schedule Compress Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SCHEDULE_COMPRESS_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Schedule Designator Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SCHEDULE_DESIGNATOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Schedule Group Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SCHEDULE_GROUP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Schedule Group Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SCHEDULE_GROUP_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Schedule Priority",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SCHEDULE_PRIORITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Ship Method",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SHIP_METHOD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Snapshot Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUPPLY_TRANSACTION_SNAPSHOT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Source Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SOURCE_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Source Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SOURCE_SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Source Supplier Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SOURCE_SUPPLIER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Source Supplier Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SOURCE_SUPPLIER_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Sr Mtl Supply Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SR_MTL_SUPPLY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Status",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Sub Inventory Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUB_INVENTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Subinventory Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUBINVENTORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Supplier Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUPPLIER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Supplier Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUPPLIER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Supplier Site Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUPPLIER_SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Supplier Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUPPLIER_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Supply Transaction Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.SUPPLY_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Updated",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.UPDATED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Volume Capacity Used",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.VOLUME_CAPACITY_USED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Weight Capacity Used",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.WEIGHT_CAPACITY_USED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Wip Start Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.WIP_START_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Wip Status Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.WIP_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Wip Supply Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.WIP_SUPPLY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Nonnettable Inventory Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.NONNETTABLE_INVENTORY_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    }, {
+      "name" : "Firm Planned Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist.FIRM_PLANNED_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_HIST_DWH_Dim_MSC_Supply_Hist" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Snapshot Gk" ],
+        "displayKey" : "Snapshot Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Supply MRP Hist",
+        "levels" : [ "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail" ]
+      } ]
+    }
+  }
+}

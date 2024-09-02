@@ -1,0 +1,829 @@
+{
+  "logicalTable" : {
+    "name" : "MFG_D_BOM_TOP_OBJ",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "BI_ITEM_CODE" ],
+    "logicalColumns" : [ {
+      "name" : "COMPONENT_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMPONENT_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_BUY_MAKE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_BUY_MAKE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_ITEM_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_ITEM_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_LAST_PO_PRICE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_LAST_PO_PRICE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_LAST_PO_RCV_PRICE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_LAST_PO_RCV_PRICE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_MATERIAL_COST",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_MATERIAL_COST" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Component_Part_Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Components"
+    }, {
+      "name" : "COMP_QUANTITY",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "COMP_QUANTITY_EXTENDED",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_QUANTITY_EXTENDED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CREATION_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIRECT_ASSEMBLY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.DIRECT_ASSEMBLY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DIRECT_ASSEMBLY_PART_NUMBER",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.DIRECT_ASSEMBLY_PART_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DISABLE_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.DISABLE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "EFFECTIVE_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.EFFECTIVE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "EXCLUDE_IND",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.EXCLUDE_IND" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.ORGANIZATION_ID" ]
+          }
+        }, {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "PLAN_LEVEL",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.PLAN_LEVEL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SORT_ORDER",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.SORT_ORDER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TOP_ASSEMBLY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.TOP_ASSEMBLY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Top Assembly",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MFG_D_BOM_EXPLODE",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.TOP_LEVEL_ASSEMBLY_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Top Assembly"
+    }, {
+      "name" : "MASTER_ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MASTER_ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "UOM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.UOM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "UOM_DESC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.UOM_DESC" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "PICTURE_URL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.PICTURE_URL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_GROUP",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_GROUP" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "PRODUCT_LINE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.PRODUCT_LINE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SUB_FAMILY_1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.SUB_FAMILY_1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SUB_FAMILY_2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.SUB_FAMILY_2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "SYSTEM_FAMILY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.SYSTEM_FAMILY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "IS_BOM_INCLUDE",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.IS_BOM_INCLUDE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "IS_HEAD",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.IS_HEAD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "IS_RESIN",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.IS_RESIN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "IS_SP",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.IS_SP" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_CATEGORY_OBJ",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_CATEGORY_OBJ" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_FOR_PARAMETER",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_FOR_PARAMETER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MAKE_BUY_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MAKE_BUY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.BI_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_DESC",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_DESC" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_TYPE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LIST_PRICE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.LIST_PRICE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MASTER_FLAG",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MASTER_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FINISH_GOOD",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.FINISH_GOOD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MANAGEMENT_TYPE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MANAGEMENT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Type"
+    }, {
+      "name" : "TECHNOLOGY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.TECHNOLOGY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MANAGEMENT_RESIN",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MANAGEMENT_RESIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Resin"
+    }, {
+      "name" : "MANAGEMENT_FAMILY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MANAGEMENT_FAMILY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Family"
+    }, {
+      "name" : "MANAGEMENT_PRODUCT_LINE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.MANAGEMENT_PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Product Line"
+    }, {
+      "name" : "MANAGEMENT_COMPOUND_FAMILY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1,  LEFT(%2, 3))",
+          "expressionObjects" : [ "logicalColumn:XXATC_MFG_CHM.MFG_D_BOM_TOP_OBJ.MANAGEMENT_FAMILY", "logicalColumn:XXATC_MFG_CHM.MFG_D_BOM_TOP_OBJ.ITEM_CODE" ]
+        }
+      },
+      "logicalLevel" : "Family"
+    }, {
+      "name" : "MANAGEMENT_COMPOUND_RESIN",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1,  IFNULL(%2, '-'))",
+          "expressionObjects" : [ "logicalColumn:XXATC_MFG_CHM.MFG_D_BOM_TOP_OBJ.MANAGEMENT_RESIN", "logicalColumn:XXATC_MFG_CHM.MFG_D_BOM_TOP_OBJ.SUB_FAMILY_1" ]
+        }
+      },
+      "logicalLevel" : "Resin"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MFG_D_BOM_EXPLODE",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'Make' AND %2 = 734",
+        "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_BUY_MAKE", "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.ORGANIZATION_ID" ]
+      },
+      "distinctValues" : false
+    }, {
+      "name" : "BOM_D_TOP_ASSEMBLY_ITEMS",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'XXOBJ_CHM_FG' AND %2 = 'Y'",
+        "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ITEM_TYPE", "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.FINISH_GOOD" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Product Line",
+        "numberOfElements" : 2,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "MANAGEMENT_PRODUCT_LINE" ],
+        "displayKey" : "MANAGEMENT_PRODUCT_LINE"
+      }, {
+        "name" : "Type",
+        "numberOfElements" : 4,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "MANAGEMENT_TYPE" ],
+        "displayKey" : "MANAGEMENT_TYPE"
+      }, {
+        "name" : "Family",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "MANAGEMENT_FAMILY" ],
+        "displayKey" : "MANAGEMENT_FAMILY"
+      }, {
+        "name" : "Resin",
+        "numberOfElements" : 20,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "MANAGEMENT_COMPOUND_RESIN" ],
+        "displayKey" : "MANAGEMENT_COMPOUND_RESIN"
+      }, {
+        "name" : "Top Assembly",
+        "numberOfElements" : 300,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Top Assembly" ],
+        "displayKey" : "Top Assembly"
+      }, {
+        "name" : "Components",
+        "numberOfElements" : 600,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Component_Part_Number" ],
+        "displayKey" : "Component_Part_Number"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "BOM Hierarchy",
+        "levels" : [ "Total", "Product Line", "Type", "Family", "Resin", "Top Assembly", "Components" ]
+      } ]
+    }
+  }
+}

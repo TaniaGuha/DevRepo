@@ -1,0 +1,86 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - AP Invoices",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - AP Invoices.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.Supplier Attributes"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.Supplier Site"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.Item (Master Org)"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.GL Code Combination"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.Project"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.Task"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.PO Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AP Invoices.Po Header"
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.Po Release"
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.Po Line"
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.Po Shipment"
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.Po Distribution"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.PO Measures"
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.AP Payments Schedules",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AP Invoices.AP Payment Schedules Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.AP Payment Schedules Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.AP Invoices",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Header"
+        }, {
+          "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Line"
+        }, {
+          "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Distribution"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Holds",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Hold Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - AP Invoices.AP Invoice Hold Measures"
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_AP_Invoices_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - AP Invoices",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AP_Invoices)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AP_Invoices)"
+    }
+  }
+}

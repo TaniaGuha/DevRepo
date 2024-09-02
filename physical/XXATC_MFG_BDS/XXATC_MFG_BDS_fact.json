@@ -1,0 +1,68 @@
+{
+  "physicalTable": {
+    "name": "XXATC_MFG_BDS_fact",
+    "sourceTable": "physicalTable:XXATC_MFG_BDS.XXATC_MFG_BDS_F_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.MFG_BDS_as_of_date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.MFG_BDS_as_of_date.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_HR_D_EMPLOYEES_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_PERSON_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_HR_D_EMPLOYEES_BI.BI_PERSON_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_HR_D_ORGANIZATION_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_HR_D_ORGANIZATION_BI.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_INV_D_MS_ITEMS_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_INV_D_MS_ITEMS_BI.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_MFG_BDS_dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BDS_SEQ",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_dim.BDS_SEQ"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_dim.BI_AS_OF_DATE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_PO_D_ITEM_USAGE_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_AS_OF_DATE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_PO_D_ITEM_USAGE_BI.BI_AS_OF_DATE"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_fact.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_PO_D_ITEM_USAGE_BI.BI_INVENTORY_ITEM_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "logicalTable" : {
+    "name" : "MRP_D_Consumption_Sale_Orders",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "BI_CONSUMPTION_CODE" ],
+    "logicalColumns" : [ {
+      "name" : "Consumed Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.CONSUMED_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Forecast Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.FORECAST_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order Schedule Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SALES_ORDER_SCHEDULE_DUE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order Line Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SO_LINE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SO_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SO_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order Source",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SO_SOURCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "BI_CONSUMPTION_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.BI_CONSUMPTION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    }, {
+      "name" : "Sale Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "MRP_D_Consumption_Sale_Orders",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.SO_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "MRP_D_Consumption_Sale_Orders Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "MRP_D_Consumption_Sale_Orders",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "MRP_D_Consumption_Sale_Orders Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "MRP_D_Consumption_Sale_Orders Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "MRP_D_Consumption_Sale_Orders Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "BI_CONSUMPTION_CODE" ],
+        "displayKey" : "BI_CONSUMPTION_CODE"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MRP_D_Consumption_Sale_OrdersDim",
+        "levels" : [ "MRP_D_Consumption_Sale_Orders Total", "MRP_D_Consumption_Sale_Orders Detail" ]
+      } ]
+    }
+  }
+}

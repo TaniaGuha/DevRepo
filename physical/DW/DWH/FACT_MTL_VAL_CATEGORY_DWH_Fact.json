@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "FACT_MTL_VAL_CATEGORY_DWH_Fact",
+    "sourceTable": "physicalTable:DW.DWH.FACT_MTL_VAL_CATEGORY_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CATEGORY_SET_DWH_Dim_Category_Set",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_VAL_CATEGORY_DWH_Fact.CATEGORY_SET_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CATEGORY_SET_DWH_Dim_Category_Set.CATEGORY_SET_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_MTL_CATEGORIES_DWH_Dim_Categories",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_VAL_CATEGORY_DWH_Fact.CATEGORY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_MTL_CATEGORIES_DWH_Dim_Categories.CATEGORY_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Customer Service Case",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Cases",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CS_CASE_DWH_Fact_Case",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_DWH_Fact_Case.CASE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "# of Work Orders",
+      "description" : "# of Work Orders (With or Without Lines)",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - Customer Service Work Order.# of Work Orders" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "# of Not Canceled Work Orders",
+      "description" : "Count number of work orders with work_order_status_category <> 'Canceled'",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - Customer Service Work Order.# of Not Canceled Work Orders" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "# of Phone Support Work Orders",
+      "description" : "Count number of not Canceled work orders with record type= 'Phone Support'",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - Customer Service Work Order.# of Phone Support Work Orders" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "# of Onsite Work Orders",
+      "description" : "Count number of not Canceled work orders with record type= 'Onsite Work Order'",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - Customer Service Work Order.# of Onsite Work Orders" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "Last Comment Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.CASE_COMMENT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Total", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Total" ]
+      }
+    }, {
+      "name" : "Last Comment Created By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.CREATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Total", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Total" ]
+      }
+    }, {
+      "name" : "Last Comment Created Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.CREATED_DATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Total", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Total" ]
+      }
+    }, {
+      "name" : "Last Comment",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.COMMENT_BODY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Total", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Total" ]
+      }
+    }, {
+      "name" : "Last Comment Is Published Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.IS_PUBLISHED_FLAG" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "MAX",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order.Dim - Customer Service Work Order Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Total", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case Open Date.Dim - Open Date Case Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Total" ]
+      }
+    }, {
+      "name" : "# of RMA Work Orders",
+      "description" : "Count number of not Canceled work orders with record type= 'RMA'",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - Customer Service Work Order.# of RMA Work Orders" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Work Order Line.Dim - Customer Service Work Order Line Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Total", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_CS_CASE_DWH_Fact_Case",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_DWH_Fact_Case" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Detail", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS_SF.Dim - Customer Service Case Open Date.Dim - Open Date Case Detail", "logicalLevel:SSYS_SF.Dim - Customer Service Case Close Date.Dim - Customer Service Case Close Date Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Customer Service Case.Dim - Customer Service Case Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'Yes'",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.LAST_COMMENT_FLAG" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Account)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Asset End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Service Case Close Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Service Case Open Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Service Case",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Site (Install)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Asset Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Open Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Service Contract (Current Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

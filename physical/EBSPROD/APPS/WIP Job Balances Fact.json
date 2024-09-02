@@ -1,0 +1,182 @@
+{
+  "physicalTable": {
+    "name": "WIP Job Balances Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMFG_WIP_PERIOD_BALANCES_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.ACCOUNTED_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Inv Orgs Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Job Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.WIP_ENTITY_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Job Dim.WIP_ENTITY_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Material Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Material Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.MATERIAL_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Material Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Material Overhead Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Material Overhead Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.MATERIAL_OVERHEAD_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Material Overhead Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Material Variance Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Material Variance Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.MATERIAL_VARIANCE_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Material Variance Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Outside Processing Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Outside Processing Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.OUTSIDE_PROCESSING_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Outside Processing Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Outside Processing Variance Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Outside Processing Variance Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.OUTSIDE_PROC_VARIANCE_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Outside Processing Variance Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Overhead Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Overhead Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.OVERHEAD_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Overhead Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Overhead Variance Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Overhead Variance Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.OVERHEAD_VARIANCE_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Overhead Variance Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Resource Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Resource Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.RESOURCE_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Resource Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Resource Variance Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Resource Variance Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.RESOURCE_VARIANCE_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Resource Variance Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP STD Cost Adjustment Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP STD Cost Adjustment Account Dim.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Job Balances Fact.STD_COST_ADJUSTMENT_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP STD Cost Adjustment Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

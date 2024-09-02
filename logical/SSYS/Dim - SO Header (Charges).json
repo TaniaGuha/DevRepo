@@ -1,0 +1,330 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - SO Header (Charges)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Order Header Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Order Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Source Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_SOURCE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Source Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_SOURCE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Creation DateTime",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CAST (%1 AS DATE )",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - SO Header (Charges).Order Creation DateTime" ]
+        }
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Sys Booking Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.SYS_BOOKING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Booked DateTime",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.BOOKED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Booked Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CAST (%1 AS DATE )",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - SO Header (Charges).Booked DateTime" ]
+        }
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Ordered date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDERED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Channel",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.DIRECT_INDIRECT_DEAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Header Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Current Rate To USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " LOOKUP( SPARSE %1, 1,  CURRENT_DATE , %2, 'USD')",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header.ORDER_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Type Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type.ORDER_TYPE_CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type.TRX_TYP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type.TRX_TYPE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    }, {
+      "name" : "Order Type - Group",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 LIKE 'Standard\\%' THEN 'Standard Order' WHEN %1 LIKE 'Trade\\%' THEN 'Trade In Order' WHEN %1 LIKE 'Lease \\%' THEN 'Lease Order' ELSE %1 END ",
+          "expressionObjects" : [ "logicalColumn:SSYS.Dim - SO Header (Charges).Order Type" ]
+        }
+      },
+      "logicalLevel" : "Dim - So Header (Charges) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Charges_Sale_Order_Header" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : " IFNULL(%1, 'ORDER') = 'ORDER'",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type.TRX_TYP_CODE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - SO Header (Charges) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - SO Header (Charges) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - So Header (Charges) Detail",
+        "numberOfElements" : 100000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Order Header Gk" ],
+        "displayKey" : "Order Header Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "So Header (Charges)",
+        "levels" : [ "Dim - SO Header (Charges) Total", "Dim - So Header (Charges) Detail" ]
+      } ]
+    }
+  }
+}

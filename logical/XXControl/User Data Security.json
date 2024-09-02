@@ -1,0 +1,167 @@
+{
+  "logicalTable" : {
+    "name" : "User Data Security",
+    "tags" : [ "Project:ADMIN", "Project:External_Strings" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.LAST_UPDATE_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.LAST_UPDATE_STATUS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Parameter Name",
+      "dataType" : "VARCHAR",
+      "writeable" : true,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.SEC_PARAMETER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Parameter Value",
+      "dataType" : "VARCHAR",
+      "writeable" : true,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.SEC_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.USER_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : true,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.USER_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Load Control",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.LOAD_CONTROL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sec ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "User Data Security",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXControl.XXCTRL.User Data Security.SEC_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "User Data Security",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXControl.XXCTRL.User Data Security" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:XXControl.BI Users",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:XXControl.Data Security Parameters",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "logicalTable" : {
+    "name" : "Lookup - SubInventory Details",
+    "type" : "LOOKUP",
+    "primaryKey" : [ "Subinventory Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Asset Inventory Id",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.ASSET_INVENTORY_IND" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Availability Type",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.AVAILABILITY_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Drop Ship For Region",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.DROP_SHIP_FOR_REGION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Secondary Inventory Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.SECONDARY_INVENTORY_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Subinventory Gk",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP.SUBINVENTORY_GK" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_INV_SUBINVENTORY_DWH_LKP",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_INV_SUBINVENTORY_DWH_LKP" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ]
+  }
+}

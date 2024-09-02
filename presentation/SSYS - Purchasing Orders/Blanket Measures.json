@@ -1,0 +1,62 @@
+{
+  "presentationTable" : {
+    "name" : "Blanket Measures",
+    "presentationColumns" : [ {
+      "name" : "Quantity Agreed",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Blanket Line.Quantity Agreed",
+      "localization" : {
+        "localizationKey" : "Quantity Agreed",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures_Quantity_Agreed)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures_Quantity_Agreed)"
+      }
+    }, {
+      "name" : "Amount Agreed (Original Currency)",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Blanket Line.Amount Agreed (Original Currency)",
+      "alternateNames" : [ "Amount Agreed" ],
+      "localization" : {
+        "localizationKey" : "Amount Agreed (Original Currency)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures_Amount_Agreed_(Original_Currency))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures_Amount_Agreed_(Original_Currency))"
+      }
+    }, {
+      "name" : "Amount Agreed (PO Currency)",
+      "description" : "\"Amount Agreed (Original Currency)\" * IFNULL(Linkage Rate ,1) \r\nIf Linkage exists, shows amount in linked currency, else in original currency",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Blanket Line.Amount Agreed (PO Currency)",
+      "localization" : {
+        "localizationKey" : "Amount Agreed (PO Currency)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures_Amount_Agreed_(PO_Currency))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures_Amount_Agreed_(PO_Currency))"
+      }
+    }, {
+      "name" : "Amount Agreed ($)",
+      "description" : "\"Amount Agreed (Original Currency)\" * Rate to USD ",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Blanket Line.Amount Agreed ($)",
+      "localization" : {
+        "localizationKey" : "Amount Agreed ($)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures_Amount_Agreed_($))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures_Amount_Agreed_($))"
+      }
+    }, {
+      "name" : "# of PO Blankets",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Blanket Line.# of PO Blankets",
+      "localization" : {
+        "localizationKey" : "# of PO Blankets",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures_#_of_PO_Blankets)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures_#_of_PO_Blankets)"
+      }
+    }, {
+      "name" : "# of PO Blanket Lines",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Blanket Line.# of PO Blanket Lines",
+      "localization" : {
+        "localizationKey" : "# of PO Blanket Lines",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures_#_of_PO_Blanket_Lines)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures_#_of_PO_Blanket_Lines)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Blanket Measures",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders_Blanket_Measures)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders_Blanket_Measures)"
+    }
+  }
+}

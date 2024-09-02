@@ -1,0 +1,143 @@
+{
+  "logicalTable" : {
+    "name" : "WIP Schedule Completion Week Time Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Scheduled Comp Date" ],
+    "logicalColumns" : [ {
+      "name" : "Scheduled Comp Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Schedule Completion Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Week Time Dim.PERIOD_DAY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Date"
+    }, {
+      "name" : "Scheduled Comp Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Schedule Completion Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Week Time Dim.PERIOD_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Year"
+    }, {
+      "name" : "Scheduled Comp Week Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Schedule Completion Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Week Time Dim.WEEK_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Scheduled Comp Week Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Schedule Completion Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Week Time Dim.WEEK_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Scheduled Comp Year Week",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Schedule Completion Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Week Time Dim.YEAR_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Week"
+    }, {
+      "name" : "Scheduled Comp Year Week Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Schedule Completion Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Schedule Completion Week Time Dim.YEAR_WEEK_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Week"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "WIP Schedule Completion Week Time Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.WIP Schedule Completion Week Time Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.WIP Schedule Completion Week Time Dim.Date" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "WIP Schedule Completion Week Time Dim Total",
+      "logicalLevels" : [ {
+        "name" : "WIP Schedule Completion Week Time Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Scheduled Comp Year" ],
+        "displayKey" : "Scheduled Comp Year"
+      }, {
+        "name" : "Week",
+        "numberOfElements" : 520,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Scheduled Comp Year Week" ],
+        "displayKey" : "Scheduled Comp Year Week"
+      }, {
+        "name" : "Date",
+        "numberOfElements" : 3600,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Scheduled Comp Date" ],
+        "displayKey" : "Scheduled Comp Date",
+        "chronologicalKey" : [ "Scheduled Comp Date" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "WIP Schedule Completion Week Time Dim",
+        "levels" : [ "WIP Schedule Completion Week Time Dim Total", "Year", "Week", "Date" ]
+      } ]
+    }
+  }
+}

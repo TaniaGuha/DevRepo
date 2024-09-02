@@ -1,0 +1,2036 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Planning MSC Demand History",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Demand Snapshot Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Snapshot Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SNAPSHOT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Snapshot Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SNAPSHOT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Action",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ACTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Applied",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.APPLIED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Arrival Set Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ARRIVAL_SET_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Atp Override Flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ATP_OVERRIDE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Backward Days",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.BACKWARD_DAYS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Bucket Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.BUCKET_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Bucket Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.BUCKET_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Comp Seq Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.COMP_SEQ_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Component Scaling Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.COMPONENT_SCALING_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Component Yield Factor",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.COMPONENT_YIELD_FACTOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Confidence Percentage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CONFIDENCE_PERCENTAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Customer Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CUSTOMER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Customer Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CUSTOMER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Customer Po Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CUSTOMER_PO_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Customer Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CUSTOMER_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Customer Site Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.CUSTOMER_SITE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Daily Demand Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DAILY_DEMAND_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Class",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Class Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_CLASS_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Priority",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_PRIORITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Snapshot Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_TRANSACTION_SNAPSHOT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Source Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_SOURCE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Transaction Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Demand Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DEMAND_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Designator Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DESIGNATOR_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Disposition Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DISPOSITION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Dmd Lateness Cost",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DMD_LATENESS_COST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Dmd Satisfied Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.DMD_SATISFIED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Firm Planned Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.FIRM_PLANNED_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Forecast Mad",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.FORECAST_MAD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Forecast Set Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.FORECAST_SET_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Intransit Lead Time",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.INTRANSIT_LEAD_TIME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Issued Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ISSUED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Item Type Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ITEM_TYPE_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Last Run Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LAST_RUN_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Latest Acceptable Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LATEST_ACCEPTABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Link To Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LINK_TO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.LOT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Mrp Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.MRP_INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Mrp Planning Code Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.MRP_PLANNING_CODE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "New Due Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.NEW_DUE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Old Demand Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OLD_DEMAND_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Old Due Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OLD_DUE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Old Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OLD_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Old Using Requirement Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OLD_USING_REQUIREMENT_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Op Seq Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OP_SEQ_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Order Date Type Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORDER_DATE_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Order Date Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORDER_DATE_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Order Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORDER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Order Priority",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORDER_PRIORITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Order Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORDER_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Order Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORDER_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Org Firm Flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORG_FIRM_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Orig Intransit Lead Time",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIG_INTRANSIT_LEAD_TIME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Original Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINAL_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Original Item Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINAL_ITEM_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Original Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINAL_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Original System Line Reference",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINAL_SYSTEM_LINE_REFERENCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Original System Reference",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINAL_SYSTEM_REFERENCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Origination Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Origination Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.ORIGINATION_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Part Condition",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PART_CONDITION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Plan Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PLAN_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Planned Arrival Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PLANNED_ARRIVAL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Planned Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PLANNED_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Prev Subst Item",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PREV_SUBST_ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Prev Subst Org",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PREV_SUBST_ORG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Primary Component Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PRIMARY_COMPONENT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Probability",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PROBABILITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Promise Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PROMISE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Promise Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.PROMISE_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Qty By Due Date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.QTY_BY_DUE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Quantity Per Assembly",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.QUANTITY_PER_ASSEMBLY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Quantity Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.QUANTITY_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Refresh Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.REFRESH_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Release Status",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.RELEASE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Request Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.REQUEST_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Request Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.REQUEST_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Reservation Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.RESERVATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Reserved Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.RESERVED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Sale Order Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SALE_ORDER_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Sale Order Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SALE_ORDER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Sale Order Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SALE_ORDER_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Sales Order Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SALES_ORDER_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Schedule Arrival Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SCHEDULE_ARRIVAL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Schedule Designator Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SCHEDULE_DESIGNATOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Schedule Ship Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SCHEDULE_SHIP_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Selling Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SELLING_PRICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Service Level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SERVICE_LEVEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ship Calendar",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIP_CALENDAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ship Method",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIP_METHOD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ship Set Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIP_SET_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ship To Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIP_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ship To Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIP_TO_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Ship To Site Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIP_TO_SITE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Shipping Method Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SHIPPING_METHOD_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Source Org Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SOURCE_ORG_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Source Organization Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SOURCE_ORGANIZATION_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Source Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SOURCE_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Source Phantom Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SOURCE_PHANTOM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Status",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Subst Item Flag",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SUBST_ITEM_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Supply Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SUPPLY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Supply Transaction Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.SUPPLY_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Unbucketed Demand Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.UNBUCKETED_DEMAND_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Unmet Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.UNMET_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Updated",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.UPDATED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Using Assembly Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.USING_ASSEMBLY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Using Assembly Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.USING_ASSEMBLY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Using Requirement Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.USING_REQUIREMENT_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Wip Entity Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.WIP_ENTITY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Wip Entity Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.WIP_ENTITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Wip Status Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.WIP_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Wip Supply Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.WIP_SUPPLY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    }, {
+      "name" : "Within Rel Time Fence",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist.WITHIN_REL_TIME_FENCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim MSC Demand History Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_DEMAND_HIST_DWH_Dim_MSC_Demand_Hist" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim MSC Demand History Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim MSC Demand History Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim MSC Demand History Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Demand Snapshot Gk" ],
+        "displayKey" : "Demand Snapshot Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MSC Demand History",
+        "levels" : [ "Dim MSC Demand History Total", "Dim MSC Demand History Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "DIM_INV_ITEM_DWH_ADD_INFO_V_Item",
+    "sourceTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_ADD_INFO_V",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_ADD_INFO_V_Item.CHILD_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "CHILD_ITEM_GK"
+      ]
+    ]
+  }
+}

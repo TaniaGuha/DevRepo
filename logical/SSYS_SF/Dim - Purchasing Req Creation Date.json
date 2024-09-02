@@ -1,0 +1,597 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Req Creation Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Time Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Calendar Half Year Hhyyyy C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_HALF_YEAR_HHYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Half Year Yyyyhh C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_HALF_YEAR_YYYYHH_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Half Year Yyyyhh N",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_HALF_YEAR_YYYYHH_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Month Number In Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Quarter",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_QUARTER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Week Ending Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_WEEK_ENDING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Week Ending Date Us",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_WEEK_ENDING_DATE_US" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Week Number In Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_WEEK_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year Month Mmyyyy C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_MONTH_MMYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year Month Yyyymm C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_MONTH_YYYYMM_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year Month Yyyymm N",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_MONTH_YYYYMM_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year N",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year Quarter Qqyyyy C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_QUARTER_QQYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year Quarter Yyyyqq C",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Calendar Year Quarter Yyyyqq N",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Number In Calendar Month",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_NUMBER_IN_CALENDAR_MONTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Number In Calendar Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_NUMBER_IN_CALENDAR_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Number In Epoch",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_NUMBER_IN_EPOCH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Number In Fiscal Month",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_NUMBER_IN_FISCAL_MONTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Number In Fiscal Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_NUMBER_IN_FISCAL_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Number In Week",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Day Of Week",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.DAY_OF_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "First Day Of Q",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.FIRST_DAY_OF_Q" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Full Date Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.FULL_DATE_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Holiday Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.HOLIDAY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Last Day In Month Indicator",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.LAST_DAY_IN_MONTH_INDICATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Last Day In Qtr Indicator",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.LAST_DAY_IN_QTR_INDICATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Last Day In Week Indicator",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.LAST_DAY_IN_WEEK_INDICATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Month Number In Epoch",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.MONTH_NUMBER_IN_EPOCH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Selling Season Weekday Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.SELLING_SEASON_WEEKDAY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Req Creation Date",
+      "description" : "Requisition Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Time Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Week Number In Epoch",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.WEEK_NUMBER_IN_EPOCH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    }, {
+      "name" : "Weekday Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Purchasing_Req_Creation_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date.WEEKDAY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Req Creation Date Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Purchasing_Req_Creation_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Req_Creation_Date" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Req Creation Date Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Req Creation Date Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Req Creation Date Detail",
+        "numberOfElements" : 365245,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Time Gk" ],
+        "displayKey" : "Time Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Req Creation Date",
+        "levels" : [ "Dim - Purchasing Req Creation Date Total", "Dim - Purchasing Req Creation Date Detail" ]
+      } ]
+    }
+  }
+}

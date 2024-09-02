@@ -1,0 +1,482 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Supply MRP",
+    "tags" : [ "Project:SSYS_GSC_Project_Release1", "Project:SSYS_Procure2Pay_Release3" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Purchase Orders",
+      "description" : "Counts number of POs that are source of supply",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.DISPOSITION_ID" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.DISPOSITION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Expiration Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.EXPIRATION_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.EXPIRATION_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Firm Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.FIRM_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.FIRM_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Implement Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.IMPLEMENT_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.IMPLEMENT_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Implemented Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.IMPLEMENTED_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.IMPLEMENTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "New Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.NEW_ORDER_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Old New Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.OLD_NEW_ORDER_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.OLD_NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Old Order Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.OLD_ORDER_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.OLD_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Old Qty Completed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.OLD_QTY_COMPLETED" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.OLD_QTY_COMPLETED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Quantity In Process",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.QUANTITY_IN_PROCESS" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.QUANTITY_IN_PROCESS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Wip Start Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.WIP_START_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.WIP_START_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Total OnHand Supply Qty",
+      "description" : "Do not Aggregate by Supply Attributes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'On Hand' THEN %2 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.ORDER_TYPE_TEXT", "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.NEW_ORDER_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'On Hand' THEN %2 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.ORDER_TYPE_TEXT", "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - End Pegging Item Supply.Dim - End Pegging Item Supply Total" ]
+      }
+    }, {
+      "name" : "Total OnHand in Shortage SubInv",
+      "description" : "Do not Aggregate by Supply Attributes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'Y')",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Purchasing Supply MRP.Total OnHand Supply Qty", "logicalColumn:SSYS.Dim - Subinventory.Include In Sp Shortage Report" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - End Pegging Item Supply.Dim - End Pegging Item Supply Total" ]
+      }
+    }, {
+      "name" : "Total OnHand in Other Org",
+      "description" : "Do not Aggregate by Supply Attributes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'On Hand' THEN %2 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.ORDER_TYPE_TEXT", "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.NEW_ORDER_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'On Hand' THEN %2 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.ORDER_TYPE_TEXT", "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Item.Dim - Item Total", "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - End Pegging Item Supply.Dim - End Pegging Item Supply Total" ]
+      }
+    }, {
+      "name" : "Total PO in Other Org",
+      "description" : "Do not Aggregate by Supply Attributes",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'Purchase order' THEN %2 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.ORDER_TYPE_TEXT", "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply.NEW_ORDER_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'Purchase order' THEN %2 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.ORDER_TYPE_TEXT", "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist.NEW_ORDER_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Item.Dim - Item Total", "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - End Pegging Item Supply.Dim - End Pegging Item Supply Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MSC_SUPPLY_DWH_Fact_MSC_Supply" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Detail", "logicalLevel:SSYS.Dim - Current-History Indication.Dim - Current History Indication Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Detail", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Detail", "logicalLevel:SSYS.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Detail", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Detail", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail" ],
+      "dataFragmentation" : {
+        "expressionTemplate" : "%1 = 'Current Execution'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Current-History Indication.Indication Text" ]
+      },
+      "combineWithOtherFragments" : true,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MSC_SUPPLY_HIST_DWH_Fact_MSC_Supply_Hist" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Current-History Indication.Dim - Current History Indication Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Detail", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Detail", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Detail", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Detail", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Subinventory.Dim - Subinventory Detail", "logicalLevel:SSYS.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail" ],
+      "dataFragmentation" : {
+        "expressionTemplate" : "%1 = 'Historical Executions'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Current-History Indication.Indication Text" ]
+      },
+      "combineWithOtherFragments" : true,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Current-History Indication",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Organization (From Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Buyer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing MSC Plans",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Release",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Shipment",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Supply MRP Hist",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Supply MRP",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Subinventory",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

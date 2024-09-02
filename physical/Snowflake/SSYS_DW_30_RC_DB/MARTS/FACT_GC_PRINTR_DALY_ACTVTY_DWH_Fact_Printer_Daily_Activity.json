@@ -1,0 +1,98 @@
+{
+  "physicalTable": {
+    "name": "FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUSTOMER_ACCNT_SITE_DWH_Asset_Install_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.INSTALL_SITE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUSTOMER_ACCNT_SITE_DWH_Asset_Install_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.END_CUSTOMER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_PRINTER_DWH_Dim_GC_Printer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.GC_PRINTER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_PRINTER_DWH_Dim_GC_Printer.GC_PRINTER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_PRINTER_JOB_DWH_Dim_GC_Printer_Job",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.GC_PRINTER_JOB_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_PRINTER_JOB_DWH_Dim_GC_Printer_Job.GC_PRINTER_JOB_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.GC_USER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GC_USER_DWH_Dim_GC_User.GC_USER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.ORIG_JOB_START_TIME_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.HMS_TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Asset_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.PRODUCT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Asset_Product.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_ASSET_DWH_Dim_Asset",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.ASSET_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_ASSET_DWH_Dim_Asset.ASSET_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Daily_Activity_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.DAILY_DATE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Daily_Activity_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GC_PRINTR_DALY_ACTVTY_DWH_Fact_Printer_Daily_Activity.ORIG_JOB_START_DATE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Printer_Job_Start_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "physicalTable": {
+    "name": "FACT_CS_CASE_DWH_Fact_Case",
+    "sourceTable": "physicalTable:DW.DWH.FACT_CS_CASE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Asset_Install_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.INSTALL_LOCATION_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Asset_Install_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_ACCOUNT_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_END_CUSTOMER_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Asset_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.PRODUCT_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Asset_Product.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.ACCOUNT_OU_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Service_Contract",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.SERVICE_CONTRACT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Service_Contract.CONTRACT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_ASSET_DWH_Dim_Asset",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.ASSET_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_ASSET_DWH_Dim_Asset.ASSET_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_CS_CASE_DWH_Dim_Case",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Dim_Case.CASE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Close_Case_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_CLOSED_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Close_Case_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Close_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_CLOSED_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Close_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Open_Case_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_OPEN_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Open_Case_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Open_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Fact_Case.CASE_OPEN_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Open_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

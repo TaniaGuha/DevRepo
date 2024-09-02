@@ -1,0 +1,24 @@
+{
+  "initBlock" : {
+    "name" : "PA_SECURED",
+    "description" : "Init block for determining users that are project secured.",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:EBSPROD.EBSPROD_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT DISTINCT 'PA_PROJECTS_LIST', PROJECT_ID\r\nFROM XXBI.XXPA_PROJECT_ROLES_V\r\nWHERE PROJECT_MGR_ORACLE_USER_ID =\r\nVALUEOF(NQ_SESSION.ORACLE_USER_ID)\r\nAND 1 = VALUEOF(NQ_SESSION.PA_RESTRICTED_ROLE_FLAG)\r\n;"
+    } ],
+    "variables" : [ {
+      "name" : "PA_PROJECTS_LIST",
+      "value" : "-(99)",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "dependencies" : [ "PA_RESTRICTED_ROLE_FLAG", "xxctrl_Oracle_User_Name" ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : true,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : false
+  }
+}

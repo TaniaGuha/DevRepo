@@ -1,0 +1,41 @@
+{
+  "presentationTable" : {
+    "name" : "In Transit Receiving Measures",
+    "presentationColumns" : [ {
+      "name" : "Transit Quantity Received",
+      "description" : "Quantity Received is the quantity that was received (regardless if it was already delivered)",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Receiving Shipment Lines.Quantity Received",
+      "alternateNames" : [ "Quantity Received" ],
+      "localization" : {
+        "localizationKey" : "Transit Quantity Received",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures_Transit_Quantity_Received)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures_Transit_Quantity_Received)"
+      }
+    }, {
+      "name" : "Transit Quantity Pending Delivery",
+      "description" : "Shipped from source org, received but not delivered to inventory.\r\nThis quantity is taken from RCV_SUPPLY.Quantity.",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Receiving Shipment Lines.Quantity Pending Delivery",
+      "alternateNames" : [ "Quantity Pending Delivery" ],
+      "localization" : {
+        "localizationKey" : "Transit Quantity Pending Delivery",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures_Transit_Quantity_Pending_Delivery)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures_Transit_Quantity_Pending_Delivery)"
+      }
+    }, {
+      "name" : "Transit Quantity Delivered",
+      "description" : "Quantity Received – Quantity Pending Delivery",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Receiving Shipment Lines.Quantity Delivered",
+      "alternateNames" : [ "Quantity Delivered" ],
+      "localization" : {
+        "localizationKey" : "Transit Quantity Delivered",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures_Transit_Quantity_Delivered)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures_Transit_Quantity_Delivered)"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "In Transit Receiving Measures",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Receiving_In_Transit_Receiving_Measures)"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "physicalTable": {
+    "name": "FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num",
+    "sourceTable": "physicalTable:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_SUBINVENTORY_DWH_Subinventory",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.SUBINVENTORY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_SUBINVENTORY_DWH_Subinventory.SUBINVENTORY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.LOCATOR_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ITEM_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.SALE_ORDER_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization_Common.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_RCV_SHIPMENT_HEADER_DWH_Dim_Rcv_Shipment_header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.SHIPMENT_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_RCV_SHIPMENT_HEADER_DWH_Dim_Rcv_Shipment_header.SHIPMENT_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_WSH_DELIVERY_DWH_Dim_Delivery",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.DELIVERY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_WSH_DELIVERY_DWH_Dim_Delivery.DELIVERY_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MTL_LOT_NUMBER_DWH_Dim_MTL_Lot_Number",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.LOT_NUMBER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MTL_LOT_NUMBER_DWH_Dim_MTL_Lot_Number.LOT_NUMBER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Dim_Material_Transactions",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.MATERIAL_TRANSACTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MTL_MATERIAL_TRX_DWH_Dim_Material_Transactions.MATERIAL_TRANSACTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Dim_MTL_Transactions_LOT_Num",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.MATERIAL_TRX_LOT_NUMBER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Dim_MTL_Transactions_LOT_Num.MATERIAL_TRX_LOT_NUMBER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.SALE_ORDER_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.SHIPMENT_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MTL_TRX_LOT_NUMBER_DWH_Fact_MTL_Transactions_LOT_Num.DELIVERY_DETAIL_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_WSH_DELIVERY_LINE_DWH_Dim_Delivery_Line.DELIVERY_DETAIL_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

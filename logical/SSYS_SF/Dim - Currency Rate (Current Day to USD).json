@@ -1,0 +1,197 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Currency Rate (Current Day to USD)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "From Currency Gk" ],
+    "logicalColumns" : [ {
+      "name" : "From Currency Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.FROM_CURRENCY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "From Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.FROM_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "To Currency",
+      "description" : "'USD'",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.TO_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Conversion Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.CONVERSION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Current Conversion Rate To USD",
+      "description" : "Today's conversion rate to USD ",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Inverse Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.INVERSE_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Next Day Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.NEXT_DAY_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Next Day Inv Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.NEXT_DAY_INV_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Conversion Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.CONVERSION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    }, {
+      "name" : "Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Rate (Current Day to USD) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 =  CURRENT_DATE  AND %2 = 'USD'",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.CONVERSION_DATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_GL_Daily_Rate_Current_to_USD.TO_CURRENCY" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Currency Rate (Current Day to USD) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Currency Rate (Current Day to USD) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Currency Rate (Current Day to USD) Detail",
+        "numberOfElements" : 100000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "From Currency Gk" ],
+        "displayKey" : "From Currency Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Currency Rate (Current Day to USD)",
+        "levels" : [ "Dim - Currency Rate (Current Day to USD) Total", "Dim - Currency Rate (Current Day to USD) Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Material Transactions",
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - MTL Material Transactions.Primary Quantity",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Material Transactions.Organization (Inventory Org)"
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Material Transactions.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Item (Transaction Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Locator"
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Period Start Date"
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Demand Histories",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Material Transactions.Demand Histories Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Demand Histories Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Material Transactions",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Material Transactions.Account Alias Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Subinventory"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Sale Order Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Material Transactions.SO Header"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.SO Lines"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Purchasing Requisition Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Material Transactions.Requisition Header"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.Requisition Lines"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Purchasing Order Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Material Transactions.PO Header"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.PO Line"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.PO Distribution"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.PO Shipment"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.PO Release"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Receiving Shipment Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Material Transactions.Receiving Shipment Header"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.Receiving Shipment Lines"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Delivery Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Material Transactions.Delivery"
+        }, {
+          "name" : "presentationTable:SSYS - Material Transactions.Delivery Lines"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.WIP Discrete Job Atttributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Material TRX Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Material TRX Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Material Transactions - LOT Numbers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Material Transactions.LOT Numbers Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Material Transactions Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.MTL TRX LOT Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.MTL TRX LOT Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Material Transactions - Serial Units",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Material Transactions.Material Transaction Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.MTL TRX Serial Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.MTL TRX Serial  Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.MTL Safety Stock",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Material Transactions.Safety Stock Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Material Transactions.Safety Stock Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Material Transactions.Supplier"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Inventory_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Material Transactions",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Material_Transactions)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Material_Transactions)"
+    }
+  }
+}

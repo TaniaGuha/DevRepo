@@ -1,0 +1,30 @@
+{
+  "physicalTable": {
+    "name": "INV Item Master Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXINV_MASTER_ORG_ITEMS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Buyer (Master Org) Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.BUYER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Buyer (Master Org) Dim.PERSON_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ORGANIZATION_ID"
+      ],
+      [
+        "SEGMENT1"
+      ],
+      [
+        "INVENTORY_ITEM_ID"
+      ],
+      [
+        "ORGANIZATION_ID",
+        "INVENTORY_ITEM_ID"
+      ]
+    ]
+  }
+}

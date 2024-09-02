@@ -1,0 +1,130 @@
+{
+  "logicalTable" : {
+    "name" : "XXATC_MFG_D_PLAN_CHM_BI",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "BI_INVENTORY_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.BI_INVENTORY_ITEM_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_PERIOD_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.BI_PERIOD_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_TYPE",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.ITEM_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "PACK_OF",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.PACK_OF" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "PERIOD",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.PERIOD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "QUANTITY",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "WEIGHT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_MFG_D_PLAN_CHM_BI",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.WEIGHT" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "XXATC_MFG_D_PLAN_CHM_BI",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "BI_INVENTORY_ITEM_CODE", "BI_PERIOD_CODE" ]
+  }
+}

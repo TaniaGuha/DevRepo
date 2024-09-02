@@ -1,0 +1,148 @@
+{
+  "physicalTable" : {
+    "name" : "XXATC_MFG_CHM_F_BI",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "AS_OF_DATE",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BI_AS_OF_DATE",
+      "dataType" : "VARCHAR",
+      "length" : 11,
+      "nullable" : true
+    }, {
+      "name" : "BI_INVENTORY_ITEM_ID",
+      "dataType" : "VARCHAR",
+      "length" : 84,
+      "nullable" : true
+    }, {
+      "name" : "BI_ORGANIZATION_ID",
+      "dataType" : "VARCHAR",
+      "length" : 43,
+      "nullable" : true
+    }, {
+      "name" : "CYCLE_WORK_HOURS_BOT",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "CYCLE_WORK_HOURS_CHM",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "CYCLE_WORK_HOURS_TOTAL",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "DIRECT_LABOR_HOURS_BOT",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "DIRECT_LABOR_HOURS_CHM",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "DIRECT_LABOR_HOURS_TOTAL",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "LAVI_HOURS",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "QTY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "RANK",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "UOM",
+      "dataType" : "VARCHAR",
+      "length" : 75,
+      "nullable" : true
+    }, {
+      "name" : "QTY_ISSUED",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "WEIGHT_KG",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE",
+      "useJoinExpression" : true,
+      "joinExpression" : {
+        "expressionTemplate" : "(%1 <= %2 OR %2 IS NULL ) AND (%1 >= %3 OR %3 IS NULL ) AND %4 = %5 AND %6 = %7",
+        "expressionObjects" : [ "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.AS_OF_DATE", "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.DISABLE_DATE", "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.EFFECTIVE_DATE", "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.INVENTORY_ITEM_ID", "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.COMP_ITEM_ID", "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.ORGANIZATION_ID", "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.ORGANIZATION_ID" ]
+      },
+      "joinType" : "INNER",
+      "cardinality" : "UNKNOWN"
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG_CHM.MFG_D_DATES",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.MFG_D_DATES.BI_DATE_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG_CHM.XXATC_HR_D_ORGANIZATION_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_ORGANIZATION_ID",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_HR_D_ORGANIZATION_BI.BI_ORG_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG_CHM.XXATC_INV_D_MS_ITEMS_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_INVENTORY_ITEM_ID",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_INV_D_MS_ITEMS_BI.BI_ITEM_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.BI_PERIOD_CODE"
+      }, {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_INVENTORY_ITEM_ID",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_D_PLAN_CHM_BI.BI_INVENTORY_ITEM_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG_CHM.XXATC_PO_D_ITEM_USAGE_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_PO_D_ITEM_USAGE_BI.BI_AS_OF_DATE"
+      }, {
+        "leftColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_MFG_CHM_F_BI.BI_INVENTORY_ITEM_ID",
+        "rightColumn" : "physicalColumn:XXATC_MFG_CHM.XXATC_PO_D_ITEM_USAGE_BI.BI_INVENTORY_ITEM_CODE"
+      } ]
+    } ]
+  }
+}

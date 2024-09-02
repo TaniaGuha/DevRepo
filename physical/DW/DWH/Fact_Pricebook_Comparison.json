@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "Fact_Pricebook_Comparison",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PRICEBOOK_COMPARISON_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.Dim_Pricebook_Version1",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_Pricebook_Comparison.PB_NAME",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_Pricebook_Version1.PRICE_BOOK_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_Pricebook_Version2",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_Pricebook_Comparison.PB_NAME",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_Pricebook_Version2.PRICE_BOOK_NAME"
+          }
+        ]
+      }
+    ]
+  }
+}

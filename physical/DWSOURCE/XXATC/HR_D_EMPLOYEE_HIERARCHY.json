@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "HR_D_EMPLOYEE_HIERARCHY",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_HR_D_EMP_HIERARCHY_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_EFFECTIVE_DATES",
+        "joinExpression": {
+          "expressionTemplate": "%1 >= %2 AND %1 <= %3",
+          "expressionObjects": [
+            "physicalColumn:DWSOURCE.XXATC.HR_D_EFFECTIVE_DATES.BI_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_D_EMPLOYEE_HIERARCHY.HIER_EFFCT_START_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_D_EMPLOYEE_HIERARCHY.HIER_EFFCT_END_DATE"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      }
+    ]
+  }
+}

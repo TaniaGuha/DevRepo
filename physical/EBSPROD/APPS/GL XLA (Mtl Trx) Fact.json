@@ -1,0 +1,44 @@
+{
+  "physicalTable": {
+    "name": "GL XLA (Mtl Trx) Fact",
+    "description": "Subledger Accounting views with Header, Line and Distribution XLA tables.  Used to identify and drill down to subledger transactions.",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXGL_XLA_DETAIL_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (Mtl Trx) Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (Mtl Trx) Fact.L_CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (Mtl Trx) Fact.L_LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (Mtl Trx) Fact.L_ACCOUNTING_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MTL Transaction Distributions Fact",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (Mtl Trx) Fact.D_SOURCE_DISTRIBUTION_ID_NUM_1",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MTL Transaction Distributions Fact.INV_SUB_LEDGER_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

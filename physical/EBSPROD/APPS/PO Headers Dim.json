@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "PO Headers Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPO_HEADERS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Buyer Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Headers Dim.BUYER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Buyer Dim.PERSON_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "PURCHASE_ORDER_ID"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "physicalTable" : {
+    "name" : "DIM_PO_SIMULATION_TYPE",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select 1 as SIMULATION_TYPE_GK, 'Direct' as SIMULATION_TYPE from dual\r\nunion all\r\nselect 2 as SIMULATION_TYPE_GK, 'Direct (Childless Only)' as SIMULATION_TYPE from dual\r\nunion all\r\nselect 3 as SIMULATION_TYPE_GK, 'Third Party' as SIMULATION_TYPE from dual\r\nunion all\r\nselect 4 as SIMULATION_TYPE_GK, 'Third Party (No Sourcing Rule)' as SIMULATION_TYPE from dual"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "SIMULATION_TYPE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SIMULATION_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    } ],
+    "additionalKeys" : [ [ "SIMULATION_TYPE_GK" ] ]
+  }
+}

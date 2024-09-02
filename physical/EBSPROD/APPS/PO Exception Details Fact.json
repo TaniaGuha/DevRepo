@@ -1,0 +1,88 @@
+{
+  "physicalTable": {
+    "name": "PO Exception Details Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.MSC_EXCEPTION_DETAILS_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.PERIOD_START_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Inv Orgs Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.CATEGORY_SET_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.CATEGORY_SET_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.PLAN_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.PLAN_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.SR_INSTANCE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Items Dim.SR_INSTANCE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Organizations Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.SR_INSTANCE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Organizations Dim.SR_INSTANCE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Plans Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Exception Details Fact.PLAN_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.MSC Plans Dim.PLAN_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

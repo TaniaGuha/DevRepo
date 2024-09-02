@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Lines",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PRICELIST_LINES_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Lines.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Lines.LIST_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList.LIST_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Lines_Details",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Lines.PRICE_LIST_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Lines_Details.PRICE_LIST_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_Rule_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Lines.LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_Rule_Header.LIST_HEADER_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

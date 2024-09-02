@@ -1,0 +1,142 @@
+{
+  "physicalTable" : {
+    "name" : "X_FIN_FACT_FA_UG_V",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "ASSET_CATEGORY",
+      "dataType" : "VARCHAR",
+      "length" : 61,
+      "nullable" : true
+    }, {
+      "name" : "Asset",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "Book",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "Currency_Code",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "DEPRECIATION_RATE",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "Date_Placed_In_Service",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "Date_Retired",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "Department",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "Item_Description",
+      "dataType" : "VARCHAR",
+      "length" : 283,
+      "nullable" : true
+    }, {
+      "name" : "Item_Type",
+      "dataType" : "VARCHAR",
+      "length" : 40,
+      "nullable" : true
+    }, {
+      "name" : "LOCAL_CURRENCY_COST",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "LOCAL_CURRENCY_STD_COST",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "Local_Depreciation_YTD",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "PERIOD_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "Revaluated_UR",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "Revaluated_accum_UR",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "SERIAL_NUMBER",
+      "dataType" : "VARCHAR",
+      "length" : 35,
+      "nullable" : true
+    }, {
+      "name" : "STD_Cost",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "UR_Local_Currency",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "UR_USD",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "USD_Amount",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "YTD_Depreciation_in_Dollar",
+      "dataType" : "DOUBLE",
+      "length" : 22,
+      "nullable" : true
+    }, {
+      "name" : "Ledger_ID",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 6,
+      "expiryUnit" : "HOURS"
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_LEDGER_CURRENCY_V",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_FA_UG_V.Ledger_ID",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_LEDGER_CURRENCY_V.LEDGER_ID"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_FA_UG_V.PERIOD_NAME",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods.PERIOD_NAME"
+      } ]
+    } ]
+  }
+}

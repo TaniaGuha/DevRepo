@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "DIM_CUST_CONTACT_ORACLE_DWH_Bill_To_Contact",
+    "sourceTable": "physicalTable:DW.DWH.DIM_CUST_CONTACT_ORACLE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_HZ_LOCATION_DWH_Bill_To_Contact_Location",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_CUST_CONTACT_ORACLE_DWH_Bill_To_Contact.LOCATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_HZ_LOCATION_DWH_Bill_To_Contact_Location.LOCATION_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ORACLE_CUSTOMER_CONTACT_GK"
+      ]
+    ]
+  }
+}

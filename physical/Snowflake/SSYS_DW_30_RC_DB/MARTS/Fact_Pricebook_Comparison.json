@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "Fact_Pricebook_Comparison",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PRICEBOOK_COMPARISON_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Pricebook_Version1",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_Pricebook_Comparison.PB_NAME",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Pricebook_Version1.PRICE_BOOK_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Pricebook_Version2",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_Pricebook_Comparison.PB_NAME",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Pricebook_Version2.PRICE_BOOK_NAME"
+          }
+        ]
+      }
+    ]
+  }
+}

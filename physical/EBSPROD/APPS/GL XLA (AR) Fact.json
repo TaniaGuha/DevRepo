@@ -1,0 +1,32 @@
+{
+  "physicalTable": {
+    "name": "GL XLA (AR) Fact",
+    "description": "Subledger Accounting views with Header, Line and Distribution XLA tables.  Used to identify and drill down to subledger transactions.",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXGL_XLA_DETAIL_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Distributions Fact (XLA)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_SOURCE_DISTRIBUTION_ID_NUM_1",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).TRANSACTION_DISTRIBUTION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.D_SOURCE_DISTRIBUTION_TYPE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Distributions Fact (XLA).SOURCE_DISTRIBUTION_TYPE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL XLA (AR) Fact.L_CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

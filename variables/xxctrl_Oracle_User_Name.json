@@ -1,0 +1,30 @@
+{
+  "initBlock" : {
+    "name" : "xxctrl_Oracle_User_Name",
+    "description" : "Get the Oracle user Name for the AD account used to log in to the BI. Matching is done according to Email address",
+    "tags" : [ "Project:ADMIN" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:DW.DW_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select oracle_user_name, oracle_user_id\r\nfrom xxctrl_bi_users\r\nwhere lower(':USER') = lower(ad_samaccountname)"
+    } ],
+    "variables" : [ {
+      "name" : "ORACLE_USER_NAME",
+      "description" : "Oracle User Name ",
+      "value" : "'NO ORACLE USER'",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    }, {
+      "name" : "ORACLE_USER_ID",
+      "description" : "Oracle User ID",
+      "value" : "-(1)",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

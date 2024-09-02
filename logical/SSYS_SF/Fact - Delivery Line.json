@@ -1,0 +1,505 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Delivery Line",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Cancelled Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.CANCELLED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Cancelled Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.CANCELLED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Delivered Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.DELIVERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Delivered Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.DELIVERED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Picked Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.PICKED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Picked Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.PICKED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Quality Control Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.QUALITY_CONTROL_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Quality Control Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.QUALITY_CONTROL_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Received Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.RECEIVED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Received Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.RECEIVED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Reference Line Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.REFERENCE_LINE_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Requested Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.REQUESTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Requested Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.REQUESTED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Returned Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.RETURNED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Returned Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.RETURNED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Scheduled Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.SCHEDULED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Scheduled Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.SCHEDULED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Shipped Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.SHIPPED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Shipped Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.SHIPPED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Src Requested Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.SRC_REQUESTED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "Src Requested Quantity2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.SRC_REQUESTED_QUANTITY2" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "# Of Delivery Lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.DELIVERY_DETAIL_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    }, {
+      "name" : "# Of Deliveries",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line.DELIVERY_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_WSH_DELIVERY_LINE_DWH_Fact_Delivery_Line" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Detail", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Detail", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Detail", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Detail", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Detail", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Detail", "logicalLevel:SSYS_SF.Dim - Item Locator.Dim - Item Locator Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Sold To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Contacts (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Site (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Site (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Delivery Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Delivery",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item Locator",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - LPN Delivery Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Opportunity Product Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Opportunity",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Exclusion",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PLUPDT_RULE_EXCLUSION_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Item",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 AND %3 = 91",
+          "expressionObjects": [
+            "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_CODE_SEGMENT1",
+            "physicalColumn:DW.DWH.Fact_PriceList_Exclusion.CONDITION_VALUE",
+            "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ORGANIZATION_ID"
+          ]
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_PriceList_Exclusion.LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Master",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_PriceList_Exclusion.MASTER_LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList_Master.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Rule_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_PriceList_Exclusion.RULE_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Rule_Header.RULE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

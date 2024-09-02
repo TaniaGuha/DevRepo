@@ -1,0 +1,71 @@
+{
+  "physicalTable": {
+    "name": "AP Holds Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAP_HOLDS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Invoice Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.INVOICE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Dim.INVOICE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Suppliers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.VENDOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.HOLD_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.PO_HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Headers Dim.PURCHASE_ORDER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Lines Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.PO_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Lines Dim.PO_LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Requestor Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Holds Fact.REQUESTER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Requestor Dim.PERSON_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

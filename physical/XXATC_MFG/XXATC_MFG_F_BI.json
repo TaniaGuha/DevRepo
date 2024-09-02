@@ -1,0 +1,249 @@
+{
+  "physicalTable" : {
+    "name" : "XXATC_MFG_F_BI",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "AS_OF_DATE",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BI_AS_OF_DATE",
+      "dataType" : "CHAR",
+      "length" : 11,
+      "nullable" : true
+    }, {
+      "name" : "BI_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 84,
+      "nullable" : true
+    }, {
+      "name" : "BI_PERSON_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 43,
+      "nullable" : true
+    }, {
+      "name" : "CREATION_DATE",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CYCLE_TIME_TOTAL",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "DEP_GROUP",
+      "dataType" : "VARCHAR",
+      "length" : 450,
+      "nullable" : true
+    }, {
+      "name" : "EMPLOYEE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "EMP_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "RANK",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "SEGMENT1",
+      "dataType" : "VARCHAR",
+      "length" : 120,
+      "nullable" : true
+    }, {
+      "name" : "SOURCE_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 8,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_CYCLE_TIME_TOTAL",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_DIRECT_LABOR_HOUR_ASSY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_DIRECT_LABOR_HOUR_INTG",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_DIRECT_LABOR_HOUR_SHIP",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "TIME_IN_ASSEMBLY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "TIME_IN_INTEGRATION",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "TIME_IN_SHIPMENT",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "TRANSACTION_DATE",
+      "dataType" : "DATETIME",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "TRANSACTION_QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "BI_ITEM_SET_CAT_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 95,
+      "nullable" : true
+    }, {
+      "name" : "BI_ORGANIZATION_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 43,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_DIRECT_LABOR_TIME",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "UNITS_IN_PROCESS_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CURRENT_VALUE_BY_AVG_CST",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "VALUE_WHEN_COMPLET_BY_AVG_CST",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CURRENT_VALUE_BY_STD_CST",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "VALUE_WHEN_COMPLET_BY_STD_CST",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 1,
+      "expiryUnit" : "DAYS"
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:DWSOURCE.XXATC.MFG_D_EMPLOYEES",
+      "useJoinExpression" : true,
+      "joinExpression" : {
+        "expressionTemplate" : "%1 = %2 AND %3 >= %4 AND %3 <= %5",
+        "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.MFG_D_EMPLOYEES.BI_PERSON_CODE", "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_PERSON_CODE", "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.AS_OF_DATE", "physicalColumn:DWSOURCE.XXATC.MFG_D_EMPLOYEES.EFFECTIVE_START_DATE", "physicalColumn:DWSOURCE.XXATC.MFG_D_EMPLOYEES.EFFECTIVE_END_DATE" ]
+      },
+      "joinType" : "INNER",
+      "cardinality" : "UNKNOWN"
+    }, {
+      "rightTable" : "physicalTable:DWSOURCE.XXATC.MFG_D_HC_ALLOCATION",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:DWSOURCE.XXATC.MFG_D_HC_ALLOCATION.BI_AS_OF_DATE"
+      }, {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_PERSON_CODE",
+        "rightColumn" : "physicalColumn:DWSOURCE.XXATC.MFG_D_HC_ALLOCATION.BI_PERSON_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.INV_D_MS_ITEMS_FINISHED_GOODS",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_ITEM_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.INV_D_MS_ITEMS_FINISHED_GOODS.BI_ITEM_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_CS_D_RESOURCES_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_PERSON_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_CS_D_RESOURCES_BI.BI_PERSON_PARTY_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_DIM_DATE_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_DIM_DATE_BI.BI_DATE_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_HR_D_ORGANIZATION_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_ORGANIZATION_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_HR_D_ORGANIZATION_BI.BI_ORG_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_INV_D_ITM_CAT_DETAILS_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_ITEM_SET_CAT_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_INV_D_ITM_CAT_DETAILS_BI.BI_ITEM_SET_CAT_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_INV_D_MS_ITEMS_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_ITEM_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_INV_D_MS_ITEMS_BI.BI_ITEM_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_MFG_D_PLAN_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_D_PLAN_BI.BI_FORCAST_DATE"
+      }, {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_ITEM_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_D_PLAN_BI.BI_ITEM_CODE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:XXATC_MFG.XXATC_PO_D_ITEM_USAGE_BI",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_AS_OF_DATE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_PO_D_ITEM_USAGE_BI.BI_AS_OF_DATE"
+      }, {
+        "leftColumn" : "physicalColumn:XXATC_MFG.XXATC_MFG_F_BI.BI_ITEM_CODE",
+        "rightColumn" : "physicalColumn:XXATC_MFG.XXATC_PO_D_ITEM_USAGE_BI.BI_INVENTORY_ITEM_CODE"
+      } ]
+    } ]
+  }
+}

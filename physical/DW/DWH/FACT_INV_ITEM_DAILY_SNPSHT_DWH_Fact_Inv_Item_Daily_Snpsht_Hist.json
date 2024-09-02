@@ -1,0 +1,61 @@
+{
+  "physicalTable": {
+    "name": "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist",
+    "sourceTable": "physicalTable:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist.LAST_RUN_IND",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind.LAST_RUN_IND"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Fact_Inv_Item_Daily_Snpsht_Hist.ITEM_DAILY_SNPST_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.ITEM_DAILY_SNPST_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

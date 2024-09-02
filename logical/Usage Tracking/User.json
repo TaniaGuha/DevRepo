@@ -1,0 +1,47 @@
+{
+  "logicalTable" : {
+    "name" : "User",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.USER_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Impersonator User Name",
+      "description" : "The user name of the impersonated user. If the request is not run as an impersonated user, then the value is 'None'.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.IMPERSONATOR_USER_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LOGICAL_QUERIES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "User Name" ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "physicalTable": {
+    "name": "MSC Items Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.MSC_SYSTEM_ITEMS_SC_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Order Types Fact",
+        "joinExpression": {
+          "expressionTemplate": "%1 = 8002 AND %2 = %3 AND %4 = %5 AND %6 = %7 AND %8 = %9",
+          "expressionObjects": [
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.CATEGORY_SET_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.ORGANIZATION_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ORGANIZATION_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.PLAN_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.PLAN_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.SR_INSTANCE_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.SR_INSTANCE_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.ITEM_SEGMENTS",
+            "physicalColumn:EBSPROD.APPS.MSC Order Types Fact.ITEM_NUMBER"
+          ]
+        },
+        "cardinality": "ONE_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Pegging Details Fact",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 AND %3 = %4 AND %5 = %6 AND %7 = 8002",
+          "expressionObjects": [
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.INVENTORY_ITEM_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.ASSEMBLY_MSC_ITEM_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.ORGANIZATION_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.ORGANIZATION_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.PLAN_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.PLAN_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Items Dim.CATEGORY_SET_ID"
+          ]
+        },
+        "cardinality": "ONE_TO_ONE",
+        "joinType": "INNER"
+      }
+    ],
+    "additionalKeys": [
+      [
+        "CATEGORY_SET_ID",
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID",
+        "PLAN_ID",
+        "SR_INSTANCE_ID"
+      ],
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID",
+        "PLAN_ID"
+      ]
+    ]
+  }
+}

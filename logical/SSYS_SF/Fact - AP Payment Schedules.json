@@ -1,0 +1,239 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - AP Payment Schedules",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Amount Remaining",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.AMOUNT_REMAINING" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Discount Amount Available",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.DISCOUNT_AMOUNT_AVAILABLE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Discount Amount Remaining",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.DISCOUNT_AMOUNT_REMAINING" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Gross Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.GROSS_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Hold Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.HOLD_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inv Curr Gross Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.INV_CURR_GROSS_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Invoice Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.INVOICE_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Invoices",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.INVOICE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "Payment Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.PAYMENT_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Invoice Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.INVOICE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "# of Payments (GK)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.PAYMENT_SCHEDULE_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    }, {
+      "name" : "# of Payments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) || '~' ||  CAST (%2 AS CHARACTER ( 30 ))",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.INVOICE_ID", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules.PAYMENT_NUM" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - GL Code Combination.Dim - GL Code Combination Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - AP Invoice Line.Dim - AP Invoice Line Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_AP_PAYMENT_SCHEDULES_DWH_Fact_AP_Payment_Schedules" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - AP Invoice Header.Dim - AP Invoice Header Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - AP Payment Schedule.Dim - AP Payment Schedule Detail", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - AP Invoice Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - AP Payment Schedule",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

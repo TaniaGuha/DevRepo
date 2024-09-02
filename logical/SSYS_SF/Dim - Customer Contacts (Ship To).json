@@ -1,0 +1,927 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Customer Contacts (Ship To)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Contact Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Ship To Contact Address City",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.CITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Concatenate Lines",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " REPLACE( TRIM(TRAILING '.' FROM %1 || ' ' || %2 || '.' || %3 || '.' || %4), ' ', '')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Customer Contacts (Ship To).Ship To Contact Address Line1", "logicalColumn:SSYS_SF.Dim - Customer Contacts (Ship To).Ship To Contact Address Line2", "logicalColumn:SSYS_SF.Dim - Customer Contacts (Ship To).Ship To Contact Address Line3", "logicalColumn:SSYS_SF.Dim - Customer Contacts (Ship To).Ship To Contact Address Line4" ]
+        }
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Country",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Ship To Contact Address Country Code",
+      "descriptorColumn" : "Ship To Contact Address Country Code",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Country Details.COUNTRY_SHORT_NAME", "logicalColumn:SSYS_SF.Dim - Customer Contacts (Ship To).Country Gk" ]
+        }
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Country Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.COUNTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address County",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.COUNTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Line1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Line2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Line3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Line4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Postal Zip Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.POSTAL_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address Province",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.PROVINCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address State",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.STATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Address State Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST ('' AS VARCHAR ( 5 ))"
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Contact Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.ORACLE_CUSTOMER_CONTACT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.CONTACT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ship To Contact Email",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.EMAIL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Country Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.COUNTRY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Usa East West",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.USA_EAST_WEST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Usa State",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.USA_STATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Address Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Address Lines Phonetic",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS_LINES_PHONETIC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Address Style",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.ADDRESS_STYLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Timezone",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.TIMEZONE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Language",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.LANGUAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Date Validated",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.DATE_VALIDATED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Geometry Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location.GEOMETRY_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Contact Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.CONTACT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Contact Responsibilities",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.CONTACT_RESPONSIBILITIES" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Contact Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.CONTACT_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Contact Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.CONTACT_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Contact Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.CONTACT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Decision Maker",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.DECISION_MAKER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ecommerce",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.ECOMMERCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Email Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.EMAIL_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "First Name Local Language",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.FIRST_NAME_LOCAL_LANGUAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Job Title",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.JOB_TITLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Job Title Responsibility",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.JOB_TITLE_RESPONSIBILITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Last Name Local Language",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.LAST_NAME_LOCAL_LANGUAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Area Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_AREA_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Country Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_COUNTRY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Ebs Contact Point Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_EBS_CONTACT_POINT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Extension",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_EXTENSION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Raw Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_RAW_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Mobile Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.MOBILE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Oracle Customer Contact Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.ORACLE_CUSTOMER_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Area Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_AREA_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Country Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_COUNTRY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Ebs Contact Point Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_EBS_CONTACT_POINT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Extension",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_EXTENSION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Raw Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_RAW_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Phone Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.PHONE_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Site Main Contact",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.SITE_MAIN_CONTACT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Web",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.WEB" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Web Ebs Contact Point Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.WEB_EBS_CONTACT_POINT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Web Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.WEB_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    }, {
+      "name" : "Ww Global Main Contact",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact.WW_GLOBAL_MAIN_CONTACT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Contacts (Ship To) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact", "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_CONTACT_ORACLE_DWH_Ship_To_Contact",
+          "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HZ_LOCATION_DWH_Ship_To_Contact_Location",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Customer Contacts (Ship To) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Customer Contacts (Ship To) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Customer Contacts (Ship To) Detail",
+        "numberOfElements" : 10000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Contact Gk" ],
+        "displayKey" : "Contact Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customer Contacts (Ship To)",
+        "levels" : [ "Dim - Customer Contacts (Ship To) Total", "Dim - Customer Contacts (Ship To) Detail" ]
+      } ]
+    }
+  }
+}

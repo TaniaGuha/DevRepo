@@ -1,0 +1,23 @@
+{
+  "initBlock" : {
+    "name" : "PA_UNSECURED",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:EBSPROD.EBSPROD_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT '%'\r\nFROM DUAL\r\nWHERE VALUEOF(NQ_SESSION.PA_RESTRICTED_ROLE_FLAG) = 0"
+    } ],
+    "variables" : [ {
+      "name" : "PA_PROJECTS_LIST_ALL",
+      "value" : "'-99'",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "dependencies" : [ "PA_RESTRICTED_ROLE_FLAG" ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : false
+  }
+}

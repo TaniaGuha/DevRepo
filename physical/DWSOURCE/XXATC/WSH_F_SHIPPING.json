@@ -1,0 +1,116 @@
+{
+  "physicalTable": {
+    "name": "WSH_F_SHIPPING",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_WSH_F_SHIPPING_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_AIR_EXPORT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_AIR_EXPORT_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_AIR_EXPORT_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_DHL_EXPORT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_DHL_EXPORT_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_DHL_EXPORT_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_DROP_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_DROP_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_DROP_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_FEDEX_EXPORT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_FEDEX_EXPORT_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_FEDEX_EXPORT_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_FEDEX_IMPORT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_FEDEX_IMPORT_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_FEDEX_IMPORT_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_FEDEX_LOCAL_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_FEDEX_LOCAL_DETAILS.FORWARDER_NAME"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.WAYBILL",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_FEDEX_LOCAL_DETAILS.AWB"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_IMPORT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_IMPORT_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_IMPORT_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_OCEAN_EXPORT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_FILE_NUM",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_OCEAN_EXPORT_DETAILS.BI_FILE_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.FORWARDER_NAME",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_OCEAN_EXPORT_DETAILS.FORWARDER_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.WSH_D_SHIPPING_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.WSH_F_SHIPPING.BI_SHIPPED_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.WSH_D_SHIPPING_DATE.BI_DATE_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

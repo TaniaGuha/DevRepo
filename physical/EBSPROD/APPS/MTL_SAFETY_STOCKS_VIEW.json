@@ -1,0 +1,37 @@
+{
+  "physicalTable" : {
+    "name" : "MTL_SAFETY_STOCKS_VIEW",
+    "description" : "Changed from using the standard Oracle view to using a custom safety stock view because the standard view did not have date effectiveness and we needed to return only the LAST safety stock value.",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT INVENTORY_ITEM_ID, ORGANIZATION_ID, SAFETY_STOCK_CODE, SAFETY_STOCK_QUANTITY, UOM\r\nFROM XXINV_SAFETY_STOCK_V\r\nWHERE SS_SOURCE = 'MTL'"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "UOM",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : true
+    }, {
+      "name" : "SAFETY_STOCK_QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SAFETY_STOCK_CODE",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ]
+  }
+}

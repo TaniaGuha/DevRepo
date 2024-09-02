@@ -1,0 +1,942 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Requisition Distribution",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Requisition Distribution Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Requisition Distribution Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQUISITION_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Requisition Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQUISITION_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Requisition Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQUISITION_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Requisition Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQUISITION_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Distribution Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.DISTRIBUTION_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Encumbered Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ENCUMBERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Encumbered Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ENCUMBERED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Accrual Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ACCRUAL_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Accrual Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ACCRUAL_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Allocation Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ALLOCATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Allocation Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ALLOCATION_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Budget Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.BUDGET_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Budget Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.BUDGET_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Charge Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.CHARGE_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Charge Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.CHARGE_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Expenditure Item Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.EXPENDITURE_ITEM_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Expenditure Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.EXPENDITURE_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Expenditure Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.EXPENDITURE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Failed Funds Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.FAILED_FUNDS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Gl Cancelled Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.GL_CANCELLED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Gl Closed Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.GL_CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Gl Encumbered Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.GL_ENCUMBERED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Gl Encumbered Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.GL_ENCUMBERED_PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Nonrecoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.NONRECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Prevent Encumbrance Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.PREVENT_ENCUMBRANCE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Project Accounting Context",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.PROJECT_ACCOUNTING_CONTEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Project Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.PROJECT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Project Related Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.PROJECT_RELATED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Recoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.RECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Recovery Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.RECOVERY_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Req Line Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQ_LINE_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Req Line Currency Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQ_LINE_CURRENCY_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Req Line Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.REQ_LINE_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Set Of Books Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.SET_OF_BOOKS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Source Req Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.SOURCE_REQ_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Task Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.TASK_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Tax Recovery Override Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.TAX_RECOVERY_OVERRIDE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Variance Account Ccid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.VARIANCE_ACCOUNT_CCID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    }, {
+      "name" : "Variance Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution.VARIANCE_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Requisition Distribution Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PO_REQ_DISTRIBUTION_DWH_Dim_Po_Req_Distribution" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Requisition Distribution Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Requisition Distribution Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Requisition Distribution Detail",
+        "numberOfElements" : 600037,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Requisition Distribution Gk" ],
+        "displayKey" : "Requisition Distribution Id",
+        "additionalKeys" : [ [ "Requisition Distribution Id" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Requisition Distribution",
+        "levels" : [ "Dim - Purchasing Requisition Distribution Total", "Dim - Purchasing Requisition Distribution Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "physicalTable": {
+    "name": "INV_F_COSTING",
+    "sourceTable": "physicalTable:XXATC_PO.XXATC.XXATC_INV_F_COSTING_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "SECONDS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:XXATC_PO.XXATC.XXATC_COST_AS_OF_DATE",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2",
+          "expressionObjects": [
+            "physicalColumn:XXATC_PO.XXATC.XXATC_COST_AS_OF_DATE.BI_DATE_CODE",
+            "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_AS_OF_DATE"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.INV_D_COSTING_INV_ORGANIZATION",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_INV_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_COSTING_INV_ORGANIZATION.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.INV_D_COSTING_OPERATING_UNIT",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_OPERATING_UNIT_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_COSTING_OPERATING_UNIT.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.XXATC_INV_D_MS_ITEMS_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.INV_F_COSTING.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.XXATC_INV_D_MS_ITEMS_BI.BI_ITEM_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

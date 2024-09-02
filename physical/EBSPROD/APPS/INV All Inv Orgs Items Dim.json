@@ -1,0 +1,91 @@
+{
+  "physicalTable": {
+    "name": "INV All Inv Orgs Items Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXINV_ALL_ORG_ITEMS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV COGS Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.COST_OF_SALES_ACCOUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV COGS Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Buyer Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.BUYER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Buyer Dim.PERSON_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Encumbrance Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ENCUMBRANCE_ACCOUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Encumbrance Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Expense Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.EXPENSE_ACCOUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Expense Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Mfg Cost USD Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Mfg Cost USD Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Sales Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.SALES_ACCOUNT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Sales Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim (Item Source Org)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.SOURCE_ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim (Item Source Org).ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Planners Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Planners Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.PLANNER_CODE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Planners Dim.PLANNER_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID"
+      ],
+      [
+        "INVENTORY_ITEM_ID"
+      ],
+      [
+        "ORGANIZATION_ID"
+      ],
+      [
+        "ORGANIZATION_ID",
+        "SEGMENT1"
+      ]
+    ]
+  }
+}

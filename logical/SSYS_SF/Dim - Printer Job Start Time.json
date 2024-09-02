@@ -1,0 +1,145 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Printer Job Start Time",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "HMS Time Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Date Created",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.DATE_CREATED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "HMS Time Caption",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.HMS_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Time Hour Second"
+    }, {
+      "name" : "HMS Time Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.HMS_TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Time Hour Second"
+    }, {
+      "name" : "HMS Hour",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.HOUR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Time Hour"
+    }, {
+      "name" : "HMS Minute",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.MINUTE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Time Minute"
+    }, {
+      "name" : "HMS Second",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time.SECOND_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Start Time Hour Second"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_HMS_TIME_DWH_Printer_Job_Start_Time",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_HMS_TIME_DWH_Printer_Job_Start_Time" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Printer Job Start Time Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Printer Job Start Time Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Printer Job Start Time Hour",
+        "numberOfElements" : 24,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "HMS Hour" ],
+        "displayKey" : "HMS Hour"
+      }, {
+        "name" : "Dim - Printer Job Start Time Minute",
+        "numberOfElements" : 1440,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "HMS Minute" ],
+        "displayKey" : "HMS Minute"
+      }, {
+        "name" : "Dim - Printer Job Start Time Hour Second",
+        "numberOfElements" : 86400,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "HMS Time Gk" ],
+        "displayKey" : "HMS Time Caption",
+        "additionalKeys" : [ [ "HMS Time Caption" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Printer Job Start Time",
+        "levels" : [ "Dim - Printer Job Start Time Total", "Dim - Printer Job Start Time Hour", "Dim - Printer Job Start Time Minute", "Dim - Printer Job Start Time Hour Second" ]
+      } ]
+    }
+  }
+}

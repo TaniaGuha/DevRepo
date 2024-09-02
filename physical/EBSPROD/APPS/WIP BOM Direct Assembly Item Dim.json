@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "WIP BOM Direct Assembly Item Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXINV_ALL_ORG_ITEMS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Buyer Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP BOM Direct Assembly Item Dim.BUYER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Buyer Dim.PERSON_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID"
+      ]
+    ]
+  }
+}

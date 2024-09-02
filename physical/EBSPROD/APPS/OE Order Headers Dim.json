@@ -1,0 +1,28 @@
+{
+  "physicalTable": {
+    "name": "OE Order Headers Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXOE_ORDER_HEADERS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Booked Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Dim.BOOKED_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Booked Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.EBS BI Users",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Dim.CREATED_BY_NAME",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.EBS BI Users.ORACLE_USER_NAME"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "HEADER_ID"
+      ]
+    ]
+  }
+}

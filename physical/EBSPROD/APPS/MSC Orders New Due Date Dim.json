@@ -1,0 +1,26 @@
+{
+  "physicalTable": {
+    "name": "MSC Orders New Due Date Dim",
+    "description": "New Due Date column on MSC Orders view",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXGL_PERIODS_T",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Supplier Forecast Fact",
+        "joinExpression": {
+          "expressionTemplate": "%1 =  CAST (%2 AS DATE )",
+          "expressionObjects": [
+            "physicalColumn:EBSPROD.APPS.MSC Orders New Due Date Dim.PERIOD_DAY",
+            "physicalColumn:EBSPROD.APPS.PO Supplier Forecast Fact.NEW_DUE_DATE"
+          ]
+        },
+        "cardinality": "ONE_TO_ONE",
+        "joinType": "INNER"
+      }
+    ],
+    "additionalKeys": [
+      [
+        "PERIOD_DAY"
+      ]
+    ]
+  }
+}

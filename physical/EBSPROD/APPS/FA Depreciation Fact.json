@@ -1,0 +1,55 @@
+{
+  "physicalTable": {
+    "name": "FA Depreciation Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXFA_DEPRECIATION_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Acctg Period Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.BOOK_TYPE_CODE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.BOOK_TYPE_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.PERIOD_COUNTER",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_COUNTER"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Assets Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.ASSET_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Assets Dim.ASSET_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Books Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.BOOK_TYPE_CODE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Books Dim.BOOK_TYPE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Depreciation Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

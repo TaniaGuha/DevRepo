@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "DIM_AR_INVOICE_HEADER_DWH_Invoice_Header",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AR_INVOICE_HEADER_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AR_TRANSACTION_TYPE_DWH_Invoice_type",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AR_INVOICE_HEADER_DWH_Invoice_Header.TRX_TYPE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AR_TRANSACTION_TYPE_DWH_Invoice_type.TRX_TYPE_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVOICE_HEADER_GK"
+      ]
+    ]
+  }
+}

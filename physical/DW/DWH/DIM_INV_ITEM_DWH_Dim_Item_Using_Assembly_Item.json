@@ -1,0 +1,20 @@
+{
+  "physicalTable": {
+    "name": "DIM_INV_ITEM_DWH_Dim_Item_Using_Assembly_Item",
+    "sourceTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Using_Assembly_Item.ITEM_KEY",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job.INVENTORY_ITEM_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ITEM_KEY"
+      ]
+    ]
+  }
+}

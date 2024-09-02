@@ -1,0 +1,24 @@
+{
+  "physicalTable": {
+    "name": "INV All Item Category Sets",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMTL_CATEGORIES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Parent Category Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.INV All Item Category Sets.CONCATENATED_SEGMENTS",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Parent Category Dim.FLEX_VALUE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVENTORY_ITEM_ID"
+      ],
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID"
+      ]
+    ]
+  }
+}

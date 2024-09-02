@@ -1,0 +1,299 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - GL Period",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "GL Date" ],
+    "logicalColumns" : [ {
+      "name" : "GL Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Day Detail"
+    }, {
+      "name" : "Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.PERIOD_NAME" ]
+          }
+        }, {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Month"
+    }, {
+      "name" : "Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.START_DATE" ]
+          }
+        }, {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPADD( SQL_TSI_DAY , -(1) * ( DAYOFMONTH(%1) - 1), %1)",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.TIME_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.END_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Year Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.YEAR_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Year"
+    }, {
+      "name" : "Quarter Start Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.QUARTER_START_DATE" ]
+          }
+        }, {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.FIRST_DAY_OF_Q" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Quarter"
+    }, {
+      "name" : "Entered Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.ENTERED_PERIOD_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.PERIOD_YEAR" ]
+          }
+        }, {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Year"
+    }, {
+      "name" : "Quarter Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.QUARTER_NUM" ]
+          }
+        }, {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.CALENDAR_QUARTER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.PERIOD_NUM" ]
+          }
+        }, {
+          "logicalTableSource" : "TIME_DIM_GL_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Adjustment Period Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.ADJUSTMENT_PERIOD_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_PERIOD_DWH_GL_Period",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period.PERIOD_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Period Quarter",
+      "description" : "Year and Quarter in format \"2017 Q2\"",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Quarter Start Date",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CAST (%1 AS CHARACTER ( 4 )) || ' Q' ||  CAST (%2 AS CHARACTER ( 1 ))",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - GL Period.Period Year", "logicalColumn:SSYS_SF.Dim - GL Period.Quarter Num" ]
+        }
+      },
+      "logicalLevel" : "Quarter"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GL_PERIOD_DWH_GL_Period",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_PERIOD_DWH_GL_Period" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - GL Period.Month" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "TIME_DIM_GL_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_GL_Date" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - GL Period.Day Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Year",
+        "numberOfElements" : 25,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Period Year" ],
+        "displayKey" : "Period Year",
+        "chronologicalKey" : [ "Period Year" ]
+      }, {
+        "name" : "Quarter",
+        "numberOfElements" : 100,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Period Quarter" ],
+        "displayKey" : "Period Quarter",
+        "chronologicalKey" : [ "Period Quarter" ]
+      }, {
+        "name" : "Month",
+        "numberOfElements" : 300,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Period Name" ],
+        "displayKey" : "Period Name",
+        "chronologicalKey" : [ "Period Name" ]
+      }, {
+        "name" : "Day Detail",
+        "numberOfElements" : 360000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "GL Date" ],
+        "displayKey" : "GL Date",
+        "chronologicalKey" : [ "GL Date" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "GL Period",
+        "description" : "GL Date Time Level Based Dimension Hierarchy ",
+        "levels" : [ "Total", "Year", "Quarter", "Month", "Day Detail" ]
+      } ]
+    }
+  }
+}

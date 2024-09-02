@@ -1,0 +1,342 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - GL Ledger",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Gl Ledger Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Gl Ledger Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.GL_LEDGER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Ledger Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LEDGER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Short Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.SHORT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Ledger Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LEDGER_CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Functional Currency",
+      "description" : "Ledger Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LEDGER_CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Object Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.OBJECT_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Accounted Period Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.ACCOUNTED_PERIOD_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Alc Ledger Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.ALC_LEDGER_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Allow Intercompany Post Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.ALLOW_INTERCOMPANY_POST_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Chart Of Accounts Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.CHART_OF_ACCOUNTS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Configuration Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.CONFIGURATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Latest Encumbrance Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LATEST_ENCUMBRANCE_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Latest Opened Period Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LATEST_OPENED_PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Le Ledger Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LE_LEDGER_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Period End Rate Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.PERIOD_END_RATE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Period Set Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.PERIOD_SET_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Ledger Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GL_LEDGER_DWH_Dim_GL_Ledger",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_GL_LEDGER_DWH_Dim_GL_Ledger" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - GL Ledger Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - GL Ledger Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - GL Ledger Detail",
+        "numberOfElements" : 20,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Gl Ledger Gk" ],
+        "displayKey" : "Gl Ledger Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "GL Ledger",
+        "levels" : [ "Dim - GL Ledger Total", "Dim - GL Ledger Detail" ]
+      } ]
+    }
+  }
+}

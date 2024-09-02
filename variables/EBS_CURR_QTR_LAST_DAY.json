@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "EBS_CURR_QTR_LAST_DAY",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:EBSPROD.EBSPROD",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT MAX(PERIOD_END_DATE)\r\nFROM XXBI.XXGL_PERIODS_V\r\nWHERE QUARTER_YEAR_NAME IN\r\n  (SELECT QUARTER_YEAR_NAME\r\n  FROM XXBI.XXGL_PERIODS_V\r\n  WHERE PERIOD_DAY = TRUNC(SYSDATE)\r\n  )"
+    } ],
+    "variables" : [ {
+      "name" : "EBS_CURR_QUARTER_LAST_DAY",
+      "value" : " TIMESTAMP '2024-06-30 00:00:00'"
+    } ],
+    "runSchedule" : {
+      "interval" : 1,
+      "intervalUnit" : "DAYS",
+      "startingOn" : "2015-10-16 11:26:29"
+    },
+    "disable" : false
+  }
+}

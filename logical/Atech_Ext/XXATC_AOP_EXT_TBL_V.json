@@ -1,0 +1,107 @@
+{
+  "logicalTable" : {
+    "name" : "XXATC_AOP_EXT_TBL_V",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "AMOUNT",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_AOP_EXT_TBL_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.AMOUNT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CURRENCY_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_AOP_EXT_TBL_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.CURRENCY_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CUSTOMER_LOCATION",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_AOP_EXT_TBL_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.CUSTOMER_LOCATION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "QUERY_CURRENCY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_AOP_EXT_TBL_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.QUERY_CURRENCY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "UNIQUE_NUM",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_AOP_EXT_TBL_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.UNIQUE_NUM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "XXATC_AOP_EXT_TBL_V",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.BI_ORG_CODE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "XXATC_AOP_EXT_TBL_V",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_Ext.ex_aop",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

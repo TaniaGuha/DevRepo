@@ -1,0 +1,67 @@
+{
+  "presentationTable" : {
+    "name" : "Operating Unit",
+    "presentationColumns" : [ {
+      "name" : "Operating Unit",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit",
+      "localization" : {
+        "localizationKey" : "Operating Unit",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit_Operating_Unit)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit_Operating_Unit)"
+      }
+    }, {
+      "name" : "Operating Unit Org Id",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit Org Id",
+      "localization" : {
+        "localizationKey" : "Operating Unit Org Id",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit_Operating_Unit_Org_Id)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit_Operating_Unit_Org_Id)"
+      }
+    }, {
+      "name" : "Functional Currency",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Operating Unit Org.Functional Currency",
+      "localization" : {
+        "localizationKey" : "Functional Currency",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit_Functional_Currency)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit_Functional_Currency)"
+      }
+    }, {
+      "name" : "Country",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Operating Unit Org.Country",
+      "localization" : {
+        "localizationKey" : "Country",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit_Country)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit_Country)"
+      }
+    }, {
+      "name" : "Timezone Code",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Operating Unit Org.Timezone Code",
+      "localization" : {
+        "localizationKey" : "Timezone Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit_Timezone_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit_Timezone_Code)"
+      }
+    }, {
+      "name" : "Location Code",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Operating Unit Org.Location Code",
+      "localization" : {
+        "localizationKey" : "Location Code",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit_Location_Code)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit_Location_Code)"
+      }
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit Org Id", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Operating Unit",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Requisitions_Operating_Unit)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Requisitions_Operating_Unit)"
+    }
+  }
+}

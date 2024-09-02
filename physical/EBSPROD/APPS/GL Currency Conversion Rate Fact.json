@@ -1,0 +1,15 @@
+{
+  "physicalTable": {
+    "name": "GL Currency Conversion Rate Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXGL_CURR_CONVERSION_RATE_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Currency Conversion Rate Fact.CONVERSION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      }
+    ]
+  }
+}

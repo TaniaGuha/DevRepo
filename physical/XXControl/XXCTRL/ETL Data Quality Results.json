@@ -1,0 +1,15 @@
+{
+  "physicalTable": {
+    "name": "ETL Data Quality Results",
+    "sourceTable": "physicalTable:XXControl.XXCTRL.XXETL_DQ_RESULT_T",
+    "joins": [      {
+        "rightTable": "physicalTable:XXControl.XXCTRL.ETL Data Quality Dependancy",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXControl.XXCTRL.ETL Data Quality Results.DQ_RULE_ID",
+            "rightColumn": "physicalColumn:XXControl.XXCTRL.ETL Data Quality Dependancy.DQ_RULE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

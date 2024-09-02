@@ -1,0 +1,33 @@
+{
+  "physicalTable" : {
+    "name" : "X_FIN_DIM_LEDGER_CURRENCY_V",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "LEDGER_ID",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SHORT_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : false
+    }, {
+      "name" : "CURRENCY_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : false
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "SHORT_NAME" ], [ "LEDGER_ID" ] ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 6,
+      "expiryUnit" : "HOURS"
+    }
+  }
+}

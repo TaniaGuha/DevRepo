@@ -1,0 +1,34 @@
+{
+  "physicalTable": {
+    "name": "OE Order Line Shipment Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXOE_ORDER_LINE_SHIPMENTS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Move Order Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Dim.MOVE_ORDER_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Move Order Dim.LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Shipped Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Line Shipment Dim.CONFIRMATION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Shipped Date Dim.PERIOD_DAY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "SOURCE_LINE_ID"
+      ],
+      [
+        "DELIVERY_DETAIL_ID"
+      ],
+      [
+        "SOURCE_HEADER_ID"
+      ]
+    ]
+  }
+}

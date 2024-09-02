@@ -1,0 +1,221 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - TPL Free Stage",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Tpl Free Stage Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Dlv Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.DLV_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Free Stage Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.FREE_STAGE_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Item",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.ITEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.LOT_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Oh Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.OH_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Serial Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.SERIAL_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.SUBINVENTORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Subinventory Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.SUBINVENTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "Tpl Free Stage Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.TPL_FREE_STAGE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    }, {
+      "name" : "User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty.USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - TPL Free Stage Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_TPL_FREE_STAGE_QTY_DWH_Dim_TPL_Free_Stage_Qty" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - TPL Free Stage Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - TPL Free Stage Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - TPL Free Stage Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Tpl Free Stage Gk" ],
+        "displayKey" : "Tpl Free Stage Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "TPL Free Stage",
+        "levels" : [ "Dim - TPL Free Stage Total", "Dim - TPL Free Stage Detail" ]
+      } ]
+    }
+  }
+}

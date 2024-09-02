@@ -1,0 +1,311 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Item Daily Snapshot Hist",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Item Daily Snpst Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Inventory Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Item Daily Snpst Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.ITEM_DAILY_SNPST_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Mrp Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.MRP_INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Plan Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.PLAN_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Plan Start Datetime",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.PLAN_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Current Snapshot Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : " VALUEOF(%1)",
+            "expressionObjects" : [ "variable:STD_AMR_MAX_SNPST_DT.STD_AMR_MAX_SNPST_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Snapshot Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.SNAPSHOT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Snapshot Date Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.SNAPSHOT_DATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Source",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.SOURCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Std Amr All 6m",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.STD_AMR_ALL_6M" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Std Amr Net 6m",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.STD_AMR_NET_6M" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Std Amr Net 1y",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.STD_AMR_NET_1Y" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    }, {
+      "name" : "Std Amr All 1y",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist.STD_AMR_ALL_1Y" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Daily Snapshot Hist Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_INV_ITEM_DAILY_SNPSHT_DWH_Dim_Inv_Item_Daily_Snpsht_Hist" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Item Daily Snapshot Hist Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Item Daily Snapshot Hist Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Item Daily Snapshot Hist Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Item Daily Snpst Gk" ],
+        "displayKey" : "Item Daily Snpst Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Item Daily Snapshot Hist",
+        "levels" : [ "Dim - Item Daily Snapshot Hist Total", "Dim - Item Daily Snapshot Hist Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "physicalTable": {
+    "name": "FA Asset Assignments Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXFA_ASSET_ASSIGNMENTS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Asset Location Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Assignments Fact.LOCATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Asset Location Dim.LOCATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Assets Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Assignments Fact.ASSET_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Assets Dim.ASSET_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Books Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Assignments Fact.BOOK_TYPE_CODE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Books Dim.BOOK_TYPE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Code Combinations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Assignments Fact.CHART_OF_ACCOUNTS_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CHART_OF_ACCOUNTS_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Assignments Fact.CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Assignments Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

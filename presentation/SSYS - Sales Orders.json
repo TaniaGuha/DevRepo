@@ -1,0 +1,95 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Sales Orders",
+    "tags" : [ "Project:Lead2Invoice", "Project:SSYS_All_DWH", "Project:SSYS_Lead2Invoice" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Sale Order line.# Of Orders",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Sales Orders.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Opportunity"
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Customers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Sales Orders.Sold To Customer"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Bill To Customer"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Ship To Customer"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.End Customer"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Sales Orders.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Item (Ship From Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Item (Ship To Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Requisition Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Sales Orders.Requisition Header"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Requisition Line"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Order Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Sales Orders.Order Header"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Order Line"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Order Measures"
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Shipment Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Sales Orders.Delivery"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Delivery Line Details"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Shipment Measures"
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Order Line Invoice"
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Pricing Modifiers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Sales Orders.Modifier Header"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.Modifier Line"
+      }, {
+        "name" : "presentationTable:SSYS - Sales Orders.OE Price Adjustments"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Sales Orders.Item Cost"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Sales_Orders_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Sales Orders",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Sales_Orders)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Sales_Orders)"
+    }
+  }
+}

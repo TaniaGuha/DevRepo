@@ -1,0 +1,33 @@
+{
+  "physicalTable": {
+    "name": "INV_D_MS_ITEMS_NO_FINISHED_GOODS",
+    "sourceTable": "physicalTable:XXATC_PO.XXATC.XXATC_INV_D_MS_ITEMS_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.raw_material_buyers",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_MS_ITEMS_NO_FINISHED_GOODS.BI_DEFAULT_BUYER_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.raw_material_buyers.BI_PERSON_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.raw_material_vendors",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_MS_ITEMS_NO_FINISHED_GOODS.PREFERRED_VENDOR_BI_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.raw_material_vendors.BI_VENDOR_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_ITEM_CODE"
+      ]
+    ]
+  }
+}

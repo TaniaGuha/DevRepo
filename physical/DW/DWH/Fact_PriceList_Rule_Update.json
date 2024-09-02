@@ -1,0 +1,31 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Rule_Update",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PRICELIST_RULE_UPDATE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Rule_Update.LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Master",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Rule_Update.MASTER_LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Master.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_Rule_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Rule_Update.RULE_ID",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_Rule_Header.RULE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

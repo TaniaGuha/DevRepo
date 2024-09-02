@@ -1,0 +1,701 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Item Locator",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Item Location Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Item Location Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ITEM_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Inventory Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.INVENTORY_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Inventory Location Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.INVENTORY_LOCATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Locator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Padded Concatenated Segments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.PADDED_CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Availability Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.AVAILABILITY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Dimension UOM Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.DIMENSION_UOM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Disable Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Dropping Order",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.DROPPING_ORDER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Length",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.LENGTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Width",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.WIDTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Height",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.HEIGHT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Inventory ATP Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.INVENTORY_ATP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Location Current Units",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.LOCATION_CURRENT_UNITS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Physical Location id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.PHYSICAL_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Picking Order",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.PICKING_ORDER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Reservable Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.RESERVABLE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Status Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.STATUS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Subinventory Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SUBINVENTORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Empty Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.EMPTY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ENABLED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Mixed Items Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.MIXED_ITEMS_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Summary Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SUMMARY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Z Coordinate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.Z_COORDINATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    }, {
+      "name" : "Segment 10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.SEGMENT10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Item Locator Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_ITEM_LOCATION_DWH_Dim_Locator",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Item Locator Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Item Locator Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Item Locator Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Item Location Gk" ],
+        "displayKey" : "Item Location Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Item Locator",
+        "levels" : [ "Dim - Item Locator Total", "Dim - Item Locator Detail" ]
+      } ]
+    }
+  }
+}

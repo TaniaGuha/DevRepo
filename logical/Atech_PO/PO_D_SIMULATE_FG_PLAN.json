@@ -1,0 +1,590 @@
+{
+  "logicalTable" : {
+    "name" : "PO_D_SIMULATE_FG_PLAN",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "BI_ITEM_CODE", "BI_TARGET_DATE" ],
+    "logicalColumns" : [ {
+      "name" : "BI_ITEM_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.BI_ITEM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FG Item Code"
+    }, {
+      "name" : "BI_TARGET_DATE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.BI_TARGET_DATE" ]
+          }
+        }, {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.BI_DATE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CREATION_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Item Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.ITEM_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FG Item Code"
+    }, {
+      "name" : "LAST_UPDATE_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MAIN_CATEGORY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.MAIN_CATEGORY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MRP Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "RANK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.RANK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Simulate Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.SIMULATE_QUANTITY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Spend Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.SPEND_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TARGET_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.TARGET_DATE" ]
+          }
+        }, {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.BI_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DAY_NO_IN_MONTH",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.DAY_NO_IN_MONTH" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DAY_OF_WEEK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.DAY_OF_WEEK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FIRST_DAY_IN_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.FIRST_DAY_IN_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FIRST_DAY_IN_MONTH",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.FIRST_DAY_IN_MONTH" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FIRST_DAY_IN_WEEK",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.FIRST_DAY_IN_WEEK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FIRST_DAY_IN_YEAR",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.FIRST_DAY_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "LAST_DAY_IN_MONTH",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.LAST_DAY_IN_MONTH" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MONTH_CODE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.MONTH_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MONTH_NO_IN_YEAR",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.MONTH_NO_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "WEEK_CODE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.WEEK_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "WEEK_NO_IN_YEAR",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.WEEK_NO_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "YEAR_CODE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.YEAR_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "YEAR_NO",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.YEAR_NO" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_DATE_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.BI_DATE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DATE_VALUE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.DATE_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "QUARTER",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.QUARTER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "BI_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.BI_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DATE_CODE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_SIMULATION_DATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_SIMULATION_DATES.DATE_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Quarter-Year",
+      "description" : "QQ-YYYY\r\nfor Example: Q1-2013",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "'Q' ||  CAST (%1 AS CHARACTER ( 1 )) || '-' ||  CAST (%2 AS CHARACTER ( 4 ))",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.QUARTER", "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.YEAR_NO" ]
+        }
+      },
+      "logicalLevel" : "Quarter"
+    }, {
+      "name" : "Month-Year",
+      "description" : "Mon-YYYY\r\nfor Example: Jan-2013",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CAST ( MONTHNAME(%1) AS CHARACTER ( 3 )) || '-' ||  CAST (%2 AS CHARACTER ( 4 ))",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.DATE_VALUE", "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.YEAR_NO" ]
+        }
+      },
+      "logicalLevel" : "Month"
+    }, {
+      "name" : "FG Item Code and Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_D_FG_ITEMS.ITEM_FOR_PARAMETER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FG Item Code"
+    }, {
+      "name" : "Item Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_SIMULATE_FG_PLAN",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.INV_D_FG_ITEMS.ITEM_DESC" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM_MONTH_CODE_Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 || '-' ||  CAST (%2 AS CHARACTER ( 6 ))",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.BI_ITEM_CODE", "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.MONTH_CODE" ]
+        }
+      },
+      "logicalLevel" : "Month"
+    }, {
+      "name" : "ITEM_QUARTER_CODE_Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 || '-' || %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.BI_ITEM_CODE", "logicalColumn:Atech_PO.PO_D_SIMULATE_FG_PLAN.Quarter-Year" ]
+        }
+      },
+      "logicalLevel" : "Quarter"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "PO_D_SIMULATE_FG_PLAN",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN", "physicalTable:XXATC_PO.XXATC.INV_D_FG_ITEMS" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN",
+          "rightTable" : "physicalTable:XXATC_PO.XXATC.INV_D_FG_ITEMS",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 1",
+        "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.RANK" ]
+      },
+      "distinctValues" : false
+    }, {
+      "name" : "PO_SIMULATION_DATES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.PO_SIMULATION_DATES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "FG Plan Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "FG Plan Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "FG Item Code",
+        "numberOfElements" : 100,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "BI_ITEM_CODE" ],
+        "displayKey" : "Item Code",
+        "additionalKeys" : [ [ "Item Code" ] ]
+      }, {
+        "name" : "Quarter",
+        "numberOfElements" : 400,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "ITEM_QUARTER_CODE_Key" ],
+        "displayKey" : "Quarter-Year",
+        "additionalKeys" : [ [ "Quarter-Year" ] ]
+      }, {
+        "name" : "Month",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "ITEM_MONTH_CODE_Key" ],
+        "displayKey" : "Month-Year",
+        "additionalKeys" : [ [ "Month-Year" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Finished Goods Plan",
+        "levels" : [ "FG Plan Total", "FG Item Code", "Quarter", "Month" ]
+      } ]
+    }
+  }
+}

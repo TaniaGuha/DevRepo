@@ -1,0 +1,43 @@
+{
+  "physicalTable": {
+    "name": "FA Asset Books Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXFA_ASSET_BOOKS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Acctg Period Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Books Fact.BOOK_TYPE_CODE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.BOOK_TYPE_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Books Fact.PERIOD_COUNTER_CAPITALIZED",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Acctg Period Dim.PERIOD_COUNTER"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Assets Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Books Fact.ASSET_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Assets Dim.ASSET_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Books Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Books Fact.BOOK_TYPE_CODE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Books Dim.BOOK_TYPE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Books Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

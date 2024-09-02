@@ -1,0 +1,348 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Printer Daily Activity Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Daily Activity Date GK" ],
+    "logicalColumns" : [ {
+      "name" : "Daily Activity Date GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Day Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.DAY_OF_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Day Number (week)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Day Number (month)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.DAY_NUMBER_IN_CALENDAR_MONTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Day Number (year)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.DAY_NUMBER_IN_CALENDAR_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Day Is Holiday",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.HOLIDAY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Day"
+    }, {
+      "name" : "Daily Activity Week Number (year)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_WEEK_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Daily Activity Month and Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.PERIOD_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Month"
+    }, {
+      "name" : "Daily Activity Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Month"
+    }, {
+      "name" : "Daily Activity Month Number",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Month"
+    }, {
+      "name" : "Daily Activity Month ID",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_YEAR_MONTH_YYYYMM_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Month"
+    }, {
+      "name" : "Daily Activity Quarter",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Daily Activity Quarter ID",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_YEAR_QUARTER_QQYYYY_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Quarter"
+    }, {
+      "name" : "Daily Activity Quarter ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Quarter"
+    }, {
+      "name" : "Daily Activity Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_YEAR_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Year"
+    }, {
+      "name" : "Daily Activity Year ID",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Printer Job Daily Activity Date Year"
+    }, {
+      "name" : "Days in Month",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE('add_months(trunc(\\%1,''mm''),1) - trunc(\\%2,''mm'')' AS  INTEGER , %1, %1)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.TIME_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Is Relevant",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 >= 2010 AND %2 <  CURRENT_DATE  THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.CALENDAR_YEAR_N", "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.TIME_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Daily Activity Period",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Printer_Daily_Activity_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.PERIOD_NAME" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Printer_Daily_Activity_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Printer Job Daily Activity Date Total",
+      "logicalLevels" : [ {
+        "name" : "Dim - Printer Job Daily Activity Date Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Printer Job Daily Activity Date Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Daily Activity Year ID" ],
+        "displayKey" : "Daily Activity Year",
+        "additionalKeys" : [ [ "Daily Activity Year" ] ]
+      }, {
+        "name" : "Dim - Printer Job Daily Activity Date Quarter",
+        "numberOfElements" : 40,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Daily Activity Quarter ID" ],
+        "displayKey" : "Daily Activity Quarter",
+        "additionalKeys" : [ [ "Daily Activity Quarter" ] ]
+      }, {
+        "name" : "Dim - Printer Job Daily Activity Date Month",
+        "numberOfElements" : 120,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Daily Activity Month ID" ],
+        "displayKey" : "Daily Activity Month and Year",
+        "additionalKeys" : [ [ "Daily Activity Month and Year" ] ],
+        "chronologicalKey" : [ "Daily Activity Month ID" ]
+      }, {
+        "name" : "Dim - Printer Job Daily Activity Date Day",
+        "numberOfElements" : 4000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Daily Activity Date GK" ],
+        "displayKey" : "Daily Activity Date",
+        "additionalKeys" : [ [ "Daily Activity Date" ] ],
+        "chronologicalKey" : [ "Daily Activity Date GK" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Printer Daily Activity Date",
+        "levels" : [ "Dim - Printer Job Daily Activity Date Total", "Dim - Printer Job Daily Activity Date Year", "Dim - Printer Job Daily Activity Date Quarter", "Dim - Printer Job Daily Activity Date Month", "Dim - Printer Job Daily Activity Date Day" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "physicalTable": {
+    "name": "Fact_PriceList_Changes",
+    "sourceTable": "physicalTable:DW.DWH.FACT_PL_LINES_CHANGE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Changes.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Changes.LIST_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList.LIST_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.Dim_PriceList_Change_Details",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.Fact_PriceList_Changes.PRICE_LIST_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.Dim_PriceList_Change_Details.PRICE_LIST_LINE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

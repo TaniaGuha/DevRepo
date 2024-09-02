@@ -1,0 +1,428 @@
+{
+  "logicalTable" : {
+    "name" : "INV Onhand Balances Fact",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.ORG_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.ORGANIZATION_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.ORGANIZATION_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Date Received",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.DATE_RECEIVED" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Onhand Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.ONHAND_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.HZ Customer Sites Dim(Bill-To).HZ Customer Sites Dim(Bill-To) Total", "logicalLevel:EBS.HZ Customer Sites Dim(Ship-To).HZ Customer Sites Dim(Ship-To) Total", "logicalLevel:EBS.Operating Units Dim.Operating Units Dim Total", "logicalLevel:EBS.OE Order Headers Dim.OE Order Headers Dim Total", "logicalLevel:EBS.OE Order Lines Dim.OE Order Lines Dim Total", "logicalLevel:EBS.OE Order Line Shipment Dim.OE Order Line Shipment Dim Total", "logicalLevel:EBS.OE Fulfillment Sets Dim.OE Fulfillment Sets Dim Total", "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL Demand History Time Dim.MTL Demand History Time Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Subinventory Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.SUBINVENTORY_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.REVISION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Inventory Locator Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.INVENTORY_LOCATOR_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Locator Segment1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.LOCATOR_SEGMENT1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Locator Segment2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.LOCATOR_SEGMENT2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Locator Segment3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.LOCATOR_SEGMENT3" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Create Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.CREATE_TRANSACTION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Update Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.UPDATE_TRANSACTION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Lot Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.LOT_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.CREATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.CREATION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.LAST_UPDATED_BY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Segment1",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.SEGMENT1" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Segment2",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.SEGMENT2" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Segment3",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.SEGMENT3" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Onhand Value Usd",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) *  IFNULL(%2, 0)",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Onhand Balances Fact.ONHAND_QUANTITY", "physicalColumn:EBSPROD.APPS.INV Item Mfg Cost USD (Inv Snapshot).MFG_ITEM_COST_USD" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL Demand History Time Dim.MTL Demand History Time Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Onhand Quantity (Nettable)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'Nettable inventory')",
+          "expressionObjects" : [ "logicalColumn:EBS.INV Onhand Balances Fact.Onhand Quantity", "logicalColumn:EBS.INV Subinventory Dim.Nettable Flag" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:EBS.HZ Customer Sites Dim(Bill-To).HZ Customer Sites Dim(Bill-To) Total", "logicalLevel:EBS.HZ Customer Sites Dim(Ship-To).HZ Customer Sites Dim(Ship-To) Total", "logicalLevel:EBS.Operating Units Dim.Operating Units Dim Total", "logicalLevel:EBS.OE Order Headers Dim.OE Order Headers Dim Total", "logicalLevel:EBS.OE Order Lines Dim.OE Order Lines Dim Total", "logicalLevel:EBS.OE Order Line Shipment Dim.OE Order Line Shipment Dim Total", "logicalLevel:EBS.OE Fulfillment Sets Dim.OE Fulfillment Sets Dim Total", "logicalLevel:EBS.MSC Orders New Due Date Dim.MSC Orders New Due Date Dim Total", "logicalLevel:EBS.MSC Plans Dim.MSC Plans Dim Total", "logicalLevel:EBS.MTL Demand History Time Dim.MTL Demand History Time Dim Total", "logicalLevel:EBS.MTL ABC Compile Headers Dim.MTL ABC Compile Headers Dim Total", "logicalLevel:EBS.MSC Order Source Order Type Dim.MSC Order Source Order Type Dim Total" ]
+      }
+    }, {
+      "name" : "Item Cost Usd (MFG Org)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Onhand Balances Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Item Mfg Cost USD (Inv Snapshot).MFG_ITEM_COST_USD" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV Onhand Balances Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.INV Onhand Balances Fact", "physicalTable:EBSPROD.APPS.INV Item Mfg Cost USD (Inv Snapshot)" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:EBSPROD.APPS.INV Onhand Balances Fact",
+          "rightTable" : "physicalTable:EBSPROD.APPS.INV Item Mfg Cost USD (Inv Snapshot)",
+          "joinType" : "LEFT_OUTER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.INV All Inv Orgs Items Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV All Item Category Sets Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Brand Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Activity Analysis Hier Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Class Hierarchy Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Frozen Cost Dim",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Locators Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Lots Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Subinventory Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV To Locators Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.MSC Organizations Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

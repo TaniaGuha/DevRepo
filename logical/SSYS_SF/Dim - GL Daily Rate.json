@@ -1,0 +1,191 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - GL Daily Rate",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Gl Rate Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Gl Rate Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.GL_RATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "From Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.FROM_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "To Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.TO_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Conversion Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.CONVERSION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Inverse Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.INVERSE_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Next Day Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.NEXT_DAY_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Next Day Inv Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.NEXT_DAY_INV_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Conversion Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.CONVERSION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    }, {
+      "name" : "Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate.STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - GL Daily Rate Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Dim_Gl_daily_Rate" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - GL Daily Rate Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - GL Daily Rate Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - GL Daily Rate Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Gl Rate Gk" ],
+        "displayKey" : "Gl Rate Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "GL Daily Rate",
+        "levels" : [ "Dim - GL Daily Rate Total", "Dim - GL Daily Rate Detail" ]
+      } ]
+    }
+  }
+}

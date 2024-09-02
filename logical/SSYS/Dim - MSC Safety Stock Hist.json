@@ -1,0 +1,551 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - MSC Safety Stock Hist",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Msc Safety Stock Snapshot Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Snapshot Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SNAPSHOT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Snapshot Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SNAPSHOT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Safety Stock Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SAFETY_STOCK_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Safety Stock Code Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SAFETY_STOCK_CODE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Demand Var Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.DEMAND_VAR_SS_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Inventory Level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.INVENTORY_LEVEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Mfg Ltvar Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.MFG_LTVAR_SS_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Mrp Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.MRP_INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Msc Safety Stock Snapshot Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.MSC_SAFETY_STOCK_SNAPSHOT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Period Start Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.PERIOD_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Plan Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.PLAN_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Refresh Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.REFRESH_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Reserved Safety Stock Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.RESERVED_SAFETY_STOCK_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Safety Stock Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SAFETY_STOCK_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Safety Stock Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SAFETY_STOCK_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Status",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Sup Ltvar Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.SUP_LTVAR_SS_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Target Safety Stock",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.TARGET_SAFETY_STOCK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Total Unpooled Safety Stock",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.TOTAL_UNPOOLED_SAFETY_STOCK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Transit Ltvar Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.TRANSIT_LTVAR_SS_PERCENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    }, {
+      "name" : "Updated",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock.UPDATED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Msc Safety Stock Snapshot Gk" ],
+        "displayKey" : "Msc Safety Stock Snapshot Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "MSC Safety Stock Hist",
+        "levels" : [ "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail" ]
+      } ]
+    }
+  }
+}

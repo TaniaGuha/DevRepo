@@ -1,0 +1,35 @@
+{
+  "physicalTable": {
+    "name": "MSC Component Items Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.MSC_SYSTEM_ITEMS_SC_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:EBSPROD.APPS.MSC Pegging Details Fact",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2 AND %3 = %4 AND %5 = %6 AND %7 = 8002",
+          "expressionObjects": [
+            "physicalColumn:EBSPROD.APPS.MSC Component Items Dim.INVENTORY_ITEM_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.COMPONENT_ITEM_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Component Items Dim.ORGANIZATION_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.ORGANIZATION_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Component Items Dim.PLAN_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Pegging Details Fact.PLAN_ID",
+            "physicalColumn:EBSPROD.APPS.MSC Component Items Dim.CATEGORY_SET_ID"
+          ]
+        },
+        "cardinality": "ONE_TO_ONE",
+        "joinType": "INNER"
+      }
+    ],
+    "additionalKeys": [
+      [
+        "INVENTORY_ITEM_ID",
+        "ORGANIZATION_ID",
+        "PLAN_ID"
+      ]
+    ]
+  }
+}

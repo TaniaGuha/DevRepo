@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "AR Lease Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAR_LEASE_FACT_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Lease Fact.CONTRACT_NUMBER",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Headers Dim.REFERENCE_NUMBER"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Lease Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Lease Fact.ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Lease Dim.ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Lease Fact.BILL_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Lease Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - End Customer",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Customer GK" ],
+    "logicalColumns" : [ {
+      "name" : "Billing Country",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.BILLING_COUNTRY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.BILLING_COUNTRY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.SFDC_CUSTOMER_ACCOUNT_GK" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - End Customer Detail"
+    }, {
+      "name" : "Customer Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.SFDC_ACCOUNT_NAME" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.ACCOUNT_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - End Customer Detail"
+    }, {
+      "name" : "Customer Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Dim_End_Customer.ACCOUNT_NUMBER" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.ACCOUNT_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.SFDC_ACCOUNT_TYPE" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.ACCOUNT_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Customer Region",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.ACCOUNT_REGION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Global Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "''"
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.GLOBAL_ACCOUNT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Industry",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.SFDC_ACCOUNT_INDUSTRY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.INDUSTRY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Internal Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.INTERNAL_ACCOUNT_FLAG" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.INTERNAL_ACCOUNT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Is Internal",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " IFNULL(%1, 'N/A')",
+          "expressionObjects" : [ "logicalColumn:SSYS GrabCAD.Dim - End Customer.Internal Account" ]
+        }
+      }
+    }, {
+      "name" : "Partner Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "''"
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.PARTNER_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Sales Channel",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Dim_End_Customer.SALES_CHANNEL_CODE" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.SALES_CHANNEL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Shipping Country",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer.SHIPPING_COUNTRY" ]
+          }
+        }, {
+          "logicalTableSource" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer.SHIPPING_COUNTRY" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Dim_End_Customer", "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer" ],
+        "logicalTableSourceJoins" : [ {
+          "leftTable" : "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Dim_End_Customer",
+          "rightTable" : "physicalTable:DW_GrabCad.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Dim_End_Customer",
+          "joinType" : "INNER",
+          "disable" : false
+        } ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer",
+      "description" : "@deprecated",
+      "disable" : false,
+      "priority" : 1,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.DIM_ACCOUNT_DETAILS_DWH_Dim_End_Customer" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - End Customer Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - End Customer Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - End Customer Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Customer GK" ],
+        "displayKey" : "Customer GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "End Customer",
+        "levels" : [ "Dim - End Customer Total", "Dim - End Customer Detail" ]
+      } ]
+    }
+  }
+}

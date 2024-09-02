@@ -1,0 +1,19 @@
+{
+  "physicalTable": {
+    "name": "CN Commissions Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXCN_COMMISSIONS_AR_AUDIT_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.CN Commissions Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.CN Commissions Fact.CUSTOMER_TRX_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.CN Commissions Dim.CUSTOMER_TRX_LINE_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.CN Commissions Fact.SYSTEM_RESELLER_NAME",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.CN Commissions Dim.RESELLER_NAME"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "physicalTable" : {
+    "name" : "FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select nvl(account.account_all_gk,-1) as account_all_gk , nvl(account.oracle_customer_account_gk,-1) as oracle_customer_account_gk, account.oracle_customer_account_id, nvl(account.oracle_customer_ou_org_gk,-1) as oracle_customer_ou_org_gk , \r\nnvl(account.sfdc_customer_account_gk,-1) as sfdc_customer_account_gk, account.sfdc_customer_account_id, account.external_key , nvl(account.sfdc_parent_account_gk,-1) as sfdc_parent_account_gk, \r\nnvl(account.sfdc_customer_ou_org_gk,-1) as sfdc_customer_ou_org_gk , nvl((case when account.oracle_customer_ou_org_gk = -1 then account.sfdc_customer_ou_org_gk else account.oracle_customer_ou_org_gk end),-1) as customer_ou_org_gk,\r\nnvl(site.customer_site_gk,-1) as customer_site_gk , site.customer_site_id, nvl(site.site_territory_gk,-1) as site_territory_gk , site.site_territory_id,\r\nnvl(contact.contact_all_gk,-1) as contact_all_gk , nvl(contact.oracle_customer_contact_gk,-1) as oracle_customer_contact_gk , contact.oracle_customer_contact_id ,\r\nnvl(contact.sfdc_customer_contact_gk,-1) as sfdc_customer_contact_gk , contact.sfdc_customer_contact_id \r\nfrom fact_cust_account_all_dwh account, \r\ndim_customer_accnt_site_dwh site,\r\nfact_cust_contact_all_dwh contact\r\nwhere account.oracle_customer_account_id = Site.customer_account_id(+)\r\nand account.account_all_gk = contact.account_all_gk (+)"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "CONTACT_ALL_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORACLE_CUSTOMER_CONTACT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORACLE_CUSTOMER_CONTACT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_CUSTOMER_CONTACT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_CUSTOMER_CONTACT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORACLE_CUSTOMER_ACCOUNT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORACLE_CUSTOMER_OU_ORG_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "EXTERNAL_KEY",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "ACCOUNT_ALL_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "SFDC_CUSTOMER_ACCOUNT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_PARENT_ACCOUNT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_CUSTOMER_ACCOUNT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORACLE_CUSTOMER_ACCOUNT_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SFDC_CUSTOMER_OU_ORG_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CUSTOMER_SITE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SITE_TERRITORY_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CUSTOMER_SITE_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SITE_TERRITORY_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CUSTOMER_OU_ORG_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Account",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.CUSTOMER_SITE_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Account.CUSTOMER_SITE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Customer",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_ACCOUNT_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_ORACLE_DWH_Customer.ORACLE_CUSTOMER_ACCOUNT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Customer",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_ACCOUNT_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Customer.SFDC_CUSTOMER_ACCOUNT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_CUST_CONTACT_ORACLE_DWH_Contact",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.ORACLE_CUSTOMER_CONTACT_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_CUST_CONTACT_ORACLE_DWH_Contact.ORACLE_CUSTOMER_CONTACT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_CUST_CONTACT_SFDC_DWH_Contact",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.SFDC_CUSTOMER_CONTACT_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_CUST_CONTACT_SFDC_DWH_Contact.SFDC_CUSTOMER_CONTACT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_CUST_ACCOUNT_ALL_DWH_Account_Contact_Site.CUSTOMER_OU_ORG_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+      } ]
+    } ]
+  }
+}

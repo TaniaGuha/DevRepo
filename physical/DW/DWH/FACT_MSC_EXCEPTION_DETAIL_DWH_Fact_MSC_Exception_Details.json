@@ -1,0 +1,175 @@
+{
+  "physicalTable": {
+    "name": "FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details",
+    "sourceTable": "physicalTable:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SUPPLIER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SUPPLIER_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SUPPLIER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.MASTER_INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_MSC_PLAN_DWH_Dim_MSC_Plans",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.PLAN_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_MSC_PLAN_DWH_Dim_MSC_Plans.PLAN_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SO_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SOURCE_ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Source_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Source_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SOURCE_OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Source_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.BUYER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.PO_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.PO_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.REQUISITION_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_HEADER_DWH_Dim_Po_Req_Header.REQUISITION_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.REQUISITION_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_PO_REQ_LINE_DWH_Dim_Po_Req_Line.REQUISITION_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MSC_DEMAND_DWH_Dim_MSC_Demand",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.DEMAND_TRANSACTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MSC_DEMAND_DWH_Dim_MSC_Demand.DEMAND_TRANSACTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Dim_MSC_Exception_Details",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.EXCEPTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Dim_MSC_Exception_Details.EXCEPTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.END_PEGGING_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.SUPPLY_END_ITEM_TRANSACTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_MSC_SUPPLY_DWH_Dim_MSC_Supply",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SUPPLY_TRANSACTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_MSC_SUPPLY_DWH_Dim_MSC_Supply.SUPPLY_TRANSACTION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.SO_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_MSC_EXCEPTION_DETAIL_DWH_Fact_MSC_Exception_Details.PO_LINE_LOCATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Po_Shipment.PO_LINE_LOCATION_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

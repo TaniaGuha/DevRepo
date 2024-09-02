@@ -1,0 +1,34 @@
+{
+  "physicalTable": {
+    "name": "BOM Resources Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMFG_RESOURCES_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Resource Absorption Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.BOM Resources Dim.ABSORPTION_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Resource Absorption Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Resource Rate Variance Account Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.BOM Resources Dim.RATE_VARIANCE_ACCOUNT",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Resource Rate Variance Account Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "RESOURCE_ID"
+      ],
+      [
+        "PURCHASE_ITEM_ID"
+      ]
+    ]
+  }
+}

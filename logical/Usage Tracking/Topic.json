@@ -1,0 +1,196 @@
+{
+  "logicalTable" : {
+    "name" : "Topic",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Logical SQL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.QUERY_TEXT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Subject Area",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.SUBJECT_AREA_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Repository Name",
+      "description" : "The name of the repository that the query accesses",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.REPOSITORY_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Node Id",
+      "description" : "Concatenates <hostname>:<instance_name>:<component_name> where <instance_name>:<component_name> can be overridden by the environment variables INSTANCE_NAME and COMPONENT_NAME",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.NODE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cache Indication Flag",
+      "description" : "Y indicates a cache hit for the query; N indicates a cache miss",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.CACHE_IND_FLG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Query Source Code",
+      "description" : "The source of the request.\r\nValues that can be inserted, for example: An analysis, or any export operation inserts 'Report'.\r\nUsing the 'Value' drop down in a filter dialog, or using a dashboard prompt inserts 'ValuePrompt'.\r\nAgent to seed analytics server cache inserts 'Seed'.\r\nOnline Admin Tool physical table or column row count, or view data inserts 'NULL'\r\n",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.QUERY_SRC_CD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Saw Source Path",
+      "description" : "The path name in the Oracle BI Presentation Catalog for the analysis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.SAW_SRC_PATH" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Saw Dashboard",
+      "description" : "The path name of the dashboard",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.SAW_DASHBOARD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Saw Dashboard Page",
+      "description" : "The page name in the dashboard",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.SAW_DASHBOARD_PG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Presentation Name",
+      "description" : "The name of the Oracle BI Presentation Catalog",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.PRESENTATION_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Success Flag",
+      "description" : "The completion status of the query, as defined in the following list:\r\n•0 - The query completed successfully with no errors.\r\n•1 - The query timed out.\r\n•2 = The query failed because row limits were exceeded.\r\n•3 = The query failed due to some other reason\r\n\r\n",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.SUCCESS_FLG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Error Text",
+      "description" : "Error message from the back-end database",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.ERROR_TEXT" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LOGICAL_QUERIES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Logical SQL" ]
+  }
+}

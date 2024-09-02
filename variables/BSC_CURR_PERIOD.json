@@ -1,0 +1,31 @@
+{
+  "initBlock" : {
+    "name" : "BSC_CURR_PERIOD",
+    "tags" : [ "Project:BSC_PROJECT" ],
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:BSC.BSC_Connection_Pool",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT \r\n    YEAR_NUM\r\n  , QUARTER_NUM\r\n  , MONTH_NUM\r\n  , DATE_VALUE\r\nFROM XXBSC_T_DIM_TIME \r\nWHERE DATE_VALUE = TRUNC(SYSDATE);"
+    } ],
+    "variables" : [ {
+      "name" : "BSC_CURR_YEAR",
+      "value" : "2016.0d"
+    }, {
+      "name" : "BSC_CURR_QUARTER_NUM",
+      "value" : "4.0d"
+    }, {
+      "name" : "BSC_CURR_MONTH_NUM",
+      "value" : "12.0d"
+    }, {
+      "name" : "BSC_CURR_DAY",
+      "value" : " TIMESTAMP '2016-12-17 00:00:00'"
+    } ],
+    "runSchedule" : {
+      "interval" : 1,
+      "intervalUnit" : "DAYS",
+      "startingOn" : "2015-04-12 21:39:51"
+    },
+    "disable" : false
+  }
+}

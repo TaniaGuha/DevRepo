@@ -1,0 +1,126 @@
+{
+  "physicalTable": {
+    "name": "PO_F_BOM_PLAN",
+    "sourceTable": "physicalTable:XXATC_PO.XXATC.XXATC_PO_F_BOM_PLAN_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.INV_D_BUY_ITEMS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_COMP_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_BUY_ITEMS.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.INV_D_MS_ITEMS_FINISHED_GOODS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_FG_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.INV_D_MS_ITEMS_FINISHED_GOODS.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_Component_Usage",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_COMP_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_Component_Usage.BI_INVENTORY_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_Activity_Analysis",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_FG_ACTIVITY_CAT_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_Activity_Analysis.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_BOM_TOP_BUY_HIER",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_BOM_HIERARCHY_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_BOM_TOP_BUY_HIER.BI_BOM_HIERARCHY_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_DATES",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_TARGET_DATE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_DATES.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_CURRENCY",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.FROM_CURRENCY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_Product_Hierarchy",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_FG_PRODUCT_HIER_CAT_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_Product_Hierarchy.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_FG_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.BI_ITEM_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_TARGET_DATE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATE_FG_PLAN.BI_TARGET_DATE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_SIMULATION_ORGANIZATIONS.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_D_VENDORS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_VENDOR_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_D_VENDORS.BI_VENDOR_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.PO_Top_buy_Usage",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_COMP_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.PO_Top_buy_Usage.BI_INVENTORY_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PO.XXATC.po_buyers_D",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.PO_F_BOM_PLAN.BI_BUYER_CODE",
+            "rightColumn": "physicalColumn:XXATC_PO.XXATC.po_buyers_D.BI_PERSON_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_BOM_HIERARCHY_CODE",
+        "BI_TARGET_DATE"
+      ]
+    ]
+  }
+}

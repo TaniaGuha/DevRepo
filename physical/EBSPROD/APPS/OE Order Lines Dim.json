@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "OE Order Lines Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXOE_ORDER_LINES_DIM_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Ordered Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Lines Dim.ORDERED_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Ordered Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Promised Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Lines Dim.PROMISE_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Promised Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Scheduled Ship Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Lines Dim.SCHEDULED_SHIP_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Scheduled Ship Date Dim.PERIOD_DAY"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "HEADER_ID"
+      ],
+      [
+        "LINE_ID"
+      ]
+    ]
+  }
+}

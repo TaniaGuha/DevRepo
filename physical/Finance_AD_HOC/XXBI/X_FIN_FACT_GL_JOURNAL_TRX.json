@@ -1,0 +1,245 @@
+{
+  "physicalTable" : {
+    "name" : "X_FIN_FACT_GL_JOURNAL_TRX",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "ACCOUNT_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "ENTERED_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ENCUMBRANCE_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "LEDGER",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : true
+    }, {
+      "name" : "PERIOD_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "ACCOUNT",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "ACCOUNT_COMBINATION",
+      "dataType" : "VARCHAR",
+      "length" : 233,
+      "nullable" : true
+    }, {
+      "name" : "SUB_ACC",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "PRODUCT_LINE_ACC",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "LOCATION_ACC",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "LOCATION_ACC_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "JOURNAL_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "ACCOUNTED_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SOURCE",
+      "dataType" : "VARCHAR",
+      "length" : 29,
+      "nullable" : true
+    }, {
+      "name" : "CATEGORY",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "ACTUAL_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "DEPARTMENT_ACC_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "SUB_ACC_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "PRODUCT_LINE_ACC_DESC",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "INTERCOMP_ACC",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "CURRENCY_CONVERSION_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "STATUS",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "EFFECTIVE_DATE",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BUDGET_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "START_PERIOD",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "CURRENCY",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "DEPARTMENT_ACC",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "LOCATION_ACCOUNTING_PARENT",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : true
+    }, {
+      "name" : "CURRENCY_CONVERSION_DATE",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BATCH_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "JOURNAL_LINE_DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : true
+    }, {
+      "name" : "CURRENCY_CONVERSION_RATE",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "JOURNAL_NUMBER",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "JOURNAL_LINE_NUMBER",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "END_PERIOD",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "Ledger_ID",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "REVENUE_ADJUST_INVOICE_NMUBER",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : true
+    }, {
+      "name" : "PROD_LINE_CATEGORY",
+      "dataType" : "VARCHAR",
+      "length" : 16,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 6,
+      "expiryUnit" : "HOURS"
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_GL_ACCOUNTS_V",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_GL_JOURNAL_TRX.ACCOUNT",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_GL_ACCOUNTS_V.ACCOUNT"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_GL_DEPTS_V",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_GL_JOURNAL_TRX.DEPARTMENT_ACC",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_GL_DEPTS_V.FLEX_VALUE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_LEDGER_CURRENCY_V",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_GL_JOURNAL_TRX.Ledger_ID",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_LEDGER_CURRENCY_V.LEDGER_ID"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_From",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_GL_JOURNAL_TRX.START_PERIOD",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_From.PERIOD_NAME"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_GL_JOURNAL_TRX.PERIOD_NAME",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_Periods.PERIOD_NAME"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_To",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_GL_JOURNAL_TRX.END_PERIOD",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_PERIODS_To.PERIOD_NAME"
+      } ]
+    } ]
+  }
+}

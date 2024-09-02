@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "XXBI Custom Metrics Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXBI_OBIEE_CUSTOM_METRICS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.XXBI Custom Metrics Fact.PERIOD_DAY",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.XXBI Custom Metrics Fact.ITEM_NUMBER",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.SEGMENT1"
+          }
+        ]
+      }
+    ]
+  }
+}

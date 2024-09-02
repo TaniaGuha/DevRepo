@@ -1,0 +1,74 @@
+{
+  "logicalTable" : {
+    "name" : "Lookup - Currency Daily Exchange Rate Details",
+    "type" : "LOOKUP",
+    "primaryKey" : [ "CONVERSION_DATE", "FROM_CURRENCY", "TO_CURRENCY" ],
+    "logicalColumns" : [ {
+      "name" : "CONVERSION_DATE",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FROM_CURRENCY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.FROM_CURRENCY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TO_CURRENCY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.TO_CURRENCY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CONVERSION_RATE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ]
+  }
+}

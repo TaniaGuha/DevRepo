@@ -1,0 +1,71 @@
+{
+  "physicalTable": {
+    "name": "OE Order Headers Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXOE_ORDER_HEADERS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.CREATION_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Contacts (Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.SHIP_TO_CONTACT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Contacts (Ship-To).CONTACT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.BILL_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.SHIP_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Header Holds Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Header Holds Dim.HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Order Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Dim.HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.OE Price Adjsustments Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.HEADER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.OE Price Adjsustments Dim.HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.OE Order Headers Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

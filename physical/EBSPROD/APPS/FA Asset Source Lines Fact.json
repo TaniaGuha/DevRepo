@@ -1,0 +1,47 @@
+{
+  "physicalTable": {
+    "name": "FA Asset Source Lines Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXFA_SOURCE_LINES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Invoice Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Source Lines Fact.INVOICE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Invoice Dim.INVOICE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Suppliers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Source Lines Fact.PO_VENDOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.FA Assets Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Source Lines Fact.ASSET_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.FA Assets Dim.ASSET_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Projects Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Source Lines Fact.PROJECT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Projects Dim.PROJECT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PA Task Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.FA Asset Source Lines Fact.TASK_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PA Task Dim.TASK_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

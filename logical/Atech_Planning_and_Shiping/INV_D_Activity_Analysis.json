@@ -1,0 +1,120 @@
+{
+  "logicalTable" : {
+    "name" : "INV_D_Activity_Analysis",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "BI_ITEM_SET_CAT_CODE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.BI_ITEM_SET_CAT_CODE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ENABLED_FLAG",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.ENABLED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ITEM",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.ITEM" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "MAIN_CATEGORY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.MAIN_CATEGORY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.ORGANIZATION_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Activity Analysis",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV_D_Activity_Analysis",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.SEGMENT1" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV_D_Activity_Analysis",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 1100000222",
+        "expressionObjects" : [ "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.CATEGORY_SET_ID" ]
+      },
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "BI_ITEM_SET_CAT_CODE" ]
+  }
+}

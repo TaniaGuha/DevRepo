@@ -1,0 +1,731 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - BOM Explode",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Bom Explode Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Batch Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.BATCH_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Bom Explode Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.BOM_EXPLODE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Change Notice",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.CHANGE_NOTICE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Buy Make",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_BUY_MAKE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Top Buy Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_DIRECT_BUY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Top Buy Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 1 THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_DIRECT_BUY_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "End Component Ind",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.END_COMPONENT_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "End Component Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 1 THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.END_COMPONENT_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Master Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_MASTER_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Part Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Component Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMPONENT_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Component Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMPONENT_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Component Yield Factor",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMPONENT_YIELD_FACTOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Comp Quantity Extended",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.COMP_QUANTITY_EXTENDED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Direct Assembly Bill Seq Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DIRECT_ASSEMBLY_BILL_SEQ_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Direct Assembly Buy Make",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DIRECT_ASSEMBLY_BUY_MAKE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Direct Assembly Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DIRECT_ASSEMBLY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Direct Assembly Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DIRECT_ASSEMBLY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Direct Assembly Master Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DIRECT_ASSEMBLY_MASTER_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Direct Assembly Part Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DIRECT_ASSEMBLY_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Disable Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Effective Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.EFFECTIVE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Exclude Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.EXCLUDE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Implementation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.IMPLEMENTATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Item Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.ITEM_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Operation Seq Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.OPERATION_SEQ_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Plan Level",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.PLAN_LEVEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Sort Order",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.SORT_ORDER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Supply Locator Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.SUPPLY_LOCATOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Supply Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.SUPPLY_SUBINVENTORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Top Assembly Bill Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.TOP_ASSEMBLY_BILL_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Top Assembly Buy Make",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.TOP_ASSEMBLY_BUY_MAKE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Top Assembly Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.TOP_ASSEMBLY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Top Assembly Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.TOP_ASSEMBLY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Top Assembly Master Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.TOP_ASSEMBLY_MASTER_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Top Assembly Part Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.TOP_ASSEMBLY_PART_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Wip Supply Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.WIP_SUPPLY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Current Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  CURRENT_DATE  BETWEEN %1 AND  IFNULL(%2,  CURRENT_DATE  + 1) THEN 'Yes' ELSE 'No' END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.IMPLEMENTATION_DATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.DISABLE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    }, {
+      "name" : "Wip Supply Type Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode.WIP_SUPPLY_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - BOM Explode Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_BOM_EXPLODE_DWH_Dim_BOM_Explode" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - BOM Explode Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - BOM Explode Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - BOM Explode Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Bom Explode Gk" ],
+        "displayKey" : "Bom Explode Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "BOM Explode",
+        "levels" : [ "Dim - BOM Explode Total", "Dim - BOM Explode Detail" ]
+      } ]
+    }
+  }
+}

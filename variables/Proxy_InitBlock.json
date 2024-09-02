@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "Proxy_InitBlock",
+    "tags" : [ "Project:ADMIN" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:DW.DW_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select PROXY_TARGET_ID\r\n  from XXCTRL_OBIEE_PRXY_ACT_AS \r\n  where 'VALUEOF(NQ_SESSION.RUNAS)'=PROXY_TARGET_ID \r\n  and lower(':USER')=lower(PROXY_USER_ID)"
+    } ],
+    "variables" : [ {
+      "name" : "PROXY",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

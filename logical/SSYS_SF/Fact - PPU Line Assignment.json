@@ -1,0 +1,151 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - PPU Line Assignment",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Assignment Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment.ASSIGNMENT_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment.COMMENTS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Cubic Inch",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment.CUBIC_INCH" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total" ]
+      }
+    }, {
+      "name" : "Material Ordered Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Fact_PPU_Material_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Fact_PPU_Material_Lines.MTRL_ORDERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total" ]
+      }
+    }, {
+      "name" : "Material Shipped Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PPU_MATERIAL_LINE_DWH_Fact_PPU_Material_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Fact_PPU_Material_Lines.MTRL_SHIPPED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_LINE_ASSIGNMENT_DWH_Fact_PPU_Line_Assignment" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Detail", "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS_SF.Dim - Item Material.Dim - Item Material Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - PPU Material Line.Dim - PPU Material Line Detail", "logicalLevel:SSYS_SF.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_PPU_MATERIAL_LINE_DWH_Fact_PPU_Material_Lines",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PPU_MATERIAL_LINE_DWH_Fact_PPU_Material_Lines" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Detail", "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS_SF.Dim - Item Material.Dim - Item Material Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - PPU Material Line.Dim - PPU Material Line Detail", "logicalLevel:SSYS_SF.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Account)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Asset End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Delivery",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Asset Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item Material",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - PPU Material Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Service Contract (Current Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

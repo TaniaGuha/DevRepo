@@ -1,0 +1,55 @@
+{
+  "physicalTable": {
+    "name": "F_FORECAST_DATES_DWH_Fact_Forecast_Dates",
+    "sourceTable": "physicalTable:DW.DWH.F_FORECAST_DATES_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Fact_Forecast_Dates.MASTER_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Fact_Forecast_Dates.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Fact_Forecast_Dates.ORGANIZATION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Dim_Inventory_Organization.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Fact_Forecast_Dates.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.D_FORECAST_DWH_Dim_Forecast",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Fact_Forecast_Dates.FORECAST_GK",
+            "rightColumn": "physicalColumn:DW.DWH.D_FORECAST_DWH_Dim_Forecast.FORECAST_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Fact_Forecast_Dates.FORECAST_TRANSACTION_GK",
+            "rightColumn": "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.FORECAST_TRANSACTION_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

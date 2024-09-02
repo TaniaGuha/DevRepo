@@ -1,0 +1,36 @@
+{
+  "physicalTable": {
+    "name": "xxatc_ap_invoice_of_po_distribution",
+    "sourceTable": "physicalTable:XXATC_PO.XXATC.XXATC_AP_F_INVOICE_DIST_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.PO_AP_INVOICE_ALL_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.xxatc_ap_invoice_of_po_distribution.BI_AP_INVOICE_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.PO_AP_INVOICE_ALL_BI.BI_AP_INVOICE_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.xxatc_ap_invoice_of_po_distribution.BI_AP_INVOICE_LINE_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.PO_AP_INVOICE_ALL_BI.BI_AP_INVOICE_LINE_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_PO.XXATC.xxatc_ap_invoice_of_po_distribution.BI_PO_DISTRIBUTION_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.PO_AP_INVOICE_ALL_BI.BI_PO_DISTRIBUTION_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_PO_DISTRIBUTION_CODE"
+      ],
+      [
+        "BI_PO_DISTRIBUTION_CODE",
+        "BI_AP_INVOICE_CODE",
+        "BI_AP_INVOICE_LINE_CODE"
+      ]
+    ]
+  }
+}

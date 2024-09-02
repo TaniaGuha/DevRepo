@@ -1,0 +1,45 @@
+{
+  "presentationTable" : {
+    "name" : "Purchasing Simulation",
+    "presentationColumns" : [ {
+      "name" : "Simulation Type",
+      "description" : "1) Direct - All Items suggested to buy by MRP results\r\n2) Direct (Childless Only) - Item suggested to buy by MRP results but has no BOM\r\n3) Third Party - Items under Direct item BOM that has sourcing rule ",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Dim - Purchasing Simulation Type.Simulation Type",
+      "localization" : {
+        "localizationKey" : "Simulation Type",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Simulation_Type)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Simulation_Type)"
+      }
+    }, {
+      "name" : "Quantity",
+      "description" : "Quantity for PO Simulation",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Simulation.Quantity",
+      "localization" : {
+        "localizationKey" : "Quantity",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Quantity)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Quantity)"
+      }
+    }, {
+      "name" : "Receiving Qnt. By Primary UOM",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Receiving.Receiving Qnt\\. By Primary UOM",
+      "localization" : {
+        "localizationKey" : "Receiving Qnt. By Primary UOM",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Receiving_Qnt._By_Primary_UOM)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Receiving_Qnt._By_Primary_UOM)"
+      }
+    }, {
+      "name" : "Receiving Qnt. By Primary UOM (By Item and OU)",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Purchasing Receiving.Receiving Qnt\\. By Primary UOM (By Item and OU)",
+      "localization" : {
+        "localizationKey" : "Receiving Qnt. By Primary UOM (By Item and OU)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Receiving_Qnt._By_Primary_UOM_(By_Item_and_OU))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Planning_Purchasing_Simulation_Receiving_Qnt._By_Primary_UOM_(By_Item_and_OU))"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Purchasing Simulation",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Planning_Purchasing_Simulation)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Planning_Purchasing_Simulation)"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "logicalTable" : {
+    "name" : "PO_D_Fixed_Rates",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "From Currency" ],
+    "logicalColumns" : [ {
+      "name" : "BI_CONVERSION_DATE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.BI_CONVERSION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Conversion Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.CONVERSION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.CONVERSION_RATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "From Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.FROM_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Currency details"
+    }, {
+      "name" : "Inverse Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.INVERSE_CONVERSION_RATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "To Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.TO_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Currency details"
+    }, {
+      "name" : "Conversion Year",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " EXTRACT( YEAR  FROM %1)",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_D_Fixed_Rates.Conversion Date" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "PO_D_FIXED_YEARLY_CONVERSION_RATES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'USD' AND  EXTRACT( YEAR  FROM %2) =  EXTRACT( YEAR  FROM  CURRENT_DATE )",
+        "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.TO_CURRENCY", "physicalColumn:XXATC_PO.XXATC.PO_D_FIXED_YEARLY_CONVERSION_RATES.CONVERSION_DATE" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total Currency",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total Currency",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Currency details",
+        "numberOfElements" : 20,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "From Currency" ],
+        "displayKey" : "From Currency"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Currency Rates",
+        "levels" : [ "Total Currency", "Currency details" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "physicalTable": {
+    "name": "WIP Operations Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXMFG_WIP_OPERATIONS_V",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.BOM Departments Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.DEPARTMENT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.BOM Departments Dim.DEPARTMENT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV All Inv Orgs Items Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV All Inv Orgs Items Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Item Master Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Item Master Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.PRIMARY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Job Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.WIP_ENTITY_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Job Dim.WIP_ENTITY_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Operations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.OPERATION_SEQ_NUM",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Dim.OPERATION_SEQ_NUM"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Fact.WIP_ENTITY_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Operations Dim.WIP_ENTITY_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

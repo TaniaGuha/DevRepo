@@ -1,0 +1,92 @@
+{
+  "physicalTable": {
+    "name": "AR Cash Applications Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAR_AR_CASH_APPLICATIONS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Cash Applications Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.RECEIVABLE_APPLICATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Dim.RECEIVABLE_APPLICATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Cash Receipts Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.CASH_RECEIPT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Cash Receipts Dim.CASH_RECEIPT_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.APPLIED_CUSTOMER_TRX_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Headers Dim.TRANSACTION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Lines Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.AR_TRANSACTION_LINE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Lines Dim.TRANSACTION_LINE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Payment Date Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.DEPOSIT_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Payment Date Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Transaction Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.PAYMENT_SCHEDULE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Transaction Dim.PAYMENT_SCHEDULE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Ledgers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.LEDGER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Ledgers Dim.LEDGER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.APPLY_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.CUSTOMER_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Cash Applications Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "RECEIVABLE_APPLICATION_ID"
+      ]
+    ]
+  }
+}

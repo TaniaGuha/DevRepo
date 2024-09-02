@@ -1,0 +1,22 @@
+{
+  "physicalTable" : {
+    "name" : "DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select 1 as last_run_ind, \r\n       'Current Execution' as ind_text \r\n  from dual\r\n union \r\nselect 0, \r\n       'Historical Executions' \r\n  from dual"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "IND_TEXT",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : false
+    }, {
+      "name" : "LAST_RUN_IND",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "additionalKeys" : [ [ "LAST_RUN_IND" ] ]
+  }
+}

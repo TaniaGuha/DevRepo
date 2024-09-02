@@ -1,0 +1,446 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - AP Invoice Hold",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Hold GK" ],
+    "logicalColumns" : [ {
+      "name" : "Hold Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Hold GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Hold Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Hold Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Hold Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Hold Release Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_RELEASE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Hold Release reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HOLD_RELEASE_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Held By User",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HELD_BY_USER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Held By User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.HELD_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Invoice Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.INVOICE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Created By User",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.CREATED_BY_USER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Created By User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.CREATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Insufficient Funds Responsibility",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.INSUFF_FUNDS_RESPONSIBILITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Insufficient Funds Owner Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.INSUFFICIENT_FUNDS_OWNER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Status Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.STATUS_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Last Update By User",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.LAST_UPDATE_BY_USER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Last Update By User Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.LAST_UPDATE_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "OU Org GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "OU Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "PO Header GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "PO Line GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "PO Line Location GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Invoice GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.INVOICE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    }, {
+      "name" : "Supplier GK",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold.SUPPLIER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Hold Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_AP_INVOICE_HOLDS_DWH_Dim_Ap_Invoice_Hold" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - AP Invoice Hold Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - AP Invoice Hold Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - AP Invoice Hold Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Hold GK" ],
+        "displayKey" : "Hold GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "AP Invoice Hold",
+        "levels" : [ "Dim - AP Invoice Hold Total", "Dim - AP Invoice Hold Detail" ]
+      } ]
+    }
+  }
+}

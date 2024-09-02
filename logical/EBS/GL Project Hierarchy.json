@@ -1,0 +1,167 @@
+{
+  "logicalTable" : {
+    "name" : "GL Project Hierarchy",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Project Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.LEVEL1_FLEX_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Project",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.LEVEL1_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Project Parent Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.ROOT_FLEX_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Project Parent",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.ROOT_FLEX_VALUE_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Root Flex Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.ROOT_FLEX_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Chart Of Accounts",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.CHART_OF_ACCOUNTS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.ENABLED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.END_DATE_ACTIVE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Parent Child Attribute",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.PARENT_CHILD_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Date Active",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Project Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.START_DATE_ACTIVE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "GL Project Hierarchy",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.GL Project Hierarchy" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'XXGL_PROJECT_SEG'",
+        "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.ROOT_FLEX_NAME" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.GL Code Combinations",
+      "joinType" : "RIGHT_OUTER",
+      "cardinality" : "ZERO_OR_ONE_TO_MANY"
+    } ],
+    "primaryKey" : [ "Project Number" ]
+  }
+}

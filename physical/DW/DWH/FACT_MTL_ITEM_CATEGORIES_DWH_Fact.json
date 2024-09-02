@@ -1,0 +1,102 @@
+{
+  "physicalTable" : {
+    "name" : "FACT_MTL_ITEM_CATEGORIES_DWH_Fact",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select  distinct A.category_set_gk,  A.category_set_id,\r\n nvl(C.category_gk,-1) category_gk  , C.category_id , \r\nnvl(C.inventory_item_gk,-1) inventory_item_gk , C.inventory_item_id,\r\n nvl(C.ou_org_gk,-1) ou_org_gk , C.ou_org_id,\r\n nvl(C.master_org_item_gk,-1) master_org_item_gk ,\r\n nvl(C.organization_gk,-1) organization_gk, C.organization_id\r\n from \r\ndim_category_Set_dwh A, fact_mtl_item_categories_dwh C\r\nwhere A.category_set_gk = C.category_set_gk(+)\r\n\r\nunion all\r\n\r\nselect -1, null, B.category_gk , B.category_id , -1,null,-1,null,-1, -1, null from dim_mtl_categories_dwh B\r\nwhere B.category_gk not in\r\n(select C.category_gk from fact_mtl_item_categories_dwh C\r\n)"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "CATEGORY_SET_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CATEGORY_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CATEGORY_SET_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CATEGORY_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "INVENTORY_ITEM_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "INVENTORY_ITEM_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "OU_ORG_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "OU_ORG_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "MASTER_ORG_ITEM_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORGANIZATION_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORGANIZATION_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:DW.DWH.DIM_CATEGORY_SET_DWH_Dim_Category_Set",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_MTL_ITEM_CATEGORIES_DWH_Fact.CATEGORY_SET_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_CATEGORY_SET_DWH_Dim_Category_Set.CATEGORY_SET_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_MTL_ITEM_CATEGORIES_DWH_Fact.MASTER_ORG_ITEM_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_MTL_ITEM_CATEGORIES_DWH_Fact.INVENTORY_ITEM_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_MTL_CATEGORIES_DWH_Dim_Categories",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_MTL_ITEM_CATEGORIES_DWH_Fact.CATEGORY_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_MTL_CATEGORIES_DWH_Dim_Categories.CATEGORY_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.FACT_MTL_ITEM_CATEGORIES_DWH_Fact.OU_ORG_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+      } ]
+    } ]
+  }
+}

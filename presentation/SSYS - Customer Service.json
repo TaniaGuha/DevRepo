@@ -1,0 +1,108 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Customer Service",
+    "tags" : [ "Project:Strataforce 2" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Customer Service Case.# of Cases",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Customer Service.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Customers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service.Account"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.End Customer"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Locations",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service.Install Site"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Service Contract"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Product"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Spare Part"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Asset"
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Case",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service.Case Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Case Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Work Order",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service.Work Order Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Work Order Line"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Work Order Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Charges",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service.Charges - Oracle Sale Order",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Customer Service.Charges - Order Header"
+        }, {
+          "name" : "presentationTable:SSYS - Customer Service.Charges - Order Line"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Charges Debrief",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Customer Service.Charges Debrief Header"
+        }, {
+          "name" : "presentationTable:SSYS - Customer Service.Charges Debrief Line"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Customer Service.Oracle Sale Order",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Customer Service.Order Header"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Order Line"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Order Measures"
+      }, {
+        "name" : "presentationTable:SSYS - Customer Service.Order Customers",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Customer Service.Sold To Customer"
+        }, {
+          "name" : "presentationTable:SSYS - Customer Service.Bill To Customer"
+        }, {
+          "name" : "presentationTable:SSYS - Customer Service.Ship To Customer"
+        }, {
+          "name" : "presentationTable:SSYS - Customer Service.Order End Customer"
+        } ]
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:CS_User",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Customer Service",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Customer_Service)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Customer_Service)"
+    }
+  }
+}

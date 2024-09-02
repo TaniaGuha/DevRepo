@@ -1,0 +1,22 @@
+{
+  "initBlock" : {
+    "name" : "PA_RESTRICTED_ROLE_FLAG",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:EBSPROD.EBSPROD_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT 1\r\nFROM DUAL\r\nWHERE 'VALUEOF(NQ_SESSION.ROLES)' LIKE '%PA_Consumer_Secured%'"
+    } ],
+    "variables" : [ {
+      "name" : "PA_RESTRICTED_ROLE_FLAG",
+      "value" : "0",
+      "enableUsersToSetValue" : false,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : false
+  }
+}

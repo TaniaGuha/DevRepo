@@ -1,0 +1,1344 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Supply Pegging",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Supply End Item Transaction Gk" ],
+    "logicalColumns" : [ {
+      "name" : "End Inventory Item Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_INVENTORY_ITEM_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Allocated Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_ALLOCATED_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Buyer Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_BUYER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Disposition Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DISPOSITION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item End Pegging Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_END_PEGGING_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Peg Create Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PEG_CREATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Peg Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PEG_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Pegging Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PEGGING_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Plan Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PLAN_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Pegging Item Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Distribution Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Line Location Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Po Release Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_PO_RELEASE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Sub Inventory Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SUB_INVENTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Supplier Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SUPPLIER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Supplier Site Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SUPPLIER_SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Supply Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SUPPLY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Supply Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SUPPLY_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Supply Transaction Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_SUPPLY_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Master Org Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Mrp Inv Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_MRP_INV_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Disposition Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_DISPOSITION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch End Pegging Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_END_PEGGING_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Inventory Item Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_INVENTORY_ITEM_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Allocated Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_ALLOCATED_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Buyer Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_BUYER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Demand Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_DEMAND_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Demand Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_DEMAND_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Demand Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_DEMAND_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Demand Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_DEMAND_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Distribution Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Line Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Line Location Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Po Release Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_PO_RELEASE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Subinventory Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_SUBINVENTORY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Supplier Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_SUPPLIER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Supplier Site Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_SUPPLIER_SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Supply Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_SUPPLY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Master Org Item Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Mrp Inv Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_MRP_INV_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Peg Create Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PEG_CREATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Peg Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PEG_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Pegging Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PEGGING_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Plan Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PLAN_GK" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Purch Plan Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Po Header Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Sr Instance Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_SR_INSTANCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Supply Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_SUPPLY_QTY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Supply Transaction Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_SUPPLY_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Supply End Item Transaction Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.SUPPLY_END_ITEM_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Item Demand Id And Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_ID_AND_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Item Demand Id And Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_ITEM_DEMAND_ID_AND_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Purch Prev Pegging Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.PURCH_PREV_PEGGING_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item New Due Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_NEW_DUE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Order Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_ORDER_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Order Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_ORDER_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Order Type Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_ORDER_TYPE_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Item Usage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_USAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Bom Wip Supply Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.BOM_WIP_SUPPLY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Origination Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ORIGINATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "Supply Type",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.SUPPLY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Class",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Class Meaning",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_CLASS_MEANING" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    }, {
+      "name" : "End Pegging Item Demand Priority",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current.END_ITEM_DEMAND_PRIORITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing MSC Supply Pegging Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_PURCH_SUPPLY_CURR_DWH_Dim_MSC_Purch_Supply_Current" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing MSC Supply Pegging Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing MSC Supply Pegging Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing MSC Supply Pegging Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Supply End Item Transaction Gk" ],
+        "displayKey" : "Supply End Item Transaction Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Supply Pegging",
+        "levels" : [ "Dim - Purchasing MSC Supply Pegging Total", "Dim - Purchasing MSC Supply Pegging Detail" ]
+      } ]
+    }
+  }
+}

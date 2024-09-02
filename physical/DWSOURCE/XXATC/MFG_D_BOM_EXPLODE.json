@@ -1,0 +1,22 @@
+{
+  "physicalTable": {
+    "name": "MFG_D_BOM_EXPLODE",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_BOM_EXPLODE_HISTORY_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.MFG_D_BOM_EXPLODE.TOP_ASSEMBLY_ITEM_ID",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.BOM_D_TOP_ASSEMBLY_ITEMS.INVENTORY_ITEM_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

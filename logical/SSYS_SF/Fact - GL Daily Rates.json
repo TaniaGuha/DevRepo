@@ -1,0 +1,236 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - GL Daily Rates",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total" ]
+      }
+    }, {
+      "name" : "Conversion Rate To USD",
+      "description" : "Only Take Exchange rates to USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'USD')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - GL Daily Rates.Conversion Rate", "logicalColumn:SSYS_SF.Dim - Currency (Converted Currency).Currency Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total" ]
+      }
+    }, {
+      "name" : "Monthly Average Conversion Rate To USD",
+      "description" : "Average of all conversion rates in the GL period selected\r\nfrom the functional currency to USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'USD')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - GL Daily Rates.Monthly Conversion Rate", "logicalColumn:SSYS_SF.Dim - Currency (Converted Currency).Currency Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Month", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Monthly Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Month", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Quarterly Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Quarter", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Quarterly Average Conversion Rate To USD",
+      "description" : "Average of all conversion rates in the GL period selected\r\nfrom the functional currency to USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'USD')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - GL Daily Rates.Quarterly Conversion Rate", "logicalColumn:SSYS_SF.Dim - Currency (Converted Currency).Currency Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Quarter", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Total" ]
+      }
+    }, {
+      "name" : "Next Day Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.NEXT_DAY_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Next Day Monthly Conversion Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.NEXT_DAY_CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - GL Period.Month", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Next Day Monthly Average Conversion Rate To USD",
+      "description" : "Average of all next day conversion rates in the GL period selected\r\nfrom the functional currency to USD",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = 'USD')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - GL Daily Rates.Next Day Monthly Conversion Rate", "logicalColumn:SSYS_SF.Dim - Currency (Converted Currency).Currency Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Total", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Month", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Conversion Rate To USD (By Invoice Date And Transaction Currency)",
+      "description" : "Conversion rate to USD from transaction Currency ( like Sale Order)  and invoice date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING  NOT %2 IS NULL  AND  NOT %3 IS NULL  AND %4 = 'USD')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Fact - GL Daily Rates.Conversion Rate  (By Invoice Date And Transaction Currency)", "logicalColumn:SSYS_SF.Dim - Invoice Date.Invoice Date", "logicalColumn:SSYS_SF.Dim - Currency (Transaction Currency).Currency Code", "logicalColumn:SSYS_SF.Dim - Currency (Converted Currency).Currency Code" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Detail", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Detail", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    }, {
+      "name" : "Conversion Rate  (By Invoice Date And Transaction Currency)",
+      "description" : "Conversion rate from transaction Currency ( like Sale Order)  and invoice date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.CONVERSION_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Modifier Header.Dim Modifier Header Total", "logicalLevel:SSYS_SF.Dim - Modifier Line.Dim Modifier Line Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To End Customer).Dim Qualifier Header (Bill To End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (Bill To Ship Customer).Dim Qualifier Header (Bill To Ship Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header (End Customer).Dim Qualifier Header (End Customer) Total", "logicalLevel:SSYS_SF.Dim - Qualifier Header.Dim Qualifier Header Total", "logicalLevel:SSYS_SF.Dim - Qualifier Line.Dim Qualifier Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Bill To).Dim - Customer Bill To (Mod HQ) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Header Qualifier Ship To).Dim - Customer Account (Mod HQ Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Line Qualifier).Dim - Customer Account (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details GET).Dim - Item (Mod DD1) Total", "logicalLevel:SSYS_SF.Dim - Item (Define Details Additional).Dim - Item (Mod DD2) Total", "logicalLevel:SSYS_SF.Dim - Item (Modifier Line).Dim - Item (Mod Line) Total", "logicalLevel:SSYS_SF.Dim - Item (Line Qualifier).Dim - Item (Mod LQ) Total", "logicalLevel:SSYS_SF.Dim - Opportunity Product Line.Dim - Opportunity Product Line Total", "logicalLevel:SSYS_SF.Dim - Opportunity.Dim - Opportunity Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Invoice Line.Dim - Invoice Line Total", "logicalLevel:SSYS_SF.Dim - Invoice Header.Dim - Invoice Header Total", "logicalLevel:SSYS_SF.Dim - Invoice Distribution.Dim - Invoice Distribution Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Total", "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Total", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Detail", "logicalLevel:SSYS_SF.Dim - Currency Rate (Current Day to USD).Dim - Currency Rate (Current Day to USD) Total", "logicalLevel:SSYS_SF.Dim - GL Period.Total", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Detail", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Sold To).Dim - Customer Contacts (Sold To) Total", "logicalLevel:SSYS_SF.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - GL Ledger.Dim - GL Ledger Detail", "logicalLevel:SSYS_SF.Dim - Invoice Date.Dim - Invoice Date Detail", "logicalLevel:SSYS_SF.Dim - GL Period.Day Detail", "logicalLevel:SSYS_SF.Dim - Currency (Converted Currency).Dim - Currency (Converted Currency) Detail", "logicalLevel:SSYS_SF.Dim - Currency (Transaction Currency).Dim - Currency Detail", "logicalLevel:SSYS_SF.Dim - GL Daily Rate.Dim - GL Daily Rate Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > 0",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Fact_GL_Daily_Rates.GL_RATE_GK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Currency (Converted Currency)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Currency (Transaction Currency)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - GL Daily Rate",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - GL Ledger",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - GL Period",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Invoice Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

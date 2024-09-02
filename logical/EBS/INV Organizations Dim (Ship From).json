@@ -1,0 +1,71 @@
+{
+  "logicalTable" : {
+    "name" : "INV Organizations Dim (Ship From)",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Inv Org Code (Ship From)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " SUBSTRING(%1 FROM 1 FOR 3)",
+          "expressionObjects" : [ "logicalColumn:EBS.INV Organizations Dim (Ship From).Inv Org Name (Ship From)" ]
+        }
+      }
+    }, {
+      "name" : "Inv Org Name (Ship From)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Organizations Dim (Ship From)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim (Ship From).OPERATING_UNIT_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Organization Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Organizations Dim (Ship From)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim (Ship From).ORGANIZATION_TYPE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "INV Organizations Dim (Ship From)",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.INV Organizations Dim (Ship From).ORG_ID" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "INV Organizations Dim (Ship From)",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.INV Organizations Dim (Ship From)" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Org Id" ]
+  }
+}

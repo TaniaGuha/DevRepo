@@ -1,0 +1,53 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Items",
+    "description" : "Subject Area to investigate inventory items, engineering items, and purchasing items with all their item-related information.",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Item" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Items.# Of Items",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Items.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Items.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Items.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Items.Item (Inventory Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Items.Item Measures"
+    }, {
+      "name" : "presentationTable:SSYS - Items.Item Attribute Changes"
+    }, {
+      "name" : "presentationTable:SSYS - Items.MTL Category Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Items.MTL Category Sets"
+      }, {
+        "name" : "presentationTable:SSYS - Items.MTL Categories"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Items.MTL Categories Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Items_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Items",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Items)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Items)"
+    }
+  }
+}

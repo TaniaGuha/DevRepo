@@ -1,0 +1,17 @@
+{
+  "initBlock" : {
+    "name" : "External_Metadata_Strings",
+    "tags" : [ "Project:External_Strings" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:XXControl.Ext_Strings_ConnectionPool",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select SESSION_VAR_NAME, TRANSLATED_TEXT from \r\nXXCTRL_EDW_METADATA where LANG_KEY = 'VALUEOF(NQ_SESSION.LOCALE)';"
+    } ],
+    "dependencies" : [ "LOCALE" ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : true,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "physicalTable": {
+    "name": "DIM_WIP_DISCRETE_JOB_DWH_Fact_WIP_Discrete_Job",
+    "sourceTable": "physicalTable:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH",
+    "caching": {
+      "enable": true,
+      "expiryTime": 6,
+      "expiryUnit": "HOURS"
+    },
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Fact_WIP_Discrete_Job.MASTER_ORG_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Item",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Fact_WIP_Discrete_Job.INVENTORY_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Item.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Fact_WIP_Discrete_Job.COMPLETION_LOCATOR_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ITEM_LOCATION_DWH_Dim_Locator.ITEM_LOCATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Fact_WIP_Discrete_Job.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Fact_WIP_Discrete_Job.WIP_ENTITY_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job.WIP_ENTITY_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

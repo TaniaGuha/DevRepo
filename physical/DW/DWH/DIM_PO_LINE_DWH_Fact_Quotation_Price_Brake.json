@@ -1,0 +1,162 @@
+{
+  "physicalTable" : {
+    "name" : "DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT PL.MASTER_ORG_ITEM_GK,PL.SUPPLIER_GK,PL.SUPPLIER_SITE_GK,PL.SUPPLIER_CONTACT_GK,PL.PO_HEADER_GK,PL.OU_ORG_GK,PL.PO_LINE_GK,PL.PO_CREATION_DATE_GK, \r\nPL.SOURCE_DOC_HEADER_GK,PL.SOURCE_DOC_LINE_GK,PLL.PO_LINE_LOCATION_ID,NVL(PLL.PO_LINE_LOCATION_GK,-1) AS PO_LINE_LOCATION_GK, NVL(PLL.SHIP_TO_ORG_ITEM_GK,-1) AS SHIP_TO_ORG_ITEM_GK\r\n,NVL(PLL.SHIP_TO_ORGANIZATION_GK,-1) AS SHIP_TO_ORGANIZATION_GK \r\n, NVL(PL.BUYER_GK,-1) AS BUYER_GK\r\nFROM DIM_PO_HEADER_DWH PH,\r\n     DIM_PO_LINE_DWH PL,\r\n     FACT_PO_LINE_LOCATION_DWH PLL\r\nWHERE PH.PO_TYPE_CODE = 'QUOTATION'\r\nAND PH.PO_HEADER_GK = PL.PO_HEADER_GK\r\nAND PL.PO_LINE_GK = PLL.PO_LINE_GK(+)\r\n"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "SOURCE_DOC_HEADER_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PO_LINE_LOCATION_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PO_LINE_LOCATION_ID",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "MASTER_ORG_ITEM_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_CONTACT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "OU_ORG_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PO_CREATION_DATE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_ORGANIZATION_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_SITE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PO_HEADER_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SHIP_TO_ORG_ITEM_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PO_LINE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SOURCE_DOC_LINE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BUYER_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 6,
+      "expiryUnit" : "HOURS"
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:DW.DWH.DIM_AP_SUPPLIER_CONTACTS_DWH_Dim_Supplier_Contact",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.SUPPLIER_CONTACT_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_CONTACTS_DWH_Dim_Supplier_Contact.SUPPLIER_CONTACT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.SUPPLIER_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.SUPPLIER_SITE_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SUPPLIER_SITE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.SHIP_TO_ORG_ITEM_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.MASTER_ORG_ITEM_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.OU_ORG_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.BUYER_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_PO_HEADER_DWH_Dim_Quotation_Header",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.PO_HEADER_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Quotation_Header.PO_HEADER_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.PO_LINE_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Dim_Po_Line.PO_LINE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DW.DWH.DIM_PO_LINE_DWH_Fact_Quotation_Price_Brake.PO_LINE_LOCATION_GK",
+        "rightColumn" : "physicalColumn:DW.DWH.FACT_PO_LINE_LOCATION_DWH_Dim_Quotation_Price_Brake.PO_LINE_LOCATION_GK"
+      } ]
+    } ]
+  }
+}

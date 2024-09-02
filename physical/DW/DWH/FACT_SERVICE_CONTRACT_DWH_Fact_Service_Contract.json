@@ -1,0 +1,131 @@
+{
+  "physicalTable": {
+    "name": "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+    "sourceTable": "physicalTable:DW.DWH.FACT_SERVICE_CONTRACT_DWH",
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Asset_Installed_Period",
+        "joinExpression": {
+          "expressionTemplate": "%1 >= %2 AND %1 <= %3",
+          "expressionObjects": [
+            "physicalColumn:DW.DWH.TIME_DIM_Asset_Installed_Period.TIME_DATE",
+            "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_START_DATE",
+            "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_END_DATE"
+          ]
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date",
+        "joinExpression": {
+          "expressionTemplate": "%1 >= %2 AND %1 <= %3",
+          "expressionObjects": [
+            "physicalColumn:DW.DWH.TIME_DIM_Printer_Daily_Activity_Date.TIME_DATE",
+            "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_START_DATE",
+            "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_END_DATE"
+          ]
+        },
+        "cardinality": "MANY_TO_ONE",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Asset_Install_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ASSET_INSTALL_LOCATION_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Asset_Install_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Ship_To_Customer_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ASSET_SHIP_TO_LOCATION_SITE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUSTOMER_ACCNT_SITE_DWH_Ship_To_Customer_Site.CUSTOMER_SITE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_ACCOUNT_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Account_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ASSET_END_CUSTOMER_SFDC_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_CUST_ACCOUNT_SFDC_DWH_Asset_End_Cust_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_INV_ITEM_DWH_Asset_Product",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ASSET_PRODUCT_ITEM_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_INV_ITEM_DWH_Asset_Product.ITEM_KEY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Next_Contract",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.NEXT_CONTRACT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Next_Contract.CONTRACT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Previous_Contract",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.PREV_CONTRACT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Previous_Contract.CONTRACT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Service_Contract",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Service_Contract.CONTRACT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_ASSET_DWH_Dim_Asset",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ASSET_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_ASSET_DWH_Dim_Asset.ASSET_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Close_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_END_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Close_Date.TIME_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.TIME_DIM_Open_Date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_START_DATE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.TIME_DIM_Open_Date.TIME_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "logicalTable" : {
+    "name" : "WIP Completed Week Time Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Completed Date" ],
+    "logicalColumns" : [ {
+      "name" : "Completed Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Completed Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Completed Week Time Dim.PERIOD_DAY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Date"
+    }, {
+      "name" : "Completed Year",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Completed Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Completed Week Time Dim.PERIOD_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Year"
+    }, {
+      "name" : "Completed Week Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Completed Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Completed Week Time Dim.WEEK_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Completed Week Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Completed Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Completed Week Time Dim.WEEK_NUMBER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Completed Year Week",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Completed Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Completed Week Time Dim.YEAR_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Week"
+    }, {
+      "name" : "Completed Year Week Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP Completed Week Time Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP Completed Week Time Dim.YEAR_WEEK_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Week"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "WIP Completed Week Time Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.WIP Completed Week Time Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.WIP Completed Week Time Dim.Date" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "TIME",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "WIP Completed Week Time Dim Total",
+      "logicalLevels" : [ {
+        "name" : "WIP Completed Week Time Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Year",
+        "numberOfElements" : 10,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Completed Year" ],
+        "displayKey" : "Completed Year"
+      }, {
+        "name" : "Week",
+        "numberOfElements" : 520,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Completed Year Week" ],
+        "displayKey" : "Completed Year Week"
+      }, {
+        "name" : "Date",
+        "numberOfElements" : 3600,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Completed Date" ],
+        "displayKey" : "Completed Date",
+        "chronologicalKey" : [ "Completed Date" ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "WIP Completed Week Time Dim",
+        "levels" : [ "WIP Completed Week Time Dim Total", "Year", "Week", "Date" ]
+      } ]
+    }
+  }
+}

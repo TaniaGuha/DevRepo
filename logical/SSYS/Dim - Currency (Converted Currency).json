@@ -1,0 +1,165 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Currency (Converted Currency)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Currency Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Currency Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.CURRENCY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "Currency Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.CURRENCY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.ENABLED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.END_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "Iso Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.ISO_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "Issuing Territory Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.ISSUING_TERRITORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    }, {
+      "name" : "Symbol",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.SYMBOL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency (Converted Currency) Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CURRENCY_DWH_Dim_Converted_Currency",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'Y' AND %2 = 'Y'",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.CURRENCY_FLAG", "physicalColumn:DW.DWH.DIM_CURRENCY_DWH_Dim_Converted_Currency.ENABLED_FLAG" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Currency (Converted Currency) Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Currency (Converted Currency) Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Currency (Converted Currency) Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Currency Gk" ],
+        "displayKey" : "Currency Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Currency (Converted Currency)",
+        "levels" : [ "Dim - Currency (Converted Currency) Total", "Dim - Currency (Converted Currency) Detail" ]
+      } ]
+    }
+  }
+}

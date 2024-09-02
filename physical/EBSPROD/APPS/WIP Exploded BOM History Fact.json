@@ -1,0 +1,87 @@
+{
+  "physicalTable": {
+    "name": "WIP Exploded BOM History Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXINV_BOM_EXPLODE_HISTORY",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Locators Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.SUPPLY_LOCATOR_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Locators Dim.INVENTORY_LOCATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Organizations Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Organizations Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.TOP_ASSEMBLY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.INV Subinventory Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Subinventory Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.SUPPLY_SUBINVENTORY",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.INV Subinventory Dim.SUBINVENTORY_NAME"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP BOM Direct Assembly Item Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.DIRECT_ASSEMBLY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP BOM Direct Assembly Item Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP BOM Direct Assembly Item Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP BOM Top Level Assembly Item Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP BOM Top Level Assembly Item Dim.ORGANIZATION_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.TOP_ASSEMBLY_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP BOM Top Level Assembly Item Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Component Item Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.COMP_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Item Dim.INVENTORY_ITEM_ID"
+          },
+          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.ORGANIZATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Item Dim.ORGANIZATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.WIP Component Product Hierarchy Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.WIP Exploded BOM History Fact.COMP_ITEM_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.WIP Component Product Hierarchy Dim.INVENTORY_ITEM_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

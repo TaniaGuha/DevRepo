@@ -1,0 +1,25 @@
+{
+  "physicalTable" : {
+    "name" : "XXATC_DIM_QUERY_CURRENCY",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select VALUE_CHAR as  QUERY_CURRENCY_CODE, VALUE_CHAR AS QUERY_CURRENCY from xxatc.xxatc_bi_param a where a.bi_param_code=\r\n'Query_Currency'\r\n"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "QUERY_CURRENCY_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : false
+    }, {
+      "name" : "QUERY_CURRENCY",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : false
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    }
+  }
+}

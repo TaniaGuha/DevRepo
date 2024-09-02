@@ -1,0 +1,72 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Current-History Indication",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Last Run Indication" ],
+    "logicalColumns" : [ {
+      "name" : "Indication Text",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind.IND_TEXT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Current History Indication Detail"
+    }, {
+      "name" : "Last Run Indication",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind.LAST_RUN_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Current History Indication Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENT_HISTORY_IND_DWH_Dim_Curr_Hist_Ind" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Current History Indication Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Current History Indication Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Current History Indication Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Last Run Indication" ],
+        "displayKey" : "Last Run Indication"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Current-History Indication",
+        "levels" : [ "Dim - Current History Indication Total", "Dim - Current History Indication Detail" ]
+      } ]
+    }
+  }
+}

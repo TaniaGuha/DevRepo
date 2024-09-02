@@ -1,0 +1,459 @@
+{
+  "logicalTable" : {
+    "name" : "Level Based Measures",
+    "description" : "This logical table contains metrics that always return value at a particular level within a dimension. Eg:- Revenue at Month level, Billed Qtry at Year level, Booked Amt for all Products etc.",
+    "tags" : [ "Project:10g_Project" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "FORCAST_3PARTY_QTY (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "FORCAST_3PARTY_VALUE_ORIG_CUR (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "FORCAST_3PARTY_VALUE_USD (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "FORCAST_DIRECT_QTY (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "FORCAST_DIRECT_VALUE_ORIG_CUR (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "FORCAST_DIRECT_VALUE_USD (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "Forcast Value Orig Currency (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "Forcast Value ($) (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "Forecast Quantity (Sum By Vendor)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Details" ]
+      }
+    }, {
+      "name" : "FORCAST_3PARTY_QTY (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "FORCAST_3PARTY_VALUE_ORIG_CUR (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "FORCAST_3PARTY_VALUE_USD (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "FORCAST_DIRECT_QTY (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "FORCAST_DIRECT_VALUE_ORIG_CUR (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "FORCAST_DIRECT_VALUE_USD (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "Forcast Value Orig Currency (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "Forcast Value ($) (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "Forecast Quantity (Sum for All Vendors)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total" ]
+      }
+    }, {
+      "name" : "Forcast Value Orig Currency (Sum By Buyer)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.po_buyers_D.Buyer Details" ]
+      }
+    }, {
+      "name" : "Forcast Value ($) (Sum By Buyer)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.po_buyers_D.Buyer Details" ]
+      }
+    }, {
+      "name" : "Forecast Quantity (Sum By Buyer)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.po_buyers_D.Buyer Details" ]
+      }
+    }, {
+      "name" : "Forcast Value Orig Currency (Sum for All Buyers)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.po_buyers_D.Buyer Total" ]
+      }
+    }, {
+      "name" : "Forcast Value ($) (Sum for All Buyers)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.po_buyers_D.Buyer Total" ]
+      }
+    }, {
+      "name" : "Forecast Quantity (Sum for All Buyers)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.po_buyers_D.Buyer Total" ]
+      }
+    }, {
+      "name" : "Forcast Value Orig Currency (Sum for All Dims But Time)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.INV_D_MS_ITEMS_FINISHED_GOODS.FG Total", "logicalLevel:Atech_PO.INV_D_BUY_ITEMS.Components Total", "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total", "logicalLevel:Atech_PO.po_buyers_D.Buyer Total" ]
+      }
+    }, {
+      "name" : "Forcast Value ($) (Sum for All Dims But Time)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_USD", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_BOM_TOP_BUY_HIER.Component", "logicalLevel:Atech_PO.INV_D_MS_ITEMS_FINISHED_GOODS.FG Total", "logicalLevel:Atech_PO.PO_Component_Usage.Total Components", "logicalLevel:Atech_PO.INV_D_BUY_ITEMS.Component Details", "logicalLevel:Atech_PO.PO_D_SIMULATE_FG_PLAN.FG Plan Total", "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total", "logicalLevel:Atech_PO.po_buyers_D.Buyer Total" ]
+      }
+    }, {
+      "name" : "Forecast Quantity (Sum for All Dims But Time)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_QTY", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_QTY" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_BOM_TOP_BUY_HIER.Component", "logicalLevel:Atech_PO.INV_D_MS_ITEMS_FINISHED_GOODS.FG Total", "logicalLevel:Atech_PO.INV_D_BUY_ITEMS.Components Total", "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total", "logicalLevel:Atech_PO.po_buyers_D.Buyer Total" ]
+      }
+    }, {
+      "name" : "FG Simulated Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FG Total simulate Qty for period" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_BOM_TOP_BUY_HIER.BOM Total", "logicalLevel:Atech_PO.INV_D_MS_ITEMS_FINISHED_GOODS.FG Total", "logicalLevel:Atech_PO.PO_Component_Usage.Total Components", "logicalLevel:Atech_PO.INV_D_BUY_ITEMS.Components Total", "logicalLevel:Atech_PO.PO_D_Fixed_Rates.Total Currency", "logicalLevel:Atech_PO.PO_D_SIMULATE_FG_PLAN.FG Item Code", "logicalLevel:Atech_PO.PO_D_VENDORS.Vendor Total", "logicalLevel:Atech_PO.po_buyers_D.Buyer Total", "logicalLevel:Atech_PO.PO_D_Product_Hierarchy.PO_D_Product_Hierarchy Total", "logicalLevel:Atech_PO.PO_D_Activity_Analysis.PO_D_Activity_Analysis Total" ]
+      }
+    }, {
+      "name" : "Forecast Direct Value($) (Sum By Product)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_USD" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.INV_D_MS_ITEMS_FINISHED_GOODS.FG Item Details", "logicalLevel:Atech_PO.PO_D_SIMULATE_FG_PLAN.FG Item Code", "logicalLevel:Atech_PO.PO_D_Product_Hierarchy.PO_D_Product_Hierarchy Total", "logicalLevel:Atech_PO.PO_D_Activity_Analysis.PO_D_Activity_Analysis Total" ]
+      }
+    }, {
+      "name" : "Forcast Value Orig Currency (Sum By Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 + %2",
+          "expressionObjects" : [ "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_DIRECT_VALUE_ORIG_CUR", "logicalColumn:Atech_PO.PO_F_BOM_PLAN.FORECAST_3PARTY_VALUE_ORIG_CUR" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:Atech_PO.PO_D_DATES.Month", "logicalLevel:Atech_PO.PO_D_Fixed_Rates.Currency details" ]
+      }
+    } ]
+  }
+}

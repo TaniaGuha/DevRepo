@@ -1,0 +1,78 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Assets",
+    "tags" : [ "Project:Strataforce 2" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Asset.# of Assets",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Assets.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Customers",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Assets.Account"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.End Customer",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Assets.End Customer Contacts"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Locations",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Assets.Install Site"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.Ship To Site"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.Bill To Site"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Service Contracts",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Assets.Current Contract"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.Next Contract"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.Previous Contract"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.Warranty"
+      }, {
+        "name" : "presentationTable:SSYS - Assets.Next Signed Contract"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Product"
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Asset Attributes"
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Asset Measures"
+    }, {
+      "name" : "presentationTable:SSYS - Assets.Asset Upgrades Attributes"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:CS_Install_Base",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:CS_User",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Assets",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Assets)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Assets)"
+    }
+  }
+}

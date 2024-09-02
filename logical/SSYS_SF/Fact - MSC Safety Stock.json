@@ -1,0 +1,203 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - MSC Safety Stock",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Reserved Safety Stock Qty",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.RESERVED_SAFETY_STOCK_QTY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock.RESERVED_SAFETY_STOCK_QTY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Safety Stock Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.SAFETY_STOCK_QUANTITY" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock.SAFETY_STOCK_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Total Unpooled Safety Stock",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.TOTAL_UNPOOLED_SAFETY_STOCK" ]
+          }
+        }, {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock.TOTAL_UNPOOLED_SAFETY_STOCK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item (Using Assembly Item).Dim - Item (Using Assembly Item) Total", "logicalLevel:SSYS_SF.Dim - Planning MSC Demand.Dim - Planning MSC Demand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP Hist.Fact Msc Supply Hist Dwh Dim Msc Supply Hist Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Total", "logicalLevel:SSYS_SF.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Total", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - End Pegging Item.Dim - End Pegging Item Total", "logicalLevel:SSYS_SF.Dim - Item Relationship.Dim - Item Relationship Total", "logicalLevel:SSYS_SF.Dim - Item As off Date.FACT_INV_ITEM_AS_OF_DATE_DWH_Dim_Item_As_Of_Date Total", "logicalLevel:SSYS_SF.Dim - Item (Related Item).Dim - Item (Related Item) Total", "logicalLevel:SSYS_SF.Dim - MTL Safety Stock.Dim - MTL Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total" ]
+      }
+    }, {
+      "name" : "Sup Ltvar Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.SUP_LTVAR_SS_PERCENT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Mfg Ltvar Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.MFG_LTVAR_SS_PERCENT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Transit Ltvar Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.TRANSIT_LTVAR_SS_PERCENT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Demand Var Ss Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.DEMAND_VAR_SS_PERCENT" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Target Safety Stock",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock.TARGET_SAFETY_STOCK" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_DWH_Fact_MSC_Safety_Stock" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Detail", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Total", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Detail", "logicalLevel:SSYS_SF.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - MTL Lot Number.Dim - MTL Lot Number Total", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail" ],
+      "dataFragmentation" : {
+        "expressionTemplate" : "%1 = 'Current Execution'",
+        "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Current-History Indication.Indication Text" ]
+      },
+      "combineWithOtherFragments" : true,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    }, {
+      "name" : "FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SAFETY_STOCK_HIST_DWH_Fact_MSC_Safety_Stock" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Current-History Indication.Dim - Current History Indication Detail", "logicalLevel:SSYS_SF.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock.Dim - MSC Safety Stock Total", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - MSC Safety Stock Hist.FACT_MSC_SAFETY_STOCK_HIST_DWH_Dim_MSC_Safety_Stock Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail" ],
+      "dataFragmentation" : {
+        "expressionTemplate" : "%1 = 'Historical Executions'",
+        "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Current-History Indication.Indication Text" ]
+      },
+      "combineWithOtherFragments" : true,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - MSC Safety Stock Hist",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - MSC Safety Stock",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

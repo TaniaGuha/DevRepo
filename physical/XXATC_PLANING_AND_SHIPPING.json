@@ -1,0 +1,102 @@
+{
+  "database" : {
+    "name" : "XXATC_PLANING_AND_SHIPPING",
+    "databaseType" : "ORACLE_DATABASE",
+    "connectionPools" : [ {
+      "name" : "Connection Pool",
+      "connection" : "'system'.'XXATC'",
+      "remoteConnection" : false,
+      "maxConnections" : 10,
+      "requiresFullyQualifedTableNames" : false,
+      "connectionTimeout" : 5,
+      "connectionTimeoutUnit" : "MINUTES",
+      "multithreaded" : true,
+      "supportParams" : true,
+      "writeBackConfig" : {
+        "dbSupportsUnicode" : false,
+        "bulkInsertBufferSize" : 10240,
+        "transactionBoundary" : 10,
+        "tempTablePrefix" : "TT"
+      }
+    } ],
+    "featureOverrides" : [ {
+      "name" : "LISTAGG_BASIC_SUPPORTED",
+      "value" : false
+    } ],
+    "virtualPrivateDatabase" : false,
+    "crmMetadataTables" : false,
+    "allowDirectDatabaseRequests" : false,
+    "allowPopulateQueries" : false,
+    "queryLimits" : [ {
+      "accessor" : "role:BIAdministrator",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:General_Data_Security",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:MCS_Materials_SA",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:SSYS_Customer_Data",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:SSYS_GrabCAD_SA",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:SSYS_Inventory_SA",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:SSYS_Pricing_Modifiers_SA",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    }, {
+      "accessor" : "role:SSYS_Supply_Chain_Planning_SA",
+      "maxRowSetting" : "INHERIT",
+      "maxRows" : 100000,
+      "maxTimeSetting" : "INHERIT",
+      "maxTime" : 10,
+      "directDatabaseRequests" : "INHERIT"
+    } ]
+  }
+}

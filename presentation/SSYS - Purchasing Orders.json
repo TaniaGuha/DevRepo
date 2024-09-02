@@ -1,0 +1,86 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Orders",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release2", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Purchasing Order.# of Po Headers",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Item (Ship To Org)"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Supplier Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Supplier Site"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Supplier Contact"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Buyer"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Project"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Discrete Job Attributes"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Requisition",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Requisition Header"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Requisition Line"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Requisition Distribution"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Purchase Order Attributes",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Po Header"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Po Release"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Po Line"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Po Shipment"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Po Distribution"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Purchase Order Measures",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Orders.Blanket Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Item Cost"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Orders.Daily Conversion Rates  - Standalone Object"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Orders_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Orders",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Orders)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Orders)"
+    }
+  }
+}

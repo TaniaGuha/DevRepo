@@ -1,0 +1,839 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Purchasing Order",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_GSC_Project_Release1", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release2", "Project:SSYS_Procure2Pay_Release3" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Material Cost ($) by MFG Org",
+      "description" : "Material Cost From the Manufacturing Organization.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " FILTER(%1 USING %2 = %3)",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Item Cost.Material Cost", "logicalColumn:SSYS.Dim - Item (Master Org).Mfg Org", "logicalColumn:SSYS.Dim - Item Cost.Inv Organization Id" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "# of Po Headers",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Item.Dim - Item Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "# of Po Releases",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_RELEASE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "# of Po Lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "# of Po Shipments",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "# of Po Distributions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Ordered",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Billed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_BILLED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Cancelled",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Delivered",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_DELIVERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Financed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_FINANCED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Recouped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_RECOUPED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Amount Ordered (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_ORDERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Amount Billed (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_BILLED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Amount Cancelled (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_CANCELLED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Amount Delivered (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_DELIVERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Amount Financed (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_FINANCED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Amount Recouped (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_RECOUPED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Encumbered Amount (Functional Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.ENCUMBERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Unencumbered Amount (Functional Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.UNENCUMBERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Unencumbered Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.UNENCUMBERED_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Recoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.RECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Nonrecoverable Tax",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.NONRECOVERABLE_TAX" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Due Received",
+      "description" : "\"QUANTITY_ORDERED\" - \"QUANTITY_CANCELLED\" -\"QUANTITY_DELIVERED\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) -  IFNULL(%2, 0) -  IFNULL(%3, 0)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_DELIVERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Quantity Due Billed",
+      "description" : "\"QUANTITY_ORDERED\" - \"QUANTITY_CANCELLED\" -\"QUANTITY_BILLED\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 0) -  IFNULL(%2, 0) -  IFNULL(%3, 0)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_BILLED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Total Ordered Amount (Original Currency)",
+      "description" : "*** Relevant for Standard or Release PO types\r\nTotal (Ordered Quantity – Cancelled Quantity) * Original Price\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Total Ordered Amount ($)",
+      "description" : "*** Relevant for Standard or Release PO types\r\nTotal (Ordered Quantity – Cancelled Quantity) * Original Price * Rate to USD ",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3 * %4",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_RATE_TO_USD" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Total Ordered Amount (PO Currency)",
+      "description" : "*** Relevant for Standard or Release PO types\r\nTotal (Ordered Quantity – Cancelled Quantity) * Original Price * IFNULL(Linkage Rate ,1) \r\nIf Linkage exists, shows total amount in linked currency, else in original currency",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3 /  IFNULL(%4, 1)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_LINKAGE_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Ordered Amount Net (Original Currency)",
+      "description" : "(Ordered Quantity – Cancelled Quantity) * Original Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Ordered Amount Net (PO Currency)",
+      "description" : "(Ordered Quantity – Cancelled Quantity) * Original Price * IFNULL(Linkage Rate ,1) \r\nIf Linkage exists, shows total amount in linked currency, else in original currency",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3 /  IFNULL(%4, 1)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_LINKAGE_RATE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "Ordered Amount Net ($)",
+      "description" : "(Ordered Quantity – Cancelled Quantity) * Original Price * Rate to USD ",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3 * %4",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_RATE_TO_USD" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total" ]
+      }
+    }, {
+      "name" : "# of Requisitions",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.REQUISITION_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Ordered Quantity Net",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 - %2",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Purchasing Order.Quantity Ordered", "logicalColumn:SSYS.Fact - Purchasing Order.Quantity Cancelled" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Total PO Ordered Amount Net (Original Currency)",
+      "description" : "(Ordered Quantity – Cancelled Quantity) * Original Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE_ANALYTIC('sum(\\%1) over (partition by \\%2)' AS  DOUBLE PRECISION , ( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3, %4)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail" ]
+      }
+    }, {
+      "name" : "Total PO Ordered Amount Net ($)",
+      "description" : "(Ordered Quantity – Cancelled Quantity) * Original Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE_ANALYTIC('sum(\\%1) over (partition by \\%2)' AS  DOUBLE PRECISION , ( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3 * %4, %5)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_RATE_TO_USD", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail" ]
+      }
+    }, {
+      "name" : "Total PO Ordered Amount Net (PO Currency)",
+      "description" : "(Ordered Quantity – Cancelled Quantity) * (line unit price/linkage rate)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE_ANALYTIC('sum(\\%1) over (partition by \\%2)' AS  DOUBLE PRECISION , ( IFNULL(%1, 0) -  IFNULL(%2, 0)) * %3 /  IFNULL(%4, 1), %5)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_ORDERED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.QUANTITY_CANCELLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_LINKAGE_RATE", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail" ]
+      }
+    }, {
+      "name" : "# of Source PRs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : " EVALUATE_ANALYTIC('count(distinct \\%1) over (partition by \\%2)', %1, %2)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.REQUISITION_HEADER_ID", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail" ]
+      }
+    }, {
+      "name" : "Line Unit Price",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.LINE_UNIT_PRICE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Material Cost ($) by Ship To Org",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - Item Cost.Material Cost" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Price Break.Dim - Purchasing Quotation Price Break Total", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Total", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Total", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS.Dim - Purchasing Quotation Header.Dim - Purchasing Quotation Header Total", "logicalLevel:SSYS.Dim - Purchasing Req Creation Date.Dim - Purchasing Req Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Total", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Total", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Total", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Total", "logicalLevel:SSYS.Dim - Purchasing Sourcing Rule.Dim - Purchasing Sourcing Rule Total", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Budget Account.Dim - Purchasing Req Budget Account Total", "logicalLevel:SSYS.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Total", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Total", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    }, {
+      "name" : "Amount Billed ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 * %2",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.AMOUNT_BILLED", "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_RATE_TO_USD" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Item Cost.Dim - Item Cost Total", "logicalLevel:SSYS.Dim - Item Cost type.Dim - Item Cost type Total", "logicalLevel:SSYS.Dim - GL Daily Rate.Dim - GL Daily Rate Total", "logicalLevel:SSYS.Dim - AP Invoice Header.Dim - AP Invoice Header Total", "logicalLevel:SSYS.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Total", "logicalLevel:SSYS.Dim - Purchasing Action History.Dim - Purchasing Action History Total", "logicalLevel:SSYS.Dim - AP Invoice Distribution.Dim - AP Invoice Distribution Total", "logicalLevel:SSYS.Dim - AP Invoice Line.Dim - AP Invoice Line Total", "logicalLevel:SSYS.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS.Dim - Purchasing Supply Pegging.Dim - Purchasing MSC Supply Pegging Total", "logicalLevel:SSYS.Dim - Purchasing Supply MRP.Dim - Purchasing Supply MRP Total", "logicalLevel:SSYS.Dim - Purchasing MSC Plans.Dim - Purchasing MSC Plans Total", "logicalLevel:SSYS.Dim - BOM Explode.Dim - BOM Explode Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - Project.Dim - Project Detail", "logicalLevel:SSYS.Dim - WIP Discrete Job.DIM_WIP_DISCRETE_JOB_DWH_Dim_WIP_Discrete_Job Detail", "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS.Dim - Purchasing Buyer.Dim - Purchasing Buyer Detail", "logicalLevel:SSYS.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS.Dim - Supplier.Dim - Supplier Detail", "logicalLevel:SSYS.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Detail", "logicalLevel:SSYS.Dim - Supplier Contact.Dim - Supplier Contact Detail", "logicalLevel:SSYS.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Detail", "logicalLevel:SSYS.Dim - Supplier Site.Dim - Supplier Site Detail", "logicalLevel:SSYS.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Detail", "logicalLevel:SSYS.Dim - GL Period.Day Detail", "logicalLevel:SSYS.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail", "logicalLevel:SSYS.Dim - Purchasing Po Creation Date.Dim - Purchasing Po Creation Date Detail", "logicalLevel:SSYS.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Detail", "logicalLevel:SSYS.Dim - Item (Master Org).Dim - Item (Master Org) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 > 0",
+        "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_PO_DISTRIBUTION_DWH_Fact_Po_Distribution.PO_DISTRIBUTION_GK" ]
+      },
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit Org Id", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - GL Ledger",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - GL Period",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Project",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Buyer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Budget Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Charge Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Creation Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Release",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Po Shipment",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Purchasing Requisition Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier Contact",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Supplier",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - WIP Discrete Job",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

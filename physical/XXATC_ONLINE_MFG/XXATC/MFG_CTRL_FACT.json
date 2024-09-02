@@ -1,0 +1,39 @@
+{
+  "physicalTable": {
+    "name": "MFG_CTRL_FACT",
+    "sourceTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.XXATC_ONLINE_MFG_BI",
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.MFG_D_ASSEMBLY_ITEMS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_CTRL_FACT.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_D_ASSEMBLY_ITEMS.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.MFG_D_ITEM_CAT_DETAILS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_CTRL_FACT.BI_ITEM_SET_CAT_CODE",
+            "rightColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_D_ITEM_CAT_DETAILS.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.MFG_D_ITEM_PRODUCT_HIERARCHY",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_CTRL_FACT.BI_Product_Hrchy_set_cat_code",
+            "rightColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_D_ITEM_PRODUCT_HIERARCHY.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_ONLINE_MFG.XXATC.MFG_D_PLAN",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_CTRL_FACT.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_ONLINE_MFG.XXATC.MFG_D_PLAN.BI_ITEM_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Buyer",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Buyer Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Buyer Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Buyer Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Buyer",
+      "description" : "Buyer Full Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_FULL_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.END_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Start Date Active",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.START_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Buyer Team",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_TEAM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Buyer Location Country",
+      "description" : "ISO code of the country the buyer works in.",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.LOCATION_COUNTRY_ISO_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    }, {
+      "name" : "Active Buyer Flag",
+      "description" : "Y - Indicates a buyer is currently active \r\n(current date is between \"Start Date Active\" and \"End Date Active\" ) .",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " CASE  WHEN %1 <=  CURRENT_DATE  AND  CURRENT_DATE  <=  IFNULL(%2,  CURRENT_DATE  + 1) THEN 'Y' ELSE 'N' END ",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Purchasing Buyer.Start Date Active", "logicalColumn:SSYS_SF.Dim - Purchasing Buyer.End Date Active" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Buyer Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Buyer Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Buyer Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Buyer Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Buyer Gk" ],
+        "displayKey" : "Buyer Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Buyer",
+        "levels" : [ "Dim - Purchasing Buyer Total", "Dim - Purchasing Buyer Detail" ]
+      } ]
+    }
+  }
+}

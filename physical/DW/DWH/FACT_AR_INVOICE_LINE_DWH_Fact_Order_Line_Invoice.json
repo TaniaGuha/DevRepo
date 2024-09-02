@@ -1,0 +1,47 @@
+{
+  "physicalTable": {
+    "name": "FACT_AR_INVOICE_LINE_DWH_Fact_Order_Line_Invoice",
+    "sourceTable": "physicalTable:DW.DWH.FACT_AR_INVOICE_LINE_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_AR_INVOICE_HEADER_DWH_Invoice_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Fact_Order_Line_Invoice.INVOICE_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_AR_INVOICE_HEADER_DWH_Invoice_Header.INVOICE_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Fact_Order_Line_Invoice.ORDER_HEADER_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_HEADER_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Fact_Order_Line_Invoice.OU_ORG_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Dim_Invoice_Line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Fact_Order_Line_Invoice.INVOICE_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Dim_Invoice_Line.INVOICE_LINE_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_AR_INVOICE_LINE_DWH_Fact_Order_Line_Invoice.ORDER_LINE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_OE_ORDER_LINES_DWH_Dim_Order_line.ORDER_LINE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

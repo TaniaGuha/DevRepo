@@ -1,0 +1,107 @@
+{
+  "logicalTable" : {
+    "name" : "PO_Conversion_Rates_org_curr",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "BI_CONVERSION_DATE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Conversion_Rates_org_curr",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr.BI_CONVERSION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CONVERSION_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Conversion_Rates_org_curr",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr.CONVERSION_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "CONVERSION_RATE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Conversion_Rates_org_curr",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr.CONVERSION_RATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "FROM_CURRENCY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Conversion_Rates_org_curr",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr.FROM_CURRENCY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "INVERSE_CONVERSION_RATE",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Conversion_Rates_org_curr",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr.INVERSE_CONVERSION_RATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "TO_CURRENCY",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "PO_Conversion_Rates_org_curr",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr.TO_CURRENCY" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "PO_Conversion_Rates_org_curr",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:XXATC_PO.XXATC.PO_Conversion_Rates_org_curr" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Atech_PO.XXATC_PO_D_LINE_BI",
+      "joinType" : "INNER",
+      "cardinality" : "ZERO_OR_ONE_TO_MANY"
+    } ],
+    "primaryKey" : [ "FROM_CURRENCY" ]
+  }
+}

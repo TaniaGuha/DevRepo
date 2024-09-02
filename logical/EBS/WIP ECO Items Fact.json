@@ -1,0 +1,65 @@
+{
+  "logicalTable" : {
+    "name" : "WIP ECO Items Fact",
+    "tags" : [ "Project:EBS_WIP" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Component Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "WIP ECO Items Fact",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.WIP ECO Items Fact.COMPONENT_QUANTITY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "WIP ECO Items Fact",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.WIP ECO Items Fact" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.INV Organizations Dim.INV Organizations Dim Detail", "logicalLevel:EBS.WIP Component Item Dim.WIP Component Item Dim Detail", "logicalLevel:EBS.WIP Component Product Hierarchy Dim.WIP Component Product Hierarchy Dim Detail", "logicalLevel:EBS.WIP ECO Creation Date Dim.Date", "logicalLevel:EBS.WIP ECO Items Dim.WIP ECO Items Dim Detail", "logicalLevel:EBS.INV Item Category Dim.INV Item Category Dim Detail", "logicalLevel:EBS.INV All Inv Orgs Items Dim.INV All Inv Orgs Items Dim Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:EBS.INV All Inv Orgs Items Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Item Category Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.INV Organizations Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.WIP Component Item Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.WIP Component Product Hierarchy Dim",
+      "joinType" : "LEFT_OUTER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.WIP ECO Creation Date Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:EBS.WIP ECO Items Dim",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

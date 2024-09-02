@@ -1,0 +1,167 @@
+{
+  "physicalTable" : {
+    "name" : "FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "        select s.order_type, s.order_type_text,               \r\n               s.plan_id, s.plan_gk, s.supply_transaction_gk,\r\n               s.organization_id, s.organization_gk as inv_organization_gk, s.ou_org_id, s.ou_org_gk,\r\n               nvl(bom.comp_item_id, s.inventory_item_id) inventory_item_id, \r\n               nvl(bom.comp_item_gk, s.inventory_item_gk) inventory_item_gk, \r\n               nvl(bom.comp_master_item_gk, s.master_org_item_gk) master_org_item_gk,\r\n               case when bom.comp_part_number is null then 'Direct (Childless Only)' else (case when sr.assignment_id is not null then 'Third Party' else 'Third Party (No Sourcing Rule)' end) end simulation_type,   \r\n               case when bom.comp_part_number is null then 2 else (case when sr.assignment_id is not null then 3 else 4 end) end simulation_type_gk, \r\n               s.buyer_gk,\r\n               nvl(sr.supplier_id,decode(bom.comp_item_id,NULL,s.supplier_id,-1)) supplier_id,\r\n               nvl(sr.supplier_gk, decode(bom.comp_item_id,NULL,s.supplier_gk,-1)) supplier_gk,\r\n               nvl(sr.supplier_site_id, decode(bom.comp_item_id,NULL,s.supplier_site_id,-1)) supplier_site_id,\r\n               nvl(sr.supplier_site_gk, decode(bom.comp_item_id,NULL,s.supplier_site_gk,-1)) supplier_site_gk,\r\n               bom.comp_quantity_extended,\r\n               s.new_order_quantity as MRP_QUANTITY,\r\n               sr.allocation_percent,\r\n               nvl((bom.comp_quantity_extended*s.new_order_quantity*(sr.allocation_percent/100)),s.new_order_quantity) quantity,\r\n               s.new_schedule_date target_date,\r\n               t.time_gk target_date_gk\r\n               \r\n          from fact_msc_supply_dwh s, \r\n               (select b.organization_id comp_org_id, b.ou_org_id comp_ou_org_id, b.ou_org_gk bom_ou_org_gk,\r\n                       b.top_assembly_part_number, b.top_assembly_item_id, b.top_assembly_item_gk,\r\n                       b.comp_part_number, b.comp_item_id, b.comp_item_gk, b.comp_buy_make, b.end_component_ind,b.comp_master_item_gk,\r\n                       b.comp_quantity_extended                       \r\n                  from fact_bom_explode_dwh b\r\n                 where b.comp_buy_make = 'Buy' and trunc(sysdate) between b.effective_date and nvl(b.disable_date,sysdate+1)  \r\n                )bom,\r\n               fact_sourcing_rules_dwh sr,\r\n               time_dim t\r\n               \r\n         where s.inventory_item_id = bom.top_assembly_item_id(+)\r\n               and s.organization_id = bom.comp_org_id(+)\r\n               and bom.bom_ou_org_gk= sr.ou_org_gk(+)\r\n               and bom.comp_item_gk = sr.inventory_item_gk(+)                                          \r\n               and (s.order_type =18 or (s.order_type in (2,5) and s.source_organization_id is null))                                                        \r\n               and sr.assignment_type(+)  =  'Item-Organization'\r\n               and sr.is_active_sourcing_rule(+)  =  'Y'\r\n               and sr.source_type_desc(+)  = 'Buy From'              \r\n               and trunc(s.new_schedule_date) = t.time_date                  \r\nunion all\r\n        select s.order_type, s.order_type_text,               \r\n               s.plan_id, s.plan_gk, s.supply_transaction_gk,\r\n               s.organization_id, s.organization_gk, s.ou_org_id, s.ou_org_gk,\r\n               s.inventory_item_id, \r\n               s.inventory_item_gk, \r\n               s.master_org_item_gk,\r\n               'Direct' simulation_type,  \r\n               1 simulation_type_gk,             \r\n               s.buyer_gk,\r\n               s.supplier_id,\r\n               s.supplier_gk,\r\n               s.supplier_site_id,\r\n               s.supplier_site_gk,              \r\n               null comp_quantity_extended, \r\n               s.new_order_quantity,\r\n               null allocation_percent,             \r\n               s.new_order_quantity quantity,\r\n               s.new_schedule_date target_date,               \r\n               t.time_gk target_date_gk               \r\n          from fact_msc_supply_dwh s, \r\n               dim_inv_item_dwh i,\r\n               time_dim t        \r\n         where s.inventory_item_id = i.inventory_item_id\r\n               and s.organization_id = i.organization_id              \r\n               and trunc(s.new_schedule_date) = t.time_date\r\n               and (s.order_type in (1, 18, 8) or s.order_type in (2,5) and s.source_organization_id is null)\r\n               and i.planning_make_buy_code = 'Buy'                             \r\n              and trunc(s.new_schedule_date) = t.time_date"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "MASTER_ORG_ITEM_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_DATE",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "BUYER_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "COMP_QUANTITY_EXTENDED",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PLAN_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLY_TRANSACTION_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_DATE_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "SIMULATION_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "MRP_QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ALLOCATION_PERCENT",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "INV_ORGANIZATION_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_SITE_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "OU_ORG_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32,
+      "nullable" : true
+    }, {
+      "name" : "INVENTORY_ITEM_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "SUPPLIER_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "SIMULATION_TYPE_GK",
+      "dataType" : "INT",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Dim_Supplier",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.SUPPLIER_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_DWH_Dim_Supplier.SUPPLIER_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.SUPPLIER_SITE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SUPPLIER_SITE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.INVENTORY_ITEM_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Item_Deliver_To_Org.ITEM_KEY"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.MASTER_ORG_ITEM_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_INV_ITEM_DWH_Dim_Master_Item.ITEM_KEY"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_DWH_Dim_MSC_Plans",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.PLAN_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_DWH_Dim_MSC_Plans.PLAN_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.OU_ORG_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_ORGANIZATION_DWH_Operating_Unit_Org.ORGANIZATION_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.BUYER_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Purchasing_Buyer.BUYER_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_SIMULATION_TYPE",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.SIMULATION_TYPE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_SIMULATION_TYPE.SIMULATION_TYPE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Dim_MSC_Supply",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.SUPPLY_TRANSACTION_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Dim_MSC_Supply.SUPPLY_TRANSACTION_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Simulation_Date",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_MSC_SUPPLY_DWH_Fact_Po_Simulation.TARGET_DATE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Purchasing_Simulation_Date.TIME_GK"
+      } ]
+    } ]
+  }
+}

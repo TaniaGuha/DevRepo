@@ -1,0 +1,125 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Action History",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Action History.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Action History.Purchase Requisition",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Header"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Line"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Distribution"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Action History.Purchase Order",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Action History.PO Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Po Header"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Po Release"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Po Line"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Po Shipment"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Po Distribution"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Action History.PO Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Action History.Action History"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Action History.Action History - Revision 0 Measures",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Measures - Rev\\.0",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Resp\\. Time- Minutes - Rev\\.0"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Resp\\.Time- Hours - Rev\\.0"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Resp\\. Time- Days - Rev\\.0"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Action History.PO Measures - Rev\\.0",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.PO Resp\\. Time- Hours - Rev\\.0"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.PO Resp\\. Time- Days - Rev\\.0"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.PO Resp\\. Time- Minutes - Rev\\.0"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Action History.Release Measures - Rev\\.0",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Release Resp\\. Time- Minutes - Rev\\.0"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Release Resp\\.Time- Hours - Rev\\.0"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Release Resp\\. Time- Days - Rev\\.0"
+        } ]
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Action History.Action History - All Revisions Measures",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Measures - All Revs\\.",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Resp\\. Time- Minutes - All Revs\\."
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Resp\\.Time- Hours - All Revs\\."
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Requisition Resp\\. Time- Days - All Revs\\."
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Action History.PO Measures - All Revs\\.",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.PO Resp\\. Time- Minutes - All Revs\\."
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.PO Resp\\. Time- Hours - All Revs\\."
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.PO Resp\\. Time- Days - All Revs\\."
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Action History.Release Measures - All Revs\\.",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Release Resp\\. Time- Minutes - All Revs\\."
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Release Resp\\.Time- Hours - All Revs\\."
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Action History.Release Resp\\. Time- Days - All Revs\\."
+        } ]
+      } ]
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Action_History_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Action History",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Action_History)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Action_History)"
+    }
+  }
+}

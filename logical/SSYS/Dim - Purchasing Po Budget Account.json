@@ -1,0 +1,491 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Po Budget Account",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Code Combination Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Account Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.ACCOUNT_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Account Type Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.ACCOUNT_TYPE_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Chart Of Accounts Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.CHART_OF_ACCOUNTS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Code Combination Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.CODE_COMBINATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.CODE_COMBINATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Account Segments Codes",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.CONCATENATED_SEGMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Detail Budgeting Allowed Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.DETAIL_BUDGETING_ALLOWED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Detail Posting Allowed Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.DETAIL_POSTING_ALLOWED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.ENABLED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.END_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Company Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG1_COMPANY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Company",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG1_COMPANY_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Department Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG2_DEPARTMENT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Department",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG2_DEPARTMENT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Account Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG3_ACCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG3_ACCOUNT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Sub Account Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG4_SUB_ACCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Sub Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG4_SUB_ACCOUNT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Product Line Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG5_PRODUCT_LINE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Product Line",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG5_PRODUCT_LINE_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Location Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG6_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG6_LOCATION_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Intercompany Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG7_INTERCOMPANY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Intercompany",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG7_INTERCOMPANY_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Project Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG8_PROJECT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Budget Project",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.GL_SEG8_PROJECT_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Parent Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.PARENT_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Start Date Active",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.START_DATE_ACTIVE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Summary Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.SUMMARY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    }, {
+      "name" : "Template Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination.TEMPLATE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Budget Account Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_GL_CODE_COMBINATIONS_DWH_Po_Budget_Code_Combination" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Po Budget Account Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Po Budget Account Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Po Budget Account Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Code Combination Gk" ],
+        "displayKey" : "Code Combination Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Po Budget Account",
+        "levels" : [ "Dim - Purchasing Po Budget Account Total", "Dim - Purchasing Po Budget Account Detail" ]
+      } ]
+    }
+  }
+}

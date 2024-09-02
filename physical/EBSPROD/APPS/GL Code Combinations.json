@@ -1,0 +1,43 @@
+{
+  "physicalTable": {
+    "name": "GL Code Combinations",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXGL_CODE_COMBINATIONS_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Account Hierarchy",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.SEGMENT3",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.LEVEL1_FLEX_VALUE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Department Hierarchy",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.SEGMENT2",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Department Hierarchy.LEVEL1_FLEX_VALUE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Project Hierarchy",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.GL Code Combinations.SEGMENT8",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Project Hierarchy.LEVEL1_FLEX_VALUE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "CHART_OF_ACCOUNTS_ID",
+        "CODE_COMBINATION_ID"
+      ],
+      [
+        "CHART_OF_ACCOUNTS_ID"
+      ],
+      [
+        "CODE_COMBINATION_ID"
+      ]
+    ]
+  }
+}

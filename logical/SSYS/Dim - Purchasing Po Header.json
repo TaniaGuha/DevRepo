@@ -1,0 +1,1687 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Purchasing Po Header",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Po Header Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Po Net Amount Po Curr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_NET_AMOUNT_PO_CURR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Po Net Amount Usd",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_NET_AMOUNT_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Po Net Amount Orig Curr",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_NET_AMOUNT_ORIG_CURR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Po Header Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Original Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_ORIGINAL_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Revision Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_REVISION_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Acceptance Due Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ACCEPTANCE_DUE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Acceptance Required Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ACCEPTANCE_REQUIRED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Agent Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.AGENT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Agreement Amount Limit",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.AGREEMENT_AMOUNT_LIMIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Agreement Effective End Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.AGREEMENT_EFFECTIVE_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Agreement Effective Start Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.AGREEMENT_EFFECTIVE_START_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Agreement Min Release Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.AGREEMENT_MIN_RELEASE_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Ap Period Length",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.AP_PERIOD_LENGTH" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Approval Required Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.APPROVAL_REQUIRED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Approved Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.APPROVED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Approved Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.APPROVED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Bill To Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.BILL_TO_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Bill To Location Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.BILL_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Blanket Total Agreed Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.BLANKET_TOTAL_AGREED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Buyer",
+      "description" : "Buyer Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.BUYER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Buyer Team",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Agent Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( SPARSE %1, 'Team Not Assigned', %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS.LKP - Purchasing Buyer Details.Buyer Team", "logicalColumn:SSYS.Dim - Purchasing Po Header.Agent Id" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Carrier Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.CARRIER_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Carrier Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.CARRIER_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Created By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.CREATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Document Creation Method",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.DOCUMENT_CREATION_METHOD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Email Address",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.EMAIL_ADDRESS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po First Approved Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_APPROVED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po First Approved Datetime",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_APPROVED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Fob Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FOB_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Fob Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FOB_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Freight Terms Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FREIGHT_TERMS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Freight Terms Desc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FREIGHT_TERMS_DESC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "From Header Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FROM_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "From Type Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FROM_TYPE_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Global Agreement Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.GLOBAL_AGREEMENT_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Last Updated By Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.LAST_UPDATED_BY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Linkage Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.LINKAGE_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Linkage Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.LINKAGE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Linkage Rate",
+      "description" : "Exchange rate from Linked currency to Original PO currency",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " IFNULL(%1, 1)",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.LINKAGE_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Payment Terms",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PAYMENT_TERMS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Payment Terms Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PAYMENT_TERMS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Creation Time",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Header Cancel Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_CANCEL_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Header Closed Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_CLOSED_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Po Header Closed Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_HEADER_CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Print Count",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PRINT_COUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Printed Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PRINTED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Quotation Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.QUOTATION_CLASS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Quote Type Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.QUOTE_TYPE_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Quote Vendor Quote Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.QUOTE_VENDOR_QUOTE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Quote Warning Delay",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.QUOTE_WARNING_DELAY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Quote Warning Delay Unit",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.QUOTE_WARNING_DELAY_UNIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Rate Date To Functional Currency",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RATE_DATE_TO_FUNCTIONAL_CURR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Rate To Usd",
+      "description" : "Exchange Rate from PO original currency (before linkage) \r\nto USD at PO Header Creation Date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RATE_DATE_TO_USD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Rate To Functional Currency",
+      "description" : "Exchange Rate from PO original currency (before linkage) \r\nto operating unit functional currency  at PO Header Creation Date",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RATE_TO_FUNCTIONAL_CURR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Rate Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RATE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Receiver Note",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RECEIVER_NOTE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Reply Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.REPLY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Reply Method Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.REPLY_METHOD_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Revised Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.REVISED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Rfq Close Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RFQ_CLOSE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Ship To Location",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SHIP_TO_LOCATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Ship To Location Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SHIP_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Shipping Control",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SHIPPING_CONTROL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Status Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.STATUS_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Submit Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SUBMIT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Supplier Contact Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SUPPLIER_CONTACT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Supplier Note",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SUPPLIER_NOTE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Supplier Notif Method",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SUPPLIER_NOTIF_METHOD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Supplier Site Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.SUPPLIER_SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "User Hold Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.USER_HOLD_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Vendor Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.VENDOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Vendor Order Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.VENDOR_ORDER_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Vendor Site Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.VENDOR_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Wf Item Key",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.WF_ITEM_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Wf Item Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.WF_ITEM_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Rate to USD (BOY)",
+      "description" : "Exchange rate from the po_currency to USD at January 1st the year of \"first approved date\".\r\nBOY = Beginning Of Year\r\n",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.RATE_TO_USD_BEGINING_OF_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "POC Criterion",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " VALUEOF(%1)",
+          "expressionObjects" : [ "variable:staticVariables.POC" ]
+        }
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "POC Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  TRUNCATE(%1, 0) <=  VALUEOF(%2) THEN 'Y' ELSE 'N' END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.PO_NET_AMOUNT_USD", "variable:staticVariables.POC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "First PR Last Apprv Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_PR_LAST_APPRV_DATE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Approved PR to PO SLA (Cal)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 - %2",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_APPROVED_DATE", "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_PR_LAST_APPRV_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    }, {
+      "name" : "Approved PR to PO SLA (PO OU WD)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 81 THEN %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) + %3 -  CAST (%3 AS DATE ) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 6 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) END  ELSE  CASE  WHEN  DAYOFWEEK(%3) IN (6, 7) THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 7 THEN -(2) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) > 0 AND  DAYOFWEEK(%2) = 6 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  ELSE %2 - %3 - 2 *  FLOOR((%2 - %3) / 7) +  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) < 0 THEN  CASE  WHEN  DAYOFWEEK(%3) = 7 THEN  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(2) + %3 -  CAST (%3 AS DATE ) ELSE -(2) + %3 -  CAST (%3 AS DATE ) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) = 1 THEN -(1) - (%2 -  CAST (%2 AS DATE )) ELSE -(2) END  END  ELSE  CASE  WHEN  DAYOFWEEK(%2) -  DAYOFWEEK(%3) = 0 THEN  CASE  WHEN  DAYOFWEEK(%3) IN (7, 1) THEN  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN -(1) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(2) - 1 + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) < 0 THEN -(2) ELSE 0 END  END  ELSE  CASE  WHEN  EXTRACT( HOUR  FROM %2) -  EXTRACT( HOUR  FROM %3) >= 0 THEN  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) <> 7 THEN 0 ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE -(1) +  CAST (%2 AS DATE ) + 1 - %2 END  END  END  ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) <> 7 THEN -(1) + %3 -  CAST (%3 AS DATE ) ELSE  CASE  WHEN  DAYOFWEEK(%3) = 1 AND  DAYOFWEEK(%2) = 7 THEN -(2) + %3 -  CAST (%3 AS DATE ) +  CAST (%2 AS DATE ) + 1 - %2 ELSE  CASE  WHEN  DAYOFWEEK(%3) <> 1 AND  DAYOFWEEK(%2) = 7 THEN -(1) +  CAST (%2 AS DATE ) + 1 - %2 ELSE 0 END  END  END  END  END  END  END ",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.OU_ORG_ID", "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_APPROVED_DATE", "physicalColumn:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header.FIRST_PR_LAST_APPRV_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Purchasing Po Header Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_PO_HEADER_DWH_Dim_Po_Header",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.DIM_PO_HEADER_DWH_Dim_Po_Header" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Purchasing Po Header Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Purchasing Po Header Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Purchasing Po Header Detail",
+        "numberOfElements" : 155092,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Po Header Gk" ],
+        "displayKey" : "Po Header Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Purchasing Po Header",
+        "levels" : [ "Dim - Purchasing Po Header Total", "Dim - Purchasing Po Header Detail" ]
+      } ]
+    }
+  }
+}

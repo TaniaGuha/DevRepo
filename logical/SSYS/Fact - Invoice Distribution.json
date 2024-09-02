@@ -1,0 +1,262 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Invoice Distribution",
+    "tags" : [ "Project:Lead2Invoice", "Project:SSYS_All_DWH", "Project:SSYS_Lead2Invoice" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Dist Accounted Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.DIST_ACCTD_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "Dist Entered Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.DIST_ENTERED_AMOUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "Dist Percent",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.DIST_PERCENT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "# of Invoice Distributions",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_LINE_GL_DIST_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "# of Invoice Lines",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "# of Invoices",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.INVOICE_HEADER_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "Dist Amount ILS",
+      "description" : "Dist Entered Amount Converted to ILS\r\n(Rate date is invoice_trx_date)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.DIST_AMOUNT_ILS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "Dist Amount USD",
+      "description" : "Dist Entered Amount Converted to USD\r\n(Rate date is invoice_trx_date)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution.DIST_AMOUNT_USD" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    }, {
+      "name" : "Dist Amt (Monthly Avg Rate)",
+      "description" : "\"Dist Accounted Amoun\" * \"Next Day Monthly Avg Rate From Functional Curr To USD\"",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS.Fact - GL Daily Rates.Next Day Monthly Average Conversion Rate To USD", "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Accounted Amount" ]
+        }
+      },
+      "aggregation" : {
+        "rule" : "NONE",
+        "aggregateByLevels" : [ "logicalLevel:SSYS.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS.Dim - Delivery.Dim - Delivery Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_AR_INV_DISTRIBUTION_DWH_Fact_Invoice_Distribution" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS.Dim - Sale Order Line.Dim - Sale Order Line Detail", "logicalLevel:SSYS.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS.Dim - GL Ledger.Dim - GL Ledger Detail", "logicalLevel:SSYS.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Detail", "logicalLevel:SSYS.Dim - Invoice Line.Dim - Invoice Line Detail", "logicalLevel:SSYS.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Detail", "logicalLevel:SSYS.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Detail", "logicalLevel:SSYS.Dim - Invoice Header.Dim - Invoice Header Detail", "logicalLevel:SSYS.Dim - Customer Account (Sold To).Dim - Customer Account (Sold To) Detail", "logicalLevel:SSYS.Dim - GL Period.Day Detail", "logicalLevel:SSYS.Dim - Invoice Distribution.Dim - Invoice Distribution Detail", "logicalLevel:SSYS.Dim - Opportunity Product Line.Dim - Opportunity Product Line Detail", "logicalLevel:SSYS.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS.Dim - Opportunity.Dim - Opportunity Detail", "logicalLevel:SSYS.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Detail", "logicalLevel:SSYS.Dim - Customer Contacts (Ship To).Dim - Customer Contacts (Ship To) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:General_Data_Security",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : " CAST (%1 AS CHARACTER ( 30 )) =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS.Dim - Operating Unit Org.Operating Unit Org Id", "variable:undeclaredVariables.OU" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Account (Sold To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Contacts (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Bill To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Customer Site (Ship To)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - GL Ledger",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - GL Period",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Invoice Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Invoice Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Invoice Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Invoice Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Opportunity Product Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Opportunity",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS.Dim - Sale Order Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

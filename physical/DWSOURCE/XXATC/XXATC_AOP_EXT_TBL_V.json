@@ -1,0 +1,57 @@
+{
+  "physicalTable" : {
+    "name" : "XXATC_AOP_EXT_TBL_V",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "CURRENCY_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "CUSTOMER_LOCATION",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "QUERY_CURRENCY",
+      "dataType" : "VARCHAR",
+      "length" : 100,
+      "nullable" : true
+    }, {
+      "name" : "UNIQUE_NUM",
+      "dataType" : "DOUBLE",
+      "length" : 15,
+      "nullable" : true
+    }, {
+      "name" : "BI_ORG_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 6,
+      "nullable" : true
+    }, {
+      "name" : "AOP_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 20,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 0
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:DWSOURCE.XXATC.ex_aop",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.QUERY_CURRENCY",
+        "rightColumn" : "physicalColumn:DWSOURCE.XXATC.ex_aop.QUERY_CURRENCY"
+      }, {
+        "leftColumn" : "physicalColumn:DWSOURCE.XXATC.XXATC_AOP_EXT_TBL_V.UNIQUE_NUM",
+        "rightColumn" : "physicalColumn:DWSOURCE.XXATC.ex_aop.UNIQUE_NUM"
+      } ]
+    } ]
+  }
+}

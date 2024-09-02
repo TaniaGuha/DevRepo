@@ -1,0 +1,74 @@
+{
+  "physicalTable": {
+    "name": "MRP_F_Forecast_Consumption",
+    "sourceTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_MRP_FRCST_CONSUMPTION_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Inv_organizations.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.D_Items",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.D_Items.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_ACTIVITY_ANALYSIS_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Activity_Analysis.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.INV_D_Product_Hierarchy",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_PRODUCT_HIERARCHY_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.INV_D_Product_Hierarchy.BI_ITEM_SET_CAT_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_CONSUMPTION_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Consumption_Sale_Orders.BI_CONSUMPTION_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecast_Items",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_FORECAST_ENTRY_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecast_Items.BI_FORECAST_ENTRY_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecast_date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_FORECAST_DATE_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecast_date.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts ",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_F_Forecast_Consumption.BI_FORECAST_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.MRP_D_Forecasts .BI_FORECAST_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Customer Service Case Close Date",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Case Close Date" ],
+    "logicalColumns" : [ {
+      "name" : "Case Close Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Month Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_MONTH_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Month",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_MONTH_NUMBER_IN_YEAR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Year",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Year Quarter",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_YEAR_QUARTER_YYYYQQ_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Year Month",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_YEAR_MONTH_YYYYMM_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "First Day of Q",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.FIRST_DAY_OF_Q" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Day Number In Week",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "WorkDay Indication (IL)",
+      "description" : "indicate if it is a workday in Israel",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IN (6, 7) THEN 1 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "WorkDay Indication (WW)",
+      "description" : "indicate if it is a workday world wide( meaning not Saturday or Sunday)",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN  NOT %1 IN (6, 7) THEN 1 ELSE 0 END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.DAY_NUMBER_IN_WEEK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Workdays Passed Till Current Date",
+      "description" : "Calculate the number of workdays passed from Time date to Current Date",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " TIMESTAMPDIFF( SQL_TSI_DAY ,  TIMESTAMPADD( SQL_TSI_DAY , -( DAYOFWEEK( TIMESTAMPADD( SQL_TSI_DAY , 6, %1)) - 1),  TIMESTAMPADD( SQL_TSI_DAY , 6, %1)),  TIMESTAMPADD( SQL_TSI_DAY , -( DAYOFWEEK( CURRENT_DATE ) - 1),  CURRENT_DATE )) / 7 * 5 +  MOD(7 -  DAYOFWEEK(%1), 6) +  CASE  WHEN  DAYOFWEEK( CURRENT_DATE ) - 2 = 5 THEN 5 ELSE  DAYOFWEEK( CURRENT_DATE ) - 1 END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.TIME_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Week Ending Date US",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_WEEK_ENDING_DATE_US" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Month-Year",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Case Close Year Month",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST ( MONTHNAME(%1) AS CHARACTER ( 3 )) || '-' ||  CAST (%2 AS CHARACTER ( 4 ))",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.TIME_DATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Quarter-Year",
+      "dataType" : "VARCHAR",
+      "sortBy" : "Case Close Year Quarter",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "'Q' ||  CAST (%1 AS CHARACTER ( 1 )) || '-' ||  CAST (%2 AS CHARACTER ( 4 ))",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_QUARTER", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.CALENDAR_YEAR_N" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    }, {
+      "name" : "Case Close Date Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "TIME_DIM_Case_Close_Date",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date.TIME_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Customer Service Case Close Date Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "TIME_DIM_Case_Close_Date",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.TIME_DIM_Close_Case_Date" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Customer Service Case Close Date.Dim - Customer Service Case Close Date Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Customer Service Case Close Date Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Customer Service Case Close Date Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Customer Service Case Close Date Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Case Close Date" ],
+        "displayKey" : "Case Close Date",
+        "additionalKeys" : [ [ "Case Close Date Gk" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Customer Service Case Close Date",
+        "levels" : [ "Dim - Customer Service Case Close Date Total", "Dim - Customer Service Case Close Date Detail" ]
+      } ]
+    }
+  }
+}

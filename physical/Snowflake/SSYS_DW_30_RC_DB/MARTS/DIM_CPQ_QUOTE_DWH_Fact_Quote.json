@@ -1,0 +1,206 @@
+{
+  "physicalTable" : {
+    "name" : "DIM_CPQ_QUOTE_DWH_Fact_Quote",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select q.QUOTE_GK,\r\nq.QUOTE_ID,\r\nnvl(QUOTE_LINE_ID, -1) as QUOTE_LINE_ID ,\r\nnvl(ql.QUOTE_LINE_GK,-1) as QUOTE_LINE_GK,\r\nq.SOURCE_QUOTE_GK,\r\nq.END_CUSTOMER_ACCOUNT_GK,\r\nq.THIRD_PARTY_ACCOUNT_GK,\r\nq.CHANNEL_ACCOUNT_GK,\r\nq.OPPORTUNITY_GK,\r\nq.OPERATING_UNIT_GK,\r\nq.PRICE_BOOK_GK,\r\nq.PRIMARY_CONTACT_GK,\r\nq.PRIMARY, --ind\r\nq.UPGRADE_OPPORTUNITY_TYPE,--ind\r\nq.ADDITIONAL_DISCOUNT_PERCENT,\r\nq.COUNT_DISCOUNT_PROGRAM,\r\nq.TAX,\r\nq.LEASE_TERM,\r\nq.TARGET_CUSTOMER_AMOUNT,\r\nq.ADDITIONAL_DISCOUNT_AVG_PRCT,\r\nq.CURRENCY_CODE,\r\nnvl(ql.RELATED_IB_GK,-1) as RELATED_IB_GK,\r\nnvl(ql.REQUIRED_BY_LINE_GK,-1) as REQUIRED_BY_LINE_GK,\r\nnvl(ql.SOURCE_QUOTE_LINE_GK,-1) as SOURCE_QUOTE_LINE_GK,\r\nnvl(ql.PRODUCT_ITEM_GK,-1) as PRODUCT_ITEM_GK,\r\nnvl(ql.QUOTE_LINE_QUANTITY,0) as QUOTE_LINE_QUANTITY,\r\nnvl(ql.LIST_TOTAL,0) as LIST_TOTAL,\r\nnvl(ql.NET_TOTAL,0) as NET_TOTAL,\r\nnvl(ql.ADDITIONAL_DISCOUNT_AMOUNT,0) as ADDITIONAL_DISCOUNT_AMOUNT\r\n\r\nfrom dim_cpq_quote_dwh q,\r\nfact_cpq_quote_line_dwh ql\r\nwhere q.quote_gk = ql.quote_gk (+)\r\nand q.quote_gk > 0"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "CURRENCY_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 5,
+      "nullable" : true
+    }, {
+      "name" : "QUOTE_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : false
+    }, {
+      "name" : "QUOTE_ID",
+      "dataType" : "VARCHAR",
+      "length" : 18,
+      "nullable" : false
+    }, {
+      "name" : "QUOTE_LINE_ID",
+      "dataType" : "VARCHAR",
+      "length" : 18,
+      "nullable" : true
+    }, {
+      "name" : "QUOTE_LINE_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "SOURCE_QUOTE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "END_CUSTOMER_ACCOUNT_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "THIRD_PARTY_ACCOUNT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "CHANNEL_ACCOUNT_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32768,
+      "nullable" : true
+    }, {
+      "name" : "OPPORTUNITY_GK",
+      "dataType" : "VARCHAR",
+      "length" : 32,
+      "nullable" : true
+    }, {
+      "name" : "OPERATING_UNIT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRICE_BOOK_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRIMARY_CONTACT_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRIMARY",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "UPGRADE_OPPORTUNITY_TYPE",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ADDITIONAL_DISCOUNT_PERCENT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "COUNT_DISCOUNT_PROGRAM",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "TAX",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "LEASE_TERM",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "TARGET_CUSTOMER_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ADDITIONAL_DISCOUNT_AVG_PRCT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "RELATED_IB_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "REQUIRED_BY_LINE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "SOURCE_QUOTE_LINE_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "PRODUCT_ITEM_GK",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "QUOTE_LINE_QUANTITY",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "LIST_TOTAL",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "NET_TOTAL",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ADDITIONAL_DISCOUNT_AMOUNT",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Dim_Charges_Quote",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Dim_Charges_Quote.QUOTE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Dim_Quote",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Dim_Quote.QUOTE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_Channel_Account_SFDC",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.CHANNEL_ACCOUNT_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_Channel_Account_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_End_Cust_Account_SFDC",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.END_CUSTOMER_ACCOUNT_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_SFDC_DWH_End_Cust_Account_SFDC.SFDC_CUSTOMER_ACCOUNT_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.OPPORTUNITY_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_LINE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Charges_Quote_Line.QUOTE_LINE_GK"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Quote_Line",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CPQ_QUOTE_DWH_Fact_Quote.QUOTE_LINE_GK",
+        "rightColumn" : "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CPQ_QUOTE_LINE_DWH_Dim_Quote_Line.QUOTE_LINE_GK"
+      } ]
+    } ]
+  }
+}

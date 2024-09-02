@@ -1,0 +1,47 @@
+{
+  "physicalTable": {
+    "name": "PO Releases Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXPO_RELEASES_V",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AP Suppliers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Releases Fact.SUPPLIER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Releases Fact.RELEASE_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Releases Fact.OPERATING_UNIT_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Releases Fact.PO_RELEASE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Headers Dim.PURCHASE_ORDER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Releases Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.PO Releases Fact.PO_RELEASE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Releases Dim.PO_RELEASE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

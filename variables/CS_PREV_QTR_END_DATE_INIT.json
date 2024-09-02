@@ -1,0 +1,24 @@
+{
+  "initBlock" : {
+    "name" : "CS_PREV_QTR_END_DATE_INIT",
+    "description" : "Selects previous quarter end date",
+    "tags" : [ "Project:CS_PROJECT" ],
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:DW.Connection Pool",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select time_date from TIME_DIM where calendar_year_quarter_yyyyqq_c = (select \r\ncase when calendar_quarter = 1 then to_char(calendar_year_n-1) ||'Q4'  \r\n  else to_char(calendar_year_n) ||'Q'||to_char(calendar_quarter-1) end prev_quarter\r\nFrom TIME_DIM\r\nWHERE  1=1\r\nand time_date =  TRUNC(SYSDATE)) and last_day_in_qtr_indicator = 1"
+    } ],
+    "variables" : [ {
+      "name" : "CS_PREV_QTR_END_DATE_V",
+      "description" : "Selects previous quarter end date",
+      "value" : " TIMESTAMP '2024-03-31 00:00:00'"
+    } ],
+    "runSchedule" : {
+      "interval" : 1,
+      "intervalUnit" : "HOURS",
+      "startingOn" : "2016-01-12 10:50:56"
+    },
+    "disable" : false
+  }
+}

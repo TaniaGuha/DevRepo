@@ -1,0 +1,23 @@
+{
+  "physicalTable": {
+    "name": "DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_SITE_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Buyer_Supplier_Site",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_SUPPLIER_SITE_DWH_Dim_Supplier_Site.SITE_VS_BUYER_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_PO_BUYER_DWH_Dim_Buyer_Supplier_Site.BUYER_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "SUPPLIER_SITE_GK"
+      ]
+    ]
+  }
+}

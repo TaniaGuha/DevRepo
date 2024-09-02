@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "AP Suppliers Dim",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAP_SUPPLIERS_V",
+    "overrideSourceCacheSetting": true,
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.PO Vendor Sites Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AP Suppliers Dim.SUPPLIER_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.PO Vendor Sites Dim.VENDOR_ID"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "SUPPLIER_ID"
+      ]
+    ]
+  }
+}

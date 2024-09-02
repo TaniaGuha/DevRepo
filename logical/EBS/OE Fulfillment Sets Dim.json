@@ -1,0 +1,100 @@
+{
+  "logicalTable" : {
+    "name" : "OE Fulfillment Sets Dim",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Header Id" ],
+    "logicalColumns" : [ {
+      "name" : "Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Fulfillment Sets Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Fulfillment Sets Dim.HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "OE Fulfillment Sets Dim Detail"
+    }, {
+      "name" : "Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Fulfillment Sets Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Fulfillment Sets Dim.LINE_ID" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Fulfillment Set",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Fulfillment Sets Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Fulfillment Sets Dim.FULFILLMENT_SET" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Fulfillment Set Count",
+      "description" : "Distinct Count of Fulfillment Sets",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "OE Fulfillment Sets Dim",
+          "physicalExpression" : {
+            "expressionTemplate" : " COUNT(DISTINCT %1)",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.OE Fulfillment Sets Dim.FULFILLMENT_SET" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "OE Fulfillment Sets Dim",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.OE Fulfillment Sets Dim" ]
+      },
+      "dataGranularity" : [ "logicalLevel:EBS.OE Fulfillment Sets Dim.OE Fulfillment Sets Dim Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "OE Fulfillment Sets Dim Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "OE Fulfillment Sets Dim Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "OE Fulfillment Sets Dim Detail",
+        "numberOfElements" : 1000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Header Id" ],
+        "displayKey" : "Header Id"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "OE Fulfillment Sets Dim",
+        "levels" : [ "OE Fulfillment Sets Dim Total", "OE Fulfillment Sets Dim Detail" ]
+      } ]
+    }
+  }
+}

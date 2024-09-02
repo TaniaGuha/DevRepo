@@ -1,0 +1,24 @@
+{
+  "initBlock" : {
+    "name" : "CS_PREV_QTR_START_DATE_INIT",
+    "description" : "Selects previous quarter start date",
+    "tags" : [ "Project:CS_PROJECT" ],
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:DW.Connection Pool",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select time_date from TIME_DIM where calendar_year_quarter_yyyyqq_c = (select \r\ncase when calendar_quarter = 1 then to_char(calendar_year_n-1) ||'Q4'  \r\n  else to_char(calendar_year_n) ||'Q'||to_char(calendar_quarter-1) end prev_quarter_start_date\r\nFrom TIME_DIM\r\nWHERE  1=1\r\nand time_date =  TRUNC(SYSDATE))and first_day_of_q_ind = 1"
+    } ],
+    "variables" : [ {
+      "name" : "CS_PREV_QTR_START_DATE_V",
+      "description" : "Sets previous quarter start date",
+      "value" : " TIMESTAMP '2024-01-01 00:00:00'"
+    } ],
+    "runSchedule" : {
+      "interval" : 1,
+      "intervalUnit" : "HOURS",
+      "startingOn" : "2016-01-12 10:49:06"
+    },
+    "disable" : false
+  }
+}

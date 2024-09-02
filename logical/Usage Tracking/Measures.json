@@ -1,0 +1,207 @@
+{
+  "logicalTable" : {
+    "name" : "Measures",
+    "tags" : [ "Project:ADMIN" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Query Count",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.QUERY_TEXT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT"
+      }
+    }, {
+      "name" : "Row Count",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.ROW_COUNT" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Total Time Seconds",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.TOTAL_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Number DB Query",
+      "description" : "The number of queries that were submitted to back-end databases to satisfy the logical query request. For successful queries (SuccessFlag = 0) this number is 1 or greater",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.NUM_DB_QUERY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Number Cache Inserted",
+      "description" : "Indicates the number of times that the query generated a cache entry.",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.NUM_CACHE_INSERTED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Number Cache Hits",
+      "description" : "Indicates the number of times that the cache result returned for the query. NUM_CACHE_HITS is a 32-bit integer (or a 10-digit integer).",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.NUM_CACHE_HITS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Response Time Seconds",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.RESP_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Compile Time Seconds",
+      "description" : "The time in seconds that is required to compile the query. The number for COMPILE_TIME_SEC is included in TOTAL_TIME_SEC",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.COMPILE_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Cumulative DB Time Seconds",
+      "description" : "The total amount of time in seconds that the BI Server waited for back-end physical databases on behalf of a logical query",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.CUM_DB_TIME_SEC" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Cumulative Number DB Rows",
+      "description" : "The total number of rows that are returned by the back-end databases",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "LOGICAL_QUERIES",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES.CUM_NUM_DB_ROW" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "LOGICAL_QUERIES",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Usage Tracking.USAGE_TRACKING.LOGICAL_QUERIES" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Usage Tracking.Time",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Usage Tracking.Topic",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:Usage Tracking.User",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

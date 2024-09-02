@@ -1,0 +1,77 @@
+{
+  "initBlock" : {
+    "name" : "EBS_CURRENT_GL_PERIOD",
+    "tags" : [ "Project:EBS_LIVE" ],
+    "type" : "GLOBAL",
+    "connectionPool" : "connectionPool:EBSPROD.EBSPROD",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT \r\nPERIOD_DAY\r\n,PERIOD_START_DATE\r\n,PERIOD_END_DATE\r\n,PERIOD_YEAR\r\n,PERIOD_NUMBER\r\n,PERIOD_YEAR_NAME\r\n,PERIOD_NAME\r\n,QUARTER_YEAR_NAME\r\n,QUARTER_NUMBER\r\n,QUARTER_RANK\r\n,((PERIOD_YEAR * 12) + PERIOD_NUMBER) as MONTH_RANK\r\n,to_char(PERIOD_DAY,'YYYY-MON-DD') as AGENT_RUN_DATE\r\n,to_char(PERIOD_DAY - 6,'YYYY-MON-DD') as LAST_WEEK_DATE\r\n,period_day - ((to_char(period_day, 'D'))-1) as EBS_CURR_WEEK_START_TIMESTAMP\r\n,period_day + ((8-((1*60)/(24*60*60))) - cast(to_char(period_day, 'D') as int)) as EBS_CURR_WEEK_END_TIMESTAMP\r\n,trunc(period_day - ((to_char(period_day, 'D'))-1)) as EBS_CURR_WEEK_START_DATE\r\n,trunc(period_day + ((8-((1*60)/(24*60*60))) - cast(to_char(period_day, 'D') as int))) as EBS_CURR_WEEK_END_DATE\r\n,(to_char(period_day, 'YYYY') ||'-'|| to_char(period_day, 'WW')) as EBS_CURR_YEAR_WEEK\r\nFROM xxbi.XXGL_PERIODS_V\r\nWHERE PERIOD_DAY = TRUNC(SYSDATE)\r\n"
+    } ],
+    "variables" : [ {
+      "name" : "EBS_CURR_PERIOD_DAY",
+      "value" : " TIMESTAMP '2024-05-23 00:00:00'"
+    }, {
+      "name" : "EBS_CURR_PERIOD_START_DATE",
+      "value" : " TIMESTAMP '2024-05-01 00:00:00'"
+    }, {
+      "name" : "EBS_CURR_PERIOD_END_DATE",
+      "value" : " TIMESTAMP '2024-05-31 00:00:00'"
+    }, {
+      "name" : "EBS_CURR_YEAR",
+      "value" : "2024.0d"
+    }, {
+      "name" : "EBS_CURR_PERIOD_NUMBER",
+      "value" : "5.0d"
+    }, {
+      "name" : "EBS_CURR_PERIOD_MONTH_NUMBER",
+      "value" : "'2024-05'"
+    }, {
+      "name" : "EBS_CURR_PERIOD_NAME",
+      "value" : "'MAY-24'"
+    }, {
+      "name" : "EBS_CURR_QUARTER",
+      "value" : "'2024-Q2'"
+    }, {
+      "name" : "EBS_CURR_QUARTER_NUMBER",
+      "value" : "2.0d"
+    }, {
+      "name" : "EBS_CURR_QUARTER_RANK",
+      "value" : "62.0d"
+    }, {
+      "name" : "EBS_CURR_MONTH_RANK",
+      "value" : "24293.0d"
+    }, {
+      "name" : "AGENT_RUN_DATE",
+      "value" : "'2024-MAY-23'"
+    }, {
+      "name" : "LAST_WEEK_DATE",
+      "value" : "'2024-MAY-17'"
+    }, {
+      "name" : "EBS_CURR_WEEK_START_TIMESTAMP",
+      "description" : "Timestamp representing the first second of Sunday of the current week",
+      "value" : " TIMESTAMP '2024-05-19 00:00:00'"
+    }, {
+      "name" : "EBS_CURR_WEEK_END_TIMESTAMP",
+      "description" : "Timestamp representing the last second on Saturday of the current week",
+      "value" : " TIMESTAMP '2024-05-25 23:59:00'"
+    }, {
+      "name" : "EBS_CURR_WEEK_START_DATE",
+      "description" : "Date representing Sunday (start) of the current week",
+      "value" : " TIMESTAMP '2024-05-19 00:00:00'"
+    }, {
+      "name" : "EBS_CURR_WEEK_END_DATE",
+      "description" : "Date representing upcoming Saturday (end) of the current week",
+      "value" : " TIMESTAMP '2024-05-25 00:00:00'"
+    }, {
+      "name" : "EBS_CURR_YEAR_WEEK",
+      "value" : "'2024-21'"
+    } ],
+    "runSchedule" : {
+      "interval" : 2,
+      "intervalUnit" : "HOURS",
+      "startingOn" : "2014-10-16 00:00:01"
+    },
+    "disable" : false
+  }
+}

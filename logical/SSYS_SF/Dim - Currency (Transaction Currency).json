@@ -1,0 +1,135 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Currency (Transaction Currency)",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Currency Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Detail"
+    }, {
+      "name" : "Currency Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.CURRENCY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Detail"
+    }, {
+      "name" : "Currency Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.CURRENCY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Detail"
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.ENABLED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Detail"
+    }, {
+      "name" : "Iso Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.ISO_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Detail"
+    }, {
+      "name" : "Issuing Territory Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.ISSUING_TERRITORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Currency Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_CURRENCY_DWH_Dim_Transaction_Currency",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'Y' AND %2 = 'Y'",
+        "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.CURRENCY_FLAG", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CURRENCY_DWH_Dim_Transaction_Currency.ENABLED_FLAG" ]
+      },
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Currency Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Currency Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Currency Detail",
+        "numberOfElements" : 15,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Currency Gk" ],
+        "displayKey" : "Currency Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Currency (Transaction Currency)",
+        "levels" : [ "Dim - Currency Total", "Dim - Currency Detail" ]
+      } ]
+    }
+  }
+}

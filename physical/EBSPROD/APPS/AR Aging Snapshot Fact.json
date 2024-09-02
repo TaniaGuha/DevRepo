@@ -1,0 +1,71 @@
+{
+  "physicalTable": {
+    "name": "AR Aging Snapshot Fact",
+    "sourceTable": "physicalTable:EBSPROD.APPS.XXAR_AGING_T",
+    "joins": [      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Aging Snapshot Time Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.SNAPSHOT_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Time Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Invoice Headers Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.INVOICE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Invoice Headers Dim.TRANSACTION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Receivable Code Combination Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.AR_CODE_COMBINATION_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Receivable Code Combination Dim.CODE_COMBINATION_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.AR Transaction Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.AR_PAYMENT_SCHEDULE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.AR Transaction Dim.PAYMENT_SCHEDULE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.GL Periods Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.GL_DATE",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.GL Periods Dim.PERIOD_DAY"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.BILL_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Bill-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To)",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.SHIP_TO_SITE_USE_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.HZ Customer Sites Dim(Ship-To).SITE_USE_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:EBSPROD.APPS.Operating Units Dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:EBSPROD.APPS.AR Aging Snapshot Fact.ORG_ID",
+            "rightColumn": "physicalColumn:EBSPROD.APPS.Operating Units Dim.ORG_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

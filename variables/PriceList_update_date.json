@@ -1,0 +1,21 @@
+{
+  "initBlock" : {
+    "name" : "PriceList_update_date",
+    "tags" : [ "Project:SSYS_Price_List" ],
+    "type" : "SESSION",
+    "connectionPool" : "connectionPool:DW.DW_Setup",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "select tochar(sysdate,'yyyy-mm-dd') from dual;"
+    } ],
+    "variables" : [ {
+      "name" : "plasofdt",
+      "enableUsersToSetValue" : true,
+      "securitySensitive" : false
+    } ],
+    "disable" : false,
+    "queryReturnsVariableNamesAndValues" : false,
+    "allowDeferredExecution" : false,
+    "cacheQueryResult" : true
+  }
+}

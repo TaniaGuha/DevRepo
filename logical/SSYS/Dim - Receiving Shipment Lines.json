@@ -1,0 +1,1230 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Receiving Shipment Lines",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Shipment Line Id" ],
+    "logicalColumns" : [ {
+      "name" : "Category Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.CATEGORY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Charge Account Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.CHARGE_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Charge Account Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.CHARGE_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Cost Group Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.COST_GROUP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Deliver To Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.DELIVER_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Deliver To Person Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.DELIVER_TO_PERSON_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Delivery Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.DELIVERY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Destination Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.DESTINATION_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "From Inv Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.FROM_INV_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "From Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.FROM_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "From Ou Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.FROM_OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Item Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.ITEM_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Item Revision",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.ITEM_REVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Line Num",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.LINE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Locator Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.LOCATOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Master Org Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.MASTER_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Oe Order Header Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.OE_ORDER_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Oe Order Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.OE_ORDER_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Oe Order Line Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.OE_ORDER_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Oe Order Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.OE_ORDER_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Packing Slip",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PACKING_SLIP" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Distribution Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_DISTRIBUTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Header Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Line Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Line Location Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_LINE_LOCATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Line Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_LINE_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Release Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_RELEASE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Po Release Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PO_RELEASE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Primary Unit Of Measure",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.PRIMARY_UNIT_OF_MEASURE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Quantity Received",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_RECEIVED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Quantity Shipped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_SHIPPED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Req Distribution Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.REQ_DISTRIBUTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Requester Employee Id",
+      "dataType" : "INT",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.REQUESTER_EMPLOYEE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Requisition Header Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.REQUISITION_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Requisition Line Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.REQUISITION_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Requisition Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.REQUISITION_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Routing Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.ROUTING_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Ship From Org Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIP_FROM_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Ship To Location Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIP_TO_LOCATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Ship To Org Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIP_TO_ORG_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Shipment Header Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_HEADER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Shipment Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Shipment Line Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_LINE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Shipment Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Shipment Line Status Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_LINE_STATUS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Shipment Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SHIPMENT_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Source Document Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SOURCE_DOCUMENT_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "To Inv Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.TO_INV_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "To Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.TO_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "To Ou Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.TO_OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "To Subinventory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.TO_SUBINVENTORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Unit Of Measure",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.UNIT_OF_MEASURE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Vendor Item Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.VENDOR_ITEM_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Vendor Lot Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.VENDOR_LOT_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Active Ind",
+      "dataType" : "CHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_ACTIVE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Etl Insert Dt",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_ETL_INSERT_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Etl Update Dt",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_ETL_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Integration Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_INTEGRATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Src Create By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_SRC_CREATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Src Create Dt",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_SRC_CREATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Src Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_SRC_UPDATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "X Src Update Dt",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.X_SRC_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Quantity Pending Delivery",
+      "description" : "Shipped from source org, received but not delivered to inventory.\r\nThis quantity is taken from RCV_SUPPLY.Quantity.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_PENDING_DELIVERY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Quantity Delivered",
+      "description" : "Quantity Received – Quantity Pending Delivery",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_DELIVERED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Quantity In Transit",
+      "description" : "Quantity Shipped - Quantity Received + Quantity Pending Delivery",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 - %2 + %3",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_SHIPPED", "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_RECEIVED", "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.QUANTITY_PENDING_DELIVERY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Lot Numbers First In List",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.LOT_NUMBERS_FIRST_IN_LIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Lot Numbers List",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.LOT_NUMBERS_LIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Mmt Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.MMT_TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Serial Numbers First In List",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SERIAL_NUMBERS_FIRST_IN_LIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    }, {
+      "name" : "Serial Numbers List",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines.SERIAL_NUMBERS_LIST" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Receiving Shipment Lines Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.FACT_RCV_SHIPMENT_LINES_DWH_Dim_Receiving_Shipment_Lines" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Receiving Shipment Lines Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Receiving Shipment Lines Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Receiving Shipment Lines Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Shipment Line Id" ],
+        "displayKey" : "Shipment Line Id",
+        "additionalKeys" : [ [ "Shipment Line Gk" ] ]
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Receiving Shipment Lines",
+        "levels" : [ "Dim - Receiving Shipment Lines Total", "Dim - Receiving Shipment Lines Detail" ]
+      } ]
+    }
+  }
+}

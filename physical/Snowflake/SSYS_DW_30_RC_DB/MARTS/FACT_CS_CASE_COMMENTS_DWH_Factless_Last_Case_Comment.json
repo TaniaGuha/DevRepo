@@ -1,0 +1,18 @@
+{
+  "physicalTable": {
+    "name": "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_DWH_Dim_Case",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.CASE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_CS_CASE_DWH_Dim_Case.CASE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

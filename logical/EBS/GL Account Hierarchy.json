@@ -1,0 +1,162 @@
+{
+  "logicalTable" : {
+    "name" : "GL Account Hierarchy",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "Account Parent Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.ROOT_FLEX_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Root Flex Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.ROOT_FLEX_NAME" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Account Parent",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.ROOT_FLEX_VALUE_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Account Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.LEVEL1_FLEX_VALUE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Account",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.LEVEL1_DESCRIPTION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Enabled Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.ENABLED_FLAG" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Start Date Active",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.START_DATE_ACTIVE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "End Date Active",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.END_DATE_ACTIVE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Chart of Accounts",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.CHART_OF_ACCOUNTS" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Parent Child Attribute",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "GL Account Hierarchy",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.PARENT_CHILD_ATTRIBUTE" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "GL Account Hierarchy",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:EBSPROD.APPS.GL Account Hierarchy" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "dataFilter" : {
+        "expressionTemplate" : "%1 = 'XXGL_ACCOUNT_SEG'",
+        "expressionObjects" : [ "physicalColumn:EBSPROD.APPS.GL Account Hierarchy.ROOT_FLEX_NAME" ]
+      },
+      "distinctValues" : false
+    } ],
+    "primaryKey" : [ "Account Number" ]
+  }
+}

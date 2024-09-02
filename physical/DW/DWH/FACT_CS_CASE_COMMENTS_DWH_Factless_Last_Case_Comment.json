@@ -1,0 +1,15 @@
+{
+  "physicalTable": {
+    "name": "FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment",
+    "sourceTable": "physicalTable:DW.DWH.FACT_CS_CASE_COMMENTS_DWH",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.FACT_CS_CASE_DWH_Dim_Case",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_COMMENTS_DWH_Factless_Last_Case_Comment.CASE_GK",
+            "rightColumn": "physicalColumn:DW.DWH.FACT_CS_CASE_DWH_Dim_Case.CASE_GK"
+          }
+        ]
+      }
+    ]
+  }
+}

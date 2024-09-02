@@ -1,0 +1,552 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Forecast Dates",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Forecast Transaction Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Transaction Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.TRANSACTION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Forecast Transaction Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.FORECAST_TRANSACTION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Forecast Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.FORECAST_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Forecast Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.FORECAST_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Inventory Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.INVENTORY_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Organization Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.ORGANIZATION_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Inventory Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.INVENTORY_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Master Item Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.MASTER_ITEM_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Forecast Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.FORECAST_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Rate End Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.RATE_END_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "No of Buckets",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.NO_OF_BUCKETS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Original Forecast Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.ORIGINAL_FORECAST_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Current Forecast Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.CURRENT_FORECAST_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Total Forecast Quantity",
+      "description" : "No of Buckets * Original Forecast Quantity",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.TOTAL_FORECAST_QUANTITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Bucket Type Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.BUCKET_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Bucket Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.BUCKET_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Confidence Percentage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.CONFIDENCE_PERCENTAGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Demand Class Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.DEMAND_CLASS_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Demand Class",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.DEMAND_CLASS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "End Item Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.END_ITEM_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Comments",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.COMMENTS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Origination Type Code",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.ORIGINATION_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Origination Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.ORIGINATION_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Source Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.SOURCE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Source Forecast Designator",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.SOURCE_FORECAST_DESIGNATOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Source Line Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.SOURCE_LINE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Source Organization Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.SOURCE_ORGANIZATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.CREATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates.LAST_UPDATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Forecast Dates Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "F_FORECAST_DATES_DWH_Dim_Forecast_Dates",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW.DWH.F_FORECAST_DATES_DWH_Dim_Forecast_Dates" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Forecast Dates Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Forecast Dates Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Forecast Dates Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Forecast Transaction Gk" ],
+        "displayKey" : "Forecast Transaction Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Forecast Dates",
+        "levels" : [ "Dim - Forecast Dates Total", "Dim - Forecast Dates Detail" ]
+      } ]
+    }
+  }
+}

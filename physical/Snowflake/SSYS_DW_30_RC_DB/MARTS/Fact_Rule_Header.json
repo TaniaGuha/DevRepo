@@ -1,0 +1,26 @@
+{
+  "physicalTable": {
+    "name": "Fact_Rule_Header",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_PLUPDT_RULE_HEADER_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_Rule_Header.LIST_HEADER_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_PriceList.LIST_HEADER_ID"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Rule_Header",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Fact_Rule_Header.RULE_ID",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.Dim_Rule_Header.RULE_ID"
+          }
+        ]
+      }
+    ]
+  }
+}

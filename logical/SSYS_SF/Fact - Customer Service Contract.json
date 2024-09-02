@@ -1,0 +1,211 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Customer Service Contract",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Service Contracts",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item Material.Dim - Item Material Total", "logicalLevel:SSYS_SF.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Total", "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "# of Service Contracts (Total)",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.CONTRACT_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Item Material.Dim - Item Material Total", "logicalLevel:SSYS_SF.Dim - Asset Install Period.Dim - Asset Install Period Total", "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Total" ]
+      }
+    }, {
+      "name" : "Order List Price (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_LIST_PRICE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "Order Total Price (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_TOTAL_PRICE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "Order Unit Price (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_UNIT_PRICE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "Order List Price ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  LOOKUP( SPARSE %2, 1,  CURRENT_DATE , %3, 'USD')",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_LIST_PRICE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_CURRENCY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "Order Total Price ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  LOOKUP( SPARSE %2, 1,  CURRENT_DATE , %3, 'USD')",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_TOTAL_PRICE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_CURRENCY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    }, {
+      "name" : "Order Unit Price ($)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 *  LOOKUP( SPARSE %2, 1,  CURRENT_DATE , %3, 'USD')",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_UNIT_PRICE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_GL_DAILY_RATES_DWH_Lkp_Currency_Daily_Rates_Details.CONVERSION_RATE", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract.ORDER_CURRENCY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Contacts (Bill To).Dim - Customer Contacts (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Service Contract (Warranty).Dim - Service Contract (Warranty) Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_SERVICE_CONTRACT_DWH_Fact_Service_Contract" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Asset.Dim - Asset Detail", "logicalLevel:SSYS_SF.Dim - Asset Install Period.Dim - Asset Install Period Day", "logicalLevel:SSYS_SF.Dim - Close Date.Dim - Close Date Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Account).Dim - Customer Account (Account) Detail", "logicalLevel:SSYS_SF.Dim - Customer Account (Asset End Customer).Dim - Customer Account (Asset End Customer) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Install).Dim - Customer Site (Install) Detail", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Detail", "logicalLevel:SSYS_SF.Dim - GC Material.Dim - GC Material Total", "logicalLevel:SSYS_SF.Dim - GC Printer Job.Dim - GC Printer Job Total", "logicalLevel:SSYS_SF.Dim - GC Printer.Dim - GC Printer Total", "logicalLevel:SSYS_SF.Dim - GC User.Dim - GC User Total", "logicalLevel:SSYS_SF.Dim - Item (Asset Product).Dim - Item (Asset Product) Detail", "logicalLevel:SSYS_SF.Dim - Item Material.Dim - Item Material Total", "logicalLevel:SSYS_SF.Dim - Open Date.Dim - Open Date Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - PPU Material Line.Dim - PPU Material Line Total", "logicalLevel:SSYS_SF.Dim - Printer Daily Activity Date.Dim - Printer Job Daily Activity Date Day", "logicalLevel:SSYS_SF.Dim - Service Contract (Current Contract).Dim - Service Contract (Current Contract) Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Next Contract).Dim - Service Contract (Next Contract) Detail", "logicalLevel:SSYS_SF.Dim - Service Contract (Previous Contract).Dim - Service Contract (Previous Contract) Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Asset",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Close Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Account)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Account (Asset End Customer)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Customer Site (Install)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Asset Product)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Open Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Printer Daily Activity Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Service Contract (Current Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Service Contract (Next Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Service Contract (Previous Contract)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

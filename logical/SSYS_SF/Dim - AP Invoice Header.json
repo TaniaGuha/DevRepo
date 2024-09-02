@@ -1,0 +1,2064 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - AP Invoice Header",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Invoice Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Accts Pay Code Combination Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ACCTS_PAY_CODE_COMBINATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Amount Applicable To Discount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.AMOUNT_APPLICABLE_TO_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Amount Paid",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.AMOUNT_PAID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Application Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.APPLICATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Approval Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.APPROVAL_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Approval Iteration",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.APPROVAL_ITERATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Approval Ready Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.APPROVAL_READY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Approved Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.APPROVED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute10",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE10" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute11",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE11" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute12",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE12" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute15",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE15" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute4",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE4" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute5",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE5" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute6",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE6" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute7",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE7" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute8",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE8" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute9",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE9" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Bank Charge Bearer",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.BANK_CHARGE_BEARER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Base Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.BASE_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Batch Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.BATCH_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Cancelled Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CANCELLED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Cancelled By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CANCELLED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Cancelled Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CANCELLED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Control Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CONTROL_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Created By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CREATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Creation Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CREATION_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Credited Invoice Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CREDITED_INVOICE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Cust Registration Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.CUST_REGISTRATION_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Delivery Channel Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DELIVERY_CHANNEL_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Disc Is Inv Less Tax Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DISC_IS_INV_LESS_TAX_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Discount Amount Taken",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DISCOUNT_AMOUNT_TAKEN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Distribution Set Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DISTRIBUTION_SET_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Doc Category Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DOC_CATEGORY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Doc Sequence Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DOC_SEQUENCE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Doc Sequence Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.DOC_SEQUENCE_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Earliest Settlement Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EARLIEST_SETTLEMENT_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Exchange Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EXCHANGE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Exchange Rate To Functional Currency",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EXCHANGE_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Exchange Rate Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EXCHANGE_RATE_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Rate To Usd",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.RATE_TO_USD" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Exclude Freight From Discount",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EXCLUDE_FREIGHT_FROM_DISCOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Exclusive Payment Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EXCLUSIVE_PAYMENT_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "External Bank Account Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.EXTERNAL_BANK_ACCOUNT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Force Revalidation Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.FORCE_REVALIDATION_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Gl Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GL_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Gl Date Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GL_DATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Gl Ledger Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GL_LEDGER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Global Attribute1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GLOBAL_ATTRIBUTE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Global Attribute13",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GLOBAL_ATTRIBUTE13" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Global Attribute14",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GLOBAL_ATTRIBUTE14" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Global Attribute Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GLOBAL_ATTRIBUTE_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Goods Received Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.GOODS_RECEIVED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Currency Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_CURRENCY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CAST (%1 AS DATE )",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Datetime",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Fully Paid Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_FULLY_PAID_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Invoice Type Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INVOICE_TYPE_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Is Ssys Expense",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.IS_SSYS_EXPENSE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Last Update Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.LAST_UPDATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Last Update Login",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.LAST_UPDATE_LOGIN" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Last Updated By",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.LAST_UPDATED_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Legal Entity Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.LEGAL_ENTITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Net Of Retainage Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.NET_OF_RETAINAGE_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Oic Invoice Number",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.OIC_INVOICE_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Ou Org Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.OU_ORG_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Ou Org Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.OU_ORG_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Paid On Behalf Employee Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAID_ON_BEHALF_EMPLOYEE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Party Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PARTY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Party Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PARTY_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Pay Awt Group Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAY_AWT_GROUP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Pay Curr Invoice Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAY_CURR_INVOICE_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Pay Group Lookup Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAY_GROUP_LOOKUP_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Pay Proc Trxn Type Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAY_PROC_TRXN_TYPE_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Cross Rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_CROSS_RATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Cross Rate Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_CROSS_RATE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Currency Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_CURRENCY_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Currency Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_CURRENCY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Function",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_FUNCTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Method Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_METHOD_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Reason Code",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_REASON_CODE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Payment Status Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PAYMENT_STATUS_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Po Matched Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PO_MATCHED_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Prepay Flag",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PREPAY_FLAG" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Product Table",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.PRODUCT_TABLE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Quick Credit",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.QUICK_CREDIT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Quick Po Header Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.QUICK_PO_HEADER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Reference 1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REFERENCE_1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Reference Key1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REFERENCE_KEY1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Reference Key2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REFERENCE_KEY2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Relationship Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.RELATIONSHIP_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remit To Supplier Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMIT_TO_SUPPLIER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remit To Supplier Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMIT_TO_SUPPLIER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remit To Supplier Site",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMIT_TO_SUPPLIER_SITE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remit To Supplier Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMIT_TO_SUPPLIER_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remittance Message1",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMITTANCE_MESSAGE1" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remittance Message2",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMITTANCE_MESSAGE2" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Remittance Message3",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REMITTANCE_MESSAGE3" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Requester Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REQUESTER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Requester Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.REQUESTER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Self Assessed Tax Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.SELF_ASSESSED_TAX_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Set Of Books Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.SET_OF_BOOKS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Source",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.SOURCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Supplier Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.SUPPLIER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Supplier Site Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.SUPPLIER_SITE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Supplier Tax Invoice Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.SUPPLIER_TAX_INVOICE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Tax Invoice Internal Seq",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TAX_INVOICE_INTERNAL_SEQ" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Tax Invoice Recording Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TAX_INVOICE_RECORDING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Taxation Country",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TAXATION_COUNTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Temp Cancelled Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TEMP_CANCELLED_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Term Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TERM_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Terms Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TERMS_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Terms Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TERMS_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Total Tax Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.TOTAL_TAX_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Validation Worker Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.VALIDATION_WORKER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Vendor Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.VENDOR_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Vendor Prepay Amount",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.VENDOR_PREPAY_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Vendor Site Id",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.VENDOR_SITE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Voucher Num",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.VOUCHER_NUM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Wfapproval Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.WFAPPROVAL_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - AP Invoice Header Detail"
+    }, {
+      "name" : "Inv Validation Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+          "physicalExpression" : {
+            "expressionTemplate" : " CASE  WHEN %1 = 'APPROVED' THEN 'Validated' WHEN %1 = 'CANCELLED' THEN 'Cancelled' WHEN %1 = 'FULL' THEN 'Fully Applied' WHEN %1 = 'NEEDS REAPPROVAL' THEN 'Needs Revalidation' WHEN %1 = 'NEVER APPROVED' THEN 'Never Validated' WHEN %1 = 'UNPAID' THEN 'Unpaid' WHEN %1 = 'AVAILABLE' THEN 'Available' END ",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header.INV_VALIDATION_STAT" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_AP_INVOICE_DWH_Dim_AP_Invoice_Header" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - AP Invoice Header Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - AP Invoice Header Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - AP Invoice Header Detail",
+        "numberOfElements" : 546742,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Invoice Gk" ],
+        "displayKey" : "Invoice Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "AP Invoice Header",
+        "levels" : [ "Dim - AP Invoice Header Total", "Dim - AP Invoice Header Detail" ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "subjectArea" : {
+    "name" : "SSYS - Purchasing Receiving",
+    "tags" : [ "Project:SSYS_All_DWH", "Project:SSYS_Procure2Pay", "Project:SSYS_Procure2Pay_Release3" ],
+    "sourceBusinessModel" : "businessModel:SSYS",
+    "implicitFactColumn" : "logicalColumn:SSYS.Fact - Purchasing Receiving.# of Deliver Transactions",
+    "tableOrder" : [ {
+      "name" : "presentationTable:SSYS - Purchasing Receiving.Operating Unit"
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Receiving.Item",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Item (Ship To Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Item (Master Org)"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Item Cost"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Receiving.Supplier",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Supplier Attributes"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Supplier Site"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Receiving.Purchase Order",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Purchase Order Attributes",
+        "children" : [ {
+          "name" : "presentationTable:SSYS - Purchasing Receiving.Po Header"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Receiving.Po Release"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Receiving.Po Line"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Receiving.Po Shipment"
+        }, {
+          "name" : "presentationTable:SSYS - Purchasing Receiving.Po Distribution"
+        } ]
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Purchase Order Measures"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Receiving.Receiving",
+      "children" : [ {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Receiving Transaction"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Receiving Measures"
+      }, {
+        "name" : "presentationTable:SSYS - Purchasing Receiving.Receiving Header"
+      } ]
+    }, {
+      "name" : "presentationTable:SSYS - Purchasing Receiving.In Transit Receiving Measures"
+    } ],
+    "permissions" : [ {
+      "accessor" : "role:AuthenticatedUser",
+      "access" : "NO_ACCESS"
+    }, {
+      "accessor" : "role:BIAdministrator",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Developers",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:BI_Presentation_Administrators",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_COGS_Allowed",
+      "access" : "READ"
+    }, {
+      "accessor" : "role:SSYS_Purchasing_Receiving_SA",
+      "access" : "READ"
+    } ],
+    "localization" : {
+      "localizationKey" : "SSYS - Purchasing Receiving",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_Purchasing_Receiving)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_Purchasing_Receiving)"
+    }
+  }
+}

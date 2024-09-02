@@ -1,0 +1,34 @@
+{
+  "physicalTable": {
+    "name": "DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header",
+    "sourceTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_End_Customer_Oracle",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.END_CUSTOMER_ACCOUNT_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_CUST_ACCOUNT_ORACLE_DWH_End_Customer_Oracle.ORACLE_CUSTOMER_ACCOUNT_GK"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_ORDER_HEADER_DWH_Dim_Order_Header.ORDER_TYPE_GK",
+            "rightColumn": "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OE_TRANSACTION_TYPE_DWH_Order_Header_Type.TRX_TYPE_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ORDER_HEADER_GK"
+      ],
+      [
+        "ORDER_CURRENCY"
+      ]
+    ]
+  }
+}

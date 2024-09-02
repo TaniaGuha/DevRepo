@@ -1,0 +1,1929 @@
+{
+  "logicalTable" : {
+    "name" : "Dim - Opportunity",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Opportunity Gk" ],
+    "logicalColumns" : [ {
+      "name" : "Old Opportunity Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OLD_OPPORTUNITY_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Main Competitors",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.MAIN_COMPETITORS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity End Customer Number",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Account Sfdc Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Account SFDC Details.Oracle Account Number", "logicalColumn:SSYS_SF.Dim - Opportunity.Account Gk" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity End Customer Name",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Account Sfdc Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Account SFDC Details.Sfdc Account Name", "logicalColumn:SSYS_SF.Dim - Opportunity.Account Gk" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Account Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ACCOUNT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Amount (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Application Engineer In Charge",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.APPLICATION_ENGINEER_IN_CHARGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Asigned To Chanel Sfdc Acnt Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ASIGNED_TO_CHANEL_SFDC_ACNT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Assigned To Channel Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ASSIGNED_TO_CHANNEL_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Budget Confirmed Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.BUDGET_CONFIRMED_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Business Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.BUSINESS_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Buying Intention In 12 Months",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.BUYING_INTENTION_IN_12_MONTHS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Campaign Counter",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.CAMPAIGN_COUNTER__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Chanel Salesprsn Sfdc Cntct Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.CHANEL_SALESPRSN_SFDC_CNTCT_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Channel Salesperson Contact Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.CHANNEL_SALESPERSON_CONTACT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Company Division",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.COMPANY_DIVISION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Conflict Approval Status",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.CONFLICT_APPROVAL_STATUS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Created By User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.CREATED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Created By User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.CREATED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Date App Engineer In Charge",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DATE_APP_ENGINEER_IN_CHARGE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Date Assigned To Channel",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DATE_ASSIGNED_TO_CHANNEL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Date Assigned To Distributor",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DATE_ASSIGNED_TO_DISTRIBUTOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Date Opp Was Reopened",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DATE_OPP_WAS_REOPENED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Deal Registration Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DEAL_REGISTRATION_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Deal Value",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DEAL_VALUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Department",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DEPARTMENT_C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Direct Indirect",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DIRECT_INDIRECT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Discount Program Name Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DISCOUNT_PROGRAM_NAME_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Discovery Completed Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.DISCOVERY_COMPLETED_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "End Custmr Prmry Cntct Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.END_CUSTMR_PRMRY_CNTCT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "End Customer Primary Contct Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.END_CUSTOMER_PRIMARY_CONTCT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Estimated Shipping Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ESTIMATED_SHIPPING_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Expected Close Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.EXPECTED_CLOSE_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Expected Close Date Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.EXPECTED_CLOSE_DATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Expected Revenue (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.EXPECTED_REVENUE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Fast Track Quote Error",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FAST_TRACK_QUOTE_ERROR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "First Campaign Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FIRST_CAMPAIGN_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "First Campaign Date Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FIRST_CAMPAIGN_DATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "First Campaign Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FIRST_CAMPAIGN_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "First Campaign Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FIRST_CAMPAIGN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "First Closed Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FIRST_CLOSED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Forecast Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FORECAST_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Forecast Category Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FORECAST_CATEGORY_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Forecasting Amount (Original Currency)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FORECASTING_AMOUNT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "From Convert",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FROM_CONVERT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "From Demo Stock Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.FROM_DEMO_STOCK_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Has Opportunity Line Item Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.HAS_OPPORTUNITY_LINE_ITEM_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Isclosed",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ISCLOSED" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Iswon",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.ISWON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Last Activity Date",
+      "dataType" : "DATE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LAST_ACTIVITY_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Last Modified By User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LAST_MODIFIED_BY_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Last Modified By User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LAST_MODIFIED_BY_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Last Modified Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LAST_MODIFIED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Lead Number",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LEAD_NUMBER" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Lead Qualified By Inside Sales",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LEAD_QUALIFIED_BY_INSIDE_SALES" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Lead Source",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LEAD_SOURCE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Lost Reason",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LOST_REASON" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Lost Reason Description",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LOST_REASON_DESCRIPTION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Lost To Competitor",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.LOST_TO_COMPETITOR" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "New Customer Opp",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.NEW_CUSTOMER_OPP" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Next Step",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.NEXT_STEP" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opp Partner Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPP_PARTNER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Address",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_ADDRESS" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity City",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_CITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Country",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_COUNTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Country Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_COUNTRY_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Created Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_CREATED_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Created Date Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_CREATED_DATE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Currency",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_CURRENCY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Industry",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_INDUSTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Name Local",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_NAME_LOCAL" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Old Sf Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_OLD_SF_ID__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Owner Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_OWNER_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Owner Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_OWNER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Owner Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_OWNER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Record Type Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_RECORD_TYPE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Record Type Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_RECORD_TYPE_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Region",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_REGION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity State",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_STATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Sub Industry",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_SUB_INDUSTRY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Sub Region",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_SUB_REGION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Territory",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_TERRITORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Zipcode Postal Cod",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.OPPORTUNITY_ZIPCODE_POSTAL_COD" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Partner Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PARTNER_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Partner Account Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PARTNER_ACCOUNT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Price Book Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PRICE_BOOK_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Pricebook2id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PRICEBOOK2ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Primary Application",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PRIMARY_APPLICATION" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Primary Campaign Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PRIMARY_CAMPAIGN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Primary Quote Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PRIMARY_QUOTE_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Probability",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.PROBABILITY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Source System",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.SOURCE_SYSTEM" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Ssys Forecast Category",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.SSYS_FORECAST_CATEGORY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Stage Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.STAGE_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Stage When Ae Added",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.STAGE_WHEN_AE_ADDED__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Stage Last Modified Date",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.STAGELASTMODIFIEDDATE__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Stage",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.STAGENAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Sub Application",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.SUB_APPLICATION__C" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "System Mod Stamp",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.SYSTEM_MOD_STAMP" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Third Party Account Gk",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.THIRD_PARTY_ACCOUNT_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Third Party Account Sfdc Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.THIRD_PARTY_ACCOUNT_SFDC_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Active Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_ACTIVE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Etl Insert Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_ETL_INSERT_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Etl Update Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_ETL_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Integration Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_INTEGRATION_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Src Create By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_SRC_CREATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Src Create Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_SRC_CREATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Src Update By",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_SRC_UPDATE_BY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "X Src Update Dt",
+      "dataType" : "TIMESTAMP",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.X_SRC_UPDATE_DT" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Current Rate To USD",
+      "description" : "Exchange rate from the opportunity currency to USD",
+      "dataType" : "DOUBLE",
+      "descriptorColumn" : "Opportunity Currency",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( SPARSE %1, 1,  CURRENT_DATE , %2, 'USD')",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Currency Daily Exchange Rate Details.CONVERSION_RATE", "logicalColumn:SSYS_SF.Dim - Opportunity.Opportunity Currency" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Amount ($)",
+      "description" : "Amount Converted to USD with current day rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Opportunity.Amount (Original Currency)", "logicalColumn:SSYS_SF.Dim - Opportunity.Current Rate To USD" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Forecasting Amount ($)",
+      "description" : "\"Forecasting Amoun\" Converted to USD with current day rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Opportunity.Forecasting Amount (Original Currency)", "logicalColumn:SSYS_SF.Dim - Opportunity.Current Rate To USD" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Expected Revenue ($)",
+      "description" : "\"Expected Revenue\" Converted to USD with current day rate",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1 * %2",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Dim - Opportunity.Expected Revenue (Original Currency)", "logicalColumn:SSYS_SF.Dim - Opportunity.Current Rate To USD" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Regional Manager Sfdc User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.REGIONAL_MANAGER_SFDC_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Sip Owner Sfdc User Id",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.SIP_OWNER_SFDC_USER_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Sip Owner Sfdc User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.SIP_OWNER_SFDC_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Regional Manager User Name",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.REGIONAL_MANAGER_USER_NAME" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity CA Manager",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Account Sfdc Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Account SFDC Details.Ca Manager Sfdc User Name", "logicalColumn:SSYS_SF.Dim - Opportunity.Account Gk" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Regional Allocation",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Account Sfdc Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Account SFDC Details.Regional Allocation", "logicalColumn:SSYS_SF.Dim - Opportunity.Account Gk" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "Opportunity Account Alias",
+      "dataType" : "VARCHAR",
+      "descriptorColumn" : "Account Sfdc Id",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : " LOOKUP( DENSE %1, %2)",
+          "expressionObjects" : [ "logicalColumn:SSYS_SF.Lookup - Account SFDC Details.Account Alias", "logicalColumn:SSYS_SF.Dim - Opportunity.Account Gk" ]
+        }
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    }, {
+      "name" : "New Logo Validation Ind",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity.NEW_LOGO_VALIDATION_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Dim - Opportunity Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_OPPORTUNITY_DWH_Dim_Opportunity",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_OPPORTUNITY_DWH_Dim_Opportunity" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Dim - Opportunity Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Dim - Opportunity Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Dim - Opportunity Detail",
+        "numberOfElements" : 230000,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Opportunity Gk" ],
+        "displayKey" : "Opportunity Gk"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "Opportunity",
+        "levels" : [ "Dim - Opportunity Total", "Dim - Opportunity Detail" ]
+      } ]
+    }
+  }
+}

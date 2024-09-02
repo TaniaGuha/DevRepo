@@ -1,0 +1,341 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Receiving Shipment Lines",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Shipment",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIPMENT_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Shipped",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_SHIPPED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Received",
+      "description" : "Quantity Received is the quantity that was received (regardless if it was already delivered)",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_RECEIVED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Pending Delivery",
+      "description" : "Shipped from source org, received but not delivered to inventory.\r\nThis quantity is taken from RCV_SUPPLY.Quantity.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_PENDING_DELIVERY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Delivered",
+      "description" : "Quantity Received – Quantity Pending Delivery",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_DELIVERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity In Transit",
+      "description" : "Quantity Shipped - Quantity Received + Quantity Pending Delivery",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 - %2 + %3",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_SHIPPED", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_RECEIVED", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_PENDING_DELIVERY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "# of Shipment (Common Item Org)",
+      "description" : "This field is not affected from the Sale Order Attribute fields",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.SHIPMENT_LINE_ID" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Shipped (Common Item Org)",
+      "description" : "This field is not affected from the Sale Order Attribute fields",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_SHIPPED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Received (Common Item Org)",
+      "description" : "Quantity Received is the quantity that was received (regardless if it was already delivered) - This field is not affected from the Sale Order Attribute fields",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_RECEIVED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Pending Delivery (Common Item Org)",
+      "description" : "This field is not affected from the Sale Order Attribute fields\r\nShipped from source org, received but not delivered to inventory.\r\nThis quantity is taken from RCV_SUPPLY.Quantity.",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_PENDING_DELIVERY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity Delivered (Common Item Org)",
+      "description" : "This field is not affected from the Sale Order Attribute fields\r\nQuantity Received – Quantity Pending Delivery",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_DELIVERED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    }, {
+      "name" : "Quantity In Transit (Common Item Org)",
+      "description" : "This field is not affected from the Sale Order Attribute fields\r\nQuantity Shipped - Quantity Received + Quantity Pending Delivery",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1 - %2 + %3",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_SHIPPED", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_RECEIVED", "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines.QUANTITY_PENDING_DELIVERY" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM",
+        "aggregateByLevels" : [ "logicalLevel:SSYS_SF.Dim - Customer Site (Bill To).Dim - Customer Site (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Bill To).Dim - Customer Account (Bill To) Total", "logicalLevel:SSYS_SF.Dim - Delivery Line.Dim - Delivery Line Total", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Total", "logicalLevel:SSYS_SF.Dim - Customer Site (Ship To).Dim - Customer Site (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Customer Account (Ship To).Dim - Customer Account (Ship To) Total", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total" ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.FACT_RCV_SHIPMENT_LINES_DWH_Fact_Receiving_Shipment_Lines" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS_SF.Dim - Purchasing Po Shipment.Dim - Purchasing Po Shipment Detail", "logicalLevel:SSYS_SF.Dim - Inventory Onhand.Dim - Inventory Onhand Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Header.Dim - Purchasing Po Header Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Release.Dim - Purchasing Po Release Detail", "logicalLevel:SSYS_SF.Dim - Item (Ship From Org).Dim - Item (Ship From Org) Detail", "logicalLevel:SSYS_SF.Dim - Item (Deliver To Org).Dim - Item (Deliver To Org) Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Distribution.Dim - Purchasing Po Distribution Detail", "logicalLevel:SSYS_SF.Dim - Item (Master Org).Dim - Item (Master Org) Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit (From OU Org).Dim - Operating Unit (From OU Org) Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Line.Dim - Purchasing Requisition Line Detail", "logicalLevel:SSYS_SF.Dim - Receiving Shipment Lines.Dim - Receiving Shipment Lines Detail", "logicalLevel:SSYS_SF.Dim - Inventory Organization (Common).Dim - Inventory Organization (Common) Detail", "logicalLevel:SSYS_SF.Dim - Organization (From Inv Org).Dim - Organization (From Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Item.Dim - Item Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Req Charge Account.Dim - Purchasing Req Charge Account Detail", "logicalLevel:SSYS_SF.Dim - Item Locator.Dim - Item Locator Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Line.Dim - Purchasing Po Line Detail", "logicalLevel:SSYS_SF.Dim - Sale Order Line.Dim - Sale Order Line Detail", "logicalLevel:SSYS_SF.Dim - Operating Unit Org.Dim - Operating Unit Org Detail", "logicalLevel:SSYS_SF.Dim - Receiving Shipment Header.Dim - Receiving Shipment Header Detail", "logicalLevel:SSYS_SF.Dim - Sale Order Header.Dim - Sale Order Header Detail", "logicalLevel:SSYS_SF.Dim - Inventory Source Org.Dim - Inventory Source Org Total", "logicalLevel:SSYS_SF.Dim - Delivery.Dim - Delivery Detail", "logicalLevel:SSYS_SF.Dim - Time (Received Date).Dim - Time (Received Date) Total", "logicalLevel:SSYS_SF.Dim - Subinventory.Dim - Subinventory Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Header.Dim - Purchasing Requisition Header Detail", "logicalLevel:SSYS_SF.Dim - Organization (Inv Org).Dim - Organization (Inv Org) Detail", "logicalLevel:SSYS_SF.Dim - Purchasing Po Budget Account.Dim - Purchasing Po Budget Account Total", "logicalLevel:SSYS_SF.Dim - Supplier Site.Dim - Supplier Site Total", "logicalLevel:SSYS_SF.Dim - Purchasing Requisition Distribution.Dim - Purchasing Requisition Distribution Total", "logicalLevel:SSYS_SF.Dim - Purchasing Receiving.Dim - Purchasing Receiving Total", "logicalLevel:SSYS_SF.Dim - Purchasing Po Charge Account.Dim - Purchasing Po Charge Account Total", "logicalLevel:SSYS_SF.Dim - Supplier.Dim - Supplier Total" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Delivery",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Inventory Organization (Common)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Deliver To Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Master Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item (Ship From Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item Locator",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Item",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit (From OU Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Operating Unit Org",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (From Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Organization (Inv Org)",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Distribution",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Release",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Po Shipment",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Req Charge Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Purchasing Requisition Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Receiving Shipment Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Receiving Shipment Lines",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Header",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Sale Order Line",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS_SF.Dim - Subinventory",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

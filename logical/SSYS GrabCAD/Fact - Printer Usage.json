@@ -1,0 +1,187 @@
+{
+  "logicalTable" : {
+    "name" : "Fact - Printer Usage",
+    "tags" : [ "Project:SSYS_GrabCAD" ],
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "# of Materials",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.GC_MATERIAL_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Printers",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.GC_PRINTER_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "# of Jobs",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.GC_PRINTER_JOB_GK" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "COUNT_DISTINCT"
+      }
+    }, {
+      "name" : "Average Per Job",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.USAGE_ACTUAL" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Actual Overall Usage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.USAGE_ACTUAL" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Estimated Per Job",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.USAGE_ESTIMATED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "AVG"
+      }
+    }, {
+      "name" : "Estimated Overall Usage",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage.USAGE_ESTIMATED" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:DW_GrabCad.DWH.FACT_GC_PRINTER_USAGE_DWH_Fact_Printer_Usage" ]
+      },
+      "dataGranularity" : [ "logicalLevel:SSYS GrabCAD.Dim - Account.Dim - Account Detail", "logicalLevel:SSYS GrabCAD.Dim - User.Dim - User Total", "logicalLevel:SSYS GrabCAD.Dim - Product.Dim - Product Detail", "logicalLevel:SSYS GrabCAD.Dim - Install Site.Dim - Install Site Detail", "logicalLevel:SSYS GrabCAD.Dim - Material.Dim - Material Detail", "logicalLevel:SSYS GrabCAD.Dim - Region.Dim - Region Detail", "logicalLevel:SSYS GrabCAD.Dim - Printer.Dim - Printer Detail", "logicalLevel:SSYS GrabCAD.Dim - Start Date.Dim - Start Date Day", "logicalLevel:SSYS GrabCAD.Dim - Printer Job.Dim - Printer Job Detail", "logicalLevel:SSYS GrabCAD.Dim - Start Time.Dim - Start Time Hour Second", "logicalLevel:SSYS GrabCAD.Dim - End Customer.Dim - End Customer Detail" ],
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "dataFilters" : [ {
+      "accessor" : "role:SSYS_GrabCAD_SA",
+      "status" : "ENABLED",
+      "filter" : {
+        "expressionTemplate" : "%1 =  VALUEOF(NQ_SESSION.%2) OR  VALUEOF(NQ_SESSION.%2) = 'ALL'",
+        "expressionObjects" : [ "logicalColumn:SSYS GrabCAD.Dim - End Customer.Customer Region", "variable:undeclaredVariables.SFDC_REGION" ]
+      }
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Account",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - End Customer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Install Site",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Material",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Printer Job",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Printer",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Product",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Region",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Start Date",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    }, {
+      "rightTable" : "logicalTable:SSYS GrabCAD.Dim - Start Time",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ZERO_OR_ONE"
+    } ]
+  }
+}

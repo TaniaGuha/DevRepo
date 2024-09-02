@@ -1,0 +1,50 @@
+{
+  "physicalTable": {
+    "name": "XXATC_OE_F_SHIPMENTS",
+    "sourceTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_OE_F_SHIPMENTS_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_HR_D_INV_ORGANIZATIONS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_F_SHIPMENTS.BI_INV_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_HR_D_INV_ORGANIZATIONS.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_HR_D_ORGANIZATIONS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_F_SHIPMENTS.BI_SHIP_TO_ORG_ID",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_HR_D_ORGANIZATIONS.BI_ORG_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_INV_D_ITEMS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_F_SHIPMENTS.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_INV_D_ITEMS.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_OE_D_SHIPMENTS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_F_SHIPMENTS.BI_ORDER_LINE_CODE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_D_SHIPMENTS.BI_ORDER_LINE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_PLANING_AND_SHIPPING.XXATC_OE_SHIPPED_DATE",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_F_SHIPMENTS.BI_SHIPPIED_DATE",
+            "rightColumn": "physicalColumn:XXATC_PLANING_AND_SHIPPING.XXATC_OE_SHIPPED_DATE.BI_DATE_CODE"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "physicalTable": {
+    "name": "HR_F_EMPLOYEES_HISTORY",
+    "sourceTable": "physicalTable:DWSOURCE.XXATC.XXATC_HR_D_PERSONS_BI",
+    "caching": {
+      "enable": true
+    },
+    "joins": [      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_EFFECTIVE_DATES",
+        "joinExpression": {
+          "expressionTemplate": "%1 >= %2 AND %1 <= %3",
+          "expressionObjects": [
+            "physicalColumn:DWSOURCE.XXATC.HR_D_EFFECTIVE_DATES.BI_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.EFFECTIVE_START_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.EFFECTIVE_END_DATE"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_EMPLOYEE_HIERARCHY",
+        "joinExpression": {
+          "expressionTemplate": "%1 = %2",
+          "expressionObjects": [
+            "physicalColumn:DWSOURCE.XXATC.HR_D_EMPLOYEE_HIERARCHY.BI_PERSON_CODE",
+            "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.BI_PERSON_CODE"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "useJoinExpression": true,
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_HC_ALLOCATION",
+        "joinExpression": {
+          "expressionTemplate": "%1 >=  TIMESTAMPADD( SQL_TSI_DAY , ( DAYOFMONTH(%2) - 1) * -(1), %2) AND %1 <=  TIMESTAMPADD( SQL_TSI_DAY ,  DAYOFMONTH( TIMESTAMPADD( SQL_TSI_MONTH , 1, %3)) * -(1),  TIMESTAMPADD( SQL_TSI_MONTH , 1, %3)) AND %4 = %5",
+          "expressionObjects": [
+            "physicalColumn:DWSOURCE.XXATC.HR_D_HC_ALLOCATION.AS_OF_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.EFFECTIVE_START_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.EFFECTIVE_END_DATE",
+            "physicalColumn:DWSOURCE.XXATC.HR_D_HC_ALLOCATION.BI_PERSON_CODE",
+            "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.BI_PERSON_CODE"
+          ]
+        },
+        "cardinality": "UNKNOWN",
+        "joinType": "INNER"
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_EMPLOYEES_HISTORY",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.BI_EFFECTIVE_START_DATE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.HR_D_EMPLOYEES_HISTORY.BI_EFFECTIVE_START_DATE"
+          },
+          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.BI_PERSON_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.HR_D_EMPLOYEES_HISTORY.BI_PERSON_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:DWSOURCE.XXATC.HR_D_ORGANIZATIONS",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DWSOURCE.XXATC.HR_F_EMPLOYEES_HISTORY.BI_ORGANIZATION_CODE",
+            "rightColumn": "physicalColumn:DWSOURCE.XXATC.HR_D_ORGANIZATIONS.BI_ORG_CODE"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "BI_PERSON_CODE"
+      ]
+    ]
+  }
+}

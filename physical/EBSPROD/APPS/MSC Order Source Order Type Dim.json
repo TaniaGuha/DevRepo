@@ -1,0 +1,52 @@
+{
+  "physicalTable" : {
+    "name" : "MSC Order Source Order Type Dim",
+    "sourceType" : "SELECT",
+    "selectStatements" : [ {
+      "databaseType" : "DEFAULT",
+      "query" : "SELECT\r\n  CASE  WHEN lookup_type = 'MSC_DEMAND_ORIGINATION' THEN 'MSC_DEMANDS'\r\n             WHEN lookup_type = 'MRP_ORDER_TYPE' THEN 'MSC_SUPPLIES'\r\n             ELSE 'none'\r\n  END msc_source_table,\r\n  lookup_type,\r\n  language,\r\n  lookup_code,\r\n  to_number(lookup_code) lookup_code_num,\r\n  meaning order_type_text,\r\n  description,\r\n  enabled_flag\r\nFROM  apps.FND_LOOKUP_VALUES\r\nWHERE language = 'US'\r\n  AND lookup_type IN ('MRP_ORDER_TYPE', 'MSC_DEMAND_ORIGINATION')\r\n"
+    } ],
+    "physicalColumns" : [ {
+      "name" : "MSC_SOURCE_TABLE",
+      "dataType" : "VARCHAR",
+      "length" : 12,
+      "nullable" : true
+    }, {
+      "name" : "LOOKUP_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 30,
+      "nullable" : true
+    }, {
+      "name" : "LANGUAGE",
+      "dataType" : "VARCHAR",
+      "length" : 2,
+      "nullable" : true
+    }, {
+      "name" : "LOOKUP_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 10,
+      "nullable" : true
+    }, {
+      "name" : "LOOKUP_CODE_NUM",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORDER_TYPE_TEXT",
+      "dataType" : "VARCHAR",
+      "length" : 50,
+      "nullable" : true
+    }, {
+      "name" : "DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "length" : 200,
+      "nullable" : true
+    }, {
+      "name" : "ENABLED_FLAG",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    } ],
+    "additionalKeys" : [ [ "MSC_SOURCE_TABLE", "LOOKUP_CODE_NUM" ], [ "ORDER_TYPE_TEXT" ], [ "MSC_SOURCE_TABLE" ], [ "MSC_SOURCE_TABLE", "ORDER_TYPE_TEXT" ] ]
+  }
+}

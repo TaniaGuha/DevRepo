@@ -1,0 +1,44 @@
+{
+  "physicalTable": {
+    "name": "XXATC_MFG_BDS_WORK_PLAN_fact",
+    "sourceTable": "physicalTable:XXATC_MFG_BDS.XXATC_MFG_BDS_F_WORK_PLAN_BI",
+    "caching": {
+      "enable": true,
+      "expiryTime": 1,
+      "expiryUnit": "DAYS"
+    },
+    "joins": [      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_DIM_promised_date",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_fact.BI_PROMISED_DATE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_DIM_promised_date.BI_DATE_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_INV_D_MS_ITEMS_BI",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_fact.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_INV_D_MS_ITEMS_BI.BI_ITEM_CODE"
+          }
+        ]
+      },
+      {
+        "rightTable": "physicalTable:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_dim",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_fact.BI_ITEM_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_dim.BI_ITEM_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_fact.BI_ORG_CODE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_dim.BI_ORG_CODE"
+          },
+          {
+            "leftColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_fact.BI_PROMISED_DATE",
+            "rightColumn": "physicalColumn:XXATC_MFG_BDS.XXATC_MFG_BDS_WORK_PLAN_dim.BI_PROMISED_DATE"
+          }
+        ]
+      }
+    ]
+  }
+}

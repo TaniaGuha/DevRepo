@@ -1,0 +1,21 @@
+{
+  "physicalTable": {
+    "name": "FACT_SERVICE_CONTRACT_DWH_ADD_INFO_V_asset",
+    "sourceTable": "physicalTable:DW.DWH.FACT_SERVICE_CONTRACT_DWH_ADD_INFO_V",
+    "joins": [      {
+        "rightTable": "physicalTable:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Next_Signed_Contract",
+        "joinConditions": [          {
+            "leftColumn": "physicalColumn:DW.DWH.FACT_SERVICE_CONTRACT_DWH_ADD_INFO_V_asset.NEXT_SIGNED_CONTRACT_GK",
+            "rightColumn": "physicalColumn:DW.DWH.DIM_SERVICE_CONTRACT_DWH_Next_Signed_Contract.CONTRACT_GK"
+          }
+        ]
+      }
+    ],
+    "additionalKeys": [
+      [
+        "ASSET_ID",
+        "CONTRACT_ID"
+      ]
+    ]
+  }
+}

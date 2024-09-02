@@ -1,0 +1,105 @@
+{
+  "presentationTable" : {
+    "name" : "Invoice Distribution Measures",
+    "presentationColumns" : [ {
+      "name" : "Dist Accounted Amount",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Accounted Amount",
+      "alternateNames" : [ "Dist Acctd Amount" ],
+      "localization" : {
+        "localizationKey" : "Dist Accounted Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Accounted_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Accounted_Amount)"
+      }
+    }, {
+      "name" : "Dist Entered Amount",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Entered Amount",
+      "localization" : {
+        "localizationKey" : "Dist Entered Amount",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Entered_Amount)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Entered_Amount)"
+      }
+    }, {
+      "name" : "Dist Amount ILS",
+      "description" : "Dist Entered Amount Converted to ILS\r\n(Rate date is invoice_trx_date)",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Amount ILS",
+      "localization" : {
+        "localizationKey" : "Dist Amount ILS",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Amount_ILS)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Amount_ILS)"
+      }
+    }, {
+      "name" : "Dist Amount USD",
+      "description" : "Dist Entered Amount Converted to USD\r\n(Rate date is invoice_trx_date)",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Amount USD",
+      "localization" : {
+        "localizationKey" : "Dist Amount USD",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Amount_USD)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Amount_USD)"
+      }
+    }, {
+      "name" : "Dist Percent",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Percent",
+      "localization" : {
+        "localizationKey" : "Dist Percent",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Percent)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Percent)"
+      }
+    }, {
+      "name" : "# of Invoice Distributions",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.# of Invoice Distributions",
+      "localization" : {
+        "localizationKey" : "# of Invoice Distributions",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_#_of_Invoice_Distributions)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_#_of_Invoice_Distributions)"
+      }
+    }, {
+      "name" : "# of Invoice Lines",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.# of Invoice Lines",
+      "localization" : {
+        "localizationKey" : "# of Invoice Lines",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_#_of_Invoice_Lines)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_#_of_Invoice_Lines)"
+      }
+    }, {
+      "name" : "# of Invoices",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.# of Invoices",
+      "localization" : {
+        "localizationKey" : "# of Invoices",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_#_of_Invoices)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_#_of_Invoices)"
+      }
+    }, {
+      "name" : "Monthly Average Conversion Rate To USD",
+      "description" : "Average of all conversion rates in the GL period selected\r\nfrom the functional currency to USD",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - GL Daily Rates.Monthly Average Conversion Rate To USD",
+      "localization" : {
+        "localizationKey" : "Monthly Average Conversion Rate To USD",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Monthly_Average_Conversion_Rate_To_USD)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Monthly_Average_Conversion_Rate_To_USD)"
+      }
+    }, {
+      "name" : "Next Day Monthly Average Conversion Rate To USD",
+      "description" : "Average of all next day conversion rates in the GL period selected\r\nfrom the functional currency to USD",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - GL Daily Rates.Next Day Monthly Average Conversion Rate To USD",
+      "localization" : {
+        "localizationKey" : "Next Day Monthly Average Conversion Rate To USD",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Next_Day_Monthly_Average_Conversion_Rate_To_USD)",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Next_Day_Monthly_Average_Conversion_Rate_To_USD)"
+      }
+    }, {
+      "name" : "Dist Amt (Monthly Avg Rate)",
+      "description" : "\"Dist Accounted Amoun\" * \"Monthly Avg Rate From Functional Curr To USD\"",
+      "sourceLogicalColumn" : "logicalColumn:SSYS.Fact - Invoice Distribution.Dist Amt (Monthly Avg Rate)",
+      "localization" : {
+        "localizationKey" : "Dist Amt (Monthly Avg Rate)",
+        "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Amt_(Monthly_Avg_Rate))",
+        "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures_Dist_Amt_(Monthly_Avg_Rate))"
+      }
+    } ],
+    "localization" : {
+      "localizationKey" : "Invoice Distribution Measures",
+      "nameVariable" : "VALUEOF(NQ_SESSION.CN_SSYS_-_AR_Invoices_Invoice_Distribution_Measures)",
+      "descriptionVariable" : "VALUEOF(NQ_SESSION.CD_SSYS_-_AR_Invoices_Invoice_Distribution_Measures)"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "logicalTable" : {
+    "name" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "PLAN_GK" ],
+    "logicalColumns" : [ {
+      "name" : "LAST_RUN_DATE_IND",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.LAST_RUN_DATE_IND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail"
+    }, {
+      "name" : "PLAN_GK",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.PLAN_GK" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail"
+    }, {
+      "name" : "PLAN_ID",
+      "dataType" : "DOUBLE",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.PLAN_ID" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail"
+    }, {
+      "name" : "PLAN_RUN_DATE",
+      "dataType" : "DATETIME",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates.PLAN_RUN_DATE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:Snowflake.SSYS_DW_30_RC_DB.MARTS.DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "PLAN_GK" ],
+        "displayKey" : "PLAN_GK"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_DatesDim",
+        "levels" : [ "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Total", "DIM_MSC_PLAN_RUN_DATES_DWH_Dim_Plan_Run_Dates Detail" ]
+      } ]
+    }
+  }
+}

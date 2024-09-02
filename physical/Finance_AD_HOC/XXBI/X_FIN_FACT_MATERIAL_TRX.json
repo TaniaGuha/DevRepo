@@ -1,0 +1,91 @@
+{
+  "physicalTable" : {
+    "name" : "X_FIN_FACT_MATERIAL_TRX",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "ITEM_DESCRIPTION",
+      "dataType" : "VARCHAR",
+      "length" : 2000,
+      "nullable" : true
+    }, {
+      "name" : "QTY_OPEN_BALANCE",
+      "dataType" : "DOUBLE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "ORG_NAME",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : true
+    }, {
+      "name" : "ITEM_NUMBER",
+      "dataType" : "VARCHAR",
+      "length" : 240,
+      "nullable" : true
+    }, {
+      "name" : "TRANSACTION_TYPE",
+      "dataType" : "VARCHAR",
+      "length" : 80,
+      "nullable" : true
+    }, {
+      "name" : "GL_ACCOUNT",
+      "dataType" : "VARCHAR",
+      "length" : 25,
+      "nullable" : true
+    }, {
+      "name" : "DATE_AS_OF",
+      "dataType" : "DATE",
+      "length" : 0,
+      "nullable" : true
+    }, {
+      "name" : "IS_UR",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : true
+    }, {
+      "name" : "AMOUNT",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : true
+    }, {
+      "name" : "ORGANIZATION_CODE",
+      "dataType" : "VARCHAR",
+      "length" : 15,
+      "nullable" : true
+    } ],
+    "caching" : {
+      "enable" : true,
+      "expiryTime" : 1,
+      "expiryUnit" : "DAYS"
+    },
+    "joins" : [ {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_GL_ACCOUNTS_V",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.GL_ACCOUNT",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_GL_ACCOUNTS_V.ACCOUNT"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_From",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.DATE_AS_OF",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_From.START_DATE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_To",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.DATE_AS_OF",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_DIM_TIME_To.END_DATE"
+      } ]
+    }, {
+      "rightTable" : "physicalTable:Finance_AD_HOC.XXBI.x_fin_dim_organization_v",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:Finance_AD_HOC.XXBI.X_FIN_FACT_MATERIAL_TRX.ORG_NAME",
+        "rightColumn" : "physicalColumn:Finance_AD_HOC.XXBI.x_fin_dim_organization_v.ORG_NAME"
+      } ]
+    } ]
+  }
+}
